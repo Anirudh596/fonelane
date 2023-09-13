@@ -9,7 +9,7 @@ function Navbar() {
   return (
   <>
   <div className=" sticky top-0 bg-white z-50">
-  <div className="custom-w navbar h-[72px] flex justify-between items-center">
+  <div className="custom-w navbar h-[10vh] flex justify-between items-center">
     <div className="logo w-10">
       <Logo />
     </div>

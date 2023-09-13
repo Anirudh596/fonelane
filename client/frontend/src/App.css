@@ -46,7 +46,13 @@
 
 .rotating-char {
   display: inline-flex;
-  animation: rotate 5s linear infinite;
+  animation: rotate 10s linear infinite;
 }
+
+.background-image {
+  @apply bg-[url('./images/back.jpg')] bg-cover bg-no-repeat bg-center;
+  /* Other background properties can be added here */
+}
+
 
 

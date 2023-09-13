@@ -2,7 +2,7 @@ function LinkBar() {
   return (
     <>
     <div className="custom-w">
-    <ul className="list-none w-full flex justify-between items-center h-[32px]  text-[8px] md:text-[12px] lg:text-[14px] xl:text-[16px] ">
+    <ul className="list-none w-full flex justify-between items-center h-[4vh]  text-[8px] md:text-[12px] lg:text-[14px] xl:text-[16px] ">
       <div  className="flex gap-20">
       <li><a href="#">Track Order</a></li>
       <li><a href="#">Get 5% on sales of $10000 or above</a></li>

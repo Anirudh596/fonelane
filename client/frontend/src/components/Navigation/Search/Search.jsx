@@ -9,7 +9,7 @@ function Search() {
           <div className="flex z-10">
             <input
               type="text"
-              className="rounded-[37px] px-4 py-2"
+              className="w-[600px] rounded-[37px] px-4 py-2"
               placeholder="Search..."
               id="Search-bar"
               name="Search-bar"

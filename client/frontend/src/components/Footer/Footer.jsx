@@ -5,7 +5,7 @@ import { faInstagram, faSquareFacebook, faXTwitter, faYoutube } from '@fortaweso
 function Footer() {
   return (
     <>
-    <div className="w-full bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  h-[70vh] mt-20">
+    <div className="w-full bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  h-[70vh] ">
         <div className="contact-bar custom-w h-[12vh] flex justify-between items-center">
            
                 <p className="text-[28px] font-semibold">Contact Us On</p>
@@ -72,7 +72,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className=" h-1/3 w-full flex flex-col justif-end items-center text-right leading-8 pt-10 pl-40">
-                    <p className="text-[40px] font-bold logo-end group" >fon<span className="text-[#37ff41] rotating-char ease-in-out duration-200 group-hover:text-[55px]">e</span>lane</p>
+                    <p className="text-[40px] font-bold logo-end group" >f<img src="./images/leaves.png" alt="" className="w-[50px] h-[50px] bg-auto rotating-char mt-[-10px]"/>n<span className="text-[#37ff41] ease-in-out duration-200 group-hover:text-[55px]">e</span>lane</p>
                     <p className="text-[14px] ">@copyright fonelane since 2023</p>
                     <p className="text-[14px]">All Rights Reserved</p>
                     
