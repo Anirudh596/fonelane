@@ -18,5 +18,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: ['tailwindcss-text-fill'],
 };

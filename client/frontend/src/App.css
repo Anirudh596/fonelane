@@ -25,3 +25,35 @@
 
 
 
+/* styles.css (or use a CSS-in-JS solution) */
+
+.animate-line {
+  animation: drawLine 2s ease-in-out forwards;
+}
+
+@keyframes drawLine {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.line {
+  position: absolute;
+  height: 2px;
+  background-color: #000; /* Change to your desired line color */
+}
+.text-circle {
+  width: 100px; /* Adjust the width and height as needed */
+  height: 100px;
+  shape-outside: circle(50%); /* This creates a circular shape */
+  text-align: center;
+  line-height: 100px; /* Center the text vertically */
+  background-color: #3490dc; /* Background color of the circle */
+  color: white; /* Text color */
+  border-radius: 50%; /* Make it a perfect circle */
+}
+
+
