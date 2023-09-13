@@ -78,15 +78,15 @@ function Footer() {
                     
                 </div>
             </div>
-            <div className=" newsetter-feedback w-2/3 h-full  flex flex-col justify-center items-center p-5">
+            <div className=" newsletter-feedback w-2/3 h-full  flex flex-col justify-center items-center p-5">
                 <div className="w-full h-1/3 flex flex-col ">
                     <p className="font-medium text-[17px] mb-2">Subscribe to Our Newsletter</p>
                     <div className="flex">
-                    <input type="text" placeholder="Typr Your Email Here! " value="" className="w-[250px] px-4 py-2 rounded-[10px] z-10" id="email-box"  name="Newsletter"/><input type="submit" value="Submit" className="cursor-pointer px-4 pl-7 w-[100px] rounded-[10px] ml-[-20px] bg-black text-white" id="email-submit" name="Newsletter-btn"/>
+                    <input type="text" placeholder="Type Your Email Here! " value="" className="w-[250px] px-4 py-2 rounded-[10px] z-10" id="email-box"  name="Newsletter"/><input type="submit" value="Submit" className="cursor-pointer px-4 pl-7 w-[100px] rounded-[10px] ml-[-20px] bg-black text-white" id="email-submit" name="Newsletter-btn"/>
                     </div>
                 </div>
                 <div className="w-full h-2/3 flex flex-col justify-center items-center mt-10 ">
-                    <p className="text-[14px] font-medium my-3">Give us Your valuabel feedback</p>
+                    <p className="text-[14px] font-medium my-3">Give us Your valuable feedback</p>
                     <button className="px-4 py-2 w-[120px] bg-white text-black text-[14px] font-medium rounded-[15px]">Feedback</button>
                 </div>
                 <div className="w-full h-1/3 mt-10  flex flex-col justify-center items-center">
