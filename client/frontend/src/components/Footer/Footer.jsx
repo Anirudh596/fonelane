@@ -72,7 +72,7 @@ function Footer() {
                     </div>
                 </div>
                 <div className=" h-1/3 w-full flex flex-col justif-end items-center text-right leading-8 pt-10 pl-40">
-                    <p className="text-[40px] font-bold" >fon<span className="text-[#fff] ">e</span>lane</p>
+                    <p className="text-[40px] font-bold logo-end group" >fon<span className="text-[#37ff41] rotating-char ease-in-out duration-200 group-hover:text-[55px]">e</span>lane</p>
                     <p className="text-[14px] ">@copyright fonelane since 2023</p>
                     <p className="text-[14px]">All Rights Reserved</p>
                     
