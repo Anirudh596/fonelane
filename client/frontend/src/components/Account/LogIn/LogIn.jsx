@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Logo from "../../Navigation/Logo/Logo";
 
 function LogIn() {
   const [password, setPassword] = useState("");
@@ -23,23 +24,8 @@ function LogIn() {
     <>
       <div className="flex h-screen w-full relative">
         <div className="flex-1 background-image h-full">
-          <div className="h-1/6  p-5">
-            <div
-              href="#"
-              className="text-[20px] font-bold group cursor-pointer logo text-white"
-            >
-              f
-              <img
-                src="./images/leaves.png"
-                alt=""
-                className="w-[30px] h-[30px] bg-auto rotating-char"
-              />
-              n
-              <span className="text-[#87ff83] ease-in-out duration-200 group-hover:text-[34px] ">
-                <span>e</span>
-              </span>
-              lane
-            </div>
+          <div className="h-1/6  p-5 text-white">
+            <Logo  />
           </div>
           <div className="h-5/6 pb-32 pr-20  w-full flex flex-col justify-center text-center items-center text-white gap-5">
             <p className="w-full text-[7rem] text-right font-bold">Hi There!</p>
