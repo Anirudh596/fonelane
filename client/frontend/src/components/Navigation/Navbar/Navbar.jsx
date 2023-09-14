@@ -3,6 +3,7 @@ import Search from '../Search/Search'
 import { faArrowRight, faHeart, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Dropdown from '../Dropdown/Dropdown'
+import { Link } from 'react-router-dom';
 
 
 function Navbar() {
@@ -24,9 +25,9 @@ function Navbar() {
         <FontAwesomeIcon icon={faShoppingCart} className='w-[24px] h-[24px] '/>
       </div>
       <button className="account-icon  cursor-pointer text-[18px] border-solid border-[1px] px-4 py-2 border-indigo-600 hover:border-gray-400 hover:scale-105 rounded-[37px] tranistion-all ease-in-out duration-300">
-        <h2 >Sign Up
+        <Link to='/signup'><h2 >Sign Up
         <FontAwesomeIcon icon={faArrowRight} className='mx-2'/>
-        </h2>
+        </h2></Link>
       </button>
     </div>
   </div>

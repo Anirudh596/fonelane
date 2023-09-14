@@ -11,7 +11,7 @@ import { Autoplay, Navigation } from "swiper/modules";
 function ReelSection() {
   return (
     <>
-      <Swiper
+      <Swiper 
         style={{
           "--swiper-navigation-color": "#999",
         }}
@@ -26,7 +26,7 @@ function ReelSection() {
         }}
         navigation={true}
         modules={[Autoplay, Navigation]}
-        className="mySwiper"
+        className="mySwiper mt-10 mb-20"
       >
         <div className="bg-white my-20">
           <SwiperSlide>

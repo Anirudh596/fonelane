@@ -18,7 +18,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-id-swiper": "^4.0.0",
-    "react-router-dom": "^6.15.0",
+    "react-router-dom": "^6.16.0",
     "swiper": "^10.2.0",
     "tailwindcss-text-fill": "^0.2.0"
   },
