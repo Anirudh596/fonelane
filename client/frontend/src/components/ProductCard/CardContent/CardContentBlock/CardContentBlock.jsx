@@ -1,5 +1,4 @@
-import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Review from "../../../Review/Review"
 
 function CardContentBlock() {
   return (
@@ -7,16 +6,7 @@ function CardContentBlock() {
         <div className="image bg-white w-[250px] h-[200px]  rounded-[20px] flex justify-center items-center group">
             <img src="./images/iphone.png" alt="" className=" w-[450px] h-[200px] bg-cover group-hover:scale-110"/>
         </div>
-        <div className="star flex ml-5 my-[5px] text-[#ffdd00]">
-          <FontAwesomeIcon icon={faStar}/>
-          <FontAwesomeIcon icon={faStar}/>
-          <FontAwesomeIcon icon={faStar}/>
-          <FontAwesomeIcon icon={faStar}/>
-          <FontAwesomeIcon icon={faStarHalf}/>
-          <div className="star-count text-black justify-center items-center">
-            <p>4.5/5</p>
-          </div>
-        </div>
+        <Review />
         <div className="card-text mx-5 text-black">
             <div className="title text-[18px] font-semibold"><p>iphone 14 pro max</p></div>
             <div className="specs text-[12px]"><p>Teal Purple(128GB)</p></div>
