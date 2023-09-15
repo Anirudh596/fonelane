@@ -12,7 +12,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 function Slider() {
   return (
     <>
-      <div className="drop-shadow-3xl">
+      <div className="drop-shadow-3xl w-full">
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",
@@ -34,28 +34,28 @@ function Slider() {
           className="mySwiper"
         >
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
           <SwiperSlide>
-            <img src="./images/banner.png" alt="" />
+            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
           </SwiperSlide>
         </Swiper>
       </div>

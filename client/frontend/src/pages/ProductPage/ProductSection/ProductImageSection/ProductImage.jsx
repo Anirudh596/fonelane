@@ -4,7 +4,7 @@ function ProductImage() {
   const [selectedImage, setSelectedImage] = useState(null);
   const productImages = useMemo(
     () => [
-      "./images/iphone 2.png",
+      "./images/iphone 2-1.png",
       "./images/iphone 1.png",
       "./images/iphone 3.png",
       "./images/iphone 4.png",
@@ -33,13 +33,13 @@ function ProductImage() {
         </div> */}
         <div></div>
         <div className="flex">
-          <div className="grid grid-rows-4 w-[80px] h-fit gap-4">
+          <div className="grid grid-rows-4 w-[80px] h-fit gap-4 ">
             {productImages.map((image, index) => (
               <div
                 key={index}
                 onClick={() => handleImageClick(image)}
-                className={`cursor-pointer w-[60px] h-[80px]  rounded-[10px] flex justify-center items-center ${
-                  selectedImage === image ? "bg-gray-200" : ""
+                className={`cursor-pointer bg-gray-200 w-[60px] h-[80px]  rounded-[10px] flex justify-center items-center ${
+                  selectedImage === image ? "bg-sky-200" : ""
                 }`}
               >
                 <img
@@ -55,7 +55,7 @@ function ProductImage() {
               <img
                 src={selectedImage}
                 alt="Selected Product Image"
-                className="w-full h-auto"
+                className="w-[350px]h-[500px]"
               />
             )}
           </div>
