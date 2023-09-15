@@ -55,4 +55,27 @@
 }
 
 
+/*Hide the scrollbar*/
+.overflow-y-scroll::-webkit-scrollbar {
+  width: 0.5em; /*You can adjust the width to your preference*/
+} 
 
+/* Hide the scrollbar track */
+.overflow-y-scroll::-webkit-scrollbar-track {
+  display: none;
+}
+
+
+
+
+
+.selected {
+  background-color: #000000; /* Change to your desired background color */
+  color: #fff; /* Change to your desired text color */
+}
+
+
+/* custom.css */
+input[type="checkbox"]:checked {
+  color: gray;
+}
