@@ -1,9 +1,11 @@
-import { faEye, faSlash, faX } from "@fortawesome/free-solid-svg-icons";
+import { faEye, faSlash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFacebookF } from "@fortawesome/free-brands-svg-icons";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../Navigation/Logo/Logo";
+import BackBtn from "../../BackBtn/BackBtn";
+import Button from "../../Button/Button";
 
 function LogIn() {
   const [password, setPassword] = useState("");
@@ -17,9 +19,7 @@ function LogIn() {
     setShowPassword(!showPassword);
   };
 
-  const goBack = () => {
-    window.history.back()
-  };
+
   return (
     <>
       <div className="flex h-screen w-full relative">
@@ -35,22 +35,20 @@ function LogIn() {
             <p className="w-full text-right text-[1.6em]"> New to Fonelane ?</p>
             <div className="relative w-full ">
               <Link to="/signup">
-                <button className="ease-in-out duration-200 absolute right-0 px-9 py-2 text-[16px] bg-[#f6b93b] border rounded-[5px] border-black border-b-4 border-r-4 text-black hover:border-b-[1px] hover:border-r-[1px] active:bg-[#edf7f6] active:border-white">
-                  Create an Account
-                </button>
+                <div className="absolute right-0">
+                <Button btnText={"Create an Account"} />
+                </div>
               </Link>
             </div>
           </div>
         </div>
         <div className="flex-1 flex-col">
           <div className="h-full">
-            <div className="p-5 w-full">
-              <div className="relative  group ">
-                <FontAwesomeIcon onClick={goBack}
-                  icon={faX}
-                  className="ease-in-out duration-150 absolute right-5 text-[20px] group-hover:scale-110  cursor-pointer group-hover:border group-hover:border-black group-hover:rounded-full p-2 active:bg-slate-200 active:border-gray-600"
-                />
+            <div className="p-5 w-full relative">
+              <div className="absolute right-5 ">
+              <BackBtn className=" p-2"/>
               </div>
+              
             </div>
             <div className="h-[90vh] flex justify-center items-center">
               <div className=" flex flex-col justify-center items-center gap-2 w-[420px]">
@@ -145,9 +143,7 @@ function LogIn() {
                   </p>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <button className="ease-in-out duration-200 w-full right-0 px-9 py-2 text-[16px] bg-[#f6b93b] border rounded-[5px] border-black border-b-4 border-r-4 text-black hover:border-b-[1px] hover:border-r-[1px] active:bg-[#edf7f6] active:border-white">
-                    Log in
-                  </button>
+                  <Button btnText={"Log in"} className={" w-full right-0 "}/>
                 </div>
               </div>
             </div>
