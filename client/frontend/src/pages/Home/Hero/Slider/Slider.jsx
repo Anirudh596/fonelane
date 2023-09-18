@@ -8,8 +8,19 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import SlideContent from "./SlideContent/SlideContent";
 
 function Slider() {
+  const slideData = [
+    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/back.jpg" },
+    // Add more slide data as needed
+  ];
+
   return (
     <>
       <div className="drop-shadow-3xl w-full">
@@ -22,7 +33,7 @@ function Slider() {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 2500,
+            delay: 5000,
             disableOnInteraction: false,
           }}
           pagination={{
@@ -33,30 +44,11 @@ function Slider() {
           modules={[Autoplay, Pagination, Navigation]}
           className="mySwiper"
         >
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="./images/banner.png" alt=""  className="bg-cover bg-center"/>
-          </SwiperSlide>
+          {slideData.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <SlideContent sliderImage={slide.sliderImage} /> {/* Pass the image path as a prop */}
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </>

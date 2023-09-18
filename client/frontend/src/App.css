@@ -79,3 +79,80 @@
 input[type="checkbox"]:checked {
   color: gray;
 }
+
+/* Define styles for when the navigation bar is visible */
+.show {
+  opacity: 1; /* Adjust the visibility as needed */
+  transition: opacity 0.3s ease-in-out; /* Add a transition effect */
+}
+
+/* Define styles for when the navigation bar is hidden */
+.hide {
+  opacity: 0;
+  transform: translateY(-100%); /* Move it off the top of the screen */
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add a transition effect */
+}
+
+
+/* Icon button styles */
+.icon-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+
+.icon-button:hover {
+  transform: scale(1.1); /* Adjust the scale factor as needed */
+  color: #0070f3; /* Change to your desired hover color */
+}
+
+/* Icon styles */
+.icon {
+  width: 24px;
+  height: 24px;
+  /* Add any other icon-specific styles here */
+}
+.card-container {
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Lighter box shadow by default */
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card-container:hover {
+  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.7); /* Higher box shadow on hover */
+}
+
+
+
+/* Customize Swiper Navigation (Prev/Next) Buttons */
+.mySwiper .swiper-button-prev,
+.mySwiper .swiper-button-next {
+  width: 60px; /* Set the width of the buttons */
+  height: 60px; /* Set the height of the buttons */
+  background-color: #b4b3b37e; /* Set the background color */
+  color: #00000081; /* Set the text color */
+  font-size: 5px !important; /* Set the font size */
+  border-radius: 50%; /* Make the buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Customize the hover effect */
+.mySwiper .swiper-button-prev:hover,
+.mySwiper .swiper-button-next:hover {
+  background-color: #333; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}
+
+/* Adjust button position if needed */
+.mySwiper .swiper-button-prev {
+  left: 20px; /* Adjust the left position */
+}
+
+.mySwiper .swiper-button-next {
+  right: 20px; /* Adjust the right position */
+}
+

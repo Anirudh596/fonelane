@@ -1,24 +1,88 @@
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
+import DropdownBoard from "./DropdownBoard/DropdownBoard";
 
 function Dropdown() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [activeLabel, setActiveLabel] = useState(null);
+
+  const handleMouseEnter = (label) => {
+    setIsOpen(true);
+    setActiveLabel(label);
+  };
+
+  const handleMouseLeave = () => {
+    setIsOpen(false);
+    setActiveLabel(null);
+  };
+
+  // Define content sections for each label
+  const labelContent = {
+    "All products": (
+      <div>
+        <h2>All Products</h2>
+        <p>This is the content for All products.</p>
+      </div>
+    ),
+    Iphones: (
+      <div>
+        <h2>Iphones</h2>
+        <p>This is the content for Iphones.</p>
+      </div>
+    ),
+    AirPods: (
+      <div>
+        <h2>AirPods</h2>
+        <p>This is the content for AirPods.</p>
+      </div>
+    ),
+    Accessories: (
+      <div>
+        <h2>Accessories</h2>
+        <p>This is the content for Accessories.</p>
+      </div>
+    ),
+  };
+
   return (
     <>
-    <div className="bg-gray-300">
-    <ul className="flex items-center justify-center gap-5 md:gap-7 lg:gap-10 xl:gap-14 text-[8px] md:text-[12px] lg:text-[12px] xl:text-[14px] h-[4vh]">
-        <li className="group hover:scale-105"><a href="#"><span>All products</span>
-        <FontAwesomeIcon icon={faChevronRight} className="px-1 ease-in-out duration-200 group-hover:rotate-90 "/></a></li>
-        <li className="group hover:scale-105"><a href="#"><span>Iphones</span>
-        <FontAwesomeIcon icon={faChevronRight} className="px-1 ease-in-out duration-200 group-hover:rotate-90 "/></a></li>
-        <li className="group hover:scale-105"><a href="#"><span>AirPods</span>
-        <FontAwesomeIcon icon={faChevronRight} className="px-1 ease-in-out duration-200 group-hover:rotate-90 "/></a></li>
-        <li className="group hover:scale-105"><a href="#"><span>Accessories</span>
-        <FontAwesomeIcon icon={faChevronRight} className="px-1 ease-in-out duration-200 group-hover:rotate-90 "/></a></li>
-    </ul>
-    </div>
+      <div className="bg-[#f8f6ce]">
+        <ul className="flex items-center justify-center transform transition-transform ease-linear duration-200 gap-5 md:gap-7 lg:gap-10 xl:gap-14 text-[8px] md:text-[12px] lg:text-[12px] xl:text-[14px] h-[4vh]">
+          {dropdownLabel.map((item, index) => (
+            <li
+              key={index}
+              className="group hover:scale-105 relative"
+              onMouseEnter={() => handleMouseEnter(item.label)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <a href="#" className="flex justify-center items-center">
+                <span className="mx-1">{item.label}</span>
+                <FontAwesomeIcon
+                  icon={faChevronRight}
+                  className="px-1 ease-in-out duration-200 group-hover:rotate-90"
+                />
+              </a>
+              {isOpen && activeLabel === item.label && (
+                <>
+                <DropdownBoard content={labelContent[item.label]} />
+                <DropdownBoard content={<div><h2>All Products</h2><p>This is the content for All products.</p></div>} />
+                </>
 
+              )}
+            </li>
+          ))}
+        </ul>
+      </div>
     </>
-  )
+  );
 }
 
-export default Dropdown
+const dropdownLabel = [
+  { label: "All products" },
+  { label: "Iphones" },
+  { label: "AirPods" },
+  { label: "Accessories" },
+];
+
+export default Dropdown;

@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import DropdownMenu from "../../DropMenu/DropdownMenu";
 
 // eslint-disable-next-line react/prop-types
 function CartFloat({isOpen, onClose }) {
@@ -37,6 +38,7 @@ function CartFloat({isOpen, onClose }) {
       <Link to='/cart'><button  className="mt-4 bg-blue-500 text-white px-4 py-2 hover:bg-blue-600">
         Go to Cart
       </button></Link>
+      <DropdownMenu />
     </div>
     </>
   )

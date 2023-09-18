@@ -12,7 +12,7 @@ import Footer from "../../components/Footer/Footer";
 function Home() {
   return (
     <>
-      <div className="custom-w">
+      <div className="bg-[#674eae]">
         <LinkBar />
       </div>
       <hr className="h-px bg-gray-400 border-0 "></hr>

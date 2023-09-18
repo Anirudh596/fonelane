@@ -36,7 +36,7 @@ function LogIn() {
             <div className="relative w-full ">
               <Link to="/signup">
                 <div className="absolute right-0">
-                <Button btnText={"Create an Account"} />
+                <Button btnText={"Create an Account"} className={"px-9 py-2"} />
                 </div>
               </Link>
             </div>
@@ -143,7 +143,7 @@ function LogIn() {
                   </p>
                 </div>
                 <div className="flex justify-center items-center w-full ">
-                  <Button btnText={"Log in"} className={" w-full right-0 "}/>
+                  <Button btnText={"Log in"} className={" w-full right-0 px-9 py-2"}/>
                 </div>
               </div>
             </div>

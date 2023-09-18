@@ -44,7 +44,7 @@ function SignUp() {
             </p>
             <p className="w-full text-right text-[1.6em]">Already have an account ?</p>
             <div className="relative w-full ">
-              <Link to="/login"><div className="absolute right-0"><Button btnText={"Log in"}  /></div>
+              <Link to="/login"><div className="absolute right-0"><Button btnText={"Log in"}  className={"px-9 py-2"}/></div>
               </Link>
             </div>
           </div>
@@ -186,7 +186,7 @@ function SignUp() {
                 </div>
               </div>
               <div className="flex justify-center items-center w-full ">
-              <Button btnText={"Sign Up"} className={" w-full right-0"}/>
+              <Button btnText={"Sign Up"} className={" w-full right-0 px-9 py-2"}/>
             </div>
             </div>
           </div>

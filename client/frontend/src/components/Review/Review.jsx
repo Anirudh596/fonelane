@@ -1,16 +1,16 @@
 import { faStar, faStarHalf } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-function Review() {
+function Review({className ,classNamePoints}) {
   return (
     <>
-    <div className="star flex ml-5 my-[5px] text-[#ffdd00]">
+    <div className={`star flex ml-5 my-[5px] text-[#ffdd00] ${className}`}>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStarHalf}/>
-          <div className="star-count text-black justify-center items-center">
+          <div className={`star-count text-black justify-center items-center ${classNamePoints}`}>
             <p>4.5/5</p>
           </div>
         </div>
