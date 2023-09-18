@@ -23,7 +23,7 @@ function Slider() {
 
   return (
     <>
-      <div className="drop-shadow-3xl w-full">
+      <div className=" w-full">
         <Swiper
           style={{
             "--swiper-navigation-color": "#fff",

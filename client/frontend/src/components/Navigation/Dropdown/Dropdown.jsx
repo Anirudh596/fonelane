@@ -39,8 +39,7 @@ function Dropdown() {
     ),
     Accessories: (
       <div>
-        <h2>Accessories</h2>
-        <p>This is the content for Accessories.</p>
+        <p>Airpods 2nd Genration </p>
       </div>
     ),
   };
@@ -66,7 +65,7 @@ function Dropdown() {
               {isOpen && activeLabel === item.label && (
                 <>
                 <DropdownBoard content={labelContent[item.label]} />
-                <DropdownBoard content={<div><h2>All Products</h2><p>This is the content for All products.</p></div>} />
+                
                 </>
 
               )}

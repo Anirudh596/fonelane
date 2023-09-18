@@ -149,10 +149,10 @@ input[type="checkbox"]:checked {
 
 /* Adjust button position if needed */
 .mySwiper .swiper-button-prev {
-  left: 20px; /* Adjust the left position */
+  left: 50px; /* Adjust the left position */
 }
 
 .mySwiper .swiper-button-next {
-  right: 20px; /* Adjust the right position */
+  right: 50px; /* Adjust the right position */
 }
 
