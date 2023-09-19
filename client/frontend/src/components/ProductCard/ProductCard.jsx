@@ -28,7 +28,7 @@ function FirstCard() {
     >
       {cardData.map((card, index) => (
         <SwiperSlide key={index}>
-          <div className="my-5 mx-10">
+          <div className="my-5 mb-10 mx-10">
             <div className="w-[300px] h-[400px] bg-white rounded-[20px] cursor-pointer card-container">
               <CardContent />
             </div>
