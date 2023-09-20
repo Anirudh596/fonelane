@@ -2,7 +2,7 @@
 function Button({ btnText, className }) {
   return (
     <>
-      <button className={`ease-in-out duration-200 w-full  text-[16px] bg-[#f6b93b] border rounded-[5px] border-black border-b-4 border-r-4 text-black hover:border-b-[1px] hover:border-r-[1px] active:bg-[#edf7f6] active:border-white ${className}`}>
+      <button className={`ease-in-out duration-200 w-full  bg-[#f6b93b] border rounded-[5px] border-black border-b-4 border-r-4 text-black hover:border-b-[1px] hover:border-r-[1px] active:bg-[#edf7f6] active:border-white ${className}`}>
         {btnText}
       </button>
     </>

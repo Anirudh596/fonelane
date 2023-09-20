@@ -12,12 +12,9 @@ import SlideContent from "./SlideContent/SlideContent";
 
 function Slider() {
   const slideData = [
-    { sliderImage: "./images/back.jpg" },
-    { sliderImage: "./images/back.jpg" },
-    { sliderImage: "./images/back.jpg" },
-    { sliderImage: "./images/back.jpg" },
-    { sliderImage: "./images/back.jpg" },
-    { sliderImage: "./images/back.jpg" },
+    { sliderImage: "./images/refu.png" },
+    { sliderImage: "./images/season.png" },
+    { sliderImage: "./images/bm.png" },
     // Add more slide data as needed
   ];
 

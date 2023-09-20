@@ -28,44 +28,44 @@ function ReelSection() {
         modules={[Autoplay, Navigation]}
         className="mySwiper mt-10 mb-20"
       >
-        <div className="bg-white my-20">
+        <div className="bg-white xl:my-20">
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#e8e8e8]  rounded-[5px] cursor-pointer hover:drop-shadow-xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#e8e8e8]  rounded-[5px] cursor-pointer hover:drop-shadow-xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#cbff97]  rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#cbff97]  rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#b2ffff] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#b2ffff] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#fdff9e]  rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#fdff9e]  rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#d9d9d9] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#d9d9d9] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#ffabb6] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#ffabb6] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#edf7f6] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#edf7f6] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            <div className="w-[300px] h-[450px]  bg-[#e5eaf5] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
+            <div className="hidden md:hidden lg:block xl:block w-[100px] h-[200px] md:w-[300px] md:h-[450px] lg:w-[300px] lg:h-[450px] xl:w-[300px] xl:h-[450px]  bg-[#e5eaf5] rounded-[5px] cursor-pointer hover:drop-shadow-2xl">
               Hello World
             </div>
           </SwiperSlide>

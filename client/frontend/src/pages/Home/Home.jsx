@@ -23,19 +23,19 @@ function Home() {
       <div className="w-full flex-col justify-center items-center custom-w">
         <Assured />
         <div className="title my-10">
-          <p className="text-[28px] font-bold">Hurry, Almost Out</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Hurry, Almost Out</p>
         </div>
         <ProductCard />
         <div className="title my-10">
-          <p className="text-[28px] font-bold">Our Services</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Our Services</p>
         </div>
         <Services />
-        <div className="title my-10">
-          <p className="text-[28px] font-bold">What Our Customer says</p>
+        <div className="title xl:my-10  hidden md:hidden lg:block xl:block">
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">What Our Customer says</p>
         </div>
         <ReelSection />
         <div className="w-full title my-10 flex justify-between items-center">
-          <p className="text-[28px] font-bold">What Our Customer says</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">What Our Customer says</p>
           <ul className="flex justify-between items-center gap-9">
             <li className="group">
               <a
@@ -73,12 +73,12 @@ function Home() {
         </div>
         <Accessories />
         <div className="title my-10">
-          <p className="text-[28px] font-bold">Deal Of the day</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Deal Of the day</p>
         </div>
         <Banner />
         <div className="title my-10">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
-          <p className="text-[28px] font-bold">If you don't know</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">If you don't know</p>
         </div>
         <section className="w-full h-[60vh] flex justify-center items-center bg-gray-300">
           Hellow
@@ -90,7 +90,7 @@ function Home() {
             alt=""
             className="w-[50px] h-[50px]"
           />
-          <p className="text-[28px] font-bold">
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">
             Follow{" "}
             <span className="hover:text-[#0049b7] cursor-pointer hover:underline">
               @fonelane

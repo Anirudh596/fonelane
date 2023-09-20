@@ -24,12 +24,13 @@ function FirstCard() {
       }}
       navigation={true}
       modules={[Autoplay, Navigation]}
-      className="mySwiper"
+      className="mySwiper hidden"
     >
       {cardData.map((card, index) => (
         <SwiperSlide key={index}>
-          <div className="my-5 mb-10 mx-10">
-            <div className="w-[300px] h-[400px] bg-white rounded-[20px] cursor-pointer card-container">
+          <div className="my-1 mb-2  md:my-5 md:mb-10 md:mx-10 lg:my-5 lg:mb-10 lg:mx-10 xl:my-5 xl:mb-10 xl:mx-10">
+            <div className="  w-[100px] h-[200px] md:w-[300px] md:h-[400px] lg:w-[300px] lg:h-[400px] xl:w-[300px] xl:h-[400px]  bg-white
+            rounded-[10px] lg:rounded-[18px] xl:rounded-[20px] cursor-pointer card-container">
               <CardContent />
             </div>
           </div>

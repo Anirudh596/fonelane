@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
-
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
 
 * {
   margin: 0;
@@ -11,31 +10,51 @@
   font-family: "Poppins", sans-serif;
 }
 
-/* .custom-w {
+.custom-w {
   max-width: 1280px;
   margin: 0 auto;
 }
 
 @media only screen and (max-width: 640px) {
-  .custom-w {
-    max-width: 500px;
-    margin: 0 auto;
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none;
+
   }
 }
 @media only screen and (max-width: 940px) {
-  .custom-w {
-    max-width: 800px;
-    margin: 0 auto;
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+    width: 60px; /* Set the width of the buttons */
+  height: 60px; /* Set the height of the buttons */
+  background-color: #b4b3b37e; /* Set the background color */
+  color: #00000081; /* Set the text color */
+  font-size: 5px !important; /* Set the font size */
+  border-radius: 50%; /* Make the buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   }
 }
-@media only screen and (max-width: 1280px) {
-  .custom-w {
-    max-width: 1100px;
-    margin: 0 auto;
+@media only screen and (max-width: 1880px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: block;
+    width: 60px; /* Set the width of the buttons */
+  height: 60px; /* Set the height of the buttons */
+  background-color: #b4b3b37e; /* Set the background color */
+  color: #00000081; /* Set the text color */
+  font-size: 5px !important; /* Set the font size */
+  border-radius: 50%; /* Make the buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    
   }
-} */
-
-
+}
 
 .navbar-top {
   position: sticky;
@@ -43,8 +62,6 @@
   background: white;
   z-index: 100; /* Adjust the z-index if needed */
 }
-
-
 
 /* src/components/RotatingLogo.css */
 @keyframes rotate {
@@ -60,7 +77,7 @@
   font-size: 24px;
   display: inline-flex;
 }
-.logo-end{
+.logo-end {
   font-size: 40px;
   display: inline-flex;
 }
@@ -75,26 +92,20 @@
   /* Other background properties can be added here */
 }
 
-
 /*Hide the scrollbar*/
 .overflow-y-scroll::-webkit-scrollbar {
   width: 0.5em; /*You can adjust the width to your preference*/
-} 
+}
 
 /* Hide the scrollbar track */
 .overflow-y-scroll::-webkit-scrollbar-track {
   display: none;
 }
 
-
-
-
-
 .selected {
   background-color: #000000; /* Change to your desired background color */
   color: #fff; /* Change to your desired text color */
 }
-
 
 /* custom.css */
 input[type="checkbox"]:checked {
@@ -113,7 +124,6 @@ input[type="checkbox"]:checked {
   transform: translateY(-100%); /* Move it off the top of the screen */
   transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; /* Add a transition effect */
 }
-
 
 /* Icon button styles */
 .icon-button {
@@ -144,21 +154,11 @@ input[type="checkbox"]:checked {
   box-shadow: 0 14px 20px rgba(0, 0, 0, 0.7); /* Higher box shadow on hover */
 }
 
-
-
 /* Customize Swiper Navigation (Prev/Next) Buttons */
 .mySwiper .swiper-button-prev,
 .mySwiper .swiper-button-next {
-  width: 60px; /* Set the width of the buttons */
-  height: 60px; /* Set the height of the buttons */
-  background-color: #b4b3b37e; /* Set the background color */
-  color: #00000081; /* Set the text color */
-  font-size: 5px !important; /* Set the font size */
-  border-radius: 50%; /* Make the buttons circular */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  
+  display: none;
 }
 
 /* Customize the hover effect */
@@ -176,4 +176,3 @@ input[type="checkbox"]:checked {
 .mySwiper .swiper-button-next {
   right: 50px; /* Adjust the right position */
 }
-

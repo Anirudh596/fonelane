@@ -34,10 +34,10 @@ const assuredData = [
 function Assured() {
   return (
     <div className="w-full ">
-      <div className="bg-[#fdfded] py-10 mx-10">
-        <div className="flex justify-between items-center gap-10 my-10">
+      <div className="  mx-3 md:py-5 lg:py-8 xl:py-10 md:mx-5 lg:mx-8 xl:mx-10">
+        <div className="flex justify-between items-center gap-10 my-10 text-[6px] md:text-base lg:text-lg xl:text-xl">
         {assuredData.map((item, index) => (
-          <Block key={index} imgSrc={item.imgSrc} text={item.text} />
+          <Block key={index} imgSrc={item.imgSrc} text={item.text}/>
         ))}
         </div>
       </div>

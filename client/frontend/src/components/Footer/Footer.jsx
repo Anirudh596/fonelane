@@ -5,13 +5,13 @@ import { faInstagram, faSquareFacebook, faXTwitter, faYoutube } from '@fortaweso
 function Footer() {
   return (
     <>
-    <div className="w-full bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  h-[70vh] ">
+    <div className="w-full  bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  h-[70vh] ">
         <div className="contact-bar custom-w h-[12vh] flex justify-between items-center">
            
                 <p className="text-[28px] font-semibold">Contact Us On</p>
             
             <div>
-                <ul className="list-none flex justify-center items-center gap-10 text-[36px] realtive">
+                <ul className="list-none flex justify-center items-center gap-10 text-sm md:text-base lg:text-xl xl:text-2xl realtive">
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#405de6] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faInstagram} /></a></li>
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#405de6] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faSquareFacebook} /></a></li>
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#ff3535] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faYoutube} /></a></li>

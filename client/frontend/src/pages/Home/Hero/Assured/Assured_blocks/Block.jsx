@@ -1,13 +1,13 @@
 // eslint-disable-next-line react/prop-types
-function Block({ imgSrc, text }) {
+function Block({ imgSrc, text, className }) {
   return (
     <div className='w-full flex-col justify-center items-center'>
       <img
         src={imgSrc}
         alt={`${text} image`} // Add alt text based on the text prop
-        className="w-[50px] h-[50px]"
+        className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[50px] lg:h-[50px] xl:w-[50px] xl:h-[50px] "
       />
-      <span className='text-[15px] inline-block w-32'>{text}</span>
+      <span className={` ${className}`}>{text}</span>
     </div>
   );
 }
