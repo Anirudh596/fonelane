@@ -5,13 +5,13 @@ import { faInstagram, faSquareFacebook, faXTwitter, faYoutube } from '@fortaweso
 function Footer() {
   return (
     <>
-    <div className="w-full  bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100  h-[70vh] ">
+    <div className="w-full  bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 h-150vh sm:h-[150vh] md:h-[100vh] lg:h-[70vh]  xl:h-[70vh] ">
         <div className="contact-bar custom-w h-[12vh] flex justify-between items-center">
            
                 <p className="text-[28px] font-semibold">Contact Us On</p>
             
             <div>
-                <ul className="list-none flex justify-center items-center gap-10 text-sm md:text-base lg:text-xl xl:text-2xl realtive">
+                <ul className="list-none flex justify-center items-center gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl realtive">
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#405de6] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faInstagram} /></a></li>
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#405de6] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faSquareFacebook} /></a></li>
                     <li className="group opacity-100"><a href="#" className=" hover:text-[#ff3535] hover:text-[37px] ease-linear duration-150"><FontAwesomeIcon icon={faYoutube} /></a></li>
@@ -23,8 +23,8 @@ function Footer() {
         <div className="custom-w flex justify-between  ">
             <div className="comapny-visit w-2/5 h-full p-5">
                 <div className="  h-1/2  ">
-                    <p className="text-[18px] font-semibold ">Company</p>
-                    <ul className="list-none text-[14px] leading-7 p-3">
+                    <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold ">Company</p>
+                    <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-3">
                         <li className="group"><a href="#" className="hover:opacity-60">Home</a></li>
                         <li className="group"><a href="#" className="hover:opacity-60">Categories</a></li>
                         <li className="group"><a href="#" className="hover:opacity-60">About Us</a></li>
@@ -32,8 +32,8 @@ function Footer() {
                     </ul>
                 </div>
                 <div className="w-full h-1/2 ">
-                    <p className="text-[18px] font-semibold mt-3 mb-1">Visit Office:</p>
-                    <ul className="list-none text-[14px] p-5">
+                    <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold mt-3 mb-1">Visit Office:</p>
+                    <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base p-5">
                         <li>
                             <p>A-341, Building No.2,</p>
                         </li>
@@ -52,8 +52,8 @@ function Footer() {
             <div className="policies-links w-3/4 h-full  p-5">
                 <div className=" w-full h-2/3 flex">
                     <div className="w-1/2 h-full ">
-                    <p className="text-[18px] font-semibold ">Policies</p>
-                    <ul className="list-none text-[14px] leading-7 p-2">
+                    <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold ">Policies</p>
+                    <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-2">
                         <li><a href="#" className="hover:opacity-60">Refund Policy</a></li>
                         <li><a href="#" className="hover:opacity-60">Return Policy</a></li>
                         <li><a href="#" className="hover:opacity-60">Terms and Conditions</a></li>
@@ -62,8 +62,8 @@ function Footer() {
                     </ul>
                     </div>
                     <div className="w-1/2 h-full ">
-                    <p className="text-[18px] font-semibold ">Useful Links</p>
-                    <ul className="list-none text-[14px] leading-7 p-2">
+                    <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold ">Useful Links</p>
+                    <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-2">
                         <li><a href="#" className="hover:opacity-60">Track Orders</a></li>
                         <li><a href="#" className="hover:opacity-60">Return Products</a></li>
                         <li><a href="#" className="hover:opacity-60">Our Blogs</a></li>
@@ -73,8 +73,8 @@ function Footer() {
                 </div>
                 <div className=" h-1/3 w-full flex flex-col justif-end items-center text-right leading-8 pt-10 pl-40">
                     <p className="text-[40px] font-bold logo-end group" >f<img src="./images/leaves.png" alt="" className="w-[50px] h-[50px] bg-auto rotating-char mt-[-10px]"/>n<span className="text-[#37ff41] ease-in-out duration-200 group-hover:text-[55px]">e</span>lane</p>
-                    <p className="text-[14px] ">@copyright fonelane since 2023</p>
-                    <p className="text-[14px]">All Rights Reserved</p>
+                    <p className="text-xs md:text-sm lg:text-base xl:text-base ">@copyright fonelane since 2023</p>
+                    <p className="text-xs md:text-sm lg:text-base xl:text-base">All Rights Reserved</p>
                     
                 </div>
             </div>
@@ -86,18 +86,18 @@ function Footer() {
                     </div>
                 </div>
                 <div className="w-full h-2/3 flex flex-col justify-center items-center mt-10 ">
-                    <p className="text-[14px] font-medium my-3">Give us Your valuable feedback</p>
-                    <button className="px-4 py-2 w-[120px] bg-white text-black text-[14px] font-medium rounded-[15px]">Feedback</button>
+                    <p className="text-xs md:text-sm  xl:text-base font-medium my-3">Give us Your valuable feedback</p>
+                    <button className="px-4 py-2 w-[120px] bg-white text-black text-xs md:text-sm lg:text-base xl:text-base font-medium rounded-[15px]">Feedback</button>
                 </div>
                 <div className="w-full h-1/3 mt-10  flex flex-col justify-center items-center">
                     <p className="text-[15 px] font-normal mb-3">Payment Methods</p>
                     <div className="flex justify-center items-center gap-7">
-                        <img src="./images/visa.png" alt=""  className="w-[40px] h-[40px]"/>
-                        <img src="./images/mc.png" alt="" className="w-[40px] h-[40px]" />
-                        <img src="./images/ae.png" alt=""  className="w-[40px] h-[40px]"/>
-                        <img src="./images/paytm.png" alt=""  className="w-[40px] h-[40px]"/>
-                        <img src="./images/provider.png" alt="" className="w-[40px] h-[40px]" />
-                        <img src="./images/cod.png" alt="" className="w-[40px] h-[40px]" />
+                        <img src="./images/visa.png" alt=""  className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]"/>
+                        <img src="./images/mc.png" alt="" className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]" />
+                        <img src="./images/ae.png" alt=""  className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]"/>
+                        <img src="./images/paytm.png" alt=""  className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]"/>
+                        <img src="./images/provider.png" alt="" className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]" />
+                        <img src="./images/cod.png" alt="" className=" md:w-[20px] md:h-[20px] lg:w-[30px] lg:h-[30px] xl:w-[40px] xl:h-[40px]" />
                     </div>
                 </div>
             </div>

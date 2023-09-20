@@ -5,7 +5,7 @@ function AccessoriesContent() {
     <>
     <div className="flex-col-reverse justify-center items-center ">
         <div className="flex justify-center items-center p-5">
-            <img src="./images/air.jpg" alt="" className="w-[20px] h-[200px] xl:w-[220px] xl:h-[200px] xl:w-[220px] xl:h-[200px] xl:w-[220px] xl:h-[200px]"/>
+            <img src="./images/air.jpg" alt="" className=" w-[220px] h-[200px] md:w-[220px] md:h-[200px] lg:w-[220px] lg:h-[200px] xl:w-[220px] xl:h-[200px]"/>
         </div>
         <div className="px-5">
             <p className="title w-full text-inherit text-sm md:text-base lg:text-xl xl:text-2xl font-semibold" >Airpods 2nd Generation</p>
