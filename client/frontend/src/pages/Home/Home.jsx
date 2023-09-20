@@ -39,7 +39,7 @@ function Home() {
           <ul className="flex justify-between items-center gap-9">
             <li className="group">
               <a
-                className="group-hover:underline text-[15px] group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
                 Charger
@@ -47,7 +47,7 @@ function Home() {
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-[15px] group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
                 Charger
@@ -55,7 +55,7 @@ function Home() {
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-[15px] group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
                 Charger
@@ -63,7 +63,7 @@ function Home() {
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-[15px] group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
                 Charger
