@@ -8,7 +8,7 @@ function Search() {
 
   return (
     <div
-      className={`w-[450px] h-[35px] text-black flex items-center x justify-center border rounded-lg overflow-hidden ${
+      className={`hidden md:block lg:block xl:block md:w-[450px] md:h-[35px] lg:w-[450px] lg:h-[35px] xl:w-[450px] xl:h-[35px] text-black flex items-center x justify-center border rounded-lg overflow-hidden ${
         isInputFocused ? "border-gray-700" : "border-gray-300"
       }`}
     >
@@ -23,7 +23,7 @@ function Search() {
       
       <input
         type="text"
-        className="w-[450px] h-[35px] rounded-lg px-4 py-2 focus:outline-none"
+        className=" rounded-lg px-4 py-2 focus:outline-none"
         id="Search-bar"
         name="Search-bar"
         onFocus={() => setInputFocused(true)} // Handle input focus

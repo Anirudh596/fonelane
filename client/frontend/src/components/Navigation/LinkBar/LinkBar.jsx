@@ -25,10 +25,10 @@ function LinkBar() {
   }, []);
 
   return (
-    <div className={`custom-w ${isTop ? 'show' : 'hide'}`}>
-      <ul className="list-none w-full flex justify-around items-center h-[30px] text-[8px] md:text-[12px] lg:text-[14px] xl:text-[16px]">
-        <li><a href="#" className='text-[13px] text-white'>Track Order</a></li>
-        <li><a href="#" className='text-[13px] text-white'>Get 5% on sales of $10000 or above</a></li>
+    <div className={`w-full ${isTop ? 'show' : 'hide'}`}>
+      <ul className="list-none flex justify-around items-center h-[20px] text-white md:h-[24px] lg:h-[28px] xl:h-[30px] text-[10px] md:text-[14px] lg:text-[16px] xl:text-[16px]">
+        <li><a href="#" className='active:underline'>Track Order</a></li>
+        <li><a href="#" className='active:underline'>Get 5% on sales of $10000 or above</a></li>
       </ul>
     </div>
   );

@@ -12,15 +12,15 @@ import Footer from "../../components/Footer/Footer";
 function Home() {
   return (
     <>
-      <div className="bg-[#674eae]">
+      <div className="w-full bg-[#674eae]">
         <LinkBar />
       </div>
-      <hr className="h-px bg-gray-400 border-0 "></hr>
+      <hr className="w-full h-px bg-gray-400 border-0 "></hr>
       <div className="w-full sticky top-0 bg-white z-50">
         <Navbar />
       </div>
       <Slider />
-      <div className="flex-col justify-center items-center custom-w">
+      <div className="w-full flex-col justify-center items-center custom-w">
         <Assured />
         <div className="title my-10">
           <p className="text-[28px] font-bold">Hurry, Almost Out</p>
@@ -34,7 +34,7 @@ function Home() {
           <p className="text-[28px] font-bold">What Our Customer says</p>
         </div>
         <ReelSection />
-        <div className="title my-10 flex justify-between items-center">
+        <div className="w-full title my-10 flex justify-between items-center">
           <p className="text-[28px] font-bold">What Our Customer says</p>
           <ul className="flex justify-between items-center gap-9">
             <li className="group">
