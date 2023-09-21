@@ -13,12 +13,12 @@ function Search() {
       }`}
     >
       <label htmlFor="Search-bar">
-      <FontAwesomeIcon
+      {/* <FontAwesomeIcon
         icon={faSearch}
         className={`ml-3 flex justify-center cursor-pointer items-center text-sm text-center ${
           isInputFocused ? "text-gray-700" : "text-gray-400"
         }`}
-      />
+      /> */}
       </label>
       
       <input

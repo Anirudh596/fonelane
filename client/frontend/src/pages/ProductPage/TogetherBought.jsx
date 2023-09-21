@@ -5,7 +5,7 @@ function TogetherBought() {
             People Bought Together, Give it a shot.
           </p>
           <div className="flex mx-5 my-2">
-            <div className="w-4/6 border-r-[1px] border-black px-7 flex justify-center items-center">
+            {/* <div className="w-4/6 border-r-[1px] border-black px-7 flex justify-center items-center">
               <div className="flex flex-col justify-center items-center">
                 <div className="flex items-start">
                   <input
@@ -54,7 +54,7 @@ function TogetherBought() {
                   Add <span className="hidden">all</span> to cart
                 </button>
               </div>
-            </div>
+            </div> */}
             <div className="w-full flex-1 flex-col justify-center items-center px-10 py-3 mx-16 border border-gray-400 rounded-md">
               <p className="text-[24px] font-semibold flex flex-nowrap">
                 In Package You Get

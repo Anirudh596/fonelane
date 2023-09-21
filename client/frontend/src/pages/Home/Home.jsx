@@ -12,10 +12,10 @@ import Footer from "../../components/Footer/Footer";
 function Home() {
   return (
     <>
-      <div className="w-full bg-[#674eae]">
+      {/* <div className="w-full bg-white text-black">
         <LinkBar />
-      </div>
-      <hr className="w-full h-px bg-gray-400 border-0 "></hr>
+      </div> */}
+      {/* <hr className="w-full h-px bg-gray-400 border-0 "></hr> */}
       <div className="w-full sticky top-0 bg-white z-50">
         <Navbar />
       </div>
@@ -39,7 +39,7 @@ function Home() {
           <ul className="flex justify-between items-center gap-9">
             <li className="group">
               <a
-                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
                 Charger
@@ -47,26 +47,26 @@ function Home() {
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
-                Charger
+                Earphones
               </a>
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
-                Charger
+                Airpods
               </a>
             </li>
             <li className="group">
               <a
-                className="group-hover:underline text-sm md:text-base lg:text-xl xl:text-2xl group-hover:text-[16px] font-medium group-hover:font-semibold ease-linear duration-200"
+                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
                 href="#"
               >
-                Charger
+                Headphones
               </a>
             </li>
           </ul>
@@ -76,13 +76,13 @@ function Home() {
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Deal Of the day</p>
         </div>
         <Banner />
-        <div className="title my-10">
+        {/* <div className="title my-10">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
-          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">If you don't know</p>
-        </div>
-        <section className="w-full h-[60vh] flex justify-center items-center bg-gray-300">
+          {/* <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">If you don't know</p>
+        </div> */} 
+        {/* <section className="w-full h-[60vh] flex justify-center items-center bg-gray-300">
           Hellow
-        </section>
+        </section> */}
         <div className="title my-10 flex justify-start items-center gap-5">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           <img

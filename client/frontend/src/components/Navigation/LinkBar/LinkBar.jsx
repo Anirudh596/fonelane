@@ -26,7 +26,7 @@ function LinkBar() {
 
   return (
     <div className={`w-full ${isTop ? 'show' : 'hide'}`}>
-      <ul className="list-none flex justify-around items-center h-[20px] text-white md:h-[24px] lg:h-[28px] xl:h-[30px] text-[10px] md:text-[14px] lg:text-[16px] xl:text-[16px]">
+      <ul className="list-none flex justify-around items-center h-[20px] text-black md:h-[24px] lg:h-[28px] xl:h-[30px] text-[10px] md:text-[14px] lg:text-[16px] xl:text-[16px]">
         <li><a href="#" className='active:underline'>Track Order</a></li>
         <li><a href="#" className='active:underline'>Get 5% on sales of $10000 or above</a></li>
       </ul>

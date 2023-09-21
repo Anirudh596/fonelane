@@ -148,26 +148,8 @@ function Footer() {
               </ul>
             </div>
           </div>
-          <div className="h-1/3 w-full flex flex-col justify-end items-center text-right leading-8 pt-10 pl-40">
-            <p className="text-[40px] font-bold logo-end group">
-              f
-              <img
-                src="./images/leaves.png"
-                alt=""
-                className="w-[50px] h-[50px] bg-auto rotating-char mt-[-10px]"
-              />
-              n
-              <span className="text-[#37ff41] ease-in-out duration-200 group-hover:text-[55px]">
-                e
-              </span>
-              lane
-            </p>
-            <p className="text-xs md:text-sm lg:text-base xl:text-base">
-              @copyright fonelane since 2023
-            </p>
-            <p className="text-xs md:text-sm lg:text-base xl:text-base">
-              All Rights Reserved
-            </p>
+          <div className=" flex justify-center items-center">
+            <img src="./images/logo 2.png" className="w-48 h-48" alt="" />
           </div>
         </div>
         <div className="newsletter-feedback w-full sm:w-2/3 flex flex-col justify-center items-center p-5">
