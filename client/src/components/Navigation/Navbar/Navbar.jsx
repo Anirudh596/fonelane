@@ -10,8 +10,7 @@ import CartFloat from "../../Cart/CartFloat/CartFloat";
 import WishlistPopup from "../../Wishlist/Wishlist";
 import Search from "../Search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
-import DropdownMenu from "../../DropMenu/DropdownMenu";
+import { faHeart, faShoppingCart, } from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "../Dropdown/Dropdown";
 
 function Navbar() {
@@ -27,7 +26,7 @@ function Navbar() {
         <div className="mx-10 h-[40px] md:h-[50px] lg:h-[60px] xl:h-[70px] flex justify-between items-center">
           <div className="flex justify-between items-center mx-5">
             <Logo />
-            <ul className="list-none flex justify-between items-center text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg gap-5 mx-10 cursor-pointer">
+            <ul className=" w-full list-none flex  justify-between items-center text-xs md:text-xs lg:text-xs xl:text-sm 2xl:text-sm gap-5 mx-10 cursor-pointer">
               <li>About Us</li>
               <li>Contact Us</li>
             </ul>

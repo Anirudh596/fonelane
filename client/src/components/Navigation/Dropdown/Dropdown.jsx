@@ -1,5 +1,5 @@
-import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import DropdownBoard from "./DropdownBoard/DropdownBoard";
 
@@ -55,16 +55,16 @@ function Dropdown() {
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#" className="flex justify-center items-center cursor-pointer  text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base">
+              <a href="#" className="w-full flex justify-center items-center cursor-pointer  text-[10px] md:text-xs lg:text-xs xl:text-sm 2xl:text-sm">
                 <span className="mx-1">{item.label}</span>
               </a>
-              {isOpen && activeLabel === item.label && (
+              {/* {isOpen && activeLabel === item.label && (
                 <>
                 <DropdownBoard content={labelContent[item.label]} />
                 
                 </>
 
-              )}
+              )} */}
             </li>
           ))}
         </ul>
