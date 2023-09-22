@@ -1,5 +1,5 @@
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react"; // Import useState
 
 function Search() {
@@ -8,7 +8,7 @@ function Search() {
 
   return (
     <div
-      className={`hidden md:block lg:block xl:block md:w-[450px] md:h-[35px] lg:w-[450px] lg:h-[35px] xl:w-[450px] xl:h-[35px] text-black flex items-center x justify-center border rounded-lg overflow-hidden ${
+      className={` md:block lg:block xl:block md:w-[450px] md:h-[35px] lg:w-[450px] lg:h-[35px] xl:w-[450px] xl:h-[35px] text-black flex items-center x justify-center border rounded-lg overflow-hidden ${
         isInputFocused ? "border-gray-700" : "border-gray-300"
       }`}
     >
