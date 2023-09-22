@@ -86,7 +86,7 @@ function ProductSection() {
               <div className="flex justify-start gap-4 items-end">
                 <div className="mrp text-[#898989] text-[20px] flex">
                   <p>R</p>
-                  <p>1,39,000</p>
+                  <p className="line-through">1,39,000</p>
                 </div>
                 <div className="save text-[#32CD32] text-[20px]">
                   <p>Save R57,001 (41% Off)</p>
