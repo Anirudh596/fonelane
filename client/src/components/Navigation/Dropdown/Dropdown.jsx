@@ -47,7 +47,7 @@ function Dropdown() {
   return (
     <>
       <div className="">
-        <ul className="items-center justify-center transform transition-transform ease-linear duration-200 gap-5 md:gap-7 lg:gap-10 xl:gap-14 text-[8px] md:text-[12px] lg:text-[12px] xl:text-[14px] hidden md:flex lg:flex xl:flex md:h-[24px] lg:h-[28px] xl:h-[30px]">
+        <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-16 my-1">
           {dropdownLabel.map((item, index) => (
             <li
               key={index}
@@ -55,12 +55,8 @@ function Dropdown() {
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#" className="flex justify-center items-center">
+              <a href="#" className="flex justify-center items-center cursor-pointer  text-xs md:text-sm lg:text-sm xl:text-base 2xl:text-base">
                 <span className="mx-1">{item.label}</span>
-                <FontAwesomeIcon
-                  icon={faChevronRight}
-                  className="px-1 ease-in-out duration-200 group-hover:rotate-90"
-                />
               </a>
               {isOpen && activeLabel === item.label && (
                 <>
@@ -78,9 +74,14 @@ function Dropdown() {
 }
 
 const dropdownLabel = [
-  { label: "All products" },
-  { label: "Iphones" },
-  { label: "AirPods" },
+  { label: "All " },
+  { label: "Verified Refurbished" },
+  { label: "Student Special" },
+  { label: "Deals" },
+  { label: "Iphone" },
+  { label: "OnePlus" },
+  { label: "Samsung Galaxy" },
+  { label: "mi" },
   { label: "Accessories" },
 ];
 

@@ -4,7 +4,7 @@
 function SlideContent({ sliderImage }) {
   return (
     <div
-      className="cursor-pointer h-[200px] md:h-[400px] lg:h-[500px] w-full xl:h-[520px] slider-bg relative" // Add relative positioning
+      className="cursor-pointer h-[200px] md:h-[300px] lg:h-[380px] w-full xl:h-[420px] slider-bg relative" // Add relative positioning
       style={{ backgroundImage: `url(${sliderImage})`, backgroundSize: 'cover' }}
     >
       {/* Content */}
