@@ -1,13 +1,4 @@
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-
-// import required modules
-import { Autoplay, Navigation } from "swiper/modules";
-import Taggbox from "./taggbox";
+import Taggbox from "./Taggbox";
 
 function ReelSection() {
   return (
