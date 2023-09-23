@@ -4,10 +4,9 @@ import CartFloat from "../../Cart/CartFloat/CartFloat";
 import WishlistPopup from "../../Wishlist/Wishlist";
 import Search from "../Search/Search";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faShoppingCart, faUser } from "@fortawesome/free-solid-svg-icons";
-import DropdownMenu from "../../DropMenu/DropdownMenu";
+import { faShoppingCart} from "@fortawesome/free-solid-svg-icons";
 import Dropdown from "../Dropdown/Dropdown";
-import { LuHeart} from "react-icons/lu"
+import { CiHeart, CiShoppingCart} from "react-icons/ci"
 
 
 
@@ -32,10 +31,10 @@ function Navbar() {
           <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6">
           <Search />
           </div>
-          <div className="flex justify-between items-center text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl gap-10">
-            <LuHeart className="hover:scale-105 ease-linear cursor-pointer"/>
-            <FontAwesomeIcon icon={faShoppingCart} className="hover:scale-105 ease-linear cursor-pointer"/>
-            <button className=" px-4 py-2 border border-black rounded-lg bg-gray-200 text-sm md:text-base lg:text-lg xl:text-lg hover:scale-105">Login </button>
+          <div className="flex justify-between items-center text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-3xl gap-10">
+            <CiHeart className="hover:scale-105 ease-linear cursor-pointer"/>
+            <CiShoppingCart className="hover:scale-105 ease-linear cursor-pointer" />
+            <button className=" px-3 py-2 border border-black rounded-lg active:bg-black active:text-white hover:bg-gray-200 text-sm md:text-base lg:text-lg xl:text-sm hover:scale-105">Login </button>
           </div>
         </div>
       </div>
