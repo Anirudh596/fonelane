@@ -17,68 +17,34 @@ function Home() {
       <Slider />
       <div className="w-full flex-col justify-center items-center custom-w">
         <Assured />
-        <div className="title my-10">
-          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Hurry, Almost Out</p>
+        <div className="title my-5 ">
+          <p className="text-sm md:text-sm lg:text-base xl:text-lg font-bold">Hurry, Almost Out</p>
         </div>
         <ProductCard />
-        <div className="title my-10">
+        <div className="title my-5 ">
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Our Services</p>
         </div>
         <Services />
-        <div className="title xl:my-10  hidden md:hidden lg:block xl:block">
+        <div className="title my-5  hidden md:hidden lg:block xl:block">
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">What Our Customer says</p>
         </div>
         <ReelSection />
-        <div className="w-full title my-10 flex justify-between items-center">
-          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">What Our Customer says</p>
-          <ul className="flex justify-between items-center gap-9">
-            <li className="group">
-              <a
-                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
-                href="#"
-              >
-                Charger
-              </a>
-            </li>
-            <li className="group">
-              <a
-                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
-                href="#"
-              >
-                Earphones
-              </a>
-            </li>
-            <li className="group">
-              <a
-                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
-                href="#"
-              >
-                Airpods
-              </a>
-            </li>
-            <li className="group">
-              <a
-                className="group-hover:underline text-xs md:text-sm lg:text-lg xl:text-lg  font-medium group-hover:font-semibold ease-linear duration-200"
-                href="#"
-              >
-                Headphones
-              </a>
-            </li>
-          </ul>
+        <div className="w-full titleflex justify-between items-center">
+          <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Covers</p>
         </div>
         <Accessories />
-        <div className="title my-10">
+        <div className="title my-5 ">
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">Deal Of the day</p>
         </div>
         <Banner />
-        {/* <div className="title my-10">
+        {/* <div className="title my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           {/* <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-bold">If you don't know</p>
         </div> */} 
         {/* <section className="w-full h-[60vh] flex justify-center items-center bg-gray-300">
           Hellow
         </section> */}
-        <div className="title my-10 flex justify-start items-center gap-5">
+        <div className="titleflex justify-start items-center gap-5">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           <img
             src="./images/instagram.png"

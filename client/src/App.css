@@ -9,11 +9,65 @@
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
 }
-
+/* Default styles (mobile) */
 .custom-w {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 100%; /* Full width on mobile */
+  margin: 0 auto; /* Centered on mobile */
 }
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .custom-w {
+    max-width: 668px; /* Adjust max-width for tablets */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .custom-w {
+    max-width: 924px; /* Adjust max-width for desktops */
+  }
+}
+
+/* Large screen styles */
+@media (min-width: 1280px) {
+  .custom-w {
+    max-width: 1180px; /* Adjust max-width for large screens */
+  }
+}
+
+@media (min-width: 1440px) {
+  .custom-w {
+    max-width: 1280px; /* Adjust max-width for large screens */
+  }
+}
+@media (min-width: 1540px) {
+  .custom-w {
+    max-width: 1440px; /* Adjust max-width for large screens */
+  }
+}
+@media (min-width: 1640px) {
+  .custom-w {
+    max-width: 1540px; /* Adjust max-width for large screens */
+  }
+}
+@media (min-width: 1740px) {
+  .custom-w {
+    max-width: 1640px; /* Adjust max-width for large screens */
+  }
+}
+@media (min-width: 1840px) {
+  .custom-w {
+    max-width: 1740px; /* Adjust max-width for large screens */
+  }
+}
+@media (min-width: 1940px) {
+  .custom-w {
+    max-width: 1840px; /* Adjust max-width for large screens */
+  }
+}
+
+
 
 @media only screen and (max-width: 640px) {
   .swiper-button-next,
@@ -146,12 +200,12 @@ input[type="checkbox"]:checked {
   /* Add any other icon-specific styles here */
 }
 .card-container {
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Lighter box shadow by default */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Lighter box shadow by default */
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .card-container:hover {
-  box-shadow: 0 14px 20px rgba(0, 0, 0, 0.7); /* Higher box shadow on hover */
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
 }
 
 /* Customize Swiper Navigation (Prev/Next) Buttons */

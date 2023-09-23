@@ -1,15 +1,25 @@
 // eslint-disable-next-line react/prop-types
-function Block({ imgSrc, text, className }) {
+export function Block({ imgSrc}) {
   return (
+    <>
     <div className='w-full flex-col justify-center items-center'>
       <img
         src={imgSrc}
-        alt={`${text} image`} // Add alt text based on the text prop
-        className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[50px] lg:h-[50px] xl:w-[50px] xl:h-[50px] "
+        alt={` image`} // Add alt text based on the text prop
+        className="w-[20px] h-[30px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[60px] xl:w-[50px] xl:h-[60px] "
       />
-      <span className={` ${className}`}>{text}</span>
     </div>
+    
+    </>
   );
+
 }
 
-export default Block;
+ export function BlockText ( { text}) {
+  <div className='w-full flex-col justify-center items-center'>
+      <p className="w-[20px] h-[30px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[60px] xl:w-[50px] xl:h-[60px] "
+      >{text}</p>
+    </div>
+}
+
+
