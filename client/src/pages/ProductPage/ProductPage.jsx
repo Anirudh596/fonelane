@@ -3,7 +3,6 @@ import Footer from "../../components/Footer/Footer";
 import Navbar from "../../components/Navigation/Navbar/Navbar";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductSection from "./ProductSection/ProductSection";
-import TogetherBought from "./TogetherBought";
 
 function ProductPage() {
   return (
@@ -55,7 +54,6 @@ function ProductPage() {
           </div>
         </div>
         <hr className="h-px border-0 bg-black w-full" />
-        <TogetherBought />
         <div className="title my-10">
           <p className="text-[28px] font-bold">You may also like</p>
         </div>
@@ -63,21 +61,47 @@ function ProductPage() {
         <div className="title my-10">
           <p className="text-[28px] font-bold">You may also like</p>
         </div>
-        <div className="w-full h-[60vh] flex justify-start px-10 items-center bg-slate-300">
-          <div className=" w-1/2">
-            <p>Storage: <span>6GB RAM </span> | <span>128GB ROM</span></p>
-            <p>Display: <span>6.7-inch </span> , <span>Super Retina XDR Display</span></p>
-            <p>Resolution: <span>1278 x 2778 </span> Pixels, <span>120Hz</span></p>
-            <p>CPU: <span>Apple A15 Bionic</span> Chip</p>
-            <p>GPU: <span>Apple Intergrated </span> GPU</p>
-            <p>Rear-Camera: <span>12MP</span> + <span>12MP</span> + <span>12MP</span></p>
-            <p>Front-Camera: <span>12MP</span></p>
-            <p>Wi-Fi: <span>6/6E</span>, <span>5GHz</span>, <span>MiMO</span></p>
-            <p>Battery: Li-ion, <span>4352mAh</span></p>
-            <p>Dimension: <span>238grams</span>, <span>160.8 x 78.1 x 7.6 </span> mm</p>
-            <p>Body: Aluminium Frame, <span>Gorilla Glass Back</span></p>
-            <button className="py-2 px-10 my-3 bg-black text-white rounded-lg active:bg-white active:border-black active:border active:text-black">More Detailed Specs</button>
-
+        <div className="w-full h-[50vh] flex justify-start px-10 items-center bg-slate-300">
+          <div className=" w-1/2 text-">
+            <p>
+              Storage: <span>6GB RAM </span> | <span>128GB ROM</span>
+            </p>
+            <p>
+              Display: <span>6.7-inch </span> ,{" "}
+              <span>Super Retina XDR Display</span>
+            </p>
+            <p>
+              Resolution: <span>1278 x 2778 </span> Pixels, <span>120Hz</span>
+            </p>
+            <p>
+              CPU: <span>Apple A15 Bionic</span> Chip
+            </p>
+            <p>
+              GPU: <span>Apple Intergrated </span> GPU
+            </p>
+            <p>
+              Rear-Camera: <span>12MP</span> + <span>12MP</span> +{" "}
+              <span>12MP</span>
+            </p>
+            <p>
+              Front-Camera: <span>12MP</span>
+            </p>
+            <p>
+              Wi-Fi: <span>6/6E</span>, <span>5GHz</span>, <span>MiMO</span>
+            </p>
+            <p>
+              Battery: Li-ion, <span>4352mAh</span>
+            </p>
+            <p>
+              Dimension: <span>238grams</span>, <span>160.8 x 78.1 x 7.6 </span>{" "}
+              mm
+            </p>
+            <p>
+              Body: Aluminium Frame, <span>Gorilla Glass Back</span>
+            </p>
+            <button className="py-2 px-10 my-3 bg-black text-white rounded-lg active:bg-white active:border-black active:border active:text-black">
+              More Detailed Specs
+            </button>
           </div>
           <div className="flex-auto w-1/2 h-auto">
             <img src="./images/spec.png" alt="" />

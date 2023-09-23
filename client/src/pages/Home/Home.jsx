@@ -12,7 +12,7 @@ import Blog from "../../components/Blog/Blog";
 function Home() {
   return (
     <>
-      <div className="w-full sticky top-0 bg-white z-50 overflow-hidden">
+      <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
         <Navbar />
       </div>
       <Slider />
@@ -22,7 +22,7 @@ function Home() {
         <hr className="h-px bg-black border-0 my-10"/>
         <div className="w-full flex-col justify-center items-center custom-w">
         <div className="title  my-5">
-          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Hurry, Almost Out</p>
+          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Best Available! Deal Today*</p>
         </div>
         <ProductCard />
         <div className="title my-5 hidden md:block">
@@ -33,7 +33,7 @@ function Home() {
         <ReelSection />
         </div>
         <div className="w-full title flex justify-between items-center my-5">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Covers</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Covers & Cases</p>
         </div>
         <Accessories />
         <div className="title my-5 ">

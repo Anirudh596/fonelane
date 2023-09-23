@@ -12,34 +12,38 @@ const cardData = [
 ];
 
 function Accessories() {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-  const isTablet = useMediaQuery({ maxWidth: 1160 });
-  const isLaptop = useMediaQuery({ maxWidth: 1500 });
-
-  // Define different slide view settings based on screen size
-  let slidesPerView;
-  if (isMobile) {
-    slidesPerView = 4;
-  } else if (isTablet) {
-    slidesPerView = 5;
-  } 
-  else if (isLaptop) {
-    slidesPerView = 6;
-  } else {
-    slidesPerView = 8;
-  }
-
-  return (
-    <Swiper
-      slidesPerView={slidesPerView}
-      spaceBetween={10}
-      autoplay={{
-        duration: 4000,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
+    const isMobile = useMediaQuery({ maxWidth: 768 });
+    const isTablet2 = useMediaQuery({ maxWidth: 968 });
+    const isTablet = useMediaQuery({ maxWidth: 1160 });
+    const isLaptop = useMediaQuery({ maxWidth: 1500 });
+  
+    // Define different slide view settings based on screen size
+    let slidesPerView;
+    if (isMobile) {
+      slidesPerView = 4;
+    } else if (isTablet2) {
+      slidesPerView = 3.5;
+    } 
+    else if (isTablet) {
+      slidesPerView = 4.5;
+    } 
+    else if (isLaptop) {
+      slidesPerView = 5;
+    } else {
+      slidesPerView = 8;
+    }
+  
+    return (
+      <Swiper
+        slidesPerView={slidesPerView}
+        spaceBetween={10}
+        autoplay={{
+          duration: 4000,
+          disableOnInteraction: false,
+        }}
+        pagination={{
+          clickable: true,
+        }}
       modules={[Autoplay]}
       className="mySwiper hidden"
     >

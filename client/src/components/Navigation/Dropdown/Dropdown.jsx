@@ -27,20 +27,22 @@ function Dropdown() {
   };
 
   const dropdownLabel = [
-    { label: "All" }, // Corrected label name
-    { label: "Verified Refurbished" },
-    { label: "Student Special" },
-    { label: "Deals" },
-    { label: "Iphone" },
-    { label: "OnePlus" },
-    { label: "Samsung Galaxy" },
-    { label: "mi" },
-    { label: "Accessories" },
+    { label: "ALL" }, // Corrected label name
+    { label: "VERIFIED REFURBISHED" },
+    { label: "STUDENT SPECIAL" },
+    { label: "DEALS" },
+    { label: "iPHONE" },
+    { label: "ONEPLUS" },
+    { label: "SAMSUNG GALAXY" },
+    { label: "MI" },
+    { label: "VIVO" },
+    { label: "OPPO" },
+    { label: "ACCESSORIES" },
   ];
 
   return (
     <>
-      <div className="">
+      <div className="mx-2 md:mx-10 py-1">
         <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-auto my-1">
           {dropdownLabel.map((item, index) => (
             <li
@@ -49,7 +51,7 @@ function Dropdown() {
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#" className="mx-2w-full flex justify-center items-center cursor-pointer  text-[7px] md:text-xs lg:text-xs xl:text-sm 2xl:text-sm">
+              <a href="#" className="mx-2w-full flex justify-center items-center cursor-pointer font-extrabold  text-[6px] md:text-xs lg:text-xs xl:text-sm 2xl:text-sm">
                 <span className="mx-1">{item.label}</span>
               </a>
               {isOpen && activeLabel === item.label && (

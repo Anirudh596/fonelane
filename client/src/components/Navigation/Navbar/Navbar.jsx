@@ -5,7 +5,6 @@ import WishlistPopup from "../../Wishlist/Wishlist";
 import Search from "../Search/Search";
 import Dropdown from "../Dropdown/Dropdown";
 import { CiHeart, CiShoppingCart } from "react-icons/ci";
-import { HiBars3BottomRight } from "react-icons/hi2";
 
 function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
@@ -25,9 +24,10 @@ function Navbar() {
         <div className="mx-auto h-[40px] md:h-[50px] lg:h-[60px] xl:h-[70px] flex justify-around items-center">
           <div className="flex justify-between items-center mx-5">
             <Logo />
-            <ul className="list-none hidden md:flex  justify-between items-center text-xs md:text-sm lg:text-base xl:text-base 2xl:text-lg gap-2 md:gap-5 mx-10 cursor-pointer">
+            <ul className="list-none hidden md:flex  justify-between items-center text-xs md:text-xs lg:text-sm xl:text-sm 2xl:text-base gap-2 md:gap-5  cursor-pointer">
               <li>About Us</li>
-              <li>Contact Us</li>
+              <li>Track Order</li>
+              <li>Help ?</li>
             </ul>
           </div>
           <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6 flex ">

@@ -1,8 +1,6 @@
-import TogetherBought from "../../pages/ProductPage/TogetherBought";
+
 import BackBtn from "../BackBtn/BackBtn";
 import Button from "../Button/Button";
-import Footer from "../Footer/Footer";
-import Navbar from "../Navigation/Navbar/Navbar";
 import Assured from "../../pages/Home/Hero/Assured/Assured";
 import ProductCard from "../ProductCard/ProductCard";
 
@@ -100,7 +98,6 @@ function Wishlist() {
           
         </div>
         <Assured />
-        <TogetherBought />
         <div className="title my-10">
           <p className="text-[28px] font-bold">Hurry, Almost Out</p>
         </div>

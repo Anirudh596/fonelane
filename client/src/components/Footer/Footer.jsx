@@ -10,13 +10,15 @@ function Footer() {
   return (
     <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh] my-5">
       <div className="contact-bar custom-w h-[12vh] md:h-18 flex justify-between items-center ">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">Contact Us On</p>
+        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">FOUND Us On</p>
         <div>
           <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             <li className="group opacity-100">
-              <a href="#" className="hover:text-[#405de6]">
-                <FontAwesomeIcon icon={faInstagram} />
-              </a>
+            <img
+            src="./images/instagram.png"
+            alt=""
+            className="w-[28px] h-[28px] md:w-[36px] md:h-[36px]"
+          />
             </li>
             <li className="group opacity-100">
               <a href="#" className="hover:text-[#405de6]">

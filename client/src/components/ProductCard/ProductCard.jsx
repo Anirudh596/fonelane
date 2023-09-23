@@ -13,6 +13,7 @@ const cardData = [
 
 function FirstCard() {
   const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet2 = useMediaQuery({ maxWidth: 968 });
   const isTablet = useMediaQuery({ maxWidth: 1160 });
   const isLaptop = useMediaQuery({ maxWidth: 1500 });
 
@@ -20,11 +21,14 @@ function FirstCard() {
   let slidesPerView;
   if (isMobile) {
     slidesPerView = 4;
-  } else if (isTablet) {
-    slidesPerView = 5;
+  } else if (isTablet2) {
+    slidesPerView = 3.5;
+  } 
+  else if (isTablet) {
+    slidesPerView = 4.5;
   } 
   else if (isLaptop) {
-    slidesPerView = 6;
+    slidesPerView = 5;
   } else {
     slidesPerView = 8;
   }

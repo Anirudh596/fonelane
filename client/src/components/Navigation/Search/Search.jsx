@@ -18,9 +18,10 @@ function Search() {
       
       <input
         type="text"
-        className="rounded-sm md:rounded-lg w-11/12 h-5 md:h-auto xl:py-2 focus:outline-none text-[8px]  md:text-sm lg:text-lg xl:text-base 2xl:text-base"
+        className="rounded-sm md:rounded-lg w-11/12 h-5 md:h-9 xl:py-2 focus:outline-none text-[8px] md:text-sm lg:text-sm xl:text-sm 2xl:text-sm"
         id="Search-bar"
         name="Search-bar" 
+        placeholder="Search for Mobile, Accessories & More"
         onFocus={() => setInputFocused(true)} // Handle input focus
         onBlur={() => setInputFocused(false)} // Handle input blur
       />

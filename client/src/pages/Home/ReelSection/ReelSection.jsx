@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay,  Navigation } from "swiper/modules";
+import { Autoplay, Navigation } from "swiper/modules";
 
 // Define an array of card data with video URLs
 const cardData = [
@@ -39,35 +39,48 @@ function ReelSection() {
     setOpen(false);
   };
 
-  
   return (
-    <div className="w-full reel-section mt-4 mb-4">
-      <Swiper 
-      style={{
-        "--swiper-navigation-color": "#fff",
-        "--swiper-pagination-color": "#fff",
-      }}
-      slidesPerView={6}
-      spaceBetween={30}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false,
-      }}
-      navigation={true}
-      modules={[Autoplay, Navigation]}
-      className="mySwiper"
+    <div className="w-full reel-section mt-4 mb-4 rounded-lg">
+      <Swiper
+        style={{
+          "--swiper-navigation-color": "#fff",
+          "--swiper-pagination-color": "#fff",
+        }}
+        slidesPerView={2} // Show 1 slide on mobile
+        spaceBetween={15}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        navigation={true}
+        modules={[Autoplay, Navigation]}
+        breakpoints={{
+          768: {
+            slidesPerView: 4, // Show 2 slides on tablets
+          },
+          1024: {
+            slidesPerView: 4, // Show 3 slides on larger screens
+          },
+          1280: {
+            slidesPerView: 5, // Show 3 slides on larger screens
+          },
+          1440: {
+            slidesPerView: 6, // Show 3 slides on larger screens
+          },
+        }}
+        className="mySwiper"
       >
         {cardData.map((card) => (
           <SwiperSlide key={card.id}>
             <div
-              className=" relative cursor-pointer  w-[270px] h-[430px]"
+              className=" relative rounded-lg cursor-pointer  w-[170px] h-[330px] 2xl:w-[270px] 2xl:h-[430px]"
               onClick={() => openModal(card.videoUrl)}
             >
-              <div className=" w-[270px] h-[430px]">
+              <div className=" w-full h-full rounded-lg">
                 <video
                   src={card.videoUrl}
                   alt=""
-                  className="video-content  w-[270px] h-[430px]"
+                  className="video-content w-full h-full rounded-lg"
                   autoPlay
                   muted
                   loop
