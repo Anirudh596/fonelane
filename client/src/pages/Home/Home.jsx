@@ -5,17 +5,12 @@ import ReelSection from "./ReelSection/ReelSection";
 import Accessories from "../../components/Accessories/Accessories";
 import Banner from "../../components/Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
-import LinkBar from "../../components/Navigation/LinkBar/LinkBar";
 import Navbar from "../../components/Navigation/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 
 function Home() {
   return (
     <>
-      {/* <div className="w-full bg-white text-black">
-        <LinkBar />
-      </div> */}
-      {/* <hr className="w-full h-px bg-gray-400 border-0 "></hr> */}
       <div className="w-full sticky top-0 bg-white z-50">
         <Navbar />
       </div>
