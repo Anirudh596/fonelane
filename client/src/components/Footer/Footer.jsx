@@ -8,11 +8,11 @@ import {
 
 function Footer() {
   return (
-    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh]">
-      <div className="contact-bar custom-w h-[12vh] flex justify-between items-center mx-10 md:mx-5 ">
+    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh] my-5">
+      <div className="contact-bar custom-w h-[12vh] md:h-18 flex justify-between items-center ">
         <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">Contact Us On</p>
         <div>
-          <ul className="list-none flex justify-center items-center gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+          <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             <li className="group opacity-100">
               <a href="#" className="hover:text-[#405de6]">
                 <FontAwesomeIcon icon={faInstagram} />
@@ -154,7 +154,7 @@ function Footer() {
         </div>
         <div className="newsletter-feedback w-full sm:w-2/3 flex flex-col justify-center items-center p-5">
           <div className="w-full h-1/3 flex flex-col">
-            <p className="font-medium text-[17px] mb-2">
+            <p className="font-medium test-xs md:text-sm lg:text-lg xl:text-lg mb-2">
               Subscribe to Our Newsletter
             </p>
             <div className="flex">

@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay} from "swiper/modules";
 import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 import AccessoriesContent from "./AccessoriesContent/AccessoriesContent";
@@ -40,8 +40,7 @@ function Accessories() {
       pagination={{
         clickable: true,
       }}
-      navigation={true}
-      modules={[Autoplay, Navigation]}
+      modules={[Autoplay]}
       className="mySwiper hidden"
     >
       {cardData.map((card, index) => (

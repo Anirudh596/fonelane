@@ -4,17 +4,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 // import required modules
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination} from "swiper/modules";
 import SlideContent from "./SlideContent/SlideContent";
 
 function Slider() {
   const slideData = [
-    { sliderImage: "./images/refu.png" },
-    { sliderImage: "./images/season.png" },
-    { sliderImage: "./images/bm.png" },
+    { sliderImage: "./images/bane1.png" },
+    { sliderImage: "./images/bane2.png" },
+    { sliderImage: "./images/bane3.png" },
     // Add more slide data as needed
   ];
 
@@ -23,7 +22,6 @@ function Slider() {
       <div className=" w-full">
         <Swiper
           style={{
-            "--swiper-navigation-color": "#fff",
             "--swiper-pagination-color": "#fff",
           }}
           slidesPerView={1}
@@ -37,8 +35,7 @@ function Slider() {
             clickable: true,
             dynamicBullets: true,
           }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Pagination]}
           className="mySwiper"
         >
           {slideData.map((slide, index) => (

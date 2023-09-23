@@ -208,25 +208,3 @@ input[type="checkbox"]:checked {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
 }
 
-/* Customize Swiper Navigation (Prev/Next) Buttons */
-.mySwiper .swiper-button-prev,
-.mySwiper .swiper-button-next {
-  
-  display: none;
-}
-
-/* Customize the hover effect */
-.mySwiper .swiper-button-prev:hover,
-.mySwiper .swiper-button-next:hover {
-  background-color: #333; /* Change background color on hover */
-  color: #fff; /* Change text color on hover */
-}
-
-/* Adjust button position if needed */
-.mySwiper .swiper-button-prev {
-  left: 50px; /* Adjust the left position */
-}
-
-.mySwiper .swiper-button-next {
-  right: 50px; /* Adjust the right position */
-}
