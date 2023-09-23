@@ -3,11 +3,7 @@ export function Block({ imgSrc}) {
   return (
     <>
     <div className='w-full flex-col justify-center items-center'>
-      <img
-        src={imgSrc}
-        alt={` image`} // Add alt text based on the text prop
-        className="w-[20px] h-[30px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[60px] xl:w-[50px] xl:h-[60px] "
-      />
+      
     </div>
     
     </>

@@ -8,7 +8,7 @@ import {
 
 function Footer() {
   return (
-    <div className="w-full bg-gradient-to-r from-gray-100 via-[#bce1ff] to-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh]">
+    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh]">
       <div className="contact-bar custom-w h-[12vh] flex justify-between items-center mx-10 md:mx-5 ">
         <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">Contact Us On</p>
         <div>

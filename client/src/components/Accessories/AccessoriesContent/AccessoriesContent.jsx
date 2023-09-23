@@ -3,13 +3,13 @@ import Review from "../../Review/Review"
 function AccessoriesContent() {
   return (
     <>
-    <div className="flex-col-reverse justify-center items-center ">
+    <div className="flex flex-col justify-center items-center mx-auto">
         <div className="flex justify-center items-center p-5">
-            <img src="./images/air.jpg" alt="" className=" w-[220px] h-[200px] md:w-[220px] md:h-[200px] lg:w-[220px] lg:h-[200px] xl:w-[220px] xl:h-[200px]"/>
+            <img src="./images/air.jpg" alt="" className=" w-full h-[65px] md:h-[115px] lg:h-[135px] xl:h-[145px] bg-cover"/>
         </div>
-        <div className="px-5">
-            <p className="title w-full text-inherit text-sm md:text-base lg:text-xl xl:text-xl font-semibold" >Airpods 2nd Generation</p>
-            <p className="title w-full text-inherit flex gap-5 text-sm md:text-base lg:text-xl xl:text-xl font-medium justify-center items-center" >₹9,999 <p className="flex text-sm md:text-base lg:text-xl xl:text-xl gap-1 font-normal">M.R.P: <p className="line-through">24,999</p></p></p>
+        <div className=" flex flex-col justify-center items-center w-full mx-auto">
+            <p className="text-[8px] md:text-sm lg:text-base xl:text-base font-semibold" >Iphone Clear Case</p>
+            <p className="title w-full flex gap-1 text-[7px] md:text-sm lg:text-base xl:text-base font-medium justify-center items-center" >₹9,999 <p className="flex  text-[7px] md:text-sm lg:text-base xl:text-base gap-1 font-normal">M.R.P: <p className="line-through  text-[7px] md:text-sm lg:text-base xl:text-base">24,999</p></p></p>
         
         </div>
         <Review />

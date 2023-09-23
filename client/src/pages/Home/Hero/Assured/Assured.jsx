@@ -1,94 +1,54 @@
-import { Block, BlockText} from "./Assured_blocks/Block"; // Ensure correct import path
+import { GoShieldCheck} from "react-icons/go"
+import { LuIndianRupee} from "react-icons/lu"
+import { PiBatteryVerticalHighDuotone} from "react-icons/pi"
+import { TfiMoney} from "react-icons/tfi"
+import { LiaShippingFastSolid} from "react-icons/lia"
 
-const assuredData = [
-  {
-    imgSrc: "./images/shield.png",
-     
- },
-  {
-    imgSrc: "./images/rupee.png",
-     
- },
-  {
-    imgSrc: "./images/cash-on-delivery.png",
-     
- },
-  {
-    imgSrc: "./images/100-percent.png",
-     
-  },
-  {
-    imgSrc: "./images/battery.png",
-     
-  },
-  {
-    imgSrc: "./images/lowest-price.png",
-  },
-     
- {
-    imgSrc: "./images/shipping.png",
-     
-  },
-];
-const assuredText = [
-  {
-    text: "12 Month Warranty",
-     
- },
-  {
-    text: "",
-     
- },
-  {
-    text: "",
-     
- },
-  {
-    text: "",
-     
-  },
-  {
-    text: "",
-     
-  },
-  {
-    text: "",
-  },
-     
- {
-    text: "",
-     
-  },
-];
 
 function Assured() {
   return (
-    <div className="w-full ">
-      <div className=" ">
-        <div className="flex justify-between items-center  text-[6px] md:text-base lg:text-lg xl:text-xl">
-        {assuredData.map((item, index) => (
-          <Block key={index} imgSrc={item.imgSrc} />
-        ))}
+    <div className="w-full mx-auto my-5">
+      <div className="flex justify-between items-center">
+        <div className="flex flex-col justify-center items-center">
+          <GoShieldCheck  className= "text-2xl md:text-3xl lg:text-4xl xl:text-6xl"/>
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">12 Month Warranty</p>
         </div>
-        <div className="flex justify-between items-center  text-[6px] md:text-base lg:text-lg xl:text-xl">
-        {assuredText.map((item, index) => (
-          <BlockText key={index} text={item.text} />
-        ))}
+        <div className="flex flex-col justify-center items-center">
+          <LuIndianRupee  className= "text-2xl md:text-3xl lg:text-4xl xl:text-6xl"/>
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">No Cost EMI*</p>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+        <img
+        src="./images/cod2.png"
+        alt= "" // Add alt text based on the text prop
+        className="w-[20px] h-[30px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[60px] xl:w-[50px] xl:h-[60px] "
+      />
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">Cash On Delivery</p>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+        <img
+        src="./images/100-percent.png"
+        alt= "" // Add alt text based on the text prop
+        className="w-[20px] h-[30px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[60px] xl:w-[50px] xl:h-[60px] "
+      />
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">100% Genuine Products</p>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <PiBatteryVerticalHighDuotone  className= "text-2xl md:text-3xl lg:text-4xl xl:text-6xl"/>
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">90% Battery Health</p>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <TfiMoney  className= "text-2xl md:text-3xl lg:text-4xl xl:text-6xl"/>
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">Lowest Price</p>
+        </div>
+        <div className="flex flex-col justify-center items-center">
+          <LiaShippingFastSolid  className= "text-2xl md:text-3xl lg:text-4xl xl:text-6xl"/>
+          <p className="text-[6px] md:text-base lg:text-lg xl:text-base">Free Shipping</p>
         </div>
       </div>
+      <div></div>
     </div>
-  );
+  )
 }
 
-export default Assured;
-
-
-// function Assured() {
-//   return (
-//     <>
-
-//     </>
-//   )
-// }
-
-// export default Assured
+export default Assured

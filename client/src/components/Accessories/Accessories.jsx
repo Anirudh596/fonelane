@@ -1,79 +1,63 @@
-// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
-
-// import required modules
 import { Autoplay, Navigation } from "swiper/modules";
+import { Link } from "react-router-dom";
+import { useMediaQuery } from 'react-responsive';
 import AccessoriesContent from "./AccessoriesContent/AccessoriesContent";
 
+// Define an array of card data
+const cardData = [
+  1,2,3,4,5,6,7,8,9,10,11,12,13// Add more objects as needed
+];
+
 function Accessories() {
+  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ maxWidth: 1160 });
+  const isLaptop = useMediaQuery({ maxWidth: 1500 });
+
+  // Define different slide view settings based on screen size
+  let slidesPerView;
+  if (isMobile) {
+    slidesPerView = 4;
+  } else if (isTablet) {
+    slidesPerView = 5;
+  } 
+  else if (isLaptop) {
+    slidesPerView = 6;
+  } else {
+    slidesPerView = 8;
+  }
+
   return (
-    <>
-      <Swiper
-        style={{
-          "--swiper-navigation-color": "#999",
-        }}
-        slidesPerView={4.2}
-        spaceBetween={9}
-        autoplay={{
-          duration: 4000,
-          disableOnInteraction: false,
-        }}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Autoplay, Navigation]}
-        className="mySwiper"
-      >
-        <div className="bg-white my-9">
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px] bg-white  rounded-[9px] cursor-pointer hover:drop-shadow-xl">
-              <AccessoriesContent />
+    <Swiper
+      slidesPerView={slidesPerView}
+      spaceBetween={10}
+      autoplay={{
+        duration: 4000,
+        disableOnInteraction: false,
+      }}
+      pagination={{
+        clickable: true,
+      }}
+      navigation={true}
+      modules={[Autoplay, Navigation]}
+      className="mySwiper hidden"
+    >
+      {cardData.map((card, index) => (
+        <SwiperSlide key={index}>
+          <Link to="/products">
+            <div className="my-1 mb-2 md:my-5 md:mb-10 md:mx-10 lg:my-5 lg:mb-10 lg:mx-10 xl:my-5 xl:mb-10 xl:mx-10">
+              <div className="w-[100px] h-[150px] md:w-[160px] md:h-[240px] lg:w-[180px] lg:h-[270px] xl:w-[202px] xl:h-[291px] bg-white rounded-md cursor-pointer card-container">
+               <AccessoriesContent />
+              </div>
             </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px]   bg-white rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px] bg-white  rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px]  bg-white  rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px] bg-white rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px] bg-white rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px] bg-white  rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="w-[260px] h-[350px]  bg-white rounded-[9px] cursor-pointer hover:drop-shadow-2xl">
-              <AccessoriesContent />
-            </div>
-          </SwiperSlide>
-        </div>
-      </Swiper>
-    </>
+          </Link>
+        </SwiperSlide>
+      ))}
+    </Swiper>
   );
 }
+
 
 export default Accessories;
