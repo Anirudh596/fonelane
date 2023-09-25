@@ -1,15 +1,16 @@
 import { faX } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-function BackBtn() {
-    const goBack = () => {
-        window.history.back()
-      };
+// eslint-disable-next-line react/prop-types
+function BackBtn({className, func}) {
+    // const goBack = () => {
+    //     window.history.back()
+    //   };
   return (
     <div className="group ">
-                <FontAwesomeIcon onClick={goBack}
+                <FontAwesomeIcon onClick={func}
                   icon={faX}
-                  className="ease-in-out duration-150 text-[20px] group-hover:scale-110  cursor-pointer "
+                  className={`ease-in-out duration-150  group-hover:scale-110  cursor-pointer ${className} `}
                 />
               </div>
   )
