@@ -1,3 +1,4 @@
+const { error } = require("console");
 const generateToken = require("../config/jwtToken");
 const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
@@ -27,39 +28,84 @@ const createUser = async (req, res) => {
   }
 };
 
-const loginUserCtrl = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
+// const loginUserCtrl = asyncHandler(async (req, res) => {
+//   const { email, password } = req.body;
 
-  try {
-    // Check if the user exists
-    const findUser = await User.findOne({ email });
+//   try {
+//     // Check if the user exists
+//     const findUser = await User.findOne({ email });
 
-    if (findUser && (await findUser.isPasswordMatched(password))) {
-      // User is authenticated, generate a token
-    const token = generateToken(findUser?._id);
+//     if (findUser && (await findUser.isPasswordMatched(password))) {
+//       // User is authenticated, generate a token
+//     const token = generateToken(findUser?._id);
 
-    res.json({
-      _id: findUser?._id,
-      name: findUser?.name,
-      email: findUser?.email,
-      mobile: findUser?.mobile,
-      token,
-    });
-    }else{
-      throw new Error("Invalid credentials");
-    }
+//     res.json({
+//       _id: findUser?._id,
+//       name: findUser?.name,
+//       email: findUser?.email,
+//       mobile: findUser?.mobile,
+//       token,
+//     });
+//     }else{
+//       throw new Error("Invalid credentials");
+//     }
 
    
     
-  } catch (error) {
-    console.error(error);
-    res.status(401).json({
-      msg: "Authentication failed",
-      success: false,
-    });
-  }
-});
+//   } catch (error) {
+//     console.error(error);
+//     res.status(401).json({
+//       msg: "Authentication failed",
+//       success: false,
+//     });
+//   }
+// });
 
+const loginUserCtrl = asyncHandler(async (req, res) => {
+  const {mobile} = req.body;
+  try {
+    const findUser = await User.findOne({ mobile });
+    if(findUser){
+      try {
+        const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
+    const authToken = "a40784a3a93d4f9fb988a595417fd52e";
+    const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
+    const client = await require("twilio")(accountSid, authToken);
+    
+    client.verify.v2
+      .services(verifySid)
+      .verifications.create({ to: req.body.mobile, channel: "sms" })
+      .then((verification) => console.log(verification.status))
+      .then(() => {
+        const readline = require("readline").createInterface({
+          input: process.stdin,
+          output: process.stdout,
+        });
+        readline.question("Please enter the OTP:", (otpCode) => {
+          client.verify.v2
+            .services(verifySid)
+            .verificationChecks.create({ to: req.body.mobile, code: otpCode })
+            .then((verification_check) => console.log(verification_check.status))
+            .then(() => readline.close());
+        });
+      });
+      } catch (error) {
+        console.log(error);
+      }
+    console.log(error);
+    } else {
+      try {
+        const newUser = await User.create(req.body);
+    res.status(201).json(newUser);
+    console.log("not found");
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  } catch (error) {
+    console.log(error);
+  }
+})
 
 //update a user data
 
@@ -155,5 +201,34 @@ const deleteaUser = async( req, res) => {
     });
   };
 };
+
+// const otpGenerator = async (req, res) => {
+//   try {
+//     const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
+// const authToken = "a40784a3a93d4f9fb988a595417fd52e";
+// const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
+// const client = await require("twilio")(accountSid, authToken);
+
+// client.verify.v2
+//   .services(verifySid)
+//   .verifications.create({ to: req.body.mobile, channel: "sms" })
+//   .then((verification) => console.log(verification.status))
+//   .then(() => {
+//     const readline = require("readline").createInterface({
+//       input: process.stdin,
+//       output: process.stdout,
+//     });
+//     readline.question("Please enter the OTP:", (otpCode) => {
+//       client.verify.v2
+//         .services(verifySid)
+//         .verificationChecks.create({ to: req.body.mobile, code: otpCode })
+//         .then((verification_check) => console.log(verification_check.status))
+//         .then(() => readline.close());
+//     });
+//   });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
 module.exports = { createUser, loginUserCtrl ,getallUser, getaUser, deleteaUser, updateaUser};
