@@ -7,7 +7,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', ;
 }
 /* Default styles (mobile) */
 .custom-w {
@@ -208,3 +208,23 @@ input[type="checkbox"]:checked {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
 }
 
+
+
+/* starts Social Icons Design bottom of the page found us on */
+.social-icons{
+  transition: all .3s ease-out;
+  cursor: pointer;
+}
+.social-icons:hover{
+  transform: scale(1.1); 
+}
+.social-icons:active{
+  transform: translateY(-5px);
+
+}
+/* ends Social Icons Design bottom of the page found us on */
+
+
+/* Start Assured section styles */
+
+/* end Assured section styles */

@@ -1,32 +1,39 @@
 import Assured from "./Hero/Assured/Assured";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import Services from "./Services/Services";
 import ReelSection from "./ReelSection/ReelSection";
 import Accessories from "../../components/Accessories/Accessories";
 import Banner from "../../components/Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
 import Navbar from "../../components/Navigation/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import AdBar from "../../components/AdBar/AdBar";
 import Blog from "../../components/Blog/Blog";
 
 function Home() {
+  
   return (
     <>
       <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
         <Navbar />
       </div>
+      <div className="block md:hidden">
+      <AdBar />
+      </div>
+      <div className="block">
       <Slider />
-      <div className="w-full flex-col justify-center items-center custom-w my-5">
+
+      </div>
+      <div className="custom-w mx-auto">
         <Assured />
         </div>
-        <hr className="h-px bg-black border-0 my-10"/>
+        <hr className="h-px bg-black border-0 md:my-10"/>
         <div className="w-full flex-col justify-center items-center custom-w">
         <div className="title  my-5">
           <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Best Available! Deal Today*</p>
         </div>
         <ProductCard />
         <div className="title my-5 hidden md:block">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">What Our Customer says</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Community Stories</p>
         </div>
         <div className="hidden md:block my-10">
 

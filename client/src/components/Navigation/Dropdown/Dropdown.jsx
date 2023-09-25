@@ -1,5 +1,4 @@
 import { useState } from "react";
-import DropdownBoard from "./DropdownBoard/DropdownBoard";
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -42,8 +41,8 @@ function Dropdown() {
 
   return (
     <>
-      <div className="mx-2 md:mx-10 py-1">
-        <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-auto my-1">
+      <div className="mx-2 md:mx-10  py-1">
+        <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-auto my-0.5 md:my-1">
           {dropdownLabel.map((item, index) => (
             <li
               key={index}
@@ -51,19 +50,26 @@ function Dropdown() {
               onMouseEnter={() => handleMouseEnter(item.label)}
               onMouseLeave={handleMouseLeave}
             >
-              <a href="#" className="mx-2w-full flex justify-center items-center cursor-pointer font-extrabold  text-[6px] md:text-xs lg:text-xs xl:text-sm 2xl:text-sm">
+              <a href="#" className="mx-2 w-full flex justify-center items-center cursor-pointer font-bold text-[6px] md:text-[8px] lg:text-[10px] xl:text-xs 2xl:text-xs">
                 <span className="mx-1">{item.label}</span>
               </a>
               {isOpen && activeLabel === item.label && (
-                <>
-                  <DropdownBoard content={labelContent[item.label]} />
-                </>
+                <DropdownBoard content={labelContent[item.label]} />
               )}
             </li>
           ))}
         </ul>
       </div>
     </>
+  );
+}
+
+// eslint-disable-next-line react/prop-types
+function DropdownBoard({ content }) {
+  return (
+    <div className="absolute top-3.5 flex justify-center z-50 mt-2 w-72 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+      <div className="py-2 px-4">{content}</div>
+    </div>
   );
 }
 
