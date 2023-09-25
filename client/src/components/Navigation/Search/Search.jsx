@@ -9,7 +9,7 @@ function Search({className}) {
 
   return (
     <div
-      className={`w-full flex items-center  justify-start border rounded-md md:rounded-lg group ${className} ${
+      className={`w-full flex items-center mx-5 md:mx-0  justify-start border rounded-md md:rounded-lg group ${className} ${
         isInputFocused ? "border-gray-700" : "border-gray-300"
       }`}
     >

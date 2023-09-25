@@ -14,26 +14,39 @@ function Navbar() {
   const toggleCart = () => setIsCartOpen(!isCartOpen);
   const toggleWishlist = () => setIsWishlistOpen(!isWishlistOpen);
 
-  const [isBarsopen, setIsBarsOpen] = useState(false);
-  const toggleBars = () => {
-    setIsBarsOpen(!isBarsopen);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedOption, setSelectedOption] = useState("Select an option");
+
+  const toggleDropdown = () => {
+    setIsOpen(!isOpen);
   };
+
+  const handleOptionClick = (option) => {
+    setSelectedOption(option);
+    setIsOpen(false); // Close the dropdown when an option is selected
+  };
+
+  const options = ["Option 1", "Option 2", "Option 3", "Option 4"];
 
   return (
     <>
       <div className="top-0 bg-white z-50 w-full ">
         <div className="mx-auto h-[50px] md:h-[50px] lg:h-[60px] xl:h-[70px] flex justify-between md:justify-around items-center">
           <div className="flex justify-between items-center mx-5">
-          <div className=" flex md:hidden items-center text-2xl ">
-            <button onClick={toggleBars}>
-              <HiBars3BottomLeft />
-            </button>
-          </div>
+            <div className=" flex md:hidden items-center text-2xl ">
+              <button onClick={toggleDropdown} >
+              
+                <HiBars3BottomLeft />
+              </button>
+            </div>
+            <div className="mx-2 md:mx-10">
+
             <Logo />
-            <ul className="list-none hidden md:flex  justify-between items-center text-[8px] md:text-[12px] lg:text-xs xl:text-xs 2xl:text-sm gap-2 md:gap-5  cursor-pointer">
+            </div>
+            <ul className="list-none hidden md:flex justify-between items-center text-[8px] md:text-[12px] lg:text-xs xl:text-xs 2xl:text-sm gap-2 md:gap-5  cursor-pointer">
               <li>About Us</li>
               <li>Track Order</li>
-              <li>Help ?</li>
+              <li>Help</li>
             </ul>
           </div>
           <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6 hidden md:flex ">
@@ -47,19 +60,18 @@ function Navbar() {
               Login
             </button>
           </div>
-          
         </div>
       </div>
       <div>
         <hr className="w-full h-px border-0 bg-gray-400" />
         <div className="hidden md:block">
-        <Dropdown />
+          <Dropdown />
         </div>
         <hr className="w-full h-px border-0 bg-gray-400" />
       </div>
       <div className="w-full justify-center  items-center md:hidden flex ">
-            <Search className={"w-10/12 py-1.5 my-1"}/>
-          </div>
+        <Search className={"w-10/12 py-1.5 my-1"} />
+      </div>
 
       {isCartOpen && <CartFloat isOpen={isCartOpen} onClose={toggleCart} />}
       {isWishlistOpen && (
@@ -68,6 +80,28 @@ function Navbar() {
           onClose={toggleWishlist}
         />
       )}
+{isOpen && (
+          <div className="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+            <div
+              className="py-1"
+              role="menu"
+              aria-orientation="vertical"
+              aria-labelledby="options-menu"
+            >
+              {options.map((option, index) => (
+                <button
+                  key={index}
+                  onClick={() => handleOptionClick(option)}
+                  className="block w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-gray-900"
+                  role="menuitem"
+                >
+                  {option}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+      
     </>
   );
 }
