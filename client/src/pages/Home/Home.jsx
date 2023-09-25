@@ -1,6 +1,5 @@
 import Assured from "./Hero/Assured/Assured";
 import ProductCard from "../../components/ProductCard/ProductCard";
-import Services from "./Services/Services";
 import ReelSection from "./ReelSection/ReelSection";
 import Accessories from "../../components/Accessories/Accessories";
 import Banner from "../../components/Banner/Banner";
@@ -16,7 +15,7 @@ function Home() {
         <Navbar />
       </div>
       <Slider />
-      <div className="w-full flex-col justify-center items-center custom-w my-5">
+      <div className="flex-col justify-center items-center  my-5">
         <Assured />
         </div>
         <hr className="h-px bg-black border-0 my-10"/>
@@ -26,7 +25,7 @@ function Home() {
         </div>
         <ProductCard />
         <div className="title my-5 hidden md:block">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">What Our Customer says</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Community Stories</p>
         </div>
         <div className="hidden md:block my-10">
 

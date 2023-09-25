@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 function Review({className ,classNamePoints}) {
   return (
     <>
-    <div className={`star flex  text-[6px] md:text-base lg:text-base xl:text-base text-[#ffdd00] ${className}`}>
+    <div className={`star flex  text-[13px] md:text-base lg:text-base xl:text-base text-[#ffdd00] ${className}`}>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStar}/>
           <FontAwesomeIcon icon={faStar}/>

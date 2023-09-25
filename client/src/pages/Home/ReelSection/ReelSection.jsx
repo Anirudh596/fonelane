@@ -67,13 +67,16 @@ function ReelSection() {
           1440: {
             slidesPerView: 6, // Show 3 slides on larger screens
           },
+          1536: {
+            slidesPerView: 5.5, // Show 3 slides on larger screens
+          },
         }}
         className="mySwiper"
       >
         {cardData.map((card) => (
           <SwiperSlide key={card.id}>
             <div
-              className=" relative rounded-lg cursor-pointer  w-[170px] h-[330px] 2xl:w-[270px] 2xl:h-[430px]"
+              className=" relative rounded-lg cursor-pointer  md:w-auto h-auto 2xl:w-[250px]"
               onClick={() => openModal(card.videoUrl)}
             >
               <div className=" w-full h-full rounded-lg">

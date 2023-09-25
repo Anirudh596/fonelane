@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faInstagram,
   faSquareFacebook,
   faXTwitter,
   faYoutube,
@@ -13,25 +12,25 @@ function Footer() {
         <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">FOUND Us On</p>
         <div>
           <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-            <li className="group opacity-100">
+            <li className="social-icons opacity-100">
             <img
             src="./images/instagram.png"
             alt=""
-            className="w-[28px] h-[28px] md:w-[36px] md:h-[36px]"
+            className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] "
           />
             </li>
-            <li className="group opacity-100">
-              <a href="#" className="hover:text-[#405de6]">
+            <li className="social-icons opacity-100">
+              <a  className="text-[#405de6] ">
                 <FontAwesomeIcon icon={faSquareFacebook} />
               </a>
             </li>
-            <li className="group opacity-100">
-              <a href="#" className="hover:text-[#ff3535]">
+            <li className="social-icons opacity-100">
+              <a  className="text-[#ff3535] ">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </li>
-            <li className="group opacity-100">
-              <a href="#" className="hover:text-gray-400">
+            <li className="social-icons opacity-100">
+              <a  className="text-gray-700 ">
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </li>
@@ -181,7 +180,7 @@ function Footer() {
             <p className="text-xs md:text-sm xl:text-base font-medium my-3">
               Give us Your valuable feedback
             </p>
-            <button className="px-4 py-2 w-[120px] bg-white text-black text-xs md:text-sm lg:text-base xl:text-base font-medium rounded-[15px]">
+            <button className="px-4 py-2 w-[120px] bg-white text-black hover:bg-gray-300 active:bg-black active:text-white ease-in duration-100 text-xs md:text-sm lg:text-base xl:text-base font-medium rounded-[15px]">
               Feedback
             </button>
           </div>
