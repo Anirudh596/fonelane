@@ -25,10 +25,10 @@ function FirstCard() {
     slidesPerView = 3.5;
   } 
   else if (isLaptop) {
-    slidesPerView = 4.5;
+    slidesPerView = 4;
   } 
   else if (isDesktop) {
-    slidesPerView = 5.5;
+    slidesPerView = 5;
   } else {
     slidesPerView = 6.2;
   }

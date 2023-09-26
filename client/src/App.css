@@ -7,38 +7,42 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', ;
+  font-family: 'Montserrat', sans-serif;
 }
 /* Default styles (mobile) */
 .custom-w {
-  max-width: 100%; /* Full width on mobile */
+  max-width: 97%; /* Full width on mobile */
   margin: 0 auto; /* Centered on mobile */
 }
 
 /* Tablet styles */
 @media (min-width: 768px) {
-  .custom-w {
-    max-width: 668px; /* Adjust max-width for tablets */
+  *{
+    font-family: 'Montserrat';
   }
+  .custom-w {
+    max-width: 568px; /* Adjust max-width for tablets */
+  }
+
 }
 
 /* Desktop styles */
 @media (min-width: 1024px) {
   .custom-w {
-    max-width: 924px; /* Adjust max-width for desktops */
+    max-width: 724px; /* Adjust max-width for desktops */
   }
 }
 
 /* Large screen styles */
 @media (min-width: 1280px) {
   .custom-w {
-    max-width: 1180px; /* Adjust max-width for large screens */
+    max-width: 1080px; /* Adjust max-width for large screens */
   }
 }
 
 @media (min-width: 1440px) {
   .custom-w {
-    max-width: 1280px; /* Adjust max-width for large screens */
+    max-width: 1240px; /* Adjust max-width for large screens */
   }
 }
 @media (min-width: 1540px) {
@@ -48,22 +52,22 @@
 }
 @media (min-width: 1640px) {
   .custom-w {
-    max-width: 1540px; /* Adjust max-width for large screens */
+    max-width: 1440px; /* Adjust max-width for large screens */
   }
 }
 @media (min-width: 1740px) {
   .custom-w {
-    max-width: 1640px; /* Adjust max-width for large screens */
+    max-width: 1540px; /* Adjust max-width for large screens */
   }
 }
 @media (min-width: 1840px) {
   .custom-w {
-    max-width: 1740px; /* Adjust max-width for large screens */
+    max-width: 1640px; /* Adjust max-width for large screens */
   }
 }
 @media (min-width: 1940px) {
   .custom-w {
-    max-width: 1840px; /* Adjust max-width for large screens */
+    max-width: 1740px; /* Adjust max-width for large screens */
   }
 }
 
