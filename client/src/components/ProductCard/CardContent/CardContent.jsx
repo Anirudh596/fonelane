@@ -2,6 +2,7 @@ import Review from "../../Review/Review";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
+// eslint-disable-next-line react/prop-types
 function CardContent({pIndex}) {
   const [data, setData] = useState([]);
   const [imageData, setImageData] = useState(null);

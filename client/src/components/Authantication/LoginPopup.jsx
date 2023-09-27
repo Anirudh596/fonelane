@@ -33,7 +33,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
 
   return (
     <motion.div
-      className={`fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50`}
+      className={`fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 `}
       initial="hidden"
       animate={controls}
       variants={popupVariants}
@@ -42,7 +42,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
       <div className="relative w-full h-full md:w-2/3 md:h-3/4" ref={popupRef}>
         <div className="flex justify-center items-center w-full h-full rounded-xl bg-white z-50 transform transition-transform ease-in-out duration-700">
           <div className="absolute top-0 right-0 m-5 z-50">
-            <BackBtn func={onClose} className="text-base text-white md:text-black" />
+            <BackBtn func={onClose} className="text-base text-black" />
           </div>
           <div className="w-full h-full flex flex-col md:flex-row mx-auto ">
             <div className=" md:flex-1  md:w-full md:h-full background-image  md:rounded-l-xl z-0">
@@ -129,13 +129,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
 };
 
 
-const SignUp = () => {
-   return (
-    <>
-    Hello
-    </>
-   ) 
-}
+
 
 
 
