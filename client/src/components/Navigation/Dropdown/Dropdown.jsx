@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {  HiBars3BottomRight } from "react-icons/hi2";
 
 function Dropdown() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,7 +27,6 @@ function Dropdown() {
   };
 
   const dropdownLabel = [
-    { label: "ALL" }, // Corrected label name
     { label: "VERIFIED REFURBISHED" },
     { label: "STUDENT SPECIAL" },
     { label: "DEALS" },
@@ -41,8 +41,10 @@ function Dropdown() {
 
   return (
     <>
-      <div className="mx-2 md:mx-10  py-1">
+      <div className="mx-2 md:mx-10  py-1 z-50">
         <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-auto my-0.5 md:my-1">
+          <button className="hover:scale-110 font-bold text-[6px] md:text-[8px] lg:text-[10px] xl:text-xs 2xl:text-xs flex justify-center items-center "><HiBars3BottomRight className="flex ease-linear duration-400 md:text-[12px] lg:text-[14px] xl:text-xl 2xl:text-base"/> All</button>
+
           {dropdownLabel.map((item, index) => (
             <li
               key={index}

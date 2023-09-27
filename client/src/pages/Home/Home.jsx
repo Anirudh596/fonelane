@@ -16,14 +16,14 @@ function Home() {
       <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
         <Navbar />
       </div>
-      <div className="block md:hidden">
+      <div className="block md:hidden overflow-hidden">
       <AdBar />
       </div>
       <div className="block">
       <Slider />
 
       </div>
-      <div className="custom-w mx-auto">
+      <div className="custom-w mx-auto overflow-hidden">
         <Assured />
         </div>
         <hr className="h-px bg-black border-0 md:my-10"/>

@@ -7,23 +7,16 @@ function CartFloat({isOpen, onClose }) {
     useEffect(() => {
         const handleDocumentClick = (e) => {
           if (isOpen) {
-            // Check if the click occurred outside of the cart
             if (!e.target.closest('.cart-container')) {
               onClose();
             }
           }
         };
     
-        // Add the event listener when the component mounts
-        // document.addEventListener('mousedown', handleDocumentClick);
-    
-        // Clean up the event listener when the component unmounts
         return () => {
           document.removeEventListener('mousedown', handleDocumentClick);
         };
       }, [isOpen, onClose]);
-    
-      // ... rest of your Cart component
   return (
     <>
     
