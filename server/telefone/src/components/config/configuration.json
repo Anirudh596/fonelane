@@ -1,0 +1,38 @@
+{
+  "collectionName": "components_config_configurations",
+  "info": {
+    "displayName": "configuration"
+  },
+  "options": {},
+  "attributes": {
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "Red",
+        "Blue",
+        "Black"
+      ]
+    },
+    "storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB64",
+        "GB128",
+        "GB256"
+      ]
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "configImg": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

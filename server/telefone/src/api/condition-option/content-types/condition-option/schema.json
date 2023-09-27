@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "condition_options",
+  "info": {
+    "singularName": "condition-option",
+    "pluralName": "condition-options",
+    "displayName": "conditionOption"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "condition": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "condition_options"
+    }
+  }
+}

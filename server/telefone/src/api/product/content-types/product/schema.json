@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "product",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "price": {
+      "type": "integer",
+      "required": true
+    },
+    "iphoneMainImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "iphoneColorImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "storage_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::storage-option.storage-option",
+      "mappedBy": "storage"
+    },
+    "condition_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::condition-option.condition-option",
+      "mappedBy": "condition"
+    },
+    "color_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::color-option.color-option",
+      "mappedBy": "colorOption"
+    }
+  }
+}
