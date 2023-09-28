@@ -53,7 +53,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
             <div className="flex-grow bg-white rounded-r-2xl z-50">
               <div className="w-full h-full flex md:flex-col justify-center md:items-center p-5">
                 <form action="" className="w-full p-5">
-                  <div className="flex flex-col justify-between md:items-center gap-5 relative">
+                  <div className="flex flex-col justify-between md:items-center gap-72 relative">
                     <div className="w-full">
                       <label htmlFor="phone_id">Mobile Number:</label>
                       <input
