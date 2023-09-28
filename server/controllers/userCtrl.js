@@ -240,10 +240,17 @@ const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const twilio = require("twilio");
 
+<<<<<<< HEAD
 // Create a user
 const createUser = asyncHandler(async (req, res) => {
   const { mobile } = req.body;
   const findUser = await User.findOne({ mobile });
+=======
+const createUser = async (req, res) => {
+  try {
+    const mobile = req.body.mobile;
+    const findUser = await User.findOne({ mobile });
+>>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
 
   if (findUser) {
     return res.status(400).json({
@@ -258,11 +265,20 @@ const createUser = asyncHandler(async (req, res) => {
 
 // Login or Register a user
 const loginUserCtrl = asyncHandler(async (req, res) => {
+<<<<<<< HEAD
   const { mobile } = req.body;
   const findUser = await User.findOne({ mobile });
 
   if (findUser && (await findUser.isMobileMatched(mobile))) {
     const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
+=======
+  const {mobile} = req.body;
+  try {
+    const findUser = await User.findOne({ mobile });
+    if(findUser && (await findUser.isMobileMatched(mobile)) ){
+      try {
+        const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
+>>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
     const authToken = "a40784a3a93d4f9fb988a595417fd52e";
     const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
     const client = twilio(accountSid, authToken);
@@ -284,6 +300,7 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
             .then(() => readline.close());
         });
       });
+<<<<<<< HEAD
   } else {
     try {
       const newUser = await User.create(req.body);
@@ -295,6 +312,14 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
         msg: "An error occurred",
         success: false,
       });
+=======
+      } catch (error) {
+        console.log(error);
+      }
+    console.log(error);
+    } else {
+      console.log("user doesn't exists")
+>>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
     }
   }
 });

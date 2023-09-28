@@ -96,7 +96,11 @@ const LoginPopup = ({ isOpen, onClose }) => {
                   <form action="" method="post">
                     <div className="flex flex-col space-y-16">
                       <div className="flex flex-row items-center justify-between mx-auto w-full max-w-xs space-x-3">
+<<<<<<< HEAD
                         {otpValues.map((value, index) => (
+=======
+                        {[1, 2, 3, 4 ].map((index) => (
+>>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
                           <div key={index} className="w-16 h-16">
                             <input
                               id={`otpInput${index}`}
