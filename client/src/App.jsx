@@ -5,7 +5,6 @@ import ProductPage from "./pages/ProductPage/ProductPage";
 import CartFloat from "./components/Cart/CartFloat/CartFloat";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Cart from "./components/Cart/Cart";
-import Login from "./components/Authantication/Login";
 
 function App() {
   return (
@@ -16,7 +15,7 @@ function App() {
         <Route path="/cartfloat" element={<CartFloat />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path="/wishlist" element={<Wishlist />}/>
-        <Route path="/login" element={<Login />}/>
+        {/* <Route path="/login" element={<Login />}/> */}
 
       </Routes>
     
