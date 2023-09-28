@@ -3,6 +3,11 @@ const bcrypt = require('bcrypt')
 // Declare the Schema of the Mongo model
 var userSchema = new mongoose.Schema({
     
+    mobile:{
+        type:String,
+        required:true,
+        unique:true,
+    },
     name:{
         type:String,
         // required:true,
@@ -10,21 +15,9 @@ var userSchema = new mongoose.Schema({
     email:{
         type:String,
         // required:true,
-        unique:true,
+        // unique:true,
     },
-    mobile:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-    // password:{
-    //     type:String,
-    //     required:true,
-    // },
-    role:{
-        type: String,
-        default: "User"
-    }
+    
 });
 
 
@@ -34,9 +27,9 @@ var userSchema = new mongoose.Schema({
     
 // });
 
-// userSchema.methods.isPasswordMatched = async function(enteredPassword) {
-//     return await bcrypt.compare(enteredPassword, this.password);
-// }
+userSchema.methods.isMobileMatched = async function(enteredMobile) {
+    return await bcrypt.compare(enteredMobile, this.mobile);
+}
 
 //Export the model
 module.exports = mongoose.model('User', userSchema);
