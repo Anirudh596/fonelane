@@ -1,0 +1,92 @@
+{
+  "kind": "collectionType",
+  "collectionName": "devices",
+  "info": {
+    "singularName": "device",
+    "pluralName": "devices",
+    "displayName": "Devices",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "minLength": 3
+    },
+    "Condition": {
+      "type": "enumeration",
+      "enum": [
+        "Fair",
+        "Good ",
+        "Excellent"
+      ],
+      "required": true,
+      "default": "Fair"
+    },
+    "RamStorage": {
+      "type": "enumeration",
+      "enum": [
+        "GB 6",
+        "GB 8",
+        "GB 12"
+      ],
+      "default": "GB 6",
+      "required": true
+    },
+    "Storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB 16",
+        "GB 32",
+        "GB 64",
+        "GB 128",
+        "GB 256",
+        "GB 512"
+      ],
+      "required": true,
+      "default": "GB 16"
+    },
+    "Price": {
+      "type": "biginteger",
+      "default": "10000",
+      "required": true,
+      "private": true,
+      "unique": true
+    },
+    "DeviceStaticImg": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "private": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "DeviceDynamicImages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "Specifications": {
+      "type": "richtext",
+      "required": true,
+      "private": true
+    },
+    "Colors": {
+      "displayName": "Colors",
+      "type": "component",
+      "repeatable": true,
+      "component": "device-info.colors",
+      "required": true,
+      "min": 1
+    }
+  }
+}
