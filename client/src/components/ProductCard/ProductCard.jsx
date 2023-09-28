@@ -24,13 +24,8 @@ function FirstCard() {
     slidesPerView = 3.5;
   }
   else if (isLaptop) {
-<<<<<<< HEAD
     slidesPerView = 4.5;
   }
-=======
-    slidesPerView = 4;
-  } 
->>>>>>> 2423310aef799f54b04f9f3b53c6f52c6e3f1920
   else if (isDesktop) {
     slidesPerView = 5;
   } else {
