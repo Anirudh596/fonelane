@@ -5,8 +5,8 @@ const asyncHandler = require("express-async-handler");
 
 const createUser = async (req, res) => {
   try {
-    const email = req.body.email;
-    const findUser = await User.findOne({ email });
+    const mobile = req.body.mobile;
+    const findUser = await User.findOne({ mobile });
 
     if (findUser) {
       // User already exists
@@ -65,7 +65,7 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
   const {mobile} = req.body;
   try {
     const findUser = await User.findOne({ mobile });
-    if(findUser){
+    if(findUser && (await findUser.isMobileMatched(mobile)) ){
       try {
         const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
     const authToken = "a40784a3a93d4f9fb988a595417fd52e";
@@ -94,13 +94,7 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
       }
     console.log(error);
     } else {
-      try {
-        const newUser = await User.create(req.body);
-    res.status(201).json(newUser);
-    console.log("not found");
-      } catch (error) {
-        console.log(error);
-      }
+      console.log("user doesn't exists")
     }
   } catch (error) {
     console.log(error);
