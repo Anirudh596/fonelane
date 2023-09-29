@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
-import Footer from "../../components/Footer/Footer";
-import Navbar from "../../components/Navigation/Navbar/Navbar";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductSection from "./ProductSection/ProductSection";
 
 function ProductPage() {
   return (
     <>
-      <Navbar />
+      
       <div className="h-full custom-w">
         <div className="flex justify-start items-center gap-3 select-none my-4">
           <Link to="/">
@@ -111,7 +109,7 @@ function ProductPage() {
           <img src="./images/planet.jpg" alt="" />
         </div>
       </div>
-      <Footer />
+      
     </>
   );
 }

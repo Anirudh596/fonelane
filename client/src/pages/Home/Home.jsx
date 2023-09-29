@@ -4,8 +4,6 @@ import ReelSection from "./ReelSection/ReelSection";
 import Accessories from "../../components/Accessories/Accessories";
 import Banner from "../../components/Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
-import Navbar from "../../components/Navigation/Navbar/Navbar";
-import Footer from "../../components/Footer/Footer";
 import AdBar from "../../components/AdBar/AdBar";
 import Blog from "../../components/Blog/Blog";
 
@@ -13,9 +11,7 @@ function Home() {
   
   return (
     <>
-      <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
-        <Navbar />
-      </div>
+      
       <div className="block md:hidden overflow-hidden">
       <AdBar />
       </div>
@@ -73,7 +69,7 @@ function Home() {
         </div>
       </div>
 
-      <Footer />
+      
     </>
   );
 }

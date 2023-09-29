@@ -1,22 +1,25 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface DeviceInfoColor extends Schema.Component {
+export interface DeviceInfoColors extends Schema.Component {
   collectionName: 'components_device_info_colors';
   info: {
-    displayName: 'Color';
+    displayName: 'Colors';
     icon: 'paint';
     description: '';
   };
   attributes: {
-    colorname: Attribute.String & Attribute.Required;
-    colorhexcode: Attribute.String & Attribute.Required;
+    colorname: Attribute.String & Attribute.Required & Attribute.Unique;
+    colorcode: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.Unique;
   };
 }
 
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'device-info.color': DeviceInfoColor;
+      'device-info.colors': DeviceInfoColors;
     }
   }
 }

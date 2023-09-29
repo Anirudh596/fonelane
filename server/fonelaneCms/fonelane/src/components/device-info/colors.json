@@ -1,7 +1,7 @@
 {
   "collectionName": "components_device_info_colors",
   "info": {
-    "displayName": "Color",
+    "displayName": "Colors",
     "icon": "paint",
     "description": ""
   },
@@ -10,11 +10,13 @@
     "colorname": {
       "type": "string",
       "required": true,
-      "unique": false
+      "unique": true
     },
-    "colorhexcode": {
+    "colorcode": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": true,
+      "private": true
     }
   }
 }
