@@ -3,13 +3,49 @@ import Review from "../../../components/Review/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faShare, faTag } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
+import {useCart} from '../../../components/context/cart'
 import axios from "axios";
-
+import CardFloat from '../../../components/Cart/CartFloat/CartFloat'
 
 function ProductSection() {
+
+  const addToCart = () => {
+    // Create an object representing the product
+    const product = {
+      id: '1',
+      title: "iPhone 13 pro max", // Change this to the actual product details
+      quality: selectedQuality,
+      spec: selectedSpec,
+      price: 81999, // Change this to the actual product price
+      quantity: 0
+    };
+
+    // Check if the product is already in the cart
+    const existingProductIndex = cart.findIndex((item) => (
+      item.id === product.id &&
+      item.quality === product.quality &&
+      item.spec === product.spec
+    ));
+
+    if (existingProductIndex !== -1) {
+      // If the product exists in the cart, update its quantity
+      const updatedCart = [...cart];
+      updatedCart[existingProductIndex].quantity += 1;
+      setCart(updatedCart);
+    } else {
+      // If the product doesn't exist, add it to the cart with a quantity of 1
+      product.quantity = 1;
+      setCart((prevCart) => [...prevCart, product]);
+    }
+
+    <CardFloat />
+  };
+
+
   const [data, setData] =useState([]);
   const [selectedQuality, setSelectedQuality] = useState("excellent"); // Default selected quality measure
   const [selectedSpec, setSelectedSpec] = useState("store2"); // Default selected quality measure
+  const [cart, setCart] = useCart()
 
   const handleQualityButtonClick = (quality) => {
     setSelectedQuality(quality);
@@ -139,7 +175,7 @@ function ProductSection() {
                 Buy Now
               </button>
 
-              <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+              <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105" onClick={addToCart}>
                 Add to Cart
               </button>
             </div>
