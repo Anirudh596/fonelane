@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@strapi/plugin-color-picker": "^4.14.0",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "connect-mongodb-session": "^3.1.1",

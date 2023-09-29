@@ -10,7 +10,6 @@ import BackBtn from "../../BackBtn/BackBtn";
 import LoginPopup from "../../Authantication/LoginPopup";
 import { motion } from "framer-motion"; // Import motion
 
-// eslint-disable-next-line react/prop-types
 function Navbar() {
   const links = [
     "About Us",
@@ -26,6 +25,7 @@ function Navbar() {
     "VIVO",
     "OPPO",
   ];
+
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLogOpen, setIsLogOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
@@ -53,11 +53,11 @@ function Navbar() {
     hidden: { x: -300 }, // Slide the sidebar out of view
     visible: { x: 0 },   // Slide the sidebar into view
   };
+
   const sidebarContentVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
-  
 
   return (
     <>
@@ -79,33 +79,33 @@ function Navbar() {
             <li>Help</li>
           </ul>
           {isSidebarOpen && (
-  <motion.div
-    className="md:hidden fixed top-0 left-0 h-full w-64 bg-white z-50 border-r border-gray-200"
-    initial="hidden"
-    animate={isSidebarOpen ? "visible" : "hidden"}
-    exit="hidden"
-    variants={sidebarVariants}
-  >
-    <motion.div
-      initial="hidden"
-      animate="visible"
-      variants={sidebarContentVariants}
-    >
-      <BackBtn
-                func={handleSidebarOptionClick}
-                className={"left-0 m-5 text-base "}
-              />
-              {links.map((link, index) => (
-                <React.Fragment key={link}>
-                  <li className="my-2 flex items-center justify-center">{link}</li>
-                  {index < links.length - 1 && (
-                    <hr className="h-px border-0 my-1 bg-gray-200" />
-                  )}
-                </React.Fragment>
-              ))}
-    </motion.div>
-  </motion.div>
-)}
+            <motion.div
+              className="md:hidden fixed top-0 left-0 h-full w-64 bg-white z-50 border-r border-gray-200"
+              initial="hidden"
+              animate={isSidebarOpen ? "visible" : "hidden"}
+              exit="hidden"
+              variants={sidebarVariants}
+            >
+              <motion.div
+                initial="hidden"
+                animate="visible"
+                variants={sidebarContentVariants}
+              >
+                <BackBtn
+                  func={handleSidebarOptionClick}
+                  className={"left-0 m-5 text-base "}
+                />
+                {links.map((link, index) => (
+                  <React.Fragment key={link}>
+                    <li className="my-2 flex items-center justify-center">{link}</li>
+                    {index < links.length - 1 && (
+                      <hr className="h-px border-0 my-1 bg-gray-200" />
+                    )}
+                  </React.Fragment>
+                ))}
+              </motion.div>
+            </motion.div>
+          )}
           <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6 hidden md:flex">
             <Search />
           </div>
@@ -146,7 +146,5 @@ function Navbar() {
     </>
   );
 }
-
-
 
 export default Navbar;
