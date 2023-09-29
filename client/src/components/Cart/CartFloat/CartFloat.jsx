@@ -1,40 +1,45 @@
 import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import DropdownMenu from "../../DropMenu/DropdownMenu";
+import BackBtn from "../../BackBtn/BackBtn";
+import ProductCard from "../../ProductCard/ProductCard";
 
 // eslint-disable-next-line react/prop-types
-function CartFloat({isOpen, onClose }) {
-    useEffect(() => {
-        const handleDocumentClick = (e) => {
-          if (isOpen) {
-            if (!e.target.closest('.cart-container')) {
-              onClose();
-            }
-          }
-        };
-    
-        return () => {
-          document.removeEventListener('mousedown', handleDocumentClick);
-        };
-      }, [isOpen, onClose]);
+function CartFloat({ isOpen, onClose }) {
+  useEffect(() => {
+    const handleDocumentClick = (e) => {
+      if (isOpen) {
+        if (!e.target.closest(".cart-container")) {
+          onClose();
+        }
+      }
+    };
+
+    return () => {
+      document.removeEventListener("mousedown", handleDocumentClick);
+    };
+  }, [isOpen, onClose]);
   return (
     <>
-    
-    <div className={`fixed top-0 right-0 h-full w-1/3 bg-white z-50 transform transition-transform  ease-in-out duration-700 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-      {/* Your cart content goes here */}
-      <button onClick={onClose} className="absolute top-2 right-2 text-gray-600 hover:text-gray-800">
-        Close
-      </button>
-      <h2 className="text-2xl font-semibold mb-4">Your Cart</h2>
-      
-      
-      <Link to='/cart'><button  className="mt-4 bg-blue-500 text-white px-4 py-2 hover:bg-blue-600">
-        Go to Cart
-      </button></Link>
-      <DropdownMenu />
-    </div>
+      <div
+        className={`fixed top-0 right-0 h-full w-1/3 bg-white z-50 transform transition-transform  ease-in-out duration-700 ${
+          isOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        <div className="flex justify-between items-center">
+          <h2>Your Cart</h2>
+          <BackBtn func={onClose} className={"text-base"} />
+        </div>
+        <div>
+          <div></div>
+          <div></div>
+          <div>
+            <p>You may also like </p>
+            <ProductCard />
+          </div>
+        </div>
+        <div></div>
+      </div>
     </>
-  )
+  );
 }
 
-export default CartFloat
+export default CartFloat;
