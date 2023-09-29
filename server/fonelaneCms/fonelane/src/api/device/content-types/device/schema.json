@@ -58,12 +58,8 @@
       ]
     },
     "colors": {
-      "displayName": "Colors",
-      "type": "component",
-      "repeatable": true,
-      "component": "device-info.colors",
-      "required": true,
-      "min": 1
+      "type": "json",
+      "required": true
     }
   }
 }

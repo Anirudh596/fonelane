@@ -773,11 +773,7 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
       Attribute.DefaultTo<'GB16'>;
     mainimage: Attribute.Media & Attribute.Required;
     otherimages: Attribute.Media & Attribute.Required;
-    colors: Attribute.Component<'device-info.colors', true> &
-      Attribute.Required &
-      Attribute.SetMinMax<{
-        min: 1;
-      }>;
+    colors: Attribute.JSON & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
