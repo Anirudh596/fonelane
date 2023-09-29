@@ -6,7 +6,6 @@ import CartFloat from "./components/Cart/CartFloat/CartFloat";
 import Wishlist from "./components/Wishlist/Wishlist";
 import Cart from "./components/Cart/Cart";
 // import SignupPopup from "./components/Authantication/SignUp";
-import SignUp from "./components/Authantication/SignUp";
 
 function App() {
   return (
@@ -17,12 +16,11 @@ function App() {
         <Route path="/cartfloat" element={<CartFloat />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path="/wishlist" element={<Wishlist />}/>
-        <Route path="/sign" element={<SignUp/>} />
         {/* <Route path="/login" element={<Login />}/> */}
 
       </Routes>
     
-        {/* <Home /> */}
+        {/* <Home /> */}  
         {/* <LogIn />      */}
         {/* <SignUp /> */}
     </>
