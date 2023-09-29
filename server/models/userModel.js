@@ -17,19 +17,7 @@ var userSchema = new mongoose.Schema({
         // required:true,
         // unique:true,
     },
-<<<<<<< HEAD
     
-=======
-    mobile:{
-        type:String,
-        required:true,
-        unique:true,
-    },
-    role:{
-        type: String,
-        default: "User"
-    }
->>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
 });
 
 
