@@ -31,10 +31,6 @@ function CartFloat({ isOpen, onClose }) {
         <div>
           <div></div>
           <div></div>
-          <div>
-            <p>You may also like </p>
-            <ProductCard />
-          </div>
         </div>
         <div></div>
       </div>

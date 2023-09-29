@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from "react";
 import BackBtn from "../BackBtn/BackBtn";
 import axios from "axios";
 
-// eslint-disable-next-line react/prop-types
 const LoginPopup = ({ isOpen, onClose }) => {
   const popupVariants = {
     hidden: { opacity: 0, scale: 0 },
@@ -98,42 +97,58 @@ const LoginPopup = ({ isOpen, onClose }) => {
             <div className="flex-grow bg-white rounded-r-2xl z-30">
               <div className="w-full h-full flex md:flex-col justify-center md:items-center p-5">
                 {showOTPForm ? (
-                  <form action="" method="post">
-                    <div className="flex flex-col space-y-16">
-                      <div className="flex flex-row items-center justify-between mx-auto w-full max-w-xs space-x-3">
-<<<<<<< HEAD
-                        {otpValues.map((value, index) => (
-=======
-                        {[1, 2, 3, 4 ].map((index) => (
->>>>>>> 600091cbddae798d9e820700c394e97aec16f47a
-                          <div key={index} className="w-16 h-16">
-                            <input
-                              id={`otpInput${index}`}
-                              className="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
-                              type="text"
-                              name={`otpInput${index}`}
-                              maxLength="1" // Limit input length to 1 character
-                              value={value}
-                              onChange={(e) => handleOtpChange(index, e.target.value)}
-                            />
-                          </div>
-                        ))}
-                      </div>
-                      <div className="flex flex-col space-y-5">
-                        <div className="flex flex-row items-center justify-center text-center text-sm font-medium space-x-1 text-gray-500">
-                          <p>Didn{"'"}t receive the code?</p>
-                          <a
-                            className="text-blue-600"
-                            href="http://"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            Resend
-                          </a>
+                  <form action="POST" method="post">
+                  <div className="flex flex-col space-y-16">
+                    <div className="flex flex-row items-center justify-between mx-auto w-full max-w-xs space-x-3">
+                      {otpValues.map((value, index) => (
+                        <div key={index} className="w-16 h-16">
+                          <input
+                            id={`otpInput${index}`}
+                            className="w-full h-full flex flex-col items-center justify-center text-center mx-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                            type="text"
+                            name={`otpInput${index}`}
+                            maxLength="1"
+                            value={value}
+                            onChange={(e) => handleOtpChange(index, e.target.value)}
+                          />
                         </div>
+                      ))}
+                    </div>
+                    <div className="flex flex-col space-y-5">
+                      <div className="flex flex-row items-center justify-center text-center text-sm font-medium space-x-1 text-gray-500">
+                        <p>Didn't receive the code?</p>
+                        <a
+                          className="text-blue-600"
+                          href="http://"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Resend
+                        </a>
+                      </div>
+                      <div className="flex justify-center">
+                        <button
+                          type="submit"
+                          className="bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 cursor-pointer"
+                        >
+                          Submit OTP
+                        </button>
+                      </div>
+                      <div className="flex justify-center mt-3">
+                        <button
+                          type="button"
+                          onClick={() => setShowOTPForm(false)}
+                          className="text-blue-500 cursor-pointer hover:underline"
+                        >
+                          Back to Login
+                        </button>
                       </div>
                     </div>
-                  </form>
+                  </div>
+                </form>
+                
+                ) : isSignUp ? (
+                  <SignUp onFormClose={toggleForm} />
                 ) : (
                   <form action="POST" className="w-full p-5">
                     <div className="flex flex-col justify-between md:items-center gap-72 relative">
