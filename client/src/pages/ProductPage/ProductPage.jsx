@@ -7,17 +7,17 @@ function ProductPage() {
     <>
       
       <div className="h-full custom-w">
-        <div className="flex justify-start items-center gap-3 select-none my-4">
+        <div className="flex justify-start items-center gap-1.5 md:gap-3 select-none my-4 text-[12px] md:text-sm">
           <Link to="/">
-            <p className="cursor-pointer active:opacity-80 active:underline">
+            <p className="cursor-pointer active:opacity-80 active:underline ">
               Home
             </p>
           </Link>
-          <p className="flex justify-center items-center text-[20px]">{">"}</p>
+          <p className="flex justify-center items-center text-[12px] md:text-sm">{">"}</p>
           <p className="cursor-pointer active:opacity-80 active:underline">
             Refurbished Devices
           </p>
-          <p className="flex justify-center items-center text-[20px]">{">"}</p>
+          <p className="flex justify-center items-center text-[12px] md:text-sm">{">"}</p>
           <p className="cursor-pointer active:opacity-80 active:underline">
             Iphone 13 pro Max- Refurbished
           </p>
@@ -28,7 +28,7 @@ function ProductPage() {
           <p className="text-[16px] font-medium flex gap-3">
             Fonelane Assured <p className="text-[#32cd32]">[whats This]</p>
           </p>
-          <div className="flex justify-between items-center ">
+          <div className="flex justify-center md:justify-between items-center flex-wrap gap-2">
             <img
               src="./images/banner.png"
               alt=""
@@ -57,10 +57,10 @@ function ProductPage() {
         </div>
         <ProductCard />
         <div className="title my-10">
-          <p className="text-[28px] font-bold">You may also like</p>
+          <p className="text-[28px] font-bold">Specification</p>
         </div>
-        <div className="w-full h-[50vh] flex justify-start px-10 items-center bg-slate-300">
-          <div className=" w-1/2 text-">
+        <div className="w-full h-fit  md:h-[50vh] flex justify-center md:justify-start px-10 items-center bg-slate-300">
+          <div className="w-full my-10 md:my-1 md:w-1/2 text-xs md:text-sm leading-5">
             <p>
               Storage: <span>6GB RAM </span> | <span>128GB ROM</span>
             </p>
@@ -101,7 +101,7 @@ function ProductPage() {
               More Detailed Specs
             </button>
           </div>
-          <div className="flex-auto w-1/2 h-auto">
+          <div className="hidden md:flex-auto w-1/2 h-auto">
             <img src="./images/spec.png" alt="" />
           </div>
         </div>
