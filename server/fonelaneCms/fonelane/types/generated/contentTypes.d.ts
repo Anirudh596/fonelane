@@ -362,100 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiAppleApple extends Schema.CollectionType {
-  collectionName: 'apples';
-  info: {
-    singularName: 'apple';
-    pluralName: 'apples';
-    displayName: 'Apple';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    apple: Attribute.String;
-    iphones: Attribute.Relation<
-      'api::apple.apple',
-      'oneToMany',
-      'api::iphone.iphone'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::apple.apple',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::apple.apple',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiIphoneIphone extends Schema.CollectionType {
-  collectionName: 'iphones';
-  info: {
-    singularName: 'iphone';
-    pluralName: 'iphones';
-    displayName: 'iphone';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.Unique;
-    price: Attribute.Integer &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.Unique &
-      Attribute.DefaultTo<100>;
-    colors: Attribute.Component<'device-colors.colors', true> &
-      Attribute.Required;
-    Storage: Attribute.Enumeration<
-      ['GB16', 'GB32', 'GB64', 'GB128', 'GB256', 'GB512']
-    > &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.DefaultTo<'GB16'>;
-    Condition: Attribute.Enumeration<['Fair', 'Good', 'Excellent']> &
-      Attribute.Required &
-      Attribute.Private &
-      Attribute.DefaultTo<'Fair'>;
-    Specification: Attribute.RichText & Attribute.Required & Attribute.Private;
-    mainimage: Attribute.Media & Attribute.Required & Attribute.Private;
-    otherimages: Attribute.Media & Attribute.Private;
-    apple: Attribute.Relation<
-      'api::iphone.iphone',
-      'manyToOne',
-      'api::apple.apple'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::iphone.iphone',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::iphone.iphone',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -771,6 +677,100 @@ export interface PluginI18NLocale extends Schema.CollectionType {
   };
 }
 
+export interface ApiAppleApple extends Schema.CollectionType {
+  collectionName: 'apples';
+  info: {
+    singularName: 'apple';
+    pluralName: 'apples';
+    displayName: 'Apple';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apple: Attribute.String;
+    iphones: Attribute.Relation<
+      'api::apple.apple',
+      'oneToMany',
+      'api::iphone.iphone'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::apple.apple',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::apple.apple',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphoneIphone extends Schema.CollectionType {
+  collectionName: 'iphones';
+  info: {
+    singularName: 'iphone';
+    pluralName: 'iphones';
+    displayName: 'iphone';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.Unique;
+    price: Attribute.Integer &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.Unique &
+      Attribute.DefaultTo<100>;
+    colors: Attribute.Component<'device-colors.colors', true> &
+      Attribute.Required;
+    Storage: Attribute.Enumeration<
+      ['GB16', 'GB32', 'GB64', 'GB128', 'GB256', 'GB512']
+    > &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'GB16'>;
+    Condition: Attribute.Enumeration<['Fair', 'Good', 'Excellent']> &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Fair'>;
+    Specification: Attribute.RichText & Attribute.Required & Attribute.Private;
+    mainimage: Attribute.Media & Attribute.Required & Attribute.Private;
+    otherimages: Attribute.Media & Attribute.Private;
+    apple: Attribute.Relation<
+      'api::iphone.iphone',
+      'manyToOne',
+      'api::apple.apple'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone.iphone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone.iphone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -781,14 +781,14 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::apple.apple': ApiAppleApple;
-      'api::iphone.iphone': ApiIphoneIphone;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'plugin::i18n.locale': PluginI18NLocale;
+      'api::apple.apple': ApiAppleApple;
+      'api::iphone.iphone': ApiIphoneIphone;
     }
   }
 }

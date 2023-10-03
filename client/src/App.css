@@ -161,8 +161,10 @@
 }
 
 .selected {
-  background-color: #000000; /* Change to your desired background color */
-  color: #fff; /* Change to your desired text color */
+  background-color: #e7E0F8; /* Change to your desired background color */
+  color: #000;
+  border: 1px solid black; 
+  font-weight: 500;/* Change to your desired text color */
 }
 
 /* custom.css */
