@@ -362,13 +362,48 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiDeviceDevice extends Schema.CollectionType {
-  collectionName: 'devices';
+export interface ApiAppleApple extends Schema.CollectionType {
+  collectionName: 'apples';
   info: {
-    singularName: 'device';
-    pluralName: 'devices';
-    displayName: 'Device';
+    singularName: 'apple';
+    pluralName: 'apples';
+    displayName: 'Apple';
     description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    apple: Attribute.String;
+    iphones: Attribute.Relation<
+      'api::apple.apple',
+      'oneToMany',
+      'api::iphone.iphone'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::apple.apple',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::apple.apple',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphoneIphone extends Schema.CollectionType {
+  collectionName: 'iphones';
+  info: {
+    singularName: 'iphone';
+    pluralName: 'iphones';
+    displayName: 'iphone';
   };
   options: {
     draftAndPublish: true;
@@ -377,36 +412,43 @@ export interface ApiDeviceDevice extends Schema.CollectionType {
     title: Attribute.String &
       Attribute.Required &
       Attribute.Private &
-      Attribute.Unique &
-      Attribute.SetMinMaxLength<{
-        minLength: 3;
-        maxLength: 70;
-      }>;
-    dUrl: Attribute.UID<'api::device.device', 'title'> & Attribute.Required;
-    mainimage: Attribute.Media & Attribute.Required & Attribute.Private;
-    otherimages: Attribute.Media & Attribute.Required & Attribute.Private;
+      Attribute.Unique;
     price: Attribute.Integer &
       Attribute.Required &
       Attribute.Private &
-      Attribute.SetMinMax<{
-        min: 100;
-      }>;
-    condition: Attribute.Enumeration<['Fair', 'Good', 'Excellent']> &
-      Attribute.Required &
-      Attribute.DefaultTo<'Fair'>;
-    colorname: Attribute.Component<'device-info.color', true> &
+      Attribute.Unique &
+      Attribute.DefaultTo<100>;
+    colors: Attribute.Component<'device-colors.colors', true> &
       Attribute.Required;
+    Storage: Attribute.Enumeration<
+      ['GB16', 'GB32', 'GB64', 'GB128', 'GB256', 'GB512']
+    > &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'GB16'>;
+    Condition: Attribute.Enumeration<['Fair', 'Good', 'Excellent']> &
+      Attribute.Required &
+      Attribute.Private &
+      Attribute.DefaultTo<'Fair'>;
+    Specification: Attribute.RichText & Attribute.Required & Attribute.Private;
+    mainimage: Attribute.Media & Attribute.Required & Attribute.Private;
+    otherimages: Attribute.Media & Attribute.Private;
+    apple: Attribute.Relation<
+      'api::iphone.iphone',
+      'manyToOne',
+      'api::apple.apple'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::device.device',
+      'api::iphone.iphone',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::device.device',
+      'api::iphone.iphone',
       'oneToOne',
       'admin::user'
     > &
@@ -739,7 +781,8 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::device.device': ApiDeviceDevice;
+      'api::apple.apple': ApiAppleApple;
+      'api::iphone.iphone': ApiIphoneIphone;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;

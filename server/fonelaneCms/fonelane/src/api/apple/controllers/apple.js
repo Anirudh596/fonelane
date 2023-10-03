@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * device controller
+ * apple controller
  */
 
 const { createCoreController } = require('@strapi/strapi').factories;
 
-module.exports = createCoreController('api::device.device');
+module.exports = createCoreController('api::apple.apple');

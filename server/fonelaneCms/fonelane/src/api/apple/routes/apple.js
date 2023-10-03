@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * device router
+ * apple router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::device.device');
+module.exports = createCoreRouter('api::apple.apple');

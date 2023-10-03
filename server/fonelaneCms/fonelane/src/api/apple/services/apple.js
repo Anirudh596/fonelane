@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * device service
+ * apple service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::device.device');
+module.exports = createCoreService('api::apple.apple');

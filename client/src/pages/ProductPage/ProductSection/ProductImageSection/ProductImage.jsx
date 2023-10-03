@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import { useState, useEffect, useMemo } from "react";
 
 // function ProductImage() {
@@ -62,6 +63,17 @@
 
 import { useState, useEffect } from "react";
 import axios from "axios";
+=======
+import { useState, useEffect, useMemo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-creative";
+// import required modules
+import { EffectCreative } from 'swiper/modules';
+
+// Remove unused import
+// import { EffectCreative } from 'swiper/modules';
+>>>>>>> c9cafacb07a2acf44423f54cc969a9ba5745c326
 
 function ProductImage() {
   const [selectedImage, setSelectedImage] = useState(null);

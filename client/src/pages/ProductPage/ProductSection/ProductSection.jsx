@@ -1,11 +1,12 @@
 import ProductImage from "./ProductImageSection/ProductImage";
 import Review from "../../../components/Review/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faShare, faTag } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faTag } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import {useCart} from '../../../components/context/cart'
+import { useCart } from "../../../components/context/cart";
 import axios from "axios";
-import CardFloat from '../../../components/Cart/CartFloat/CartFloat'
+import CardFloat from "../../../components/Cart/CartFloat/CartFloat";
+import { AiOutlineShareAlt } from "react-icons/ai";
 
 function ProductSection(props) {
 
@@ -30,20 +31,21 @@ function ProductSection(props) {
   const addToCart = () => {
     // Create an object representing the product
     const product = {
-      id: '1',
+      id: "1",
       title: "iPhone 13 pro max", // Change this to the actual product details
       quality: selectedQuality,
       spec: selectedSpec,
       price: 81999, // Change this to the actual product price
-      quantity: 0
+      quantity: 0,
     };
 
     // Check if the product is already in the cart
-    const existingProductIndex = cart.findIndex((item) => (
-      item.id === product.id &&
-      item.quality === product.quality &&
-      item.spec === product.spec
-    ));
+    const existingProductIndex = cart.findIndex(
+      (item) =>
+        item.id === product.id &&
+        item.quality === product.quality &&
+        item.spec === product.spec
+    );
 
     if (existingProductIndex !== -1) {
       // If the product exists in the cart, update its quantity
@@ -56,14 +58,13 @@ function ProductSection(props) {
       setCart((prevCart) => [...prevCart, product]);
     }
 
-    <CardFloat />
+    <CardFloat />;
   };
 
-
-  const [data, setData] =useState([]);
+  const [data, setData] = useState([]);
   const [selectedQuality, setSelectedQuality] = useState("excellent"); // Default selected quality measure
   const [selectedSpec, setSelectedSpec] = useState("store2"); // Default selected quality measure
-  const [cart, setCart] = useCart()
+  const [cart, setCart] = useCart();
 
   const handleQualityButtonClick = (quality) => {
     setSelectedQuality(quality);
@@ -76,12 +77,12 @@ function ProductSection(props) {
 
   return (
     <>
-      <div className="flex h-screen">
-        <div className="flex-1">
+      <div className="flex custom-w h-fit md:h-screen flex-col md:flex-row">
+        <div className=" md:flex-1">
           <ProductImage />
         </div>
 
-        <div className="flex-1 w-full h-[90vh] px-8 py-8 overflow-y-scroll scrollbar-hide">
+        <div className=" md:flex-1 w-full h-fit md:h-[90vh] px-8 py-8 over md:overflow-y-scroll scrollbar-hide">
           <div className="main-sec flex flex-col gap-4 justify-start ">
             <div className="title-icon flex gap-16 justify-start items-center">
               <div className="titles left-0 w-full">
@@ -90,8 +91,8 @@ function ProductSection(props) {
                     {data.title} 
                   </p>{" "}
                 </div>
-                <div className="spec-config grid grid-cols-3 auto-cols-auto text-center items-center gap-2 w-full flex-nowrap">
-                  <p className=" border-r-2 border-black pr-2 py-1">
+                <div className="spec-config hidden md:grid  md:grid-cols-3 auto-cols-auto text-center items-center gap-2 w-full flex-nowrap text-[10px] md:text-sm ">
+                  <p className=" border-r-2 border-black pr-2 py-1 ">
                     Quality:{" "}
                     <span>
                       {selectedQuality === "fair" && "Fair"}
@@ -116,24 +117,19 @@ function ProductSection(props) {
                 </div>
                 <div className="review cursor-pointer flex flex-nowrap items-center">
                   <Review />
-                  <p className="mx-1 text-[25px] font-extralight ">|</p>
-                  <p>
-                    <span>3000 </span> reviews
-                  </p>
+                  <p className="mx-1  md:text-[25px] font-extralight ">|</p>
+                  <p>300 reviews</p>
                 </div>
               </div>
-              <div className="icons ">
-                <div className="text-[24px] text-[#ee0e10] cursor-pointer group ">
+              <div className="icons flex flex-col gap-5">
+                <div className="text-xl md:text-[24px] text-[#ee0e10] cursor-pointer group ">
                   <FontAwesomeIcon
                     icon={faHeart}
                     className="group-hover:scale-110 ease-in-out duration-200 active:text-[#ee600e]"
                   />
                 </div>
-                <div className="text-[24px]  cursor-pointer group ">
-                  <FontAwesomeIcon
-                    icon={faShare}
-                    className="group-hover:scale-110 ease-in-out duration-200 active:text-[#db0eee]"
-                  />
+                <div className="text-xl md:text-[24px]  cursor-pointer group ">
+                  <AiOutlineShareAlt className="group-hover:scale-110 ease-in-out duration-200 active:text-[#db0eee]" />
                 </div>
               </div>
             </div>
@@ -153,8 +149,8 @@ function ProductSection(props) {
               </div>
             </div>
             <hr className="w-full" />
-            <div>
-              <div className="flex gap-3 text-center items-center">
+            <div className="text-xs md:text-sm">
+              <div className="flex gap-3 text-center items-center ">
                 <FontAwesomeIcon
                   icon={faTag}
                   className="text-[#ff5659]"
@@ -172,7 +168,7 @@ function ProductSection(props) {
               </div>
             </div>
             <hr className="w-full" />
-            <div className="buttons flex gap-3">
+            <div className="buttons flex gap-3 text-sm md:text-base">
               <button className=" flex-1 px-5  border border-black flex justify-center items-center rounded-lg py-2 active:bg-black active:text-white hover:scale-105">
                 Buy Now
               </button>
@@ -181,17 +177,16 @@ function ProductSection(props) {
                 Add to Cart
               </button>
             </div>
-            <div className="constion">
+            <div className="constion hidden md:block">
               <p>Condition :</p>
-              <div className="flex gap-3 flex-nowrap">
+              <div className=" flex gap-3 flex-nowrap">
                 <button
                   onClick={() => handleQualityButtonClick("fair")}
                   className={`${
                     selectedQuality === "fair" ? "selected" : ""
-                  } w-[170px] h-[110px] bg-slate-300 rounded-2xl  hover:scale-105 flex flex-col justify-center items-center `}
+                  } w-44 h-24 bg-slate-300 rounded-2xl  hover:scale-105 flex flex-col justify-center items-center `}
                 >
                   <p className="text-[18px]">Fair</p>
-                  <p className="text-[40px]">🙂</p>
                 </button>
                 <button
                   onClick={() => handleQualityButtonClick("good")}
@@ -200,7 +195,6 @@ function ProductSection(props) {
                   } w-[170px] h-[110px] bg-slate-300 rounded-2xl  hover:scale-105 flex flex-col justify-center items-center`}
                 >
                   <p className="text-[18px]">Good</p>
-                  <p className="text-[40px]">😀</p>
                 </button>
                 <button
                   onClick={() => handleQualityButtonClick("excellent")}
@@ -209,11 +203,10 @@ function ProductSection(props) {
                   } w-[170px] h-[110px] bg-slate-300 rounded-2xl  hover:scale-105 flex flex-col justify-center items-center`}
                 >
                   <p className="text-[18px]">Excellent</p>
-                  <p className="text-[40px] ">🤩</p>
                 </button>
               </div>
             </div>
-            <div className="storage">
+            <div className="storage hidden md:block">
               <div>
                 <p>Storages :</p>
               </div>
@@ -252,13 +245,14 @@ function ProductSection(props) {
                 </button>
               </div>
             </div>
-            <div className="colors">
+            <div className="colors hidden md:block">
               <div className="">
                 <p>Colors :</p>
               </div>
               <div className="flex items-center gap-4">
-              <div className=" justify-center items-center w-12 h-12 border-0 border-black flex focus:border">
-                <button className="w-10 h-10 flex bg-[#BFDAF7] rounded-lg justify-center items-center"></button></div>
+                <div className=" justify-center items-center w-12 h-12 border-0 border-black flex focus:border">
+                  <button className="w-10 h-10 flex bg-[#BFDAF7] rounded-lg justify-center items-center"></button>
+                </div>
                 <button className="w-10 h-10 bg-[#485748] rounded-lg"></button>
                 <button className="w-10 h-10 bg-[#ffe8d2] rounded-lg"></button>
                 <button className="w-10 h-10 bg-[#d9d9d9] rounded-lg"></button>
@@ -267,8 +261,21 @@ function ProductSection(props) {
             <div className="pincode flex flex-col gap-3">
               <p>Pincode :</p>
               <div className="flex">
-                    <input type="text" id="pin-check" name="PinCheck" placeholder="Enter Pincode for expected Data of Delivery" className="w-[300px] rounded-lg border border-black py-3 px-3 text-[12px] focus:text-[16px] z-10"/><input type="submit" value="Check" id="pin-check-btn" name="PinCheckBtn" className="px-3 py-3  w-[120px] bg-black text-white rounded-lg ml-[-20px] " />
-                    </div>
+                <input
+                  type="text"
+                  id="pin-check"
+                  name="PinCheck"
+                  placeholder="Enter Pincode for expected Data of Delivery"
+                  className="w-[300px] rounded-lg border border-black py-3 px-3 text-[12px] focus:text-[16px] z-10"
+                />
+                <input
+                  type="submit"
+                  value="Check"
+                  id="pin-check-btn"
+                  name="PinCheckBtn"
+                  className="px-3 py-3  w-[120px] bg-black text-white rounded-lg ml-[-20px] "
+                />
+              </div>
             </div>
           </div>
         </div>

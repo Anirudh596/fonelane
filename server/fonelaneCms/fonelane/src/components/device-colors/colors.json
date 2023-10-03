@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_device_colors_colors",
+  "info": {
+    "displayName": "colors",
+    "icon": "paint"
+  },
+  "options": {},
+  "attributes": {
+    "colorname": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "black",
+        "red"
+      ],
+      "default": "blue",
+      "required": true,
+      "private": true
+    },
+    "maincolorimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "private": true,
+      "required": true
+    },
+    "othercolorimages": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "private": true
+    }
+  }
+}

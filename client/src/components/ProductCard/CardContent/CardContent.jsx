@@ -60,7 +60,7 @@ function CardContent({pIndex}) {
           <p className="text-base md:text-sm lg:text-sm xl:text-base font-semibold">{data.title}</p>
         </div>
         <p className="text-[5px] md:text-xs" >starting from</p>
-        <p className="text-sm md:text-xs lg:text-xs                                                    xl:text-xs font-semibold gap-2 flex justify-start items-end mx-2">
+        <p className="text-sm md:text-xs lg:text-xs xl:text-xs font-semibold gap-2 flex justify-start items-end mx-2">
           ₹{data.price} <span className="text-[10px] md:text-xs lg:text-xs xl:text-xs font-normal">M.R.P: ₹<span className="line-through">99,999</span></span>
         </p>
         <p className="text-[8px] md:text-[10px] lg:text-[8px] xl:text-[11px]">or only ₹xxx per month</p>

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "apples",
+  "info": {
+    "singularName": "apple",
+    "pluralName": "apples",
+    "displayName": "Apple",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "apple": {
+      "type": "string"
+    },
+    "iphones": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone.iphone",
+      "mappedBy": "apple"
+    }
+  }
+}
