@@ -9,14 +9,15 @@ function CardContent({pIndex}) {
 
   useEffect(() => {
     const fetchData = async () => {
-      try {
-        const res = await axios.get(`http://localhost:1337/api/products/${pIndex}?populate=*`, {
+       try {
+        const res = await axios.get(`http://localhost:1337/api/iphones/${pIndex}?populate=*`, {
           headers: {
-            Authorization: "bearer " + "2ec30f082320c496ed24bc7722585cefc1b1078e6b32f5b77f5de157190641ef31ba5b3d4ddab8b53b227e7be72750200641d55f6c00f4190df68656dee12f8acf40d16712faf76f49ca4348826da57778fff1c384e5b96867a2a52bf64e2d31b90d712528ed1117b68326f2fd7a36caacfe37260b8f923f032bc62d791a8119",
-          },
-        });
-        // setImageData(res.data.data?.attributes.images.data?.attributes);
-        setImageData(res.data.data?.attributes.images.data[0]?.attributes);
+            Authorization: "bearer "+ "ea2cc92777940d9cd90404735d813e642f04d4895d82f82372a51ea4b98cf0f851111798b2a88b55c9c048ec8c2f8d265dd0514b02c02c06efb5e21ca8f09e06ab5f92c596a6962f7b02ebe6ea6cb580c9ff42c892a94594fed906b0b27dd896fe141b51991b4a2cbe6562cc7359b718809b3331625b57982c5223bb9152f2ee",
+          }
+        }
+        );
+        // setData(res.data.data?.attributes);
+        setImageData(res.data.data.attributes.mainimage.data.attributes);
       } catch (error) {
         console.error(error);
       }
@@ -25,20 +26,38 @@ function CardContent({pIndex}) {
   }, []);
 
   useEffect(() => {
-    const fetchData = async () => {
+    const fetchData = async ()=>{
       try {
-        const res = await axios.get(`http://localhost:1337/api/products/${pIndex}`, {
+        const res = await axios.get(`http://localhost:1337/api/iphones/${pIndex}`, {
           headers: {
-            Authorization: "bearer " + "2ec30f082320c496ed24bc7722585cefc1b1078e6b32f5b77f5de157190641ef31ba5b3d4ddab8b53b227e7be72750200641d55f6c00f4190df68656dee12f8acf40d16712faf76f49ca4348826da57778fff1c384e5b96867a2a52bf64e2d31b90d712528ed1117b68326f2fd7a36caacfe37260b8f923f032bc62d791a8119",
-          },
-        });
-        setData(res.data.data?.attributes);
+            Authorization: "bearer "+ "ea2cc92777940d9cd90404735d813e642f04d4895d82f82372a51ea4b98cf0f851111798b2a88b55c9c048ec8c2f8d265dd0514b02c02c06efb5e21ca8f09e06ab5f92c596a6962f7b02ebe6ea6cb580c9ff42c892a94594fed906b0b27dd896fe141b51991b4a2cbe6562cc7359b718809b3331625b57982c5223bb9152f2ee",
+          }
+        }
+        );
+        // setData(res.data.data?.attributes);
+        setData(res.data.data.attributes);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchData();
-  }, []);
+    fetchData()
+  }, [])
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     try {
+  //       const res = await axios.get(`http://localhost:1337/api/apples/${pIndex}`, {
+  //         headers: {
+  //           Authorization: "bearer " + "2ec30f082320c496ed24bc7722585cefc1b1078e6b32f5b77f5de157190641ef31ba5b3d4ddab8b53b227e7be72750200641d55f6c00f4190df68656dee12f8acf40d16712faf76f49ca4348826da57778fff1c384e5b96867a2a52bf64e2d31b90d712528ed1117b68326f2fd7a36caacfe37260b8f923f032bc62d791a8119",
+  //         },
+  //       });
+  //       setData(res.data.data?.attributes);
+  //     } catch (error) {
+  //       console.log(error);
+  //     }
+  //   };
+  //   fetchData();
+  // }, []);
 
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">

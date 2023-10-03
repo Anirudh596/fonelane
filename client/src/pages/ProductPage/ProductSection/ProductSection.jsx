@@ -2,13 +2,14 @@ import ProductImage from "./ProductImageSection/ProductImage";
 import Review from "../../../components/Review/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "../../../components/context/cart";
 // import CardFloat from "../../../components/Cart/CartFloat/CartFloat";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import { BsPatchCheckFill } from "react-icons/bs";
 import Specs from "../../../components/Specs";
+import axios from "axios";
 
 // import CartFloat from "../../../components/Cart/CartFloat/CartFloat";
 
@@ -17,18 +18,20 @@ function ProductSection(props) {
   const [selectedQuality, setSelectedQuality] = useState("excellent");
   const [selectedSpec, setSelectedSpec] = useState("store2");
   const [selectedColor, setSelectedColor] = useState("color1");
+  const [data, setData] = useState("");
   // const [cart, setCart] = useCart();
 
   useEffect(() => {
     const fetchData = async ()=>{
       try {
-        const res = await axios.get(`http://localhost:1337/api/products/${props.product}`, {
+        const res = await axios.get(`http://localhost:1337/api/apples?populate=iphone-6`, {
           headers: {
             Authorization: "bearer "+ "ea2cc92777940d9cd90404735d813e642f04d4895d82f82372a51ea4b98cf0f851111798b2a88b55c9c048ec8c2f8d265dd0514b02c02c06efb5e21ca8f09e06ab5f92c596a6962f7b02ebe6ea6cb580c9ff42c892a94594fed906b0b27dd896fe141b51991b4a2cbe6562cc7359b718809b3331625b57982c5223bb9152f2ee",
           }
         }
         );
-        setData(res.data.data?.attributes);
+        // setData(res.data.data?.attributes);
+        console.log(res.data.data);
       } catch (error) {
         console.log(error);
       }
