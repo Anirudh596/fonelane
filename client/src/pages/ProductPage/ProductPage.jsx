@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductSection from "./ProductSection/ProductSection";
+import { PiShoppingCartLight } from "react-icons/pi";
 
 function ProductPage() {
   return (
     <>
-      
       <div className="h-full custom-w">
         <div className="flex justify-start items-center gap-1.5 md:gap-3 select-none my-4 text-[12px] md:text-sm">
           <Link to="/">
@@ -13,22 +13,26 @@ function ProductPage() {
               Home
             </p>
           </Link>
-          <p className="flex justify-center items-center text-[12px] md:text-sm">{">"}</p>
+          <p className="flex justify-center items-center text-[12px] md:text-sm">
+            {">"}
+          </p>
           <p className="cursor-pointer active:opacity-80 active:underline">
             Refurbished Devices
           </p>
-          <p className="flex justify-center items-center text-[12px] md:text-sm">{">"}</p>
+          <p className="flex justify-center items-center text-[12px] md:text-sm">
+            {">"}
+          </p>
           <p className="cursor-pointer active:opacity-80 active:underline">
             Iphone 13 pro Max- Refurbished
           </p>
         </div>
-        <ProductSection product={1} />
-        <hr className="h-px border-0 bg-black w-full" />
+        <ProductSection />
+        <hr className="h-px border-0 bg-black w-full my-5" />
         <div className=" flex flex-col gap-3 my-5">
           <p className="text-[16px] font-medium flex gap-3">
             Fonelane Assured <p className="text-[#32cd32]">[whats This]</p>
           </p>
-          <div className="flex justify-center md:justify-between items-center flex-wrap gap-2">
+          <div className="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-2">
             <img
               src="./images/banner.png"
               alt=""
@@ -51,65 +55,40 @@ function ProductPage() {
             />
           </div>
         </div>
-        <hr className="h-px border-0 bg-black w-full" />
+        <hr className="h-px border-0 bg-black w-full" /><hr className="h-px border-0 bg-black w-full" />
         <div className="title my-10">
           <p className="text-[28px] font-bold">You may also like</p>
         </div>
         <ProductCard />
-        <div className="title my-10">
-          <p className="text-[28px] font-bold">Specification</p>
-        </div>
-        <div className="w-full h-fit  md:h-[50vh] flex justify-center md:justify-start px-10 items-center bg-slate-300">
-          <div className="w-full my-10 md:my-1 md:w-1/2 text-xs md:text-sm leading-5">
-            <p>
-              Storage: <span>6GB RAM </span> | <span>128GB ROM</span>
-            </p>
-            <p>
-              Display: <span>6.7-inch </span> ,{" "}
-              <span>Super Retina XDR Display</span>
-            </p>
-            <p>
-              Resolution: <span>1278 x 2778 </span> Pixels, <span>120Hz</span>
-            </p>
-            <p>
-              CPU: <span>Apple A15 Bionic</span> Chip
-            </p>
-            <p>
-              GPU: <span>Apple Intergrated </span> GPU
-            </p>
-            <p>
-              Rear-Camera: <span>12MP</span> + <span>12MP</span> +{" "}
-              <span>12MP</span>
-            </p>
-            <p>
-              Front-Camera: <span>12MP</span>
-            </p>
-            <p>
-              Wi-Fi: <span>6/6E</span>, <span>5GHz</span>, <span>MiMO</span>
-            </p>
-            <p>
-              Battery: Li-ion, <span>4352mAh</span>
-            </p>
-            <p>
-              Dimension: <span>238grams</span>, <span>160.8 x 78.1 x 7.6 </span>{" "}
-              mm
-            </p>
-            <p>
-              Body: Aluminium Frame, <span>Gorilla Glass Back</span>
-            </p>
-            <button className="py-2 px-10 my-3 bg-black text-white rounded-lg active:bg-white active:border-black active:border active:text-black">
-              More Detailed Specs
-            </button>
-          </div>
-          <div className="hidden md:flex-auto w-1/2 h-auto">
-            <img src="./images/spec.png" alt="" />
-          </div>
-        </div>
+
         <div className="w-full h-auto my-20">
           <img src="./images/planet.jpg" alt="" />
         </div>
+        <div className="block md:hidden  fixed bottom-0 w-full h-24 bg-white z-50">
+          <div className="flex justify-between items-center h-full gap-5">
+            <div className="flex flex-col justify-center items-center flex-1 h-full">
+              <p className="font-semibold text-lg md:text-2xl flex items-center justify-start gap-2">
+                ₹89000{" "}
+                <p className="text-xs md:text-base font-normal line-through flex gap-2">
+                  ₹1,39000{" "}
+                </p>
+              </p>
+              <p className="text-[#32CD32]  text-xs md:text-base">
+                Save ₹57,001 (41% Off)
+              </p>
+            </div>
+            <div className="flex-grow flex w-full   text-sm md:text-base my-10 px-5 gap-6">
+              <button className="text-4xl border-[1px] border-slate-400 p-1 rounded-lg ">
+                <PiShoppingCartLight />
+              </button>
+
+              <button className="flex-1 px-2 py-1 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+                Buy Now
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
-      
     </>
   );
 }
