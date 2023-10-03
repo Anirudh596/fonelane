@@ -1,0 +1,89 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iphones",
+  "info": {
+    "singularName": "iphone",
+    "pluralName": "iphones",
+    "displayName": "iphone"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "private": true,
+      "unique": true
+    },
+    "price": {
+      "type": "integer",
+      "default": 100,
+      "required": true,
+      "unique": true,
+      "private": true
+    },
+    "colors": {
+      "displayName": "colors",
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors",
+      "required": true
+    },
+    "Storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB16",
+        "GB32",
+        "GB64",
+        "GB128",
+        "GB256",
+        "GB512"
+      ],
+      "default": "GB16",
+      "required": true,
+      "private": true
+    },
+    "Condition": {
+      "type": "enumeration",
+      "enum": [
+        "Fair",
+        "Good",
+        "Excellent"
+      ],
+      "default": "Fair",
+      "private": true,
+      "required": true
+    },
+    "Specification": {
+      "type": "richtext",
+      "required": true,
+      "private": true
+    },
+    "mainimage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "private": true
+    },
+    "otherimages": {
+      "allowedTypes": [
+        "images",
+        "videos"
+      ],
+      "type": "media",
+      "multiple": true,
+      "private": true
+    },
+    "apple": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apple.apple",
+      "inversedBy": "iphones"
+    }
+  }
+}
