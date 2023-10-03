@@ -24,7 +24,7 @@ function ProductPage() {
             Iphone 13 pro Max- Refurbished
           </p>
         </div>
-        <ProductSection />
+        <ProductSection product={1} />
         <hr className="h-px border-0 bg-black w-full" />
         <div className=" flex flex-col gap-3 my-5">
           <p className="text-[16px] font-medium flex gap-3">

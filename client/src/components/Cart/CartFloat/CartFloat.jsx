@@ -381,6 +381,7 @@ function CartFloat({ isOpen, onClose, countInc }) {
     // Create a copy of the current cart
     const updatedCart = [...cart];
 
+
     // Remove the product at the specified index
     updatedCart.splice(index, 1);
 
