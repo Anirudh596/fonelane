@@ -2,7 +2,8 @@
   "collectionName": "components_device_colors_colors",
   "info": {
     "displayName": "colors",
-    "icon": "paint"
+    "icon": "paint",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,27 +15,24 @@
         "red"
       ],
       "default": "blue",
-      "required": true,
-      "private": true
-    },
-    "maincolorimage": {
-      "allowedTypes": [
-        "images"
-      ],
-      "type": "media",
-      "multiple": false,
-      "private": true,
       "required": true
     },
-    "othercolorimages": {
+    "maincolorimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
-        "images",
-        "videos"
-      ],
+        "images"
+      ]
+    },
+    "othercolorimages": {
       "type": "media",
       "multiple": true,
       "required": false,
-      "private": true
+      "allowedTypes": [
+        "images",
+        "videos"
+      ]
     }
   }
 }

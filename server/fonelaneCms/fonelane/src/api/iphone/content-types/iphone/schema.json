@@ -4,7 +4,8 @@
   "info": {
     "singularName": "iphone",
     "pluralName": "iphones",
-    "displayName": "iphone"
+    "displayName": "iphone6-7-8",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,15 +15,13 @@
     "title": {
       "type": "string",
       "required": true,
-      "private": true,
       "unique": true
     },
     "price": {
       "type": "integer",
       "default": 100,
       "required": true,
-      "unique": true,
-      "private": true
+      "unique": true
     },
     "colors": {
       "displayName": "colors",
@@ -31,59 +30,47 @@
       "component": "device-colors.colors",
       "required": true
     },
-    "Storage": {
-      "type": "enumeration",
-      "enum": [
-        "GB16",
-        "GB32",
-        "GB64",
-        "GB128",
-        "GB256",
-        "GB512"
-      ],
-      "default": "GB16",
-      "required": true,
-      "private": true
-    },
-    "Condition": {
-      "type": "enumeration",
-      "enum": [
-        "Fair",
-        "Good",
-        "Excellent"
-      ],
-      "default": "Fair",
-      "private": true,
-      "required": true
-    },
     "Specification": {
       "type": "richtext",
-      "required": true,
-      "private": true
+      "required": true
     },
     "mainimage": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
       "required": true,
-      "private": true
+      "allowedTypes": [
+        "images"
+      ]
     },
     "otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true,
-      "private": true
+      ]
     },
     "apple": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::apple.apple",
       "inversedBy": "iphones"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": true
+    },
+    "Storage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.storage-and-cond"
+    },
+    "Condition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.condition"
     }
   }
 }

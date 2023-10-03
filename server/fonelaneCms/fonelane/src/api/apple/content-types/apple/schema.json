@@ -20,6 +20,18 @@
       "relation": "oneToMany",
       "target": "api::iphone.iphone",
       "mappedBy": "apple"
+    },
+    "iphones2": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone2.iphone2",
+      "mappedBy": "apple"
+    },
+    "iphones3": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone3.iphone3",
+      "mappedBy": "apple"
     }
   }
 }

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_device_storage_and_cond_storage_and_conds",
+  "info": {
+    "displayName": "Storage",
+    "icon": "alien",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB32",
+        "GB64",
+        "GB128",
+        "GB256",
+        "GB512",
+        "TB1"
+      ]
+    }
+  }
+}

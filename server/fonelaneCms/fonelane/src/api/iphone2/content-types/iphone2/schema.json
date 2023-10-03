@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iphones2",
+  "info": {
+    "singularName": "iphone2",
+    "pluralName": "iphones2",
+    "displayName": "Iphone10-11-12",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors",
+      "required": true
+    },
+    "Storage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.storage-and-cond"
+    },
+    "Condition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.condition"
+    },
+    "Specification": {
+      "type": "richtext"
+    },
+    "Mainimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "apple": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::apple.apple",
+      "inversedBy": "iphones2"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
