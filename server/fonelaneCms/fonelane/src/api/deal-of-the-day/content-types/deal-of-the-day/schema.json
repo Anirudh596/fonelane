@@ -1,0 +1,68 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deal_of_the_days",
+  "info": {
+    "singularName": "deal-of-the-day",
+    "pluralName": "deal-of-the-days",
+    "displayName": "Deal Of The Day",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "iphone_6_s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-6.iphone-6"
+    },
+    "iphone_7s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-7.iphone-7",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_8s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-8.iphone-8",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_xes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-x.iphone-x",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_11s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-11.iphone-11",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_12s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-12.iphone-12",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_13s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-13.iphone-13",
+      "mappedBy": "deal_of_the_day"
+    },
+    "iphone_14s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-14.iphone-14"
+    },
+    "iphone_15s": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::iphone-15.iphone-15",
+      "mappedBy": "deal_of_the_day"
+    }
+  }
+}

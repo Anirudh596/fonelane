@@ -1,0 +1,54 @@
+{
+  "collectionName": "components_device_info_device_infos",
+  "info": {
+    "displayName": "Device-info",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors"
+    },
+    "Specification": {
+      "type": "richtext"
+    },
+    "mainimage": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "Storage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.storage-and-cond"
+    },
+    "Condition": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-storage-and-cond.condition"
+    },
+    "inventory": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}

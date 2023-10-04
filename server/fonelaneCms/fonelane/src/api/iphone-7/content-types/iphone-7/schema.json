@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iphone_7s",
+  "info": {
+    "singularName": "iphone-7",
+    "pluralName": "iphone-7s",
+    "displayName": "Iphone 7",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "others": {
+      "type": "component",
+      "repeatable": false,
+      "component": "device-info.device-info"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "deal_of_the_day": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deal-of-the-day.deal-of-the-day",
+      "inversedBy": "iphone_7s"
+    }
+  }
+}
