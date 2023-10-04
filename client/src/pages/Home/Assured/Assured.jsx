@@ -33,20 +33,17 @@ function Assured() {
       icon: (
         <img
           src="./images/100-percent.png"
-          alt="100% Genuine Products"
+          alt="Genuine Products"
           className="w-[35px] h-[35px] md:w-[30px] md:h-[40px] lg:w-[50px] lg:h-[40px] xl:w-[50px] xl:h-[60px]"
         />
       ),
-      text: "100% Genuine Products",
+      text: "Genuine Products",
     },
     {
       icon: <PiBatteryVerticalHighDuotone className="text-4xl md:text-3xl lg:text-4xl xl:text-6xl" />,
-      text: "90% Battery Health",
+      text: "Battery Health",
     },
-    {
-      icon: <TfiMoney className="text-4xl md:text-3xl lg:text-4xl xl:text-6xl" />,
-      text: "Lowest Price",
-    },
+    
     {
       icon: <LiaShippingFastSolid className="text-4xl md:text-3xl lg:text-4xl xl:text-6xl" />,
       text: "Free Shipping",

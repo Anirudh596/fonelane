@@ -106,7 +106,7 @@ function ProductSection(props) {
 
                 <div className="spec-config flex flex-col md:grid md:grid-cols-3 auto-cols-auto md:text-center md:items-center  md:gap-2 w-full flex-nowrap text-xs md:text-xs my-2 md:">
                   <p className=" md:border-r-[1px] border-black pr-2 py-1 ">
-                    Quality:{" "}
+                    Condition:{" "}
                     <span>
                       {selectedQuality === "fair" && "Fair"}
                       {selectedQuality === "good" && "Good"}

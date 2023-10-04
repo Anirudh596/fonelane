@@ -110,7 +110,6 @@ function Navbar() {
             <Search />
           </div>
           <div className="flex justify-between items-center gap-5 mx-5 md:mx-0 md:gap-10">
-            <CiHeart className="hover:scale-105 ease-linear cursor-pointer text-2xl 2xl:text-3xl" />
             <CiShoppingCart
               onClick={toggleCart}
               className="hover:scale-105 ease-linear cursor-pointer text-2xl 2xl:text-3xl"

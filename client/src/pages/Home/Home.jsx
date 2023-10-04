@@ -25,7 +25,7 @@ function Home() {
         <hr className="h-px bg-black border-0 md:my-10"/>
         <div className="w-full flex-col justify-center items-center custom-w">
         <div className="title  my-5">
-          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Best Available! Deal Today*</p>
+          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Deal of the day*</p>
         </div>
         <ProductCard />
         <div className="title my-5 hidden md:block">
