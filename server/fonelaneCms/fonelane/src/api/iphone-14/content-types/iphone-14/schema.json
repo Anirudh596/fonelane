@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iphone_14s",
+  "info": {
+    "singularName": "iphone-14",
+    "pluralName": "iphone-14s",
+    "displayName": "Iphone 14",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "others": {
+      "type": "component",
+      "repeatable": false,
+      "component": "device-info.device-info"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}

@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import BackBtn from "../BackBtn/BackBtn";
 import axios from "axios";
 
+
 const LoginPopup = ({ isOpen, onClose }) => {
   const popupVariants = {
     hidden: { opacity: 0, scale: 0 },
@@ -65,6 +66,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
     }
   };
 
+
   const handleOtpChange = (index, value) => {
     if (index >= 0 && index < otpValues.length) {
       const newOtpValues = [...otpValues];
@@ -76,6 +78,28 @@ const LoginPopup = ({ isOpen, onClose }) => {
       }
     }
   };
+
+  const handleOtpSubmit = async (e) => {
+    e.preventDefault()
+    try {
+      const response = await axios.post("http://localhost:5000/api/user/verify-otp", {
+        mobile,
+        otp: otpValues.join(""), // Combine the OTP values into a single string
+      });
+  
+      // Handle the response from the backend
+      if (response.data.success) {
+        // OTP is valid, perform the necessary actions
+        console.log("OTP is valid");
+      } else {
+        // OTP is invalid, display an error message or take appropriate action
+        console.log("OTP is invalid");
+      }
+    } catch (error) {
+      console.error("Error checking OTP:", error);
+    }
+  };
+  
 
   return (
     <motion.div
@@ -99,7 +123,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
             <div className="flex-grow w-1/5 bg-white rounded-r-2xl z-30">
               <div className="w-full h-full flex md:flex-col justify-center md:items-center p-5">
                 {showOTPForm ? (
-                  <form action="POST" method="post">
+                  
                     <div className="flex flex-col space-y-16">
                       <div className="flex flex-row items-center justify-between mx-auto w-full max-w-xs space-x-3">
                         {otpValues.map((value, index) => (
@@ -132,6 +156,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
                           <button
                             type="submit"
                             className="bg-blue-500 text-white rounded-md py-2 px-4 hover:bg-blue-600 cursor-pointer"
+                            onClick={handleOtpSubmit}
                           >
                             Submit OTP
                           </button>
@@ -147,7 +172,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
                         </div>
                       </div>
                     </div>
-                  </form>
+                
                 ) : isSignUp ? (
                   <SignUp
                     onFormClose={toggleForm}
@@ -490,7 +515,7 @@ function SignUp({ onFormClose, mobileForRegistration }) {
 
   const handleSignUpSubmit = async (e) => {
     e.preventDefault();
-    setShowOtpSection(true);
+    
     try {
       const response = await axios.post(
         "http://localhost:5000/api/user/register",
@@ -499,13 +524,23 @@ function SignUp({ onFormClose, mobileForRegistration }) {
           email,
           mobile: mobileForRegistration,
         }
+        
+        
       );
-
+      await axios.post("http://localhost:5000/api/user/login", {
+        mobile: mobileForRegistration,
+      });
+    setShowOtpSection(true);
       // Handle the response as needed
     } catch (error) {
       console.error(error);
     }
+
+    
   };
+
+
+
 
   return (
     <div>

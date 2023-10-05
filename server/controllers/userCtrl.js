@@ -30,6 +30,51 @@ const createUser = async (req, res) => {
   }
 };
 
+// const loginUserCtrl = asyncHandler(async (req, res) => {
+//   const { mobile } = req.body;
+//   try {
+//     const findUser = await User.findOne({ mobile });
+//     if (findUser) {
+//       // Generate and send OTP to the user's mobile number
+//       const accountSid = "AC0af3a8ecc541f6da456e6a29d0d656bc";
+//       const authToken = "dc760f08947b6734283bee68b812cfdb";
+//       const verifySid = "VA3e3e54786b286fd0c9b86bed1a5936a4";
+//       const client = require("twilio")(accountSid, authToken);
+
+//       client.verify
+//         .services(verifySid)
+//         .verifications.create({ to: mobile, channel: "sms" })
+//         .then((verification) => {
+//           console.log("OTP sent successfully:", verification.status);
+//           res.json({
+//             msg: "OTP sent successfully",
+//             success: true,
+//           });
+//         })
+//         .catch((error) => {
+//           console.error("Error sending OTP:", error);
+//           res.status(500).json({
+//             msg: "Error sending OTP",
+//             success: false,
+//           });
+//         });
+//     } else {
+//       // User doesn't exist
+//       res.status(200).json({
+//             msg: "Error sending OTP",
+//             success: false,
+//           });
+//       console.log("dont exist");
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({
+//       msg: "An error occurred",
+//       success: false,
+//     });
+//   }
+// });
+
 const loginUserCtrl = asyncHandler(async (req, res) => {
   const { mobile } = req.body;
   try {
@@ -45,11 +90,13 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
         .services(verifySid)
         .verifications.create({ to: mobile, channel: "sms" })
         .then((verification) => {
-          console.log("OTP sent successfully:", verification.status);
-          res.json({
+          const responseMsg = {
             msg: "OTP sent successfully",
             success: true,
-          });
+            mobile: mobile, // Include the mobile number in the response
+            otpStatus: verification.status, // Include OTP status in the response
+          };
+          res.json(responseMsg);
         })
         .catch((error) => {
           console.error("Error sending OTP:", error);
@@ -61,19 +108,77 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
     } else {
       // User doesn't exist
       res.status(200).json({
-            msg: "Error sending OTP",
-            success: false,
-          });
-      console.log("dont exist");
+        msg: "Error sending OTP",
+        success: false,
+        mobile: mobile, // Include the mobile number in the response
+        otpStatus: "User not found", // Provide an appropriate status
+      });
+      console.log("User not found");
     }
   } catch (error) {
     console.error(error);
     res.status(500).json({
       msg: "An error occurred",
       success: false,
+      mobile: mobile, // Include the mobile number in the response
+      otpStatus: "Error occurred", // Provide an appropriate status
     });
   }
 });
+
+
+// for verifying otp
+const verifyOtpCtrl = asyncHandler(async (req, res) => {
+  const { mobile, otp } = req.body;
+
+  try {
+    // First, find the user by mobile number
+    const findUser = await User.findOne({ mobile });
+
+    if (!findUser) {
+      return res.status(400).json({
+        success: false,
+        msg: "User not found",
+      });
+    }
+
+    // Now, verify the OTP using Twilio
+    const accountSid = "AC0af3a8ecc541f6da456e6a29d0d656bc";
+    const authToken = "dc760f08947b6734283bee68b812cfdb";
+    const verifySid = "VA3e3e54786b286fd0c9b86bed1a5936a4";
+    const client = require("twilio")(accountSid, authToken);
+
+    // Verify the OTP
+    const verificationCheck = await client.verify
+      .services(verifySid)
+      .verificationChecks.create({
+        to: mobile,
+        code: otp,
+      });
+
+    // Check the verification status
+    if (verificationCheck.status === "approved") {
+      // OTP is valid
+      return res.status(200).json({
+        success: true,
+        msg: "OTP is valid",
+      });
+    } else {
+      // OTP is invalid
+      return res.status(400).json({
+        success: false,
+        msg: "Invalid OTP",
+      });
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({
+      success: false,
+      msg: "An error occurred",
+    });
+  }
+});
+
 
 //update a user data
 
@@ -199,7 +304,7 @@ const deleteaUser = async( req, res) => {
 //   }
 // }
 
-module.exports = { createUser, loginUserCtrl ,getallUser, getaUser, deleteaUser, updateaUser};
+module.exports = { createUser, loginUserCtrl ,getallUser, getaUser, deleteaUser, updateaUser, verifyOtpCtrl};
 
 
 // const { error } = require("console");

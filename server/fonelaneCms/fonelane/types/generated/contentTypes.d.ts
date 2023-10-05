@@ -730,21 +730,6 @@ export interface ApiAppleApple extends Schema.CollectionType {
   };
   attributes: {
     apple: Attribute.String;
-    iphones: Attribute.Relation<
-      'api::apple.apple',
-      'oneToMany',
-      'api::iphone.iphone'
-    >;
-    iphones2: Attribute.Relation<
-      'api::apple.apple',
-      'oneToMany',
-      'api::iphone2.iphone2'
-    >;
-    iphones3: Attribute.Relation<
-      'api::apple.apple',
-      'oneToMany',
-      'api::iphone3.iphone3'
-    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -763,12 +748,13 @@ export interface ApiAppleApple extends Schema.CollectionType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.CollectionType {
+export interface ApiBannerBanner extends Schema.SingleType {
   collectionName: 'banners';
   info: {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -795,50 +781,109 @@ export interface ApiBannerBanner extends Schema.CollectionType {
   };
 }
 
-export interface ApiIphoneIphone extends Schema.CollectionType {
-  collectionName: 'iphones';
+export interface ApiDealOfTheDayDealOfTheDay extends Schema.CollectionType {
+  collectionName: 'deal_of_the_days';
   info: {
-    singularName: 'iphone';
-    pluralName: 'iphones';
-    displayName: 'iphone6-7-8';
+    singularName: 'deal-of-the-day';
+    pluralName: 'deal-of-the-days';
+    displayName: 'Deal Of The Day';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String & Attribute.Required & Attribute.Unique;
-    price: Attribute.Integer &
-      Attribute.Required &
-      Attribute.Unique &
-      Attribute.DefaultTo<100>;
-    colors: Attribute.Component<'device-colors.colors', true> &
-      Attribute.Required;
-    Specification: Attribute.RichText & Attribute.Required;
+    iphone_6_s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-6.iphone-6'
+    >;
+    iphone_7s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-7.iphone-7'
+    >;
+    iphone_8s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-8.iphone-8'
+    >;
+    iphone_xes: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-x.iphone-x'
+    >;
+    iphone_11s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-11.iphone-11'
+    >;
+    iphone_12s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-12.iphone-12'
+    >;
+    iphone_13s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-13.iphone-13'
+    >;
+    iphone_14s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-14.iphone-14'
+    >;
+    iphone_15s: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToMany',
+      'api::iphone-15.iphone-15'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deal-of-the-day.deal-of-the-day',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
+  collectionName: 'deal_of_the_day_2s';
+  info: {
+    singularName: 'deal-of-the-day-2';
+    pluralName: 'deal-of-the-day-2s';
+    displayName: 'Deal Of The Day 2';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
     mainimage: Attribute.Media & Attribute.Required;
-    otherimages: Attribute.Media;
-    apple: Attribute.Relation<
-      'api::iphone.iphone',
-      'manyToOne',
-      'api::apple.apple'
-    >;
-    slug: Attribute.UID<'api::iphone.iphone', 'title'> & Attribute.Required;
-    Storage: Attribute.Component<
-      'device-storage-and-cond.storage-and-cond',
-      true
-    >;
-    Condition: Attribute.Component<'device-storage-and-cond.condition', true>;
+    otherimages: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::iphone.iphone',
+      'api::deal-of-the-day-2.deal-of-the-day-2',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::iphone.iphone',
+      'api::deal-of-the-day-2.deal-of-the-day-2',
       'oneToOne',
       'admin::user'
     > &
@@ -846,12 +891,12 @@ export interface ApiIphoneIphone extends Schema.CollectionType {
   };
 }
 
-export interface ApiIphone2Iphone2 extends Schema.CollectionType {
-  collectionName: 'iphones2';
+export interface ApiIphone11Iphone11 extends Schema.CollectionType {
+  collectionName: 'iphone_11s';
   info: {
-    singularName: 'iphone2';
-    pluralName: 'iphones2';
-    displayName: 'Iphone10-11-12';
+    singularName: 'iphone-11';
+    pluralName: 'iphone-11s';
+    displayName: 'Iphone 11';
     description: '';
   };
   options: {
@@ -860,33 +905,24 @@ export interface ApiIphone2Iphone2 extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     price: Attribute.Integer;
-    colors: Attribute.Component<'device-colors.colors', true> &
-      Attribute.Required;
-    Storage: Attribute.Component<
-      'device-storage-and-cond.storage-and-cond',
-      true
-    >;
-    Condition: Attribute.Component<'device-storage-and-cond.condition', true>;
-    Specification: Attribute.RichText;
-    Mainimage: Attribute.Media;
-    Otherimages: Attribute.Media;
-    apple: Attribute.Relation<
-      'api::iphone2.iphone2',
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-11.iphone-11', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-11.iphone-11',
       'manyToOne',
-      'api::apple.apple'
+      'api::deal-of-the-day.deal-of-the-day'
     >;
-    slug: Attribute.UID<'api::iphone2.iphone2', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::iphone2.iphone2',
+      'api::iphone-11.iphone-11',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::iphone2.iphone2',
+      'api::iphone-11.iphone-11',
       'oneToOne',
       'admin::user'
     > &
@@ -894,12 +930,12 @@ export interface ApiIphone2Iphone2 extends Schema.CollectionType {
   };
 }
 
-export interface ApiIphone3Iphone3 extends Schema.CollectionType {
-  collectionName: 'iphones3';
+export interface ApiIphone12Iphone12 extends Schema.CollectionType {
+  collectionName: 'iphone_12s';
   info: {
-    singularName: 'iphone3';
-    pluralName: 'iphones3';
-    displayName: 'Iphone13-14-15';
+    singularName: 'iphone-12';
+    pluralName: 'iphone-12s';
+    displayName: 'Iphone 12';
     description: '';
   };
   options: {
@@ -908,31 +944,287 @@ export interface ApiIphone3Iphone3 extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     price: Attribute.Integer;
-    Colors: Attribute.Component<'device-colors.colors', true>;
-    Storage: Attribute.Component<
-      'device-storage-and-cond.storage-and-cond',
-      true
-    >;
-    Condition: Attribute.Component<'device-storage-and-cond.condition', true>;
-    Mainimage: Attribute.Media;
-    Otherimages: Attribute.Media;
-    apple: Attribute.Relation<
-      'api::iphone3.iphone3',
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-12.iphone-12', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-12.iphone-12',
       'manyToOne',
-      'api::apple.apple'
+      'api::deal-of-the-day.deal-of-the-day'
     >;
-    Specification: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::iphone3.iphone3',
+      'api::iphone-12.iphone-12',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::iphone3.iphone3',
+      'api::iphone-12.iphone-12',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone13Iphone13 extends Schema.CollectionType {
+  collectionName: 'iphone_13s';
+  info: {
+    singularName: 'iphone-13';
+    pluralName: 'iphone-13s';
+    displayName: 'Iphone 13';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-13.iphone-13', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-13.iphone-13',
+      'manyToOne',
+      'api::deal-of-the-day.deal-of-the-day'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-13.iphone-13',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-13.iphone-13',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone14Iphone14 extends Schema.CollectionType {
+  collectionName: 'iphone_14s';
+  info: {
+    singularName: 'iphone-14';
+    pluralName: 'iphone-14s';
+    displayName: 'Iphone 14';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-14.iphone-14', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-14.iphone-14',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-14.iphone-14',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone15Iphone15 extends Schema.CollectionType {
+  collectionName: 'iphone_15s';
+  info: {
+    singularName: 'iphone-15';
+    pluralName: 'iphone-15s';
+    displayName: 'Iphone 15';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-15.iphone-15', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-15.iphone-15',
+      'manyToOne',
+      'api::deal-of-the-day.deal-of-the-day'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-15.iphone-15',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-15.iphone-15',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone6Iphone6 extends Schema.CollectionType {
+  collectionName: 'iphone_6s';
+  info: {
+    singularName: 'iphone-6';
+    pluralName: 'iphone-6s';
+    displayName: 'iphone 6';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-6.iphone-6', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-6.iphone-6',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-6.iphone-6',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone7Iphone7 extends Schema.CollectionType {
+  collectionName: 'iphone_7s';
+  info: {
+    singularName: 'iphone-7';
+    pluralName: 'iphone-7s';
+    displayName: 'Iphone 7';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-7.iphone-7', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-7.iphone-7',
+      'manyToOne',
+      'api::deal-of-the-day.deal-of-the-day'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-7.iphone-7',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-7.iphone-7',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphone8Iphone8 extends Schema.CollectionType {
+  collectionName: 'iphone_8s';
+  info: {
+    singularName: 'iphone-8';
+    pluralName: 'iphone-8s';
+    displayName: 'Iphone 8';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-8.iphone-8', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-8.iphone-8',
+      'manyToOne',
+      'api::deal-of-the-day.deal-of-the-day'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-8.iphone-8',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-8.iphone-8',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiIphoneXIphoneX extends Schema.CollectionType {
+  collectionName: 'iphone_xes';
+  info: {
+    singularName: 'iphone-x';
+    pluralName: 'iphone-xes';
+    displayName: 'Iphone X';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    slug: Attribute.UID<'api::iphone-x.iphone-x', 'title'>;
+    deal_of_the_day: Attribute.Relation<
+      'api::iphone-x.iphone-x',
+      'manyToOne',
+      'api::deal-of-the-day.deal-of-the-day'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::iphone-x.iphone-x',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::iphone-x.iphone-x',
       'oneToOne',
       'admin::user'
     > &
@@ -959,9 +1251,17 @@ declare module '@strapi/types' {
       'api::about.about': ApiAboutAbout;
       'api::apple.apple': ApiAppleApple;
       'api::banner.banner': ApiBannerBanner;
-      'api::iphone.iphone': ApiIphoneIphone;
-      'api::iphone2.iphone2': ApiIphone2Iphone2;
-      'api::iphone3.iphone3': ApiIphone3Iphone3;
+      'api::deal-of-the-day.deal-of-the-day': ApiDealOfTheDayDealOfTheDay;
+      'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
+      'api::iphone-11.iphone-11': ApiIphone11Iphone11;
+      'api::iphone-12.iphone-12': ApiIphone12Iphone12;
+      'api::iphone-13.iphone-13': ApiIphone13Iphone13;
+      'api::iphone-14.iphone-14': ApiIphone14Iphone14;
+      'api::iphone-15.iphone-15': ApiIphone15Iphone15;
+      'api::iphone-6.iphone-6': ApiIphone6Iphone6;
+      'api::iphone-7.iphone-7': ApiIphone7Iphone7;
+      'api::iphone-8.iphone-8': ApiIphone8Iphone8;
+      'api::iphone-x.iphone-x': ApiIphoneXIphoneX;
     }
   }
 }

@@ -16,6 +16,24 @@ export interface DeviceColorsColors extends Schema.Component {
   };
 }
 
+export interface DeviceInfoDeviceInfo extends Schema.Component {
+  collectionName: 'components_device_info_device_infos';
+  info: {
+    displayName: 'Device-info';
+    description: '';
+  };
+  attributes: {
+    colors: Attribute.Component<'device-colors.colors', true>;
+    Specification: Attribute.RichText;
+    Storage: Attribute.Component<
+      'device-storage-and-cond.storage-and-cond',
+      true
+    >;
+    Condition: Attribute.Component<'device-storage-and-cond.condition', true>;
+    inventory: Attribute.Integer & Attribute.Required;
+  };
+}
+
 export interface DeviceStorageAndCondCondition extends Schema.Component {
   collectionName: 'components_device_storage_and_cond_conditions';
   info: {
@@ -45,6 +63,7 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'device-colors.colors': DeviceColorsColors;
+      'device-info.device-info': DeviceInfoDeviceInfo;
       'device-storage-and-cond.condition': DeviceStorageAndCondCondition;
       'device-storage-and-cond.storage-and-cond': DeviceStorageAndCondStorageAndCond;
     }

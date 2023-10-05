@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "iphone_6s",
+  "info": {
+    "singularName": "iphone-6",
+    "pluralName": "iphone-6s",
+    "displayName": "iphone 6",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "others": {
+      "type": "component",
+      "repeatable": false,
+      "component": "device-info.device-info"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    }
+  }
+}
