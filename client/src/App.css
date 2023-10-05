@@ -146,7 +146,7 @@
 }
 
 .background-image {
-  @apply bg-[url('./images/back.jpg')] bg-cover bg-no-repeat bg-center;
+  @apply bg-[url('./images/back.png')] bg-cover bg-no-repeat bg-center;
   /* Other background properties can be added here */
 }
 

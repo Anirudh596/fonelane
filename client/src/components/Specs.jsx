@@ -38,7 +38,7 @@ function Specs({ isOpen, onClose }) {
       variants={popupVariants}
       transition={{ duration: 0.2 }}
     >
-         <div className="relative w-full h-full md:w-1/3 md:h-3/4" ref={popupRef}>
+         <div className="top-10 relative w-full h-full md:w-1/3 md:h-3/4" ref={popupRef}>
          <div className="flex justify-center items-center w-full h-full rounded-xl bg-white z-30 transform transition-transform ease-in-out duration-700">
          <div className="absolute top-0 right-0 m-5 flex justify-between items-center  z-50">
             <p>Technical Specification</p>

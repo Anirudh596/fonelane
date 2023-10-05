@@ -6,6 +6,7 @@ import Banner from "../../components/Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
 import AdBar from "../../components/AdBar/AdBar";
 import Blog from "../../components/Blog/Blog";
+import BankOffer from "../../components/BankOffer/BankOffer";
 
 function Home() {
   
@@ -22,10 +23,14 @@ function Home() {
       <div className="custom-w mx-auto overflow-hidden">
         <Assured />
         </div>
-        <hr className="h-px bg-black border-0 md:my-10"/>
+
+        <div>
+          <BankOffer />
+        </div>
+
         <div className="w-full flex-col justify-center items-center custom-w">
         <div className="title  my-5">
-          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Best Available! Deal Today*</p>
+          <p className="text-sm md:text-sm lg:text-base xl:text-lg ">Deal Of the Day</p>
         </div>
         <ProductCard />
         <div className="title my-5 hidden md:block">
@@ -40,7 +45,7 @@ function Home() {
         </div>
         <Accessories />
         <div className="title my-5 ">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Deal Of the day</p>
+          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">Best Deal</p>
         </div>
         <Banner />
         <div className="title my-5 ">

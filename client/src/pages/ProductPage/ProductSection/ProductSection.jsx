@@ -3,7 +3,7 @@ import Review from "../../../components/Review/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
-import { useCart } from "../../../components/context/cart";
+// import { useCart } from "../../../components/context/cart";
 // import CardFloat from "../../../components/Cart/CartFloat/CartFloat";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
@@ -192,7 +192,7 @@ function ProductSection(props) {
                   onClick={() => handleQualityButtonClick("fair")}
                   className={`${
                     selectedQuality === "fair" ? "selected" : ""
-                  } w-48 h-12  rounded-lg   hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
+                  } w-48 h-12  rounded-lg   md:hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
                 >
                   <p className="text-base">Fair</p>
                 </button>
@@ -200,7 +200,7 @@ function ProductSection(props) {
                   onClick={() => handleQualityButtonClick("good")}
                   className={`${
                     selectedQuality === "good" ? "selected" : ""
-                  } w-48 h-12  rounded-lg  hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
+                  } w-48 h-12  rounded-lg  md:hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
                 >
                   <p className="text-base">Good</p>
                 </button>
@@ -208,7 +208,7 @@ function ProductSection(props) {
                   onClick={() => handleQualityButtonClick("excellent")}
                   className={`${
                     selectedQuality === "excellent" ? "selected" : ""
-                  } w-48 h-12  rounded-lg  hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
+                  } w-48 h-12  rounded-lg  md:hover:scale-105 flex flex-col justify-center items-center border border-slate-500 font-light`}
                 >
                   <p className="text-base">Excellent</p>
                 </button>
@@ -239,7 +239,7 @@ function ProductSection(props) {
                   onClick={() => handleSpecButtonClick("store1")}
                   className={`${
                     selectedSpec === "store1" ? "selected" : ""
-                  } py-2   rounded-lg  hover:scale-105 border border-slate-500 font-light`}
+                  } py-2   rounded-lg  md:hover:scale-105 border border-slate-500 font-light`}
                 >
                   <p className="text-xs">6GB/128GB</p>
                 </button>
@@ -247,7 +247,7 @@ function ProductSection(props) {
                   onClick={() => handleSpecButtonClick("store2")}
                   className={`${
                     selectedSpec === "store2" ? "selected" : ""
-                  } py-2   rounded-lg  hover:scale-105  border border-slate-500 font-light`}
+                  } py-2   rounded-lg  md:hover:scale-105  border border-slate-500 font-light`}
                 >
                   <p className="text-xs">6GB/256GB</p>
                 </button>
@@ -255,7 +255,7 @@ function ProductSection(props) {
                   onClick={() => handleSpecButtonClick("store3")}
                   className={`${
                     selectedSpec === "store3" ? "selected" : ""
-                  } py-2   rounded-lg  hover:scale-105  border border-slate-500 font-light`}
+                  } py-2   rounded-lg  md:hover:scale-105  border border-slate-500 font-light`}
                 >
                   <p className="text-xs">6GB/512GB</p>
                 </button>
@@ -263,7 +263,7 @@ function ProductSection(props) {
                   onClick={() => handleSpecButtonClick("store4")}
                   className={`${
                     selectedSpec === "store4" ? "selected" : ""
-                  } py-2   rounded-lg  hover:scale-105  border border-slate-500 font-light`}
+                  } py-2   rounded-lg  md:hover:scale-105  border border-slate-500 font-light`}
                 >
                   <p className="text-xs">6GB/1TB</p>
                 </button>
