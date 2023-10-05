@@ -870,9 +870,13 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
   attributes: {
     title: Attribute.String;
     price: Attribute.Integer;
-    others: Attribute.Component<'device-info.device-info'>;
     mainimage: Attribute.Media & Attribute.Required;
     otherimages: Attribute.Media & Attribute.Required;
+    colors: Attribute.Component<'device-colors.colors', true> &
+      Attribute.Required;
+    Condition: Attribute.Component<'device-storage-and-cond.condition'>;
+    Storage: Attribute.Component<'device-storage-and-cond.storage-and-cond'>;
+    Inventory: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

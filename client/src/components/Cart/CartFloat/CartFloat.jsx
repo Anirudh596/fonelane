@@ -463,10 +463,6 @@ function CartFloat({ isOpen, onClose, countInc }) {
               </div>
             </SwiperSlide>
             ))}
-        <div className="mx-3">
-          <p>You may also like </p>
-          <ProductCard />
-        </div>
           </Swiper>
         </div>
 

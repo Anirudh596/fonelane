@@ -1,9 +1,15 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react"; // Import useEffect
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductSection from "./ProductSection/ProductSection";
 import { PiShoppingCartLight } from "react-icons/pi";
 
 function ProductPage() {
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it only runs once when mounted
+
   return (
     <>
       <div className="h-full custom-w">

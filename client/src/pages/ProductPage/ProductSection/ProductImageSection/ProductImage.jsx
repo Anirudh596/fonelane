@@ -2,23 +2,14 @@ import { useState, useEffect, useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-// import required modules
 import { Pagination } from 'swiper/modules';
-
-// Remove unused import
+import axios from "axios";
+import { useParams } from "react-router-dom";
 
 function ProductImage() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const productImages = useMemo(
-    () => [
-      "./images/iphone 2-1.png",
-      "./images/iphone 1.png",
-      "./images/iphone 3.png",
-      "./images/iphone 4.png",
-      // Add more image URLs here
-    ],
-    []
-  );
+  const { id } = useParams();
+  const [productImages, setProductImages] = useState([]); // Store product images
   const qualityCheck = useMemo(() => [
     {
       main: "32",
@@ -40,11 +31,33 @@ function ProductImage() {
       main: "EMI",
       text: "at no cost",
     },
-  ]);
+  ], []);
 
-  // Set the initial selected image to the first image when the page loads
   useEffect(() => {
-    setSelectedImage(productImages[0]);
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://localhost:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
+          headers: {
+            Authorization: "bearer " + "d6ac95ba95181cd90c44295e9c8e09137962dede50de6bea512ef8555e7e374bb8689d4dc37595bcccc03f26c454d4bff035a6a5ff9a79691cc933f442bacf3d77d3a3fa70cfce75353c6cf382db121d0c500335ba5d67f30bcc565dea2a08bf54cb0ca4becae34c886522d53bb32d55935f8384f90c054b2b0f48523ed8d13a",
+          }
+        });
+
+        // Extract and set product images from the response data
+        const imageData = res.data.data.attributes.otherimages.data;
+        setProductImages(imageData.map(image => image.attributes.url));
+        console.log(res.data.data.attributes.otherimages.data);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, [id]);
+
+  useEffect(() => {
+    // Set the initial selected image to the first image when the page loads
+    if (productImages.length > 0) {
+      setSelectedImage(productImages[0]);
+    }
   }, [productImages]);
 
   const handleImageClick = (image) => {
@@ -64,7 +77,7 @@ function ProductImage() {
               }`}
             >
               <img
-                src={image}
+                src={`http://localhost:1337${image}`}
                 alt={`Product Image ${index}`}
                 className="w-[20px] h-[30px]"
               />
@@ -86,7 +99,7 @@ function ProductImage() {
         <div className="mt-4 hidden md:block">
           {selectedImage && (
             <img
-              src={selectedImage}
+              src={`http://localhost:1337${selectedImage}`}
               alt="Selected Product Image"
               className="w-[250px] h-[310px]"
             />
@@ -118,7 +131,7 @@ function ProductImage() {
           {productImages.map((image, index) => (
             <SwiperSlide key={index}>
               <div className="w-full flex justify-center items-center">
-              <img src={image} alt={`Product Image ${index}`} className="w-52 h-72" />
+              <img src={`http://localhost:1337${image}`} alt={`Product Image ${index}`} className="w-52 h-72" />
               </div>
             </SwiperSlide>
           ))}
