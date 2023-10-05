@@ -42,7 +42,7 @@ function Dropdown() {
       <div className="mx-2 md:mx-10 py-1 z-50">
         <ul className="flex items-center justify-between transform transition-transform ease-linear duration-200 mx-auto my-0.5 md:my-1">
           <button
-            className="hover:scale-110 font-bold text-[6px] md:text-[8px] lg:text-[10px] xl:text-xs 2xl:text-xs flex justify-center items-center "
+            className="hover:scale-110 font-medium text-[6px] md:text-xs  flex justify-center items-center "
             onClick={handleButtonClick}
           >
             All

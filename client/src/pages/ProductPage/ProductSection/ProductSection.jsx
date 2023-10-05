@@ -16,7 +16,7 @@ import { useParams } from "react-router-dom";
 
 function ProductSection() {
 
-    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+    const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState("excellent");
@@ -30,7 +30,7 @@ function ProductSection() {
   useEffect(() => {
     const fetchData = async ()=>{
       try {
-          const res = await axios.get(`http://localhost:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
+          const res = await axios.get(`${cmsApiUrl}/api/deal-of-the-day-2s/${id}?populate=*`, {
           headers: {
             Authorization: "bearer "+ "d6ac95ba95181cd90c44295e9c8e09137962dede50de6bea512ef8555e7e374bb8689d4dc37595bcccc03f26c454d4bff035a6a5ff9a79691cc933f442bacf3d77d3a3fa70cfce75353c6cf382db121d0c500335ba5d67f30bcc565dea2a08bf54cb0ca4becae34c886522d53bb32d55935f8384f90c054b2b0f48523ed8d13a",
           }

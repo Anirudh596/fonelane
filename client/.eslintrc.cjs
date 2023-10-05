@@ -17,4 +17,8 @@ module.exports = {
       { allowConstantExport: true },
     ],
   },
+  globals: {
+    // Define import.meta.env as a global object
+    'import.meta.env': 'readonly',
+  },
 }
