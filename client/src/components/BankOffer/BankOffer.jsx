@@ -10,11 +10,11 @@ function BankOffer() {
   ];
 
   return (
-    <div className="custom-w py-[-10px] flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee]  mx-5 ">
-      <div className=" flex  justify-center items-center text-center">
-        <p className=" text-[10px] font-medium px-1">NO COST <p className="text-xs font-semibold">EMI ON</p></p>
+    <div className="custom-w py-4 px-5 flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee] rounded-tl-xl rounded-br-xl md:rounded-tl-3xl md:rounded-br-3xl mx-5 ">
+      <div className="flex md:w-1/4  justify-center items-center text-center border-r h-full border-black">
+        <p className="text-[10px] md:flex items-end gap-2 md:text-base font-medium px-1">NO COST <p className="text-xs md:text-xl font-semibold font-serif">EMI ON</p></p>
       </div>
-      <div className="w-full flex-1 flex gap-5 md:gap-8 justify-between items-center px-5">
+      <div className="w-full flex-1 flex gap-5 md:gap-2 justify-between items-center px-5">
         {bankIcons.map((icon, index) => (
           <div key={index}>
             <img src={icon} alt="" className="w-[60px] h-[] " />

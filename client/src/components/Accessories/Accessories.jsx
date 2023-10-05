@@ -25,7 +25,7 @@ function Accessories() {
       slidesPerView = 3.5;
     } 
     else if (isTablet) {
-      slidesPerView = 4.5;
+      slidesPerView = 4;
     } 
     else if (isLaptop) {
       slidesPerView = 5;
