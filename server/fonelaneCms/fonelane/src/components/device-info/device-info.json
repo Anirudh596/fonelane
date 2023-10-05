@@ -14,28 +14,6 @@
     "Specification": {
       "type": "richtext"
     },
-    "mainimage": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
-    "otherimages": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
-    },
     "Storage": {
       "type": "component",
       "repeatable": true,

@@ -13,7 +13,7 @@ import axios from "axios";
 
 // import CartFloat from "../../../components/Cart/CartFloat/CartFloat";
 
-function ProductSection(props) {
+function ProductSection({pIndex}) {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState("excellent");
   const [selectedSpec, setSelectedSpec] = useState("store2");
@@ -24,14 +24,14 @@ function ProductSection(props) {
   useEffect(() => {
     const fetchData = async ()=>{
       try {
-        const res = await axios.get(`http://localhost:1337/api/apples?populate=iphone-6`, {
+          const res = await axios.get(`http://localhost:1337/api/deal-of-the-day-2s/1?populate=*`, {
           headers: {
-            Authorization: "bearer "+ "ea2cc92777940d9cd90404735d813e642f04d4895d82f82372a51ea4b98cf0f851111798b2a88b55c9c048ec8c2f8d265dd0514b02c02c06efb5e21ca8f09e06ab5f92c596a6962f7b02ebe6ea6cb580c9ff42c892a94594fed906b0b27dd896fe141b51991b4a2cbe6562cc7359b718809b3331625b57982c5223bb9152f2ee",
+            Authorization: "bearer "+ "d6ac95ba95181cd90c44295e9c8e09137962dede50de6bea512ef8555e7e374bb8689d4dc37595bcccc03f26c454d4bff035a6a5ff9a79691cc933f442bacf3d77d3a3fa70cfce75353c6cf382db121d0c500335ba5d67f30bcc565dea2a08bf54cb0ca4becae34c886522d53bb32d55935f8384f90c054b2b0f48523ed8d13a",
           }
         }
         );
-        // setData(res.data.data?.attributes);
-        console.log(res.data.data);
+        // setData(res.data.data.attributes);
+        setData(res.data.data.attributes);
       } catch (error) {
         console.log(error);
       }
@@ -100,7 +100,7 @@ function ProductSection(props) {
               <div className="titles left-0 w-full">
                 <div className="title">
                   <p className="text-2xl md:text-[21px] font-semibold">
-                    iPhone 13 pro max
+                    {data.title}
                   </p>
                 </div>
 
@@ -148,7 +148,7 @@ function ProductSection(props) {
 
             <div className="prices hidden md:flex justify-start gap-4">
               <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
-                ₹89000{" "}
+                ₹{data.price}{" "}
                 <p className="text-sm md:text-base font-normal line-through flex gap-2">
                   ₹1,39000{" "}
                   <p className="text-[#32CD32]  text-sm md:text-base">

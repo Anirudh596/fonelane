@@ -25,8 +25,6 @@ export interface DeviceInfoDeviceInfo extends Schema.Component {
   attributes: {
     colors: Attribute.Component<'device-colors.colors', true>;
     Specification: Attribute.RichText;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
     Storage: Attribute.Component<
       'device-storage-and-cond.storage-and-cond',
       true

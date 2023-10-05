@@ -856,6 +856,41 @@ export interface ApiDealOfTheDayDealOfTheDay extends Schema.CollectionType {
   };
 }
 
+export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
+  collectionName: 'deal_of_the_day_2s';
+  info: {
+    singularName: 'deal-of-the-day-2';
+    pluralName: 'deal-of-the-day-2s';
+    displayName: 'Deal Of The Day 2';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    others: Attribute.Component<'device-info.device-info'>;
+    mainimage: Attribute.Media & Attribute.Required;
+    otherimages: Attribute.Media & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiIphone11Iphone11 extends Schema.CollectionType {
   collectionName: 'iphone_11s';
   info: {
@@ -1217,6 +1252,7 @@ declare module '@strapi/types' {
       'api::apple.apple': ApiAppleApple;
       'api::banner.banner': ApiBannerBanner;
       'api::deal-of-the-day.deal-of-the-day': ApiDealOfTheDayDealOfTheDay;
+      'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
       'api::iphone-11.iphone-11': ApiIphone11Iphone11;
       'api::iphone-12.iphone-12': ApiIphone12Iphone12;
       'api::iphone-13.iphone-13': ApiIphone13Iphone13;

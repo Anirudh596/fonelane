@@ -1,0 +1,49 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deal_of_the_day_2s",
+  "info": {
+    "singularName": "deal-of-the-day-2",
+    "pluralName": "deal-of-the-day-2s",
+    "displayName": "Deal Of The Day 2",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "others": {
+      "type": "component",
+      "repeatable": false,
+      "component": "device-info.device-info"
+    },
+    "mainimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
