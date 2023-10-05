@@ -7,6 +7,8 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function ProductImage() {
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+  // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [selectedImage, setSelectedImage] = useState(null);
   const { id } = useParams();
   const [productImages, setProductImages] = useState([]); // Store product images

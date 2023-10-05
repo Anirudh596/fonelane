@@ -9,6 +9,9 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function FirstCard() {
+
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+  // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const isMobile = useMediaQuery({ maxWidth: 550 });
   const isTablet2 = useMediaQuery({ maxWidth: 768 });
   const isLaptop = useMediaQuery({ maxWidth: 1260 });

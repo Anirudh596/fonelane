@@ -4,6 +4,9 @@ import axios from "axios";
 
 // eslint-disable-next-line react/prop-types
 function CardContent({pIndex}) {
+
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+  // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [data, setData] = useState([]);
   const [imageData, setImageData] = useState(null);
 

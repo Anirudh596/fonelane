@@ -5,6 +5,9 @@ import axios from "axios";
 
 
 const LoginPopup = ({ isOpen, onClose }) => {
+  // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+  // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
+
   const popupVariants = {
     hidden: { opacity: 0, scale: 0 },
     visible: { opacity: 1, scale: 1 },

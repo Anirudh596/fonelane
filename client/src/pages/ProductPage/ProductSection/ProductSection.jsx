@@ -15,6 +15,9 @@ import { useParams } from "react-router-dom";
 // import CartFloat from "../../../components/Cart/CartFloat/CartFloat";
 
 function ProductSection() {
+
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+  // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState("excellent");
   const [selectedSpec, setSelectedSpec] = useState("store2");
