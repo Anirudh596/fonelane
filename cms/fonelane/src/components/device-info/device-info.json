@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_device_info_device_infos",
+  "info": {
+    "displayName": "Device-info",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors"
+    },
+    "Specification": {
+      "type": "richtext"
+    }
+  }
+}

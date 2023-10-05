@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_device_storage_and_cond_conditions",
+  "info": {
+    "displayName": "Storage2",
+    "icon": "archive",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB32",
+        "GB64",
+        "GB128"
+      ]
+    }
+  }
+}

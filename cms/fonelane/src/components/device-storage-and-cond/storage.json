@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_device_storage_and_cond_storages",
+  "info": {
+    "displayName": "Condition2",
+    "icon": "arrowUp",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "condition": {
+      "type": "enumeration",
+      "enum": [
+        "Fair",
+        "Good",
+        "Excellent"
+      ]
+    }
+  }
+}
