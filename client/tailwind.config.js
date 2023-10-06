@@ -1,6 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+/** @type {import('tailwindcss').Configuration} */
+import withMT from "@material-tailwind/react/utils/withMT";
+import tailwindcssTextFill from 'tailwindcss-text-fill';
+
+export default withMT({
+  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
   theme: {
     extend: {
       gradientColors: {
@@ -9,7 +12,7 @@ export default {
       transitionProperty: {
         all: "all",
       },
-      dropShadow: {
+      boxShadow: {
         '3xl': '0 10px 10px rgba(0, 0, 0, 0.30)',
         '4xl': [
             '0 35px 35px rgba(0, 0, 0, 0.25)',
@@ -18,5 +21,5 @@ export default {
       },
     },
   },
-  plugins: ['tailwindcss-text-fill'],
-};
+  plugins: [tailwindcssTextFill],
+});

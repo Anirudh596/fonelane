@@ -7,6 +7,7 @@ import Wishlist from "./components/Wishlist/Wishlist";
 import Cart from "./components/Cart/Cart";
 import Navbar from "./components/Navigation/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
+import CheckOut from "./pages/CheckOut/CheckOut";
 // import SignupPopup from "./components/Authantication/SignUp";
 
 function App() {
@@ -21,9 +22,8 @@ function App() {
         <Route path="/cartfloat" element={<CartFloat />}/>
         <Route path="/cart" element={<Cart />}/>
         <Route path="/wishlist" element={<Wishlist />}/>
-        {/* <Route path="/sign" element={<SignUp/>} /> */}
+        <Route path="/checkout" element={<CheckOut />}/>
         
-        {/* <Route path="/login" element={<Login />}/> */}
 
       </Routes>
       <Footer />

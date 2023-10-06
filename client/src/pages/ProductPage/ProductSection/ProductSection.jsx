@@ -16,7 +16,7 @@ import { useParams } from "react-router-dom";
 
 function ProductSection() {
 
-    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+    const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState("excellent");
