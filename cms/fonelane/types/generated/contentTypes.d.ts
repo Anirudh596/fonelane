@@ -368,6 +368,7 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
     singularName: 'deal-of-the-day-2';
     pluralName: 'deal-of-the-day-2s';
     displayName: 'Deal Of The Day 2';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -381,6 +382,7 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
     condition: Attribute.Component<'device-storage-and-cond.storage'>;
     storage: Attribute.Component<'device-storage-and-cond.condition'>;
     inventory: Attribute.Integer;
+    MRP: Attribute.Integer;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

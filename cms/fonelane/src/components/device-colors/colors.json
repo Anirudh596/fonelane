@@ -2,25 +2,21 @@
   "collectionName": "components_device_colors_colors",
   "info": {
     "displayName": "Colors",
-    "icon": "alien"
+    "icon": "alien",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "colorname": {
-      "type": "richtext"
-    },
-    "colorcode": {
-      "type": "richtext"
-    },
     "colorimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

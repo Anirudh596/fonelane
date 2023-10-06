@@ -4,7 +4,8 @@
   "info": {
     "singularName": "deal-of-the-day-2",
     "pluralName": "deal-of-the-day-2s",
-    "displayName": "Deal Of The Day 2"
+    "displayName": "Deal Of The Day 2",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,24 +19,26 @@
       "type": "integer"
     },
     "mainimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     },
     "colors": {
       "type": "component",
@@ -53,6 +56,9 @@
       "component": "device-storage-and-cond.condition"
     },
     "inventory": {
+      "type": "integer"
+    },
+    "MRP": {
       "type": "integer"
     }
   }
