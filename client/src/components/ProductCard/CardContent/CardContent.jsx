@@ -1,11 +1,11 @@
-import Review from "../../Review/Review";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { Rating } from "@material-tailwind/react";
 
 // eslint-disable-next-line react/prop-types
 function CardContent({pIndex}) {
 
-    const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [data, setData] = useState([]);
   const [imageData, setImageData] = useState(null);
@@ -63,30 +63,36 @@ function CardContent({pIndex}) {
   //   fetchData();
   // }, []);
 
+  const customStyles = {
+    fontSize: "20px", // Adjust the font size to change the size of the Rating component
+  };
+
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">
-      <div className="text-[7px] md:text-xs">
+      <div className="text-[10px] md:text-xs bg-gray-400 w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
         <p>40% off</p>
       </div>
-      <div className="w-full ease-linear duration-200">
+      <div className="w-full ease-linear duration-200 flex justify-center items-center">
         {imageData && (
           <img
             src={`${imageData.url}`}
-            className="w-full h-[115px] md:h-[125px] lg:h-[145px] xl:h-[175px] bg-cover"
+            className=" h-[105px] md:h-[125px] lg:h-[145px] xl:h-[175px] bg-cover"
             alt=""
           />
         )}
       </div>
       <div className="relative mb-6 cursor-pointer z-50">
-        <Review className={"left-0"} classNamePoints={"hidden"} />
-        <div className="flex flex-col text-xs md:text-base lg:text-lg xl:text-xl w-full">
-          <p className="text-base md:text-sm lg:text-sm xl:text-base font-semibold">{data.title}</p>
+        <div className="text-sm">
+        <Rating value={4}  readonly className={"left-0"} classNamePoints={"hidden"} />
         </div>
-        <p className="text-[5px] md:text-xs" >starting from</p>
-        <p className="text-sm md:text-xs lg:text-xs xl:text-xs font-semibold gap-2 flex justify-start items-end mx-2">
-          ₹{data.price} <span className="text-[10px] md:text-xs lg:text-xs xl:text-xs font-normal">M.R.P: ₹<span className="line-through">99,999</span></span>
-        </p>
-        <p className="text-[8px] md:text-[10px] lg:text-[8px] xl:text-[11px]">or only ₹xxx per month</p>
+        <div className="flex flex-col text-xs md:text-base lg:text-lg xl:text-xl w-full">
+          <p className="text-sm md:text-sm  font-semibold">{data.title}</p>
+        </div>
+        <p className="text-[10px] md:text-xs w-full flex items-center font-medium gap-2" >starting from <p className="text-sm md:text-xs  font-bold  flex justify-start items-end"> ₹{data.price}
+        </p></p>
+        
+        <span className="text-xs md:text-xs lg:text-xs xl:text-xs font-semibold">M.R.P: ₹<span className="line-through">99,999</span></span>
+        {/* <p className="text-[12px] md:text-[10px] ">or only ₹xxx per month</p> */}
       </div>
     </div>  
   );

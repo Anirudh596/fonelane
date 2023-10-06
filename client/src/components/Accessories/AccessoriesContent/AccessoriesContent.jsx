@@ -1,4 +1,4 @@
-import Review from "../../Review/Review"
+import { Rating } from "@material-tailwind/react";
 
 function AccessoriesContent() {
   return (
@@ -12,7 +12,7 @@ function AccessoriesContent() {
             <p className="title w-full flex gap-1 text-base md:text-sm lg:text-base xl:text-base font-medium justify-center items-center" >₹499 <p className="flex  text-xs md:text-sm lg:text-base xl:text-base gap-1 font-normal">M.R.P: <p className="line-through  text-xs md:text-sm lg:text-base xl:text-base">999</p></p></p>
         
         </div>
-        <Review />
+        <Rating value={4} readonly/>
     </div>
     </>
   )
