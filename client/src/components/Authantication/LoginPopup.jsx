@@ -49,7 +49,7 @@ const LoginPopup = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:5000/api/user/login", {
+      const response = await axios.post("https://fonelane-server.onrender.com/api/user/login", {
         mobile,
       });
 
