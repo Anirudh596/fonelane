@@ -7,7 +7,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 
 function ProductImage() {
-    const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
+    // const cmsApiUrl = import.meta.env.CMS_RENDER_BACKEND_URL;
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [selectedImage, setSelectedImage] = useState(null);
   const { id } = useParams();
@@ -133,7 +133,7 @@ function ProductImage() {
           {productImages.map((image, index) => (
             <SwiperSlide key={index}>
               <div className="w-full flex justify-center items-center">
-              <img src={`http://localhost:1337${image}`} alt={`Product Image ${index}`} className="w-52 h-72" />
+              <img src={`${image}`} alt={`Product Image ${index}`} className="w-52 h-72" />
               </div>
             </SwiperSlide>
           ))}
