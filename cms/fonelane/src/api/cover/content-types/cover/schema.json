@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "covers",
+  "info": {
+    "singularName": "cover",
+    "pluralName": "covers",
+    "displayName": "Cover"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "colorname": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "MRP": {
+      "type": "integer"
+    },
+    "inventory": {
+      "type": "integer"
+    },
+    "specifications": {
+      "type": "richtext"
+    },
+    "mainimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "otherimages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
