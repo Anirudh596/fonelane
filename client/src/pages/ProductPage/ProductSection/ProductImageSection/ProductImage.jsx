@@ -38,9 +38,9 @@ function ProductImage() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://localhost:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
+        const res = await axios.get(`https://fonelane-cms.onrender.com/api/deal-of-the-day-2s/${id}?populate=*`, {
           headers: {
-            Authorization: "bearer " + "39b7cacb135a44150b60bd07187d017019f0e42446ec942628b42d692b5167211053739ff1639603a4ba90d1bbd1611d5af24b85941013764fb5077847ef758e8b23546d0bfe0801c26d9ee10474b2385ad46d9ce5843a4958c94527436ee10fd8aa378049221afe4833b1245bb206e81cdf47f9065b675125749fe64fc3541d",
+            Authorization: "bearer " + "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
           }
         });
 
@@ -79,7 +79,7 @@ function ProductImage() {
               }`}
             >
               <img
-                src={`http://localhost:1337${image}`}
+                src={`${image}`}
                 alt={`Product Image ${index}`}
                 className="w-[20px] h-[30px]"
               />
@@ -101,7 +101,7 @@ function ProductImage() {
         <div className="mt-4 hidden md:block">
           {selectedImage && (
             <img
-              src={`http://localhost:1337${selectedImage}`}
+              src={`${selectedImage}`}
               alt="Selected Product Image"
               className="w-[250px] h-[310px]"
             />
