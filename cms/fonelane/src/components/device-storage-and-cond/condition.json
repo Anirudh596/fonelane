@@ -10,9 +10,12 @@
     "storage": {
       "type": "enumeration",
       "enum": [
+        "GB16",
         "GB32",
         "GB64",
-        "GB128"
+        "GB128",
+        "GB256",
+        "GB512"
       ]
     }
   }

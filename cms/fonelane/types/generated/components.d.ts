@@ -5,10 +5,9 @@ export interface DeviceColorsColors extends Schema.Component {
   info: {
     displayName: 'Colors';
     icon: 'alien';
+    description: '';
   };
   attributes: {
-    colorname: Attribute.RichText;
-    colorcode: Attribute.RichText;
     colorimages: Attribute.Media;
   };
 }
@@ -33,7 +32,9 @@ export interface DeviceStorageAndCondCondition extends Schema.Component {
     description: '';
   };
   attributes: {
-    storage: Attribute.Enumeration<['GB32', 'GB64', 'GB128']>;
+    storage: Attribute.Enumeration<
+      ['GB16', 'GB32', 'GB64', 'GB128', 'GB256', 'GB512']
+    >;
   };
 }
 
