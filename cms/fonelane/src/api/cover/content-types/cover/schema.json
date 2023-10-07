@@ -4,7 +4,8 @@
   "info": {
     "singularName": "cover",
     "pluralName": "covers",
-    "displayName": "Cover"
+    "displayName": "Cover",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -32,24 +33,26 @@
       "type": "richtext"
     },
     "mainimage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "otherimages": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": true
+      ]
     }
   }
 }

@@ -17,6 +17,9 @@
         "videos",
         "audios"
       ]
+    },
+    "colorname": {
+      "type": "string"
     }
   }
 }
