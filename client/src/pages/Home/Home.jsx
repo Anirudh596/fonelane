@@ -26,9 +26,7 @@ function Home() {
 
       <div className="w-full flex-col justify-center items-center custom-w">
         <div className="title  my-5">
-          <p className="text-sm md:text-lg font-medium ">
-            Deal Of the Day
-          </p>
+          <p className="text-sm md:text-lg font-medium ">Deal Of the Day</p>
         </div>
         <ProductCard />
         <div className="title  my-5">
@@ -68,7 +66,7 @@ function Home() {
         <div className="title my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl ">
-            If you don't know
+            If you don{"'"}t know
           </p>
         </div>
         <Blog />

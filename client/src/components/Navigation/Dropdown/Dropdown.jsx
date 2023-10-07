@@ -31,9 +31,6 @@ function Dropdown() {
     { label: "iPHONE" },
     { label: "ONEPLUS" },
     { label: "SAMSUNG GALAXY" },
-    { label: "MI" },
-    { label: "VIVO" },
-    { label: "OPPO" },
     { label: "ACCESSORIES" },
   ];
 
