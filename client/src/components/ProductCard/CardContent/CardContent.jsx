@@ -69,7 +69,7 @@ function CardContent({pIndex}) {
 
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">
-      <div className="text-[10px] md:text-xs bg-gray-400 w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
+      <div className="text-[10px] md:text-xs bg-[#fbeec1]w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
         <p>40% off</p>
       </div>
       <div className="w-full ease-linear duration-200 flex justify-center items-center">
