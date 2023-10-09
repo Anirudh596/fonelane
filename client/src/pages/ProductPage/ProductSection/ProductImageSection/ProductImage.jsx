@@ -81,7 +81,7 @@ function ProductImage() {
               <img
                 src={`${image}`}
                 alt={`Product Image ${index}`}
-                className="w-[20px] h-[30px]"
+                className=" h-[30px]"
               />
             </div>
           ))}
@@ -98,13 +98,15 @@ function ProductImage() {
           ))}
         </div>
 
-        <div className="mt-4 hidden md:block">
+        <div className="mt-4 hidden md:flex">
           {selectedImage && (
+            <div className="w-full flex justify-center items-center">
             <img
               src={`${selectedImage}`}
               alt="Selected Product Image"
-              className="w-[250px] h-[310px]"
+              className=" h-[310px]"
             />
+            </div>
           )}
         </div>
       </div>
@@ -133,7 +135,7 @@ function ProductImage() {
           {productImages.map((image, index) => (
             <SwiperSlide key={index}>
               <div className="w-full flex justify-center items-center">
-              <img src={`${image}`} alt={`Product Image ${index}`} className="w-52 h-72" />
+              <img src={`${image}`} alt={`Product Image ${index}`} className=" h-72" />
               </div>
             </SwiperSlide>
           ))}

@@ -9,6 +9,7 @@ export interface DeviceColorsColors extends Schema.Component {
   };
   attributes: {
     colorimages: Attribute.Media;
+    colorname: Attribute.String;
   };
 }
 
