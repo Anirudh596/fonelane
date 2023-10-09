@@ -1,36 +1,21 @@
-import {  Route, Routes } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home/Home";
-import ProductPage from "./pages/ProductPage/ProductPage";
-import CartFloat from "./components/Cart/CartFloat/CartFloat";
-import Wishlist from "./components/Wishlist/Wishlist";
-import Cart from "./components/Cart/Cart";
-import Navbar from "./components/Navigation/Navbar/Navbar";
-import Footer from "./components/Footer/Footer";
-import CheckOut from "./pages/CheckOut/CheckOut";
-// import SignupPopup from "./components/Authantication/SignUp";
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Navbar from './components/Navigation/Navbar/Navbar';
+import Footer from './components/Footer/Footer';
+import routes from './Routes';
 
 function App() {
   return (
-    <>    
+    <>
       <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
         <Navbar />
       </div>
       <Routes>
-        <Route exact path="/" element={<Home />}/>
-        <Route path="/products/:id" element={<ProductPage />}/>
-        <Route path="/cartfloat" element={<CartFloat />}/>
-        <Route path="/cart" element={<Cart />}/>
-        <Route path="/wishlist" element={<Wishlist />}/>
-        <Route path="/checkout" element={<CheckOut />}/>
-        
-
+        {routes.map((route, index) => (
+          <Route key={index} path={route.path} element={route.element} />
+        ))}
       </Routes>
       <Footer />
-    
-        {/* <Home /> */}  
-        {/* <LogIn />      */}
-        {/* <SignUp /> */}
     </>
   );
 }
