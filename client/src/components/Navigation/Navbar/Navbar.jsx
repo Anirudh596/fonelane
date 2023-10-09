@@ -1,20 +1,17 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Logo from "../Logo/Logo";
 import CartFloat from "../../Cart/CartFloat/CartFloat";
 import WishlistPopup from "../../Wishlist/Wishlist";
 import Search from "../Search/Search";
 import Dropdown from "../Dropdown/Dropdown";
-import {  CiShoppingCart } from "react-icons/ci";
+import { CiShoppingCart } from "react-icons/ci";
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import LoginPopup from "../../Authantication/LoginPopup";
 import { useAuth } from "../../context/AuthContext";
 import { HiUserCircle } from "react-icons/hi";
-import {
-  Drawer,
-  Button,
-  IconButton,
-} from "@material-tailwind/react";
+
 import { Link } from "react-router-dom";
+import DrawerComponent from "./SideBar"; // Import the DrawerComponent
 
 function Navbar() {
   const links = [
@@ -36,11 +33,13 @@ function Navbar() {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isLogOpen, setIsLogOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to control the drawer
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
   const openLogin = () => setIsLogOpen(true);
   const closeLogin = () => setIsLogOpen(false);
   const toggleWishlist = () => setIsWishlistOpen(!isWishlistOpen);
+  const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen); // Function to toggle the drawer
 
   const loginButton = isLoggedIn ? (
     <HiUserCircle
@@ -55,21 +54,13 @@ function Navbar() {
     </button>
   );
 
-
-
- 
-  const [open, setOpen] = React.useState(false);
- 
-  const openDrawer = () => setOpen(true);
-  const closeDrawer = () => setOpen(false);
-
   return (
     <>
       <div className="top-0 bg-white z-50 w-full">
         <div className="mx-auto h-[50px] md:h-[50px]  flex justify-between md:justify-around items-center">
           <div className=" flex flex-grow md:flex-1 justify-between items-center mx-5">
             <div className="flex md:hidden items-center text-2xl">
-              <button onClick={openDrawer}>
+              <button onClick={toggleDrawer}>
                 <HiBars3BottomLeft />
               </button>
             </div>
@@ -82,39 +73,7 @@ function Navbar() {
             <li>Track Order</li>
             <li>Help</li>
           </ul>
-          
-            <Drawer open={open} onClose={closeDrawer} className="h-full w-full fixed top-0 left-0 overflow-y-auto transition-transform transform translate-x-0 md:translate-y-0 md:w-96">
-            <div className="mb-6 flex items-center justify-between">
-              
-              <IconButton variant="text" color="blue-gray" onClick={closeDrawer}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 28 28"
-                  strokeWidth={2}
-                  stroke="currentColor"
-                  className="h-5 w-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              </IconButton>
-            </div>
-            {links.map((link, index) => (
-                      <React.Fragment key={link}>
-                        <li className="my-2 flex items-center justify-center">{link}</li>
-                        {index < links.length - 1 && (
-                          <hr className="h-px border-0 my-1 bg-gray-200" />
-                        )}
-                      </React.Fragment>
-                    ))}
-           
-            
-          </Drawer>
-          
+          <DrawerComponent isOpen={isDrawerOpen} onClose={toggleDrawer} links={links} /> {/* Use the DrawerComponent */}
           <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6 hidden md:flex mx-5">
             <Search />
           </div>
@@ -151,19 +110,3 @@ function Navbar() {
 }
 
 export default Navbar;
-
-
-
-
-
- 
-export function DrawerDefault() {
-  
- 
-  return (
-    <React.Fragment>
-      <Button >Open Drawer</Button>
-      
-    </React.Fragment>
-  );
-}
