@@ -19,13 +19,16 @@ const Sidebar = ({ isSidebarOpen, links, handleSidebarOptionClick }) => {
   ];
 
   const sidebarVariants = {
-    hidden: { x: -300 },
+    hidden: { x: 0 },
     visible: { x: 0 },
   };
 
   const sidebarContentVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
+  };
+  const transition = {
+    duration: 0.5, // Specify the duration here (0.5 seconds in this example)
   };
 
   return (
@@ -44,6 +47,7 @@ const Sidebar = ({ isSidebarOpen, links, handleSidebarOptionClick }) => {
         variants={sidebarContentVariants}
       >
         <BackBtn func={handleSidebarOptionClick} className="left-0 m-5 text-base" />
+        
         {sidebarLinks.map((link, index) => (
           <>
             <li className="my-2 flex items-center justify-center" key={link}>
@@ -52,11 +56,15 @@ const Sidebar = ({ isSidebarOpen, links, handleSidebarOptionClick }) => {
             {index < sidebarLinks.length - 1 && (
               <hr className="h-px border-0 my-1 bg-gray-200" />
             )}
+          
           </>
         ))}
+        
       </motion.div>
+      <DrawerDefault />
     </motion.div>
   );
 };
 
 export default Sidebar;
+

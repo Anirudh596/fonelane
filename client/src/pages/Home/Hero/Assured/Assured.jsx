@@ -78,7 +78,7 @@ function Assured() {
       ) : (
         <div className="flex justify-between items-center w-full space-x-4 md:space-x-14">
           {AssuredContent.map((item, index) => (
-            <div key={index} className="flex justify-center items-center border-2 font-semibold border-gray-300 w-full gap-2 p-2 rounded-xl bg-[#f0ecfc]">
+            <div key={index} className="flex justify-center items-center border-2 font-semibold border-gray-300 w-full h-[80px] gap-2 p-2 rounded-xl bg-[#f0ecfc]">
               {item.icon}
               <p className="text-xs md:text-[13px] flex-1">{item.text}</p>
             </div>

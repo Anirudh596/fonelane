@@ -9,6 +9,7 @@ import { BsPatchCheckFill } from "react-icons/bs";
 import Specs from "../../../components/Specs";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useCart } from "../../../components/context/cart";
 
 function ProductSection() {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
@@ -17,6 +18,7 @@ function ProductSection() {
   const [selectedColor, setSelectedColor] = useState("color1");
   const [data, setData] = useState({});
   const { id } = useParams();
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -38,6 +40,12 @@ function ProductSection() {
     fetchData();
   }, [id]);
 
+  const mainPrice = data.price;
+  const mrp = data.MRP;
+  
+
+ 
+
   const dynamicPricing = () => {
     const percentMap = {
       fair: 10,
@@ -45,8 +53,18 @@ function ProductSection() {
       excellent: 20,
     };
     const percent = percentMap[selectedQuality] || 0;
-    return (data.price + (data.price * percent) / 100).toFixed(2);
+    let dynamicPrice = Math.floor(mainPrice + (data.price * percent) / 100)
+    return dynamicPrice;
   };
+
+  const saved = () => {
+    let saving = (((mrp - dynamicPricing())* 100 )/ mrp);
+   
+    let intSaving = Math.floor(saving)
+    return intSaving;
+   }
+
+   const savedPrice = mrp - dynamicPricing();
 
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);
@@ -125,12 +143,12 @@ function ProductSection() {
             <div className="prices hidden md:flex justify-start gap-4">
               <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
                 ₹{dynamicPricing()}{" "}
-                <p className="text-sm md:text-base font-normal line-through flex gap-2">
-                  ₹139000{" "}
-                  <span className="text-[#32CD32] text-sm md:text-base">
-                    Save ₹57,001 (41% Off)
-                  </span>
+                <p className="text-sm md:text-base font-semibold line-through flex gap-2">
+                  ₹{mrp}{" "}
                 </p>
+                  <span className="text-[#32CD32] text-sm md:text-base ">
+                    Save ₹{savedPrice} ({saved()}% Off)
+                  </span>
               </p>
             </div>
 
