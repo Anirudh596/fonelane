@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
@@ -8,7 +8,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 /* Default styles (mobile) */
 .custom-w {
@@ -18,12 +18,13 @@
 
 /* Tablet styles */
 @media (min-width: 768px) {
-  * {
-    font-family: "Montserrat";
+  *{
+    font-family: 'Montserrat';
   }
   .custom-w {
     max-width: 568px; /* Adjust max-width for tablets */
   }
+
 }
 
 /* Desktop styles */
@@ -71,10 +72,13 @@
   }
 }
 
+
+
 @media only screen and (max-width: 640px) {
   .swiper-button-next,
   .swiper-button-prev {
     display: none;
+
   }
 }
 @media only screen and (max-width: 940px) {
@@ -82,15 +86,15 @@
   .swiper-button-prev {
     display: block;
     width: 60px; /* Set the width of the buttons */
-    height: 60px; /* Set the height of the buttons */
-    background-color: #b4b3b37e; /* Set the background color */
-    color: #00000081; /* Set the text color */
-    font-size: 5px !important; /* Set the font size */
-    border-radius: 50%; /* Make the buttons circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  height: 60px; /* Set the height of the buttons */
+  background-color: #b4b3b37e; /* Set the background color */
+  color: #00000081; /* Set the text color */
+  font-size: 5px !important; /* Set the font size */
+  border-radius: 50%; /* Make the buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
   }
 }
 @media only screen and (max-width: 1880px) {
@@ -98,15 +102,16 @@
   .swiper-button-prev {
     display: block;
     width: 60px; /* Set the width of the buttons */
-    height: 60px; /* Set the height of the buttons */
-    background-color: #b4b3b37e; /* Set the background color */
-    color: #00000081; /* Set the text color */
-    font-size: 5px !important; /* Set the font size */
-    border-radius: 50%; /* Make the buttons circular */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
+  height: 60px; /* Set the height of the buttons */
+  background-color: #b4b3b37e; /* Set the background color */
+  color: #00000081; /* Set the text color */
+  font-size: 5px !important; /* Set the font size */
+  border-radius: 50%; /* Make the buttons circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+    
   }
 }
 
@@ -157,10 +162,10 @@
 }
 
 .selected {
-  background-color: #e7e0f8; /* Change to your desired background color */
+  background-color: #e7E0F8; /* Change to your desired background color */
   color: #000;
-  border: 1px solid black;
-  font-weight: 500; /* Change to your desired text color */
+  border: 1px solid black; 
+  font-weight: 500;/* Change to your desired text color */
 }
 
 /* custom.css */
@@ -210,16 +215,21 @@ input[type="checkbox"]:checked {
   box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
 }
 
+
+
 /* starts Social Icons Design bottom of the page found us on */
-.social-icons {
-  transition: all 0.3s ease-out;
+.social-icons{
+  transition: all .3s ease-out;
   cursor: pointer;
 }
-.social-icons:hover {
-  transform: scale(1.1);
+.social-icons:hover{
+  transform: scale(1.1); 
 }
 
 /* ends Social Icons Design bottom of the page found us on */
 
+
 /* Start Assured section styles */
 /* end Assured section styles */
+
+

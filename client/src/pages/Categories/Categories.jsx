@@ -1,3 +1,4 @@
+import  { useState } from 'react';
 import {
   Breadcrumbs,
   Menu,
@@ -9,15 +10,18 @@ import {
   Card,
   CardHeader,
   CardBody,
+  CardFooter,
   Typography,
   Rating,
 } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import 'swiper/css'; // Import Swiper styles
 
 function Categories() {
+  const [products] = useState([]); // Use products, not prodcts
+
   return (
     <div className="custom-w min-h-screen">
       <div className="flex justify-between items-center my-5">

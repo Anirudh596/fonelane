@@ -79,7 +79,7 @@ function Footer() {
                 <p>3rd Floor, Near Crc Estate 2,</p>
               </li>
               <li>
-                <p>Sultanpur, Gurgaon,</p>
+                <p>Sultanpur, New Delhi,</p>
               </li>
               <li>
                 <p>110030.</p>
@@ -109,16 +109,7 @@ function Footer() {
                     Terms and Conditions
                   </a>
                 </li>
-                <li>
-                  <a href="#" className="hover:opacity-60">
-                    Contact Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:opacity-60">
-                    Contact Us
-                  </a>
-                </li>
+                
               </ul>
             </div>
             <div className="w-1/2 h-full">
@@ -178,7 +169,7 @@ function Footer() {
           </div>
           <div className="w-full h-2/3 flex flex-col justify-center items-center mt-10">
             <p className="text-xs md:text-sm xl:text-base font-medium my-3">
-              Give us Your valuable feedback
+              Give us your valuable feedback
             </p>
             <button className="px-4 py-2 w-[120px] bg-white text-black hover:bg-gray-300 active:bg-black active:text-white ease-in duration-100 text-xs md:text-sm lg:text-base xl:text-base font-medium rounded-[15px]">
               Feedback

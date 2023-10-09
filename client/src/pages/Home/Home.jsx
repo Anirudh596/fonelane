@@ -44,7 +44,6 @@ function Home() {
             height="415"
             src="https://www.youtube.com/embed/BHACKCNDMW8?si=IuqKwn6W98IM3BdL"
             title="YouTube video player"
-            
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen
             className="w-full h-[300px] p-6 md:w-[660px] md:h-[415px]"

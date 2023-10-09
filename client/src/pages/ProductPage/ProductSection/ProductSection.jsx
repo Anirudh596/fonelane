@@ -9,6 +9,7 @@ import { BsPatchCheckFill } from "react-icons/bs";
 import Specs from "../../../components/Specs";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import { useCart } from "../../../components/context/cart";
 
 function ProductSection() {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
@@ -17,6 +18,7 @@ function ProductSection() {
   const [selectedColor, setSelectedColor] = useState("color1");
   const [data, setData] = useState({});
   const { id } = useParams();
+  const [cart, setCart] = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -144,7 +146,9 @@ function ProductSection() {
                 <p className="text-sm md:text-base font-semibold line-through flex gap-2">
                   ₹{mrp}{" "}
                 </p>
-                  <span className="text-[#32CD32] text-sm md:text-base ">Save ₹{savedPrice} ({saved()}% Off)</span>
+                  <span className="text-[#32CD32] text-sm md:text-base ">
+                    Save ₹{savedPrice} ({saved()}% Off)
+                  </span>
               </p>
             </div>
 

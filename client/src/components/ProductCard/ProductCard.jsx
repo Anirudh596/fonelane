@@ -14,6 +14,7 @@ function FirstCard() {
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const isMobile = useMediaQuery({ maxWidth: 550 });
   const isTablet2 = useMediaQuery({ maxWidth: 768 });
+  
   const isLaptop = useMediaQuery({ maxWidth: 1260 });
   const isDesktop = useMediaQuery({ maxWidth: 1500 });
 
@@ -29,6 +30,7 @@ function FirstCard() {
   else if (isLaptop) {
     slidesPerView = 4.5;
   }
+  
   else if (isDesktop) {
     slidesPerView = 5;
   } else {
