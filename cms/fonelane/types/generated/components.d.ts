@@ -51,6 +51,21 @@ export interface DeviceStorageAndCondStorage extends Schema.Component {
   };
 }
 
+export interface StoragesAndPricesStorageAndPrices extends Schema.Component {
+  collectionName: 'components_storages_and_prices_storage_and_prices';
+  info: {
+    displayName: 'storage And Prices';
+    icon: 'expand';
+    description: '';
+  };
+  attributes: {
+    storage: Attribute.Enumeration<['GB16', 'GB32', 'GB64', 'GB128']>;
+    fairPrice: Attribute.Integer;
+    goodPrice: Attribute.Integer;
+    excellentPrice: Attribute.Integer;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
@@ -58,6 +73,7 @@ declare module '@strapi/types' {
       'device-info.device-info': DeviceInfoDeviceInfo;
       'device-storage-and-cond.condition': DeviceStorageAndCondCondition;
       'device-storage-and-cond.storage': DeviceStorageAndCondStorage;
+      'storages-and-prices.storage-and-prices': StoragesAndPricesStorageAndPrices;
     }
   }
 }

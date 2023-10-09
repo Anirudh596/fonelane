@@ -362,83 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiCoverCover extends Schema.CollectionType {
-  collectionName: 'covers';
-  info: {
-    singularName: 'cover';
-    pluralName: 'covers';
-    displayName: 'Cover';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    colorname: Attribute.Component<'device-colors.colors', true>;
-    price: Attribute.Integer;
-    MRP: Attribute.Integer;
-    inventory: Attribute.Integer;
-    specifications: Attribute.RichText;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::cover.cover',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::cover.cover',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
-  collectionName: 'deal_of_the_day_2s';
-  info: {
-    singularName: 'deal-of-the-day-2';
-    pluralName: 'deal-of-the-day-2s';
-    displayName: 'Deal Of The Day 2';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    title: Attribute.String;
-    price: Attribute.Integer;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
-    colors: Attribute.Component<'device-colors.colors', true>;
-    condition: Attribute.Component<'device-storage-and-cond.storage'>;
-    storage: Attribute.Component<'device-storage-and-cond.condition'>;
-    inventory: Attribute.Integer;
-    MRP: Attribute.Integer;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::deal-of-the-day-2.deal-of-the-day-2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::deal-of-the-day-2.deal-of-the-day-2',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -754,6 +677,120 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCoverCover extends Schema.CollectionType {
+  collectionName: 'covers';
+  info: {
+    singularName: 'cover';
+    pluralName: 'covers';
+    displayName: 'Cover';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    colorname: Attribute.Component<'device-colors.colors', true>;
+    price: Attribute.Integer;
+    MRP: Attribute.Integer;
+    inventory: Attribute.Integer;
+    specifications: Attribute.RichText;
+    mainimage: Attribute.Media;
+    otherimages: Attribute.Media;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::cover.cover',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::cover.cover',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
+  collectionName: 'deal_of_the_day_2s';
+  info: {
+    singularName: 'deal-of-the-day-2';
+    pluralName: 'deal-of-the-day-2s';
+    displayName: 'Deal Of The Day 2';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    price: Attribute.Integer;
+    mainimage: Attribute.Media;
+    otherimages: Attribute.Media;
+    colors: Attribute.Component<'device-colors.colors', true>;
+    condition: Attribute.Component<'device-storage-and-cond.storage'>;
+    storage: Attribute.Component<'device-storage-and-cond.condition'>;
+    inventory: Attribute.Integer;
+    MRP: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiPhonePhone extends Schema.CollectionType {
+  collectionName: 'phones';
+  info: {
+    singularName: 'phone';
+    pluralName: 'phones';
+    displayName: 'phone';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    storage: Attribute.Component<
+      'storages-and-prices.storage-and-prices',
+      true
+    >;
+    basePrice: Attribute.Integer & Attribute.Required;
+    mrp: Attribute.Integer;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::phone.phone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::phone.phone',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -764,14 +801,15 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::cover.cover': ApiCoverCover;
-      'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::i18n.locale': PluginI18NLocale;
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::cover.cover': ApiCoverCover;
+      'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
+      'api::phone.phone': ApiPhonePhone;
     }
   }
 }
