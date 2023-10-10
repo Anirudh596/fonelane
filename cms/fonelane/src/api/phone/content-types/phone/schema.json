@@ -15,11 +15,6 @@
     "title": {
       "type": "string"
     },
-    "storage": {
-      "type": "component",
-      "repeatable": true,
-      "component": "storages-and-prices.storage-and-prices"
-    },
     "basePrice": {
       "type": "integer",
       "required": true

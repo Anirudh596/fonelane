@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "deal_of_the_day_2s",
+  "collectionName": "iphone8s",
   "info": {
-    "singularName": "deal-of-the-day-2",
-    "pluralName": "deal-of-the-day-2s",
-    "displayName": "Deal Of The Day 2",
-    "description": ""
+    "singularName": "iphone8",
+    "pluralName": "iphone8s",
+    "displayName": "Iphone8"
   },
   "options": {
     "draftAndPublish": true
@@ -53,10 +52,6 @@
     },
     "specs": {
       "type": "richtext"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
     }
   }
 }

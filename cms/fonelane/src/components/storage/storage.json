@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_storage_storages",
+  "info": {
+    "displayName": "storage",
+    "icon": "cube",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "storage": {
+      "type": "enumeration",
+      "enum": [
+        "GB16",
+        "GB32",
+        "GB64",
+        "GB128",
+        "GB256",
+        "GB512"
+      ]
+    },
+    "fairprice": {
+      "type": "integer"
+    },
+    "fairinventory": {
+      "type": "integer"
+    },
+    "goodprice": {
+      "type": "integer"
+    },
+    "goodinventory": {
+      "type": "integer"
+    },
+    "excellentprice": {
+      "type": "integer"
+    },
+    "excellentinventory": {
+      "type": "integer"
+    }
+  }
+}

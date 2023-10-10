@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "deal_of_the_day_2s",
+  "collectionName": "iphone7s",
   "info": {
-    "singularName": "deal-of-the-day-2",
-    "pluralName": "deal-of-the-day-2s",
-    "displayName": "Deal Of The Day 2",
-    "description": ""
+    "singularName": "iphone7",
+    "pluralName": "iphone7s",
+    "displayName": "Iphone7"
   },
   "options": {
     "draftAndPublish": true
@@ -50,13 +49,6 @@
       "type": "component",
       "repeatable": true,
       "component": "storage.storage"
-    },
-    "specs": {
-      "type": "richtext"
-    },
-    "slug": {
-      "type": "uid",
-      "targetField": "title"
     }
   }
 }
