@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "deal_of_the_day_2s",
+  "collectionName": "i_phone_xs",
   "info": {
-    "singularName": "deal-of-the-day-2",
-    "pluralName": "deal-of-the-day-2s",
-    "displayName": "Deal Of The Day 2",
-    "description": ""
+    "singularName": "i-phone-x",
+    "pluralName": "i-phone-xs",
+    "displayName": "iPhoneX"
   },
   "options": {
     "draftAndPublish": true
