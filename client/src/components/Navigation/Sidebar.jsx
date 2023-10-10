@@ -1,50 +1,27 @@
+import "./styles.css";
+import { useState } from "react";
 
-import { motion } from 'framer-motion';
-import BackBtn from '../BackBtn/BackBtn';
 
-const Sidebar = ({ isSidebarOpen, links, handleSidebarOptionClick }) => {
-  const sidebarLinks = [
-    'About Us',
-    'Track Order',
-    'Help',
-    'Verified Refurbished',
-    'Student Special',
-    'Deals',
-    'iPhone',
-    'OnePlus',
-    'Samsung Galaxy',
-    'MI',
-    'VIVO',
-    'OPPO',
-  ];
 
-  const sidebarVariants = {
-    hidden: { x: 0 },
-    visible: { x: 0 },
-  };
 
+<<<<<<< HEAD
   const sidebarContentVariants = {
     hidden: { opacity: 0 },
     visible: { opacity: 1 },
   };
-  const transition = {
-    duration: 0.5, // Specify the duration here (0.5 seconds in this example)
-  };
+=======
+function App() {
+>>>>>>> 35879406966b6dbd446e1ec0f343e913abc2143b
+  
 
   return (
-    <motion.div
-      className={`md:hidden fixed top-0 left-0 h-full w-64 bg-white z-50 border-r border-gray-200 ${
-        isSidebarOpen ? 'visible' : 'hidden'
-      }`}
-      initial="hidden"
-      animate={isSidebarOpen ? 'visible' : 'hidden'}
-      exit="hidden"
-      variants={sidebarVariants}
+    <motion.nav
+      
+      className="menu"
     >
-      <motion.div
-        initial="hidden"
-        animate="visible"
-        variants={sidebarContentVariants}
+      <motion.button
+        whileTap={{ scale: 0.97 }}
+        onClick={() => setIsOpen(!isOpen)}
       >
         <BackBtn func={handleSidebarOptionClick} className="left-0 m-5 text-base" />
         
@@ -61,10 +38,8 @@ const Sidebar = ({ isSidebarOpen, links, handleSidebarOptionClick }) => {
         ))}
         
       </motion.div>
-      <DrawerDefault />
     </motion.div>
   );
-};
+}
 
-export default Sidebar;
-
+export default App;

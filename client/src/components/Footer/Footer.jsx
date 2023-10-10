@@ -4,33 +4,36 @@ import {
   faXTwitter,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
     <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh] my-5">
       <div className="contact-bar custom-w h-[12vh] md:h-18 flex justify-between items-center ">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">Follow Us On</p>
+        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+          Follow Us On
+        </p>
         <div>
           <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             <li className="social-icons opacity-100">
-            <img
-            src="./images/instagram.png"
-            alt=""
-            className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] "
-          />
+              <img
+                src="./images/instagram.png"
+                alt=""
+                className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] "
+              />
             </li>
             <li className="social-icons opacity-100">
-              <a  className="text-[#405de6] ">
+              <a className="text-[#405de6] ">
                 <FontAwesomeIcon icon={faSquareFacebook} />
               </a>
             </li>
             <li className="social-icons opacity-100">
-              <a  className="text-[#ff3535] ">
+              <a className="text-[#ff3535] ">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </li>
             <li className="social-icons opacity-100">
-              <a  className="text-gray-700 ">
+              <a className="text-gray-700 ">
                 <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </li>
@@ -45,26 +48,24 @@ function Footer() {
               Company
             </p>
             <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-3">
-              <li className="group">
+              <Link to="/"><li className="group">
                 <a href="#" className="hover:opacity-60">
                   Home
                 </a>
-              </li>
-              <li className="group">
+              </li></Link>
+              <Link to="/iphones"><li className="group">
                 <a href="#" className="hover:opacity-60">
-                  Categories
+                  iPhones
                 </a>
-              </li>
-              <li className="group">
-                <a href="#" className="hover:opacity-60">
-                  About Us
+              </li></Link>
+              <Link to="/about">
+              <li>About Us</li>
+            </Link>
+            <Link to="/help"><li className="group">
+                <a className="hover:opacity-60">
+                  Help
                 </a>
-              </li>
-              <li className="group">
-                <a href="#" className="hover:opacity-60">
-                  Contact Us
-                </a>
-              </li>
+              </li></Link>
             </ul>
           </div>
           <div className="w-full h-1/2">
@@ -95,21 +96,35 @@ function Footer() {
               </p>
               <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-2">
                 <li>
-                  <a href="#" className="hover:opacity-60">
-                    Refund Policy
-                  </a>
+                  <Link to="/refund-return">
+                    <a href="" className="hover:opacity-60">
+                      Return & Refund 
+                    </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:opacity-60">
-                    Return Policy
-                  </a>
+                  <Link to="/shipping-policy">
+                    <a href="" className="hover:opacity-60">
+                      Shipping 
+                    </a>
+                  </Link>
                 </li>
-                <li>
-                  <a href="#" className="hover:opacity-60">
-                    Terms and Conditions
-                  </a>
-                </li>
+
                 
+                <li>
+                  <Link to="/privacy">
+                    <a href="#" className="hover:opacity-60">
+                      Privacy Policy
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                <Link to="/terms-conditions">
+                    <a href="#" className="hover:opacity-60">
+                      Terms and Conditions
+                    </a>
+                  </Link>
+                </li>
               </ul>
             </div>
             <div className="w-1/2 h-full">
@@ -176,7 +191,9 @@ function Footer() {
             </button>
           </div>
           <div className="w-full h-1/3 mt-10 flex flex-col justify-center items-center">
-            <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-normal mb-3">Payment Methods</p>
+            <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-normal mb-3">
+              Payment Methods
+            </p>
             <div className="flex justify-center items-center gap-7">
               <img
                 src="./images/visa.png"

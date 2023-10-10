@@ -63,7 +63,7 @@ function CardContent({pIndex}) {
   //   fetchData();
   // }, []);
 
-  const mainPrice = data.price;
+  const mainPrice = data.baseprice;
   const mrp = data.MRP;
 
  const saved = () => {

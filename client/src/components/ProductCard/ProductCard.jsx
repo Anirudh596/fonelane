@@ -59,7 +59,7 @@ function FirstCard() {
   // Create an array cardData with the same length as data and map over it
   const cardData = data.map((item, index) => (
     <SwiperSlide key={index+1}>
-      <Link to={`/products/${item.id}`}>
+      <Link to={`/products/${index+1}`}>
         <div className="my-1 mb-2 md:my-5 md:mb-10 md:mx-10 lg:my-5 lg:mb-10 lg:mx-10 xl:my-5 xl:mb-10 xl:mx-10">
           <div className="w-[160px] h-[260px] md:w-[202px] md:h-[320px] bg-white rounded-md cursor-pointer card-container">
             <CardContent pIndex={index+1}/>

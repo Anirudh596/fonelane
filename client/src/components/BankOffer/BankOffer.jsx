@@ -9,7 +9,7 @@ function BankOffer() {
   ];
 
   return (
-    <div className="custom-w md:my-4 px-2 flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee] rounded-tl-3xl rounded-br-3xl   ">
+    <div className="custom-w md:my-4 px-2 flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee]   ">
       <div className="flex md:w-1/4  justify-center items-center text-center border-r h-full border-black">
         <p className="text-[10px] md:flex items-end gap-2 md:text-base font-medium px-1">NO COST <p className="text-xs md:text-xl font-semibold font-serif">EMI ON</p></p>
       </div>

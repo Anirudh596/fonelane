@@ -6,6 +6,7 @@ import Slider from "./Hero/Slider/Slider";
 import AdBar from "../../components/AdBar/AdBar";
 import Blog from "../../components/Blog/Blog";
 import BankOffer from "../../components/BankOffer/BankOffer";
+import { Button } from "@material-tailwind/react";
 
 function Home() {
   return (
@@ -61,7 +62,21 @@ function Home() {
             Hot Deal{"'"}
           </p>
         </div>
-        <Banner />
+        <div className="flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200">
+        <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3 z-10 rounded-lg h-40 w-1/3">
+        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        <p className="absolute top-1/4 left-10 text-white">New Arrival</p>
+      </Button>
+      <Button size="lg" color="white" className="mx-5  relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
+        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        <p className="absolute top-1/4 left-10 text-white">Students Offer</p>
+      </Button>
+      <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
+        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        <p className="absolute top-1/4 left-10 text-white">Back Covers</p>
+      </Button>
+
+        </div>
         <div className="title my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-sm md:text-base lg:text-xl xl:text-2xl ">

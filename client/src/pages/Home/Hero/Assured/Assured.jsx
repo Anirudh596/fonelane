@@ -53,20 +53,6 @@ function Assured() {
   return (
     <div className="px-2 my-3 md:my-8 w-full">
       {isMobile ? (
-        // <Swiper
-        //   slidesPerView={3.5}
-        //   spaceBetween={5}
-          
-        // >
-        //   {AssuredContent.map((item, index) => (
-        //     <SwiperSlide key={index} >
-        //       <div key={index} className="flex justify-center items-center border border-gray-300 rounded-xl bg-[#f8fffd]">
-        //       {item.icon}
-        //       <p className="text-xs md:text-[13px] flex-1">{item.text}</p>
-        //     </div>
-        //     </SwiperSlide>
-        //   ))}
-        // </Swiper>
         <div className="flex justify-between items-center w-full gap-2">
           {AssuredContent.map((item, index) => (
             <div key={index} className="flex flex-col justify-center items-center text-center border border-gray-300 w-full h-[80px] p-2 rounded bg-[#f0ecfc]">
