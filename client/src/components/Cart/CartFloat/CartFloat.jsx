@@ -167,3 +167,4 @@ function CartFloat({ onClose }) {
 }
 
 export default CartFloat;
+

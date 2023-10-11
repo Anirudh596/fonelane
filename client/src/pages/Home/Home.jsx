@@ -1,11 +1,11 @@
 import Assured from "./Hero/Assured/Assured";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Accessories from "../../components/Accessories/Accessories";
-import Banner from "../../components/Banner/Banner";
+import Banner from "../Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
-import AdBar from "../../components/AdBar/AdBar";
-import Blog from "../../components/Blog/Blog";
-import BankOffer from "../../components/BankOffer/BankOffer";
+import AdBar from "../AdBar/AdBar";
+import Blog from "../Blog/Blog";
+import BankOffer from "../BankOffer/BankOffer";
 import { Button } from "@material-tailwind/react";
 
 function Home() {

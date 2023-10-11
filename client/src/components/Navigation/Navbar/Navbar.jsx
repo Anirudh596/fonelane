@@ -1,8 +1,7 @@
 import { useState } from "react";
-import Logo from "../Logo/Logo";
 import CartFloat from "../../Cart/CartFloat/CartFloat";
 import WishlistPopup from "../../Wishlist/Wishlist";
-import Search from "../Search/Search";
+import Search from "./Search";
 import Dropdown from "../Dropdown/Dropdown";
 import { CiShoppingCart } from "react-icons/ci";
 import { HiBars3BottomLeft } from "react-icons/hi2";
@@ -63,7 +62,7 @@ function Navbar() {
               onClick={toggleDrawer}
             >
               <button>
-                <HiBars3BottomLeft  className="text-2xl"/>
+                <HiBars3BottomLeft className="text-2xl" />
               </button>
               <Drawer
                 open={isDrawerOpen}
@@ -108,7 +107,11 @@ function Navbar() {
               </Drawer>
             </div>
             <div className="">
-              <Logo />
+              <Link to="/">
+                <div className="flex justify-center items-end w-auto h-auto">
+                  <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40 h-40 md:w-40 md:h-40  " />
+                </div>
+              </Link>
             </div>
           </div>
           <ul className="list-none hidden md:flex justify-between items-center text-[8px] md:text-[12px] lg:text-xs xl:text-xs 2xl:text-sm gap-2 md:gap-5  cursor-pointer">

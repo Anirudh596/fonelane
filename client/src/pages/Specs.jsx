@@ -1,6 +1,6 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import BackBtn from "./BackBtn/BackBtn";
+import BackBtn from "../components/BackBtn/BackBtn";
 
 function Specs({ isOpen, onClose }) {
     const popupVariants = {
