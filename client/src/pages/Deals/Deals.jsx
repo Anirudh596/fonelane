@@ -9,6 +9,7 @@ import {
 } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
+import Scroll from "../../components/scroll/Scroll";
 
 function Deals() {
   const newDevices = [1, 2, 3, 4, 5,6,7,8,9,10];
@@ -40,6 +41,7 @@ function Deals() {
 
   return (
     <div className="custom-w min-h-screen">
+      <Scroll />
       <div className="relative md:p-0">
         <img
           className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"

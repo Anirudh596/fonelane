@@ -4,6 +4,7 @@ import { BsTelephone } from "react-icons/bs";
 import { BiMessageDetail } from "react-icons/bi";
 import { CiLocationOn } from "react-icons/ci";
 import { useInView } from "react-intersection-observer";
+import Scroll from "../../components/scroll/Scroll";
 
 function Contact() {
   const [ref, inView] = useInView({
@@ -22,6 +23,7 @@ function Contact() {
   };
   return (
     <>
+    <Scroll />
       <div className="custom-w min-h-screen ">
         <div className="relative">
           <img

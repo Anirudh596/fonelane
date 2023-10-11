@@ -17,6 +17,7 @@ function ShippingPolicy() {
   };
   return (
     <div className="custom-w min-h-screen">
+      <Scroll />
       <div className=" relative flex w-full h-80 md:h-72 border border-gray-500 my-10">
         <div
           className={`absolute  z-20 md:top-1/4 md:left-10 text-black flex gap-3 md:gap-7 flex-col justify-center items-center w-full md:w-1/2 h-auto ${
@@ -59,6 +60,7 @@ import {
   AccordionHeader,
   AccordionBody,
 } from "@material-tailwind/react";
+import Scroll from "../../components/scroll/Scroll";
 
 // eslint-disable-next-line react/prop-types
 function Icon({ id, open }) {
