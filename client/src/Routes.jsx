@@ -14,7 +14,7 @@ import ShippingPolicy from "./pages/PrivacyPolicy/ShippingPolicy";
 import Iphones from "./pages/Iphones/Iphones";
 import JustIn from "./pages/JustIn/JustIn";
 import Deals from "./pages/Deals/Deals";
-import CoverPage from "./pages/CoverPage/Covers";
+import CoverPage from "./pages/Covers/Covers";
 
 const routes = [
   {

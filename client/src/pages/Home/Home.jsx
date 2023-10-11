@@ -1,18 +1,15 @@
 import Assured from "./Hero/Assured/Assured";
 import ProductCard from "../../components/ProductCard/ProductCard";
 import Accessories from "../../components/Accessories/Accessories";
-import Banner from "../Banner/Banner";
 import Slider from "./Hero/Slider/Slider";
-import AdBar from "../AdBar/AdBar";
-import Blog from "../Blog/Blog";
-import BankOffer from "../BankOffer/BankOffer";
+import Blog from "./Blog/Blog";
 import { Button } from "@material-tailwind/react";
 
 function Home() {
   return (
     <>
       <div className="block md:hidden overflow-hidden">
-        <AdBar />
+        <AdButtons />
       </div>
       <div className="block">
         <Slider />
@@ -117,3 +114,72 @@ function Home() {
 }
 
 export default Home;
+
+
+function AdButtons() {
+  const AssuredContent = [
+    {
+      // icon: <img src="./images/1.png" alt="" className="w-12 h-12"/>,
+      text: "Student Special",
+    },
+    {
+      // icon: <img src="./images/2.png" alt="" className="w-14 h-12"/>,
+      text: "Deals",
+    },
+    {
+      // icon: <img src="./images/3.png" alt="" className="w-12 h-12"/>,
+      text: "iPhones",
+    },
+    {
+      // icon: <img src="./images/4.png" alt="" className="w-20 h-12"/>,
+      text: "Accessories",
+    },
+  ];
+
+  // Check if the screen width is less than 768px (mobile)
+  // const isMobile = window.innerWidth < 768 ;
+
+  return (
+    <div className=" md:mx-5 my-3 md:my-3 w-full flex justify-between gap-2 px-2">
+      {AssuredContent.map((item, index) => (
+        <div key={index} className="bg-[#eeeeee] w-full flex justify-center items-center text-center p-1 border border-gray-400 rounded-sm">
+          <div className="flex ">
+            {item.icon}
+            <p className=" w-full text-[10px] md:text-xs  font-semibold">
+              {item.text}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+
+
+
+function BankOffer() {
+  const bankIcons = [
+    "./images/image-4.png",
+    "./images/image-5.png",
+    "./images/image-3.png",
+    "./images/image.png",
+    "./images/image-1.png"
+  ];
+
+  return (
+    <div className="custom-w md:my-4 px-2 flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee]   ">
+      <div className="flex md:w-1/4  justify-center items-center text-center border-r h-full border-black">
+        <p className="text-[10px] md:flex items-end gap-2 md:text-base font-medium px-1">NO COST <p className="text-xs md:text-xl font-semibold font-serif">EMI ON</p></p>
+      </div>
+      <div className="w-full flex-1 flex gap-1 md:gap-2 justify-between items-center px-5">
+        {bankIcons.map((icon, index) => (
+          <div key={index}>
+            <img src={icon} alt="" className="h-[80px] w-[80px] md:w-[120px] md:h-[120px]" />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
