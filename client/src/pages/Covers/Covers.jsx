@@ -2,9 +2,37 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react"; // Import useEffect
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { PiShoppingCartLight } from "react-icons/pi";
+import {
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "@material-tailwind/react";
+
+// eslint-disable-next-line react/prop-types
+function Icon({ id, open }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth={2}
+      stroke="currentColor"
+      className={`${
+        id === open ? "rotate-180" : ""
+      } h-5 w-5 transition-transform`}
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+      />
+    </svg>
+  );
+}
 
 function CoverPage() {
-  
+
+
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
@@ -61,7 +89,8 @@ function CoverPage() {
             />
           </div>
         </div>
-        <hr className="h-px border-0 bg-black w-full" /><hr className="h-px border-0 bg-black w-full" />
+        <hr className="h-px border-0 bg-black w-full" />
+        <hr className="h-px border-0 bg-black w-full" />
         <div className="title my-10">
           <p className="text-[28px] font-bold">You may also like</p>
         </div>
@@ -101,10 +130,7 @@ function CoverPage() {
 
 export default CoverPage;
 
-
-import  { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTag } from "@fortawesome/free-solid-svg-icons";
+import { useState } from "react";
 import { AiOutlineShareAlt } from "react-icons/ai";
 import { CiHeart } from "react-icons/ci";
 import Review from "../../components/Review/Review";
@@ -113,12 +139,18 @@ import { useParams } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { Pagination } from 'swiper/modules';
-
-
-
+import { Pagination } from "swiper/modules";
 
 function CoverSection() {
+  const [open, setOpen] = useState(0);
+
+  const handleOpen = (value) => setOpen(open === value ? 0 : value);
+  const CUSTOM_ANIMATION = {
+    mount: { scale: 1 },
+    unmount: { scale: 0.9 },
+  };
+
+
   const [selectedColor, setSelectedColor] = useState("color1");
   const [data, setData] = useState({});
   const { id } = useParams();
@@ -126,11 +158,15 @@ function CoverSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`, {
-          headers: {
-            Authorization: "Bearer 2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
-          },
-        });
+        const res = await axios.get(
+          `https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "Bearer 2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+            },
+          }
+        );
         setData(res.data.data.attributes);
         console.log(res.data.data.attributes.baseprice);
       } catch (error) {
@@ -139,7 +175,6 @@ function CoverSection() {
     };
     fetchData();
   }, [id]);
-
 
   const handleColorButtonClick = (color) => {
     setSelectedColor(color);
@@ -152,15 +187,20 @@ function CoverSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`, {
-          headers: {
-            Authorization: "bearer " + "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+        const res = await axios.get(
+          `https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "bearer " +
+                "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+            },
           }
-        });
+        );
 
         // Extract and set product images from the response data
         const imageData = res.data.data.attributes.otherimages.data;
-        setProductImages(imageData.map(image => image.attributes.url));
+        setProductImages(imageData.map((image) => image.attributes.url));
         console.log(res.data.data.attributes.otherimages.data);
       } catch (error) {
         console.log(error);
@@ -185,57 +225,65 @@ function CoverSection() {
     <>
       <div className="flex custom-w h-fit  flex-col md:flex-row">
         <div className="md:flex-1">
-        <div className="flex">
-        <div className="hidden md:grid grid-rows-4 w-[80px] h-fit gap-4">
-          {productImages.map((image, index) => (
-            <div
-              key={index}
-              onClick={() => handleImageClick(image)}
-              className={` overflow-hidden cursor-pointer bg-gray-200 w-[50px] h-[50px] rounded-[10px] flex justify-center items-center ${
-                selectedImage === image ? "bg-sky-200" : ""
-              }`}
+          <div className="flex">
+            <div className="hidden md:grid grid-rows-4 w-[80px] h-fit gap-4">
+              {productImages.map((image, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleImageClick(image)}
+                  className={` overflow-hidden cursor-pointer bg-gray-200 w-[50px] h-[50px] rounded-[10px] flex justify-center items-center ${
+                    selectedImage === image ? "bg-sky-200" : ""
+                  }`}
+                >
+                  <img
+                    src={`${image}`}
+                    alt={`Product Image ${index}`}
+                    className=" h-[30px]"
+                  />
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-4 hidden md:flex">
+              {selectedImage && (
+                <div className="w-full flex justify-center items-center">
+                  <img
+                    src={`${selectedImage}`}
+                    alt="Selected Product Image"
+                    className=" h-[310px]"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="buttons hidden md:flex gap-3 text-sm md:text-base my-10">
+            <button className="flex-1 px-5 border border-black flex justify-center items-center rounded-lg py-2 active:bg-black active:text-white hover:scale-105">
+              Buy Now
+            </button>
+
+            <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+              Add to Cart
+            </button>
+          </div>
+          <div className="flex relative md:hidden w-full justify-center items-center">
+            <Swiper
+              pagination={true}
+              modules={[Pagination]}
+              className="mySwiper"
             >
-              <img
-                src={`${image}`}
-                alt={`Product Image ${index}`}
-                className=" h-[30px]"
-              />
-            </div>
-          ))}
-        </div>
-
-        <div className="mt-4 hidden md:flex">
-          {selectedImage && (
-            <div className="w-full flex justify-center items-center">
-            <img
-              src={`${selectedImage}`}
-              alt="Selected Product Image"
-              className=" h-[310px]"
-            />
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="buttons hidden md:flex gap-3 text-sm md:text-base my-10">
-        <button className="flex-1 px-5 border border-black flex justify-center items-center rounded-lg py-2 active:bg-black active:text-white hover:scale-105">
-          Buy Now
-        </button>
-
-        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
-          Add to Cart
-        </button>
-      </div>
-      <div className="flex relative md:hidden w-full justify-center items-center">
-        <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-          {productImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div className="w-full flex justify-center items-center">
-              <img src={`${image}`} alt={`Product Image ${index}`} className=" h-72" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              {productImages.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="w-full flex justify-center items-center">
+                    <img
+                      src={`${image}`}
+                      alt={`Product Image ${index}`}
+                      className=" h-72"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
 
         <div className="md:flex-1 w-full h-fit md:h-[70vh] md:px-8 overflow-x-hidden overflow-y-scroll scrollbar-hide">
@@ -280,39 +328,25 @@ function CoverSection() {
                   ₹{data.MRP}{" "}
                 </p>
                 <span className="text-[#32CD32] text-sm md:text-base ">
-                  {/* Save ₹{savedPrice} ({saved()}% Off) */}
+                  Save ₹{data.MRP - data.price} ({Math.floor(((data.MRP - data.price) * 100) / data.MRP)}% Off)
                 </span>
               </p>
             </div>
-
-            <hr className="w-full" />
-
             <div className="w-full text-xs md:text-xs gap-1 md:flex justify-between items-center">
-              <div>
-                <div className="flex gap-2 text-center items-center ">
-                  <FontAwesomeIcon
-                    icon={faTag}
-                    className="text-[#ff5659]"
-                    flip="horizontal"
-                  />
-                  <p>Bank Offer10% Instant Discount on HDFC Credit Card</p>
-                </div>
-                <div className="flex gap-2 text-center items-center">
-                  <FontAwesomeIcon
-                    icon={faTag}
-                    className="text-[#ff5659]"
-                    flip="horizontal"
-                  />
-                  <p>Bank Offer10% Instant Discount on HDFC Credit Card</p>
-                </div>
-              </div>
-              <a href="" className="ml-2 underline text-blue-600">
-                View all offers
-              </a>
+              <Accordion open={open === 1} animate={CUSTOM_ANIMATION} icon={<Icon id={1} open={open} />}>
+                <AccordionHeader onClick={() => handleOpen(1)}>
+                  Features
+                </AccordionHeader>
+                <AccordionBody>
+                  <ul className="flex flex-col">
+                    <li>hello world</li>
+                    <li>hello world</li>
+                    <li>hello world</li>
+                    <li>hello world</li>
+                  </ul>
+                </AccordionBody>
+              </Accordion>
             </div>
-
-            <hr className="w-full" />
-
             <div className="colors block">
               <div className="">
                 <p>Colors :</p>
@@ -331,7 +365,7 @@ function CoverSection() {
                     ></button>
                   </div>
                 ))}
-              </div>    
+              </div>
             </div>
 
             <hr className="h-px border-0 bg-black w-full" />
