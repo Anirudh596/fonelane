@@ -56,6 +56,18 @@
     "slug": {
       "type": "uid",
       "targetField": "title"
+    },
+    "just_ins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::just-in.just-in",
+      "mappedBy": "i_phone_14s"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "i_phone_14s"
     }
   }
 }

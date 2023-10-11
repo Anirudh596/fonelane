@@ -52,6 +52,18 @@
     },
     "specs": {
       "type": "richtext"
+    },
+    "just_ins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::just-in.just-in",
+      "mappedBy": "iphone_8s"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "iphone_8s"
     }
   }
 }

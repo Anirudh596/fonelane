@@ -49,6 +49,18 @@
       "type": "component",
       "repeatable": true,
       "component": "storage.storage"
+    },
+    "just_ins": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::just-in.just-in",
+      "mappedBy": "iphone_7s"
+    },
+    "deals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::deal.deal",
+      "mappedBy": "iphone_7s"
     }
   }
 }

@@ -16,11 +16,13 @@ import {
 import { Link } from "react-router-dom";
 
 import 'swiper/css'; // Import Swiper styles
+import Scroll from "../../components/scroll/Scroll";
 
 function Categories() {
 
   return (
     <div className="custom-w min-h-screen">
+      <Scroll />
       <div className="flex justify-between items-center my-5">
         <Breadcrumbs separator=">" className="bg-white font-medium">
           <Link to="/">

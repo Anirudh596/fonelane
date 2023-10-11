@@ -783,6 +783,72 @@ export interface ApiCoverCover extends Schema.CollectionType {
   };
 }
 
+export interface ApiDealDeal extends Schema.CollectionType {
+  collectionName: 'deals';
+  info: {
+    singularName: 'deal';
+    pluralName: 'deals';
+    displayName: 'deal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    i_phone_6s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone6.i-phone6'
+    >;
+    iphone_7s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::iphone7.iphone7'
+    >;
+    iphone_8s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::iphone8.iphone8'
+    >;
+    i_phone_xes: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone-x.i-phone-x'
+    >;
+    i_phone_11s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone11.i-phone11'
+    >;
+    i_phone_12s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone12.i-phone12'
+    >;
+    i_phone_13s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone-13.i-phone-13'
+    >;
+    i_phone_14s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone14.i-phone14'
+    >;
+    i_phone_15s: Attribute.Relation<
+      'api::deal.deal',
+      'manyToMany',
+      'api::i-phone15.i-phone15'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::deal.deal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::deal.deal', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
   collectionName: 'deal_of_the_day_2s';
   info: {
@@ -842,6 +908,16 @@ export interface ApiIPhone13IPhone13 extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone-13.i-phone-13', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone-13.i-phone-13',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone-13.i-phone-13',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -880,6 +956,16 @@ export interface ApiIPhoneXIPhoneX extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone-x.i-phone-x', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone-x.i-phone-x',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone-x.i-phone-x',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -918,6 +1004,16 @@ export interface ApiIPhone11IPhone11 extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone11.i-phone11', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone11.i-phone11',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone11.i-phone11',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -956,6 +1052,16 @@ export interface ApiIPhone12IPhone12 extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone12.i-phone12', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone12.i-phone12',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone12.i-phone12',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -994,6 +1100,16 @@ export interface ApiIPhone14IPhone14 extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone14.i-phone14', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone14.i-phone14',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone14.i-phone14',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1032,6 +1148,16 @@ export interface ApiIPhone15IPhone15 extends Schema.CollectionType {
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
     slug: Attribute.UID<'api::i-phone15.i-phone15', 'title'>;
+    just_ins: Attribute.Relation<
+      'api::i-phone15.i-phone15',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone15.i-phone15',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1068,6 +1194,16 @@ export interface ApiIPhone6IPhone6 extends Schema.CollectionType {
     otherimages: Attribute.Media;
     colors: Attribute.Component<'device-colors.colors', true>;
     storage: Attribute.Component<'storage.storage', true>;
+    just_ins: Attribute.Relation<
+      'api::i-phone6.i-phone6',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::i-phone6.i-phone6',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1104,6 +1240,16 @@ export interface ApiIphone7Iphone7 extends Schema.CollectionType {
     otherimages: Attribute.Media;
     colors: Attribute.Component<'device-colors.colors', true>;
     storage: Attribute.Component<'storage.storage', true>;
+    just_ins: Attribute.Relation<
+      'api::iphone7.iphone7',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::iphone7.iphone7',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1141,6 +1287,16 @@ export interface ApiIphone8Iphone8 extends Schema.CollectionType {
     colors: Attribute.Component<'device-colors.colors', true>;
     storage: Attribute.Component<'storage.storage', true>;
     specs: Attribute.RichText;
+    just_ins: Attribute.Relation<
+      'api::iphone8.iphone8',
+      'manyToMany',
+      'api::just-in.just-in'
+    >;
+    deals: Attribute.Relation<
+      'api::iphone8.iphone8',
+      'manyToMany',
+      'api::deal.deal'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1152,6 +1308,80 @@ export interface ApiIphone8Iphone8 extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::iphone8.iphone8',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiJustInJustIn extends Schema.CollectionType {
+  collectionName: 'just_ins';
+  info: {
+    singularName: 'just-in';
+    pluralName: 'just-ins';
+    displayName: 'justIn';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    i_phone_6s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone6.i-phone6'
+    >;
+    iphone_7s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::iphone7.iphone7'
+    >;
+    iphone_8s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::iphone8.iphone8'
+    >;
+    i_phone_xes: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone-x.i-phone-x'
+    >;
+    i_phone_11s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone11.i-phone11'
+    >;
+    i_phone_12s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone12.i-phone12'
+    >;
+    i_phone_13s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone-13.i-phone-13'
+    >;
+    i_phone_14s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone14.i-phone14'
+    >;
+    i_phone_15s: Attribute.Relation<
+      'api::just-in.just-in',
+      'manyToMany',
+      'api::i-phone15.i-phone15'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::just-in.just-in',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::just-in.just-in',
       'oneToOne',
       'admin::user'
     > &
@@ -1211,6 +1441,7 @@ declare module '@strapi/types' {
       'api::about.about': ApiAboutAbout;
       'api::banner.banner': ApiBannerBanner;
       'api::cover.cover': ApiCoverCover;
+      'api::deal.deal': ApiDealDeal;
       'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
       'api::i-phone-13.i-phone-13': ApiIPhone13IPhone13;
       'api::i-phone-x.i-phone-x': ApiIPhoneXIPhoneX;
@@ -1221,6 +1452,7 @@ declare module '@strapi/types' {
       'api::i-phone6.i-phone6': ApiIPhone6IPhone6;
       'api::iphone7.iphone7': ApiIphone7Iphone7;
       'api::iphone8.iphone8': ApiIphone8Iphone8;
+      'api::just-in.just-in': ApiJustInJustIn;
       'api::phone.phone': ApiPhonePhone;
     }
   }

@@ -2,16 +2,18 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react"; // Import useEffect
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { PiShoppingCartLight } from "react-icons/pi";
+import Scroll from "../../components/scroll/Scroll";
 
 function ProductPage() {
   
-  useEffect(() => {
-    // Scroll to the top of the page when the component mounts
-    window.scrollTo(0, 0);
-  }, []); // Empty dependency array ensures it only runs once when mounted
+  // useEffect(() => {
+  //   // Scroll to the top of the page when the component mounts
+  //   window.scrollTo(0, 0);
+  // }, []); // Empty dependency array ensures it only runs once when mounted
 
   return (
     <>
+      <Scroll />
       <div className="h-full custom-w">
         <div className="flex justify-start items-center gap-1.5 md:gap-3 select-none my-4 text-[12px] md:text-sm">
           <Link to="/">

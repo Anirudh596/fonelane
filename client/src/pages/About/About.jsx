@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ImLinkedin } from "react-icons/im";
+import Scroll from "../../components/scroll/Scroll";
 
 function About() {
   const [ref, inView] = useInView({
@@ -20,6 +21,7 @@ function About() {
 
   return (
     <div className="custom-w min-h-screen">
+      <Scroll />
       <div className="relative p-1 md:p-0">
         <img
           className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"

@@ -4,10 +4,13 @@ import Accessories from "../../components/Accessories/Accessories";
 import Slider from "./Hero/Slider/Slider";
 import Blog from "./Blog/Blog";
 import { Button } from "@material-tailwind/react";
+import Scroll from "../../components/scroll/Scroll";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
+    <Scroll />
       <div className="block md:hidden overflow-hidden">
         <AdButtons />
       </div>
@@ -121,6 +124,7 @@ function AdButtons() {
     {
       // icon: <img src="./images/1.png" alt="" className="w-12 h-12"/>,
       text: "Student Special",
+      path: "/deals"
     },
     {
       // icon: <img src="./images/2.png" alt="" className="w-14 h-12"/>,
@@ -143,12 +147,12 @@ function AdButtons() {
     <div className=" md:mx-5 my-3 md:my-3 w-full flex justify-between gap-2 px-2">
       {AssuredContent.map((item, index) => (
         <div key={index} className="bg-[#eeeeee] w-full flex justify-center items-center text-center p-1 border border-gray-400 rounded-sm">
-          <div className="flex ">
-            {item.icon}
+         <Link  to={item.path}> <div className="flex ">
+
             <p className=" w-full text-[10px] md:text-xs  font-semibold">
               {item.text}
             </p>
-          </div>
+          </div></Link>
         </div>
       ))}
     </div>
