@@ -64,16 +64,16 @@ function Home() {
         </div>
         <div className="flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200">
         <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3 z-10 rounded-lg h-40 w-1/3">
-        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
-        <p className="absolute top-1/4 left-10 text-white">New Arrival</p>
+        <img src="images/h1.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
       </Button>
       <Button size="lg" color="white" className="mx-5  relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
-        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
-        <p className="absolute top-1/4 left-10 text-white">Students Offer</p>
+        <img src="images/h2.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">Students Offer</p> */}
       </Button>
       <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
-        <img src="images/back.jpg" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
-        <p className="absolute top-1/4 left-10 text-white">Back Covers</p>
+        <img src="images/h3.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">Back Covers</p> */}
       </Button>
 
         </div>
