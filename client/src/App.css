@@ -37,7 +37,7 @@
 /* Large screen styles */
 @media (min-width: 1280px) {
   .custom-w {
-    max-width: 1180px; /* Adjust max-width for large screens */
+    max-width: 1080px; /* Adjust max-width for large screens */
   }
 }
 
@@ -46,31 +46,8 @@
     max-width: 1240px; /* Adjust max-width for large screens */
   }
 }
-@media (min-width: 1540px) {
-  .custom-w {
-    max-width: 1440px; /* Adjust max-width for large screens */
-  }
-}
-@media (min-width: 1640px) {
-  .custom-w {
-    max-width: 1440px; /* Adjust max-width for large screens */
-  }
-}
-@media (min-width: 1740px) {
-  .custom-w {
-    max-width: 1540px; /* Adjust max-width for large screens */
-  }
-}
-@media (min-width: 1840px) {
-  .custom-w {
-    max-width: 1640px; /* Adjust max-width for large screens */
-  }
-}
-@media (min-width: 1940px) {
-  .custom-w {
-    max-width: 1740px; /* Adjust max-width for large screens */
-  }
-}
+
+
 
 
 

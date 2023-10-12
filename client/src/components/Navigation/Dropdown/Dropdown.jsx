@@ -28,7 +28,7 @@ function Dropdown() {
             >
               <Link to={item.link}><a
                 href="#"
-                className="mx-2 w-full flex justify-center items-center cursor-pointer font-bold text-[6px] md:text-[8px] lg:text-[10px] xl:text-xs 2xl:text-xs"
+                className="mx-2 w-full flex justify-center items-center cursor-pointer font-medium text-[6px] md:text-[11px] "
                 
               >
                 <span className="mx-1">{item.label}</span>

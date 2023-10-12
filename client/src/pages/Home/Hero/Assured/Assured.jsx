@@ -1,8 +1,4 @@
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 import { GoShieldCheck } from "react-icons/go";
 
 import { PiBatteryVerticalHighDuotone } from "react-icons/pi";
@@ -55,9 +51,9 @@ function Assured() {
       {isMobile ? (
         <div className="flex justify-between items-center w-full gap-2">
           {AssuredContent.map((item, index) => (
-            <div key={index} className="flex flex-col justify-center items-center text-center border border-gray-300 w-full h-[80px] p-2 rounded bg-[#f0ecfc]">
+            <div key={index} className="flex flex-col justify-center items-center  border border-gray-300 w-full mx-auto h-[80px] px-2 rounded bg-[#f0ecfc]">
               {item.icon}
-              <p className="text-[10px] font-semibold md:text-[13px] flex-1">{item.text}</p>
+              <p className="text-[10px] text-center font-medium md:text-[13px]">{item.text}</p>
             </div>
           ))}
         </div>

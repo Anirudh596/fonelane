@@ -215,11 +215,11 @@ function ProductSection() {
 
 
   const saved = () => {
-    const saving = (((mrp - mainPrice) * 100) / mrp);
+    const saving = (((mrp - dynamicPricing()) * 100) / mrp);
     return Math.floor(saving);
   };
 
-  const savedPrice = mrp - mainPrice;
+  const savedPrice = mrp - dynamicPricing();
 
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);

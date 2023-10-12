@@ -55,7 +55,7 @@ function Navbar() {
   return (
     <>
       <div className="top-0 bg-white z-50 w-full">
-        <div className="mx-auto h-[50px] md:h-[50px]  flex justify-between md:justify-around items-center">
+        <div className="mx-10 h-[50px] md:h-[50px]  flex justify-between md:justify-around items-center">
           <div className=" flex flex-grow md:flex-1 justify-between items-center mx-5">
             <div
               className="flex md:hidden items-center "
