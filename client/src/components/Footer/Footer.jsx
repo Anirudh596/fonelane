@@ -1,3 +1,5 @@
+import React from "react";
+import { Input, Button } from "@material-tailwind/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSquareFacebook,
@@ -7,6 +9,8 @@ import {
 import { Link } from "react-router-dom";
 
 function Footer() {
+  const [email, setEmail] = React.useState("");
+  const onChange = ({ target }) => setEmail(target.value);
   return (
     <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh] my-5">
       <div className="contact-bar custom-w h-[12vh] md:h-18 flex justify-between items-center ">
@@ -48,24 +52,28 @@ function Footer() {
               Company
             </p>
             <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-3">
-              <Link to="/"><li className="group">
-                <a href="#" className="hover:opacity-60">
-                  Home
-                </a>
-              </li></Link>
-              <Link to="/iphones"><li className="group">
-                <a href="#" className="hover:opacity-60">
-                  iPhones
-                </a>
-              </li></Link>
+              <Link to="/">
+                <li className="group">
+                  <a href="#" className="hover:opacity-60">
+                    Home
+                  </a>
+                </li>
+              </Link>
+              <Link to="/iphones">
+                <li className="group">
+                  <a href="#" className="hover:opacity-60">
+                    iPhones
+                  </a>
+                </li>
+              </Link>
               <Link to="/about">
-              <li>About Us</li>
-            </Link>
-            <Link to="/help"><li className="group">
-                <a className="hover:opacity-60">
-                  Help
-                </a>
-              </li></Link>
+                <li>About Us</li>
+              </Link>
+              <Link to="/help">
+                <li className="group">
+                  <a className="hover:opacity-60">Help</a>
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="w-full h-1/2">
@@ -98,19 +106,18 @@ function Footer() {
                 <li>
                   <Link to="/refund-return">
                     <a href="" className="hover:opacity-60">
-                      Return & Refund 
+                      Return & Refund
                     </a>
                   </Link>
                 </li>
                 <li>
                   <Link to="/shipping-policy">
                     <a href="" className="hover:opacity-60">
-                      Shipping 
+                      Shipping
                     </a>
                   </Link>
                 </li>
 
-                
                 <li>
                   <Link to="/privacy">
                     <a href="#" className="hover:opacity-60">
@@ -119,7 +126,7 @@ function Footer() {
                   </Link>
                 </li>
                 <li>
-                <Link to="/terms-conditions">
+                  <Link to="/terms-conditions">
                     <a href="#" className="hover:opacity-60">
                       Terms and Conditions
                     </a>
@@ -164,22 +171,27 @@ function Footer() {
             <p className="font-medium test-xs md:text-sm lg:text-lg xl:text-lg mb-2">
               Subscribe to Our Newsletter
             </p>
-            <div className="flex w-11/12 md:w-full">
-              <input
-                type="text"
-                placeholder="Type Your Email Here! "
-                value=""
-                className="w-[250px] px-4 py-2 rounded-[10px] z-10"
-                id="email-box"
-                name="Newsletter"
-              />
-              <input
-                type="submit"
-                value="Submit"
-                className="cursor-pointer px-4 pl-7 w-[100px] md:w- rounded-[10px] ml-[-20px] bg-black text-white"
-                id="email-submit"
-                name="Newsletter-btn"
-              />
+            <div className="flex">
+              <div className="relative flex w-full max-w-[24rem]">
+                <Input
+                  type="email"
+                  label="Email Address"
+                  value={email}
+                  onChange={onChange}
+                  className="pr-20"
+                  containerProps={{
+                    className: "min-w-0",
+                  }}
+                />
+                <Button
+                  size="sm"
+                  color={email ? "gray" : "blue-gray"}
+                  disabled={!email}
+                  className="!absolute right-1 top-1 rounded"
+                >
+                  Invite
+                </Button>
+              </div>
             </div>
           </div>
           <div className="w-full h-2/3 flex flex-col justify-center items-center mt-10">
@@ -198,32 +210,32 @@ function Footer() {
               <img
                 src="./images/visa.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
               <img
                 src="./images/mc.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
               <img
                 src="./images/ae.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
               <img
                 src="./images/paytm.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
               <img
                 src="./images/provider.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
               <img
                 src="./images/cod.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[30px] md:h-[30px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
               />
             </div>
           </div>
