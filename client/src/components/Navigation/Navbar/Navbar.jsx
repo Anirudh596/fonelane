@@ -11,7 +11,6 @@ import { HiUserCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Drawer, IconButton } from "@material-tailwind/react";
 import React from "react";
-import { motion } from "framer-motion"; // Import motion
 
 function Navbar() {
   const links = [

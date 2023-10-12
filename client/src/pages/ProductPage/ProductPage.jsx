@@ -5,6 +5,12 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import Scroll from "../../components/scroll/Scroll";
 
 function ProductPage() {
+  const assuredImages = [
+    "images/fo1.png",
+    "images/fo2.png",
+    "images/fo3.png",
+    "images/fo4.png",
+  ]
   
   // useEffect(() => {
   //   // Scroll to the top of the page when the component mounts
@@ -41,26 +47,9 @@ function ProductPage() {
             Fonelane Assured <p className="text-[#32cd32]">[whats This]</p>
           </p>
           <div className="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-2">
-            <img
-              src="./images/banner.png"
-              alt=""
-              className="w-[270px] h-[105px] rounded-lg cursor-pointer active:scale-105"
-            />
-            <img
-              src="./images/banner.png"
-              alt=""
-              className="w-[270px] h-[105px] rounded-lg cursor-pointer active:scale-105"
-            />
-            <img
-              src="./images/banner.png"
-              alt=""
-              className="w-[270px] h-[105px] rounded-lg cursor-pointer active:scale-105"
-            />
-            <img
-              src="./images/banner.png"
-              alt=""
-              className="w-[270px] h-[105px] rounded-lg cursor-pointer active:scale-105"
-            />
+            {assuredImages.map((item, index) => {
+              <img key={index} src={`${item}`} alt="hello" />
+            })}
           </div>
         </div>
         <hr className="h-px border-0 bg-black w-full" /><hr className="h-px border-0 bg-black w-full" />
