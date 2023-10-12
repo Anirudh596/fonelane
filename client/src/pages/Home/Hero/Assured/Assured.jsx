@@ -4,6 +4,7 @@ import { GoShieldCheck } from "react-icons/go";
 import { PiBatteryVerticalHighDuotone } from "react-icons/pi";
 
 import { LiaShippingFastSolid } from "react-icons/lia";
+import { HiMiniReceiptPercent } from "react-icons/hi2";
 
 function Assured() {
   const AssuredContent = [
@@ -23,14 +24,8 @@ function Assured() {
       text: "Cash On Delivery",
     },
     {
-      icon: (
-        <img
-          src="./images/100-percent.png"
-          alt="100% Genuine Products"
-          className="w-[35px]  md:w-[40px]  "
-        />
-      ),
-      text: "Genuine Products",
+      icon: <HiMiniReceiptPercent className="text-4xl md:text-5xl"/>,
+      text: "No Cost EMI",
     },
     {
       icon: <PiBatteryVerticalHighDuotone className="text-4xl md:text-5xl" />,

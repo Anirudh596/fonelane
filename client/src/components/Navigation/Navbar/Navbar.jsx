@@ -123,7 +123,7 @@ function Navbar() {
               <li>Help</li>
             </Link>
           </ul>
-          <div className="md:w-1/5 lg:w-2/5 xl:w-3/6 2xl:w-3/6 hidden md:flex mx-5">
+          <div className="md:w-1/4  hidden md:flex mx-5">
             <Search />
           </div>
           <div className="flex flex-shrink md:flex-none justify-between items-center gap-5 mx-5 md:mx-0 md:gap-10">

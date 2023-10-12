@@ -338,9 +338,9 @@ function CoverSection() {
                   Features
                 </AccordionHeader>
                 <AccordionBody>
-                  <ul className="flex flex-col">
-                    <li>{data.specifications}</li>
-                  </ul>
+                  
+                    {data.specifications}
+                  
                 </AccordionBody>
               </Accordion>
             </div>

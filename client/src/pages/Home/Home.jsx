@@ -21,15 +21,15 @@ function Home() {
         <Assured />
       </div>
 
-      <div>
-        <BankOffer />
-      </div>
 
       <div className="w-full flex-col justify-center items-center custom-w">
-        <div className="title  my-5">
-          <p className="text-sm md:text-lg font-medium ">Deal Of the Day</p>
+        <div className="title  ">
+          <p className="text-sm md:text-lg font-medium">Deal Of the Day</p>
         </div>
         <ProductCard />
+      <div className="my-3">
+        <BankOffer />
+      </div>
         <div className="title  my-5">
           <h2 className="text-[20px] font-medium ">
             Let them buy new, we buy fone-lane

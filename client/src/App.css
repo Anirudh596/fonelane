@@ -210,3 +210,16 @@ input[type="checkbox"]:checked {
 /* end Assured section styles */
 
 
+.scale-animation {
+  animation: scaleAnimation 2s infinite alternate linear;
+}
+
+@keyframes scaleAnimation {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.24);
+  }
+}
+
