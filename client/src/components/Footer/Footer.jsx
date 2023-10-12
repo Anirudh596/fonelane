@@ -164,7 +164,7 @@ function Footer() {
             <p className="font-medium test-xs md:text-sm lg:text-lg xl:text-lg mb-2">
               Subscribe to Our Newsletter
             </p>
-            <div className="flex">
+            <div className="flex w-11/12 md:w-full">
               <input
                 type="text"
                 placeholder="Type Your Email Here! "
@@ -176,7 +176,7 @@ function Footer() {
               <input
                 type="submit"
                 value="Submit"
-                className="cursor-pointer px-4 pl-7 w-[100px] rounded-[10px] ml-[-20px] bg-black text-white"
+                className="cursor-pointer px-4 pl-7 w-[100px] md:w- rounded-[10px] ml-[-20px] bg-black text-white"
                 id="email-submit"
                 name="Newsletter-btn"
               />

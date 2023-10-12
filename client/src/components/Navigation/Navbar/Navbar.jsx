@@ -109,7 +109,7 @@ function Navbar() {
             <div className="">
               <Link to="/">
                 <div className="flex justify-center items-end w-auto h-auto">
-                  <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40 h-40 md:w-40 md:h-40  " />
+                  <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
                 </div>
               </Link>
             </div>
@@ -123,7 +123,7 @@ function Navbar() {
               <li>Help</li>
             </Link>
           </ul>
-          <div className="md:w-1/4  hidden md:flex mx-5">
+          <div className="md:w-1/4 lg:w-1/3 xl:w-1/2 hidden md:flex mx-5">
             <Search />
           </div>
           <div className="flex flex-shrink md:flex-none justify-between items-center gap-5 mx-5 md:mx-0 md:gap-10">

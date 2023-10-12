@@ -19,7 +19,7 @@ function Slider() {
 
   return (
     <>
-      <div className="w-full md:w-full  2xl:w-[1540px] mx-auto">
+      <div className="w-full md:w-full slider-w mx-auto">
         <Swiper
           style={{
             "--swiper-pagination-color": "#fff",
