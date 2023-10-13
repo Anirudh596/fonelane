@@ -26,7 +26,7 @@ export const SearchResults = ({ results, className, onClose }) => {
     };
   }, [onClose, results, containerRef]);
   return (
-    <div ref={containerRef} className={`w-1/2 mx-auto justify-start items-start bg-white flex flex-col shadow-lg rounded-sm z-50 ${className}`}>
+    <div ref={containerRef} className={`w-full mx-auto md:w-1/2 justify-start items-start bg-white flex flex-col shadow-lg rounded-sm z-50 ${className}`}>
       {results.map((result, id) => (
         <Link
           to={`/products/${result.id}`}

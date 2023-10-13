@@ -56,9 +56,10 @@ function Iphones() {
             initial="initial"
             animate={inView ? "final" : "initial"}
             variants={animations}
-            className="text-base md:text-4xl font-semibold"
+            className="text-xl md:text-4xl font-semibold"
           >
-            Be the first one to get your hands on these new products.
+            Refurbished Apple iPhones
+            <p className="text-sm mt-4 w-full">Find the perfect refurb Apple iPhone</p>
           </motion.h2>
         </div>
         <img

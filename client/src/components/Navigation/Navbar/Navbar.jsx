@@ -141,8 +141,9 @@ function Navbar() {
         </div>
         <hr className="w-full h-px border-0 bg-gray-200" />
       </div>
-      <div className="w-full justify-center items-center md:hidden flex">
-        <Search className="w-10/12 py-1.5 my-1" />
+      <div className="relative  w-full  md:hidden flex h-10 my-1 z-50">
+        <Search setResults={setResults} className="sticky top-0" />
+        <SearchResults results={results} className="absolute top-10" onClose={closeSearchResults}/>
       </div>
 
       {isCartOpen && <CartFloat isOpen={isCartOpen} onClose={toggleCart} />}
@@ -171,3 +172,5 @@ function Logo () {
             </div>
   )
 }
+
+
