@@ -76,7 +76,7 @@ function CardContent({pIndex}) {
 
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">
-      <div className="text-[10px] md:text-xs bg-[#cafafe] text-black w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
+      <div className="text-[10px] md:text-xs bg-[#ffc65d] text-[#000000] w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
         <p >{saved()}% off</p>
       </div>
       <div className="w-full ease-linear duration-200 flex justify-center items-center">
@@ -90,7 +90,7 @@ function CardContent({pIndex}) {
       </div>
       <div className="relative mb-6 cursor-pointer z-50">
         <div className="text-sm">
-        <Rating value={4}  readonly className={"left-0"} classNamePoints={"hidden"} />
+        <Rating value={4} ratedColor="black" readonly className={"left-0"} classNamePoints={"hidden"} />
         </div>
         <div className="flex flex-col text-xs md:text-base lg:text-lg xl:text-xl w-full">
           <p className="text-sm md:text-sm  font-semibold">{data.title}</p>

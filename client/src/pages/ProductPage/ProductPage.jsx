@@ -416,6 +416,7 @@ function ProductSection() {
             </div>
 
             <div className="prices hidden md:flex justify-start gap-4">
+              <p className="">Online Excluive Price</p>
               <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
                 ₹{dynamicPricing()}{" "}
                 <p className="text-sm md:text-base font-semibold line-through flex gap-2">
@@ -535,8 +536,9 @@ function ProductSection() {
             </div>
 
             <div>
-              <p>In Box</p>
-              <div className="text-xs border-[1px] border-gray-300 rounded-lg ">
+              <p className="font-semibold">In Box</p>
+              <div className="text-sm font-medium
+               border-[1px] border-gray-300 rounded-lg ">
                 <ul className="list-disc px-5 py-2">
                   <li>Device</li>
                   <li>Back Cover</li>
