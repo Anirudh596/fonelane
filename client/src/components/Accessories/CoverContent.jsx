@@ -53,12 +53,12 @@ function CoverContent({cIndex}) {
   let intSaving = Math.floor(saving)
   return intSaving;
  }
-
+ const savedPrice = mrp - mainPrice;
 
 
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">
-      <div className="text-[10px] md:text-xs bg-[#f0ecfc] w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
+      <div className="text-[10px] md:text-xs bg-[#ffc65d] w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
         <p >{saved()}% off</p>
       </div>
       <div className="w-full ease-linear duration-200 flex justify-center items-center">
@@ -77,10 +77,12 @@ function CoverContent({cIndex}) {
         <div className="flex flex-col text-xs md:text-base lg:text-lg xl:text-xl w-full">
           <p className="text-sm md:text-sm  font-semibold">{data.title}</p>
         </div>
-        <p className="text-[10px] md:text-xs w-full flex items-center font-medium gap-2" >starting from <p className="text-sm md:text-xs  font-bold  flex justify-start items-end"> ₹{mainPrice}
-        </p></p>
+        <p className="text-[12px] md:text-xs w-full flex items-center font-bold gap-2" ><p className="text-sm md:text-xs  font-bold  flex justify-start items-end"> ₹{mainPrice}
+        </p>
+        <span className="text-xs md:text-xs lg:text-xs xl:text-xs font-semibold"> ₹<span className="line-through">{mrp}</span></span>
+        </p>
+        <p className="text-xs text-[#32CD32] font-semibold">You Save ₹{savedPrice}</p>
         
-        <span className="text-xs md:text-xs lg:text-xs xl:text-xs font-semibold">M.R.P: ₹<span className="line-through">{mrp}</span></span>
         {/* <p className="text-[12px] md:text-[10px] ">or only ₹xxx per month</p> */}
       </div>
     </div>  

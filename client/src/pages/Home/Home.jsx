@@ -39,7 +39,7 @@ function Home() {
           Fonelane – A Tech Reborn
           </h2>
           <p className="text-sm md:text-base font-medium">
-          Welcome to the world of refurbished, A Great Tech shouldn{"'"}t cost the World !!
+          Welcome to the world of refurbished. Great Tech doesn{"'"}t cost the World !!
           </p>
         </div>
         <div className="flex justify-center items-center">
@@ -62,7 +62,7 @@ function Home() {
         <Accessories />
         <div className="title my-5 ">
           <p className="text-base lg:text-xl xl:text-lg font-semibold">
-            Fonelane Special{"'"}s
+            Dicover More
           </p>
         </div>
         <div className="hidden md:flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200 h-24">
