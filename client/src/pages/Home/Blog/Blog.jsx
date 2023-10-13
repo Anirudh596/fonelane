@@ -6,14 +6,29 @@ import {
   Typography,
   Button,
 } from "@material-tailwind/react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 
 function Blog() {
   return (
-    <div className="flex justify-between items-center flex-wrap w-full mx-auto">
-      <CardDefault />
-      <CardDefault />
-      <CardDefault />
-      <CardDefault />
+    <div className="w-full  block md:hidden">
+      <Swiper
+        slidesPerView={1.6}
+        spaceBetween={10}
+       
+        pagination={{
+          clickable: true,
+        }}
+
+      className="mySwiper"
+    >
+      <SwiperSlide><CardDefault /></SwiperSlide>
+      <SwiperSlide><CardDefault /></SwiperSlide>
+      <SwiperSlide><CardDefault /></SwiperSlide>
+      <SwiperSlide><CardDefault /></SwiperSlide>
+    </Swiper>
+      
     </div>
   );
 }

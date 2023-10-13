@@ -77,7 +77,7 @@ function Footer() {
               </Link>
               <Link to="/help">
                 <li className="group">
-                  <a className="hover:opacity-60">Help</a>
+                  <a className="hover:opacity-60">Contact Us</a>
                 </li>
               </Link>
             </ul>

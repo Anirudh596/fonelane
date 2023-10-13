@@ -7,6 +7,10 @@ import { Button } from "@material-tailwind/react";
 import Scroll from "../../components/scroll/Scroll";
 import { Link } from "react-router-dom";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+
 function Home() {
   return (
     <>
@@ -61,21 +65,47 @@ function Home() {
             Fonelane Special{"'"}s
           </p>
         </div>
-        <div className="flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200">
-        <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3 z-10 rounded-lg h-40 w-1/3">
-        <img src="images/h1.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        <div className="hidden md:flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200 h-24">
+        <Button size="lg" color="white" className="h-16 mx-1 md:mx-5 relative flex items-center gap-3 z-10 rounded-lg md:h-40 w-1/3">
+        <img src="images/h1.png" className="h-16 md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
         {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
       </Button>
-      <Button size="lg" color="white" className="mx-5  relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
-        <img src="images/h2.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+      <Button size="lg" color="white" className="mx-1 md:mx-5  relative flex items-center gap-3  z-10 rounded-lg  md:h-40 w-1/3">
+        <img src="images/h2.png" className=" md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
         {/* <p className="absolute top-1/4 left-10 text-white">Students Offer</p> */}
       </Button>
-      <Button size="lg" color="white" className="mx-5 relative flex items-center gap-3  z-10 rounded-lg h-40 w-1/3">
-        <img src="images/h3.png" className="h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+      <Button size="lg" color="white" className=" mx-1 md:mx-5 relative flex items-center gap-3  z-10 rounded-lg  md:h-40 w-1/3">
+        <img src="images/h3.png" className="md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
         {/* <p className="absolute top-1/4 left-10 text-white">Back Covers</p> */}
       </Button>
 
         </div>
+        <div className="w-full  block md:hidden">
+      <Swiper
+        slidesPerView={1.3}
+       
+        pagination={{
+          clickable: true,
+        }}
+
+      className="mySwiper"
+    >
+      <SwiperSlide><Button size="lg" color="white" className=" md:mx-5 relative flex items-center gap-3 z-10 rounded-lg w-full h-40 ">
+        <img src="images/h1.png" className=" h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
+      </Button></SwiperSlide>
+      <SwiperSlide><Button size="lg" color="white" className="  md:mx-5 relative flex items-center gap-3 z-10 rounded-lg h-40 w-full">
+        <img src="images/h2.png" className=" h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
+      </Button></SwiperSlide>
+      <SwiperSlide><Button size="lg" color="white" className=" md:mx-5 relative flex items-center gap-3 z-10 rounded-lg h-40 w-full">
+        <img src="images/h3.png" className=" h-full w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
+      </Button></SwiperSlide>
+      
+    </Swiper>
+      
+    </div>
         <div className="title my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
           <p className="text-base lg:text-xl xl:text-2xl font-semibold ">
@@ -128,14 +158,17 @@ function AdButtons() {
     {
       // icon: <img src="./images/2.png" alt="" className="w-14 h-12"/>,
       text: "Deals",
+      path: "/deals"
     },
     {
       // icon: <img src="./images/3.png" alt="" className="w-12 h-12"/>,
       text: "iPhones",
+      path: "/iphones"
     },
     {
       // icon: <img src="./images/4.png" alt="" className="w-20 h-12"/>,
       text: "Accessories",
+      path: "/deals"
     },
   ];
 
