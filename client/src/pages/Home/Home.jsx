@@ -23,20 +23,19 @@ function Home() {
 
 
       <div className="w-full flex-col justify-center items-center custom-w">
-        <div className="title  ">
-          <p className="text-sm md:text-lg font-medium">Deal Of the Day</p>
+        <div className="title  w-fit ">
+          <p className="text-sm md:text-lg font-medium scale-animation2 reddot">H<span className=" text-red-400 ">o</span>t Deals</p>
         </div>
         <ProductCard />
       <div className="my-3">
         <BankOffer />
       </div>
         <div className="title  my-5">
-          <h2 className="text-[20px] font-medium ">
-            Let them buy new, we buy fone-lane
+          <h2 className="text-[20px] font-semibold ">
+          Fonelane – A Tech Reborn
           </h2>
-          <p className="text-sm md:text-base ">
-            We get the same quality, and the same excitement, for less. Watch to
-            see why.
+          <p className="text-sm md:text-base font-medium">
+          Welcome to the world of refurbished, A Great Tech shouldn{"'"}t cost the World !!
           </p>
         </div>
         <div className="flex justify-center items-center">
@@ -52,14 +51,14 @@ function Home() {
         </div>
 
         <div className="w-full title flex justify-between items-center my-5">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">
-            Covers & Cases
+          <p className="text-base lg:text-xl xl:text-lg font-semibold">
+            Cases & Covers
           </p>
         </div>
         <Accessories />
         <div className="title my-5 ">
-          <p className="text-sm md:text-base lg:text-xl xl:text-lg ">
-            Hot Deal{"'"}
+          <p className="text-base lg:text-xl xl:text-lg font-semibold">
+            Fonelane Special{"'"}s
           </p>
         </div>
         <div className="flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200">
@@ -79,23 +78,23 @@ function Home() {
         </div>
         <div className="title my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
-          <p className="text-sm md:text-base lg:text-xl xl:text-2xl ">
-            If you don{"'"}t know
+          <p className="text-base lg:text-xl xl:text-2xl font-semibold ">
+          The Latest Buzz in Refurbished Tech
           </p>
         </div>
         <Blog />
         <div className="title flex justify-start items-center gap-5 my-5 ">
           {/*eslint-disable-next-line react/no-unescaped-entities */}
-          <img
+          <a href="https://www.instagram.com/fonelane/" target="_blank"  rel="noreferrer"><img
             src="./images/instagram.png"
             alt=""
-            className="w-[30px] h-[30px]"
-          />
+            className="w-[30px] h-[30px] cursor-pointer"
+          /></a>
           <p className="text-sm md:text-base lg:text-xl xl:text-lg ">
             Follow{" "}
-            <span className="hover:text-[#0049b7] cursor-pointer hover:underline font-semibold">
+            <a href="https://www.instagram.com/fonelane/" target="_blank"  rel="noreferrer"><span className="hover:text-[#0049b7] cursor-pointer hover:underline font-semibold">
               @fonelane
-            </span>{" "}
+            </span>{" "}</a>
             for more such Content
           </p>
         </div>
@@ -173,13 +172,13 @@ function BankOffer() {
 
   return (
     <div className="custom-w md:my-4 px-2 flex justify-center items-center border-2 border-gray-400 bg-[#eeeeee]   ">
-      <div className="flex md:w-1/4  justify-center items-center text-center border-r h-full border-black">
+      <div className="flex md:w-1/4  justify-center items-center text-center border-rborder-black">
         <p className="text-[10px] md:flex items-end gap-2 md:text-base font-medium px-1">NO COST <p className="text-xs md:text-xl font-semibold font-serif">EMI ON</p></p>
       </div>
-      <div className="w-full flex-1 flex gap-1 md:gap-2 justify-between items-center px-5">
+      <div className="w-full flex-1 flex gap-1 md:gap-2 justify-between items-center px-5 h-[45px] md:h-[80px]">
         {bankIcons.map((icon, index) => (
           <div key={index}>
-            <img src={icon} alt="" className="h-[80px] w-[80px] md:w-[120px] md:h-[120px]" />
+            <img src={icon} alt="" className=" w-[80px] md:w-[120px] " />
           </div>
         ))}
       </div>

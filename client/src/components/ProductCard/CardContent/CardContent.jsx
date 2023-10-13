@@ -64,7 +64,7 @@ function CardContent({pIndex}) {
   // }, []);
 
   const mainPrice = data.baseprice;
-  const mrp = data.MRP;
+  const mrp = data.mrp;
 
  const saved = () => {
   let saving = (((mrp - mainPrice)* 100 )/ mrp);
@@ -76,7 +76,7 @@ function CardContent({pIndex}) {
 
   return (
     <div className="mx-1 md:mx-1 lg:mx-2 xl:mx-3 group leading-5">
-      <div className="text-[10px] md:text-xs bg-[#f0ecfc] w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
+      <div className="text-[10px] md:text-xs bg-[#cafafe] text-black w-12 md:w-14 p-1 font-semibold ml-[-4px] md:ml-[-10px] rounded-br-md rounded-tl-md ">
         <p >{saved()}% off</p>
       </div>
       <div className="w-full ease-linear duration-200 flex justify-center items-center">

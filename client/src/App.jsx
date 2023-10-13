@@ -7,7 +7,7 @@ import routes from './Routes';
 function App() {
   return (
     <>
-      <div className="w-full sticky top-0 bg-[#f9f9f9] z-50 overflow-hidden">
+      <div className="w-full sticky top-0 bg-[#f9f9f9] z-30">
         <Navbar />
       </div>
       <Routes>

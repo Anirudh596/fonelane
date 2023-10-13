@@ -7,6 +7,7 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import {FaLinkedin} from "react-icons/fa"
 
 function Footer() {
   const [email, setEmail] = React.useState("");
@@ -20,25 +21,30 @@ function Footer() {
         <div>
           <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
             <li className="social-icons opacity-100">
-              <img
+              <a href="https://www.instagram.com/fonelane/" target="_blank"  rel="noreferrer"><img
                 src="./images/instagram.png"
                 alt=""
                 className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] "
-              />
+              /></a>
             </li>
             <li className="social-icons opacity-100">
-              <a className="text-[#405de6] ">
+              <a href="https://www.facebook.com/fonelaneshop/" target="_blank"  rel="noreferrer" className="text-[#405de6] ">
                 <FontAwesomeIcon icon={faSquareFacebook} />
               </a>
             </li>
             <li className="social-icons opacity-100">
-              <a className="text-[#ff3535] ">
+              <a href="https://www.youtube.com/@Fonelane" target="_blank"  rel="noreferrer" className="text-[#ff3535] ">
                 <FontAwesomeIcon icon={faYoutube} />
               </a>
             </li>
             <li className="social-icons opacity-100">
-              <a className="text-gray-700 ">
+              <a href="https://twitter.com/fonelane_" target="_blank"  rel="noreferrer" className="text-gray-700 ">
                 <FontAwesomeIcon icon={faXTwitter} />
+              </a>
+            </li>
+            <li className="social-icons opacity-100">
+              <a href="https://www.linkedin.com/company/fonelane" target="_blank"  rel="noreferrer" className="text-[#405de6] ">
+                <FaLinkedin />
               </a>
             </li>
           </ul>

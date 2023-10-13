@@ -1,57 +1,46 @@
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Typography,
+  Button,
+} from "@material-tailwind/react";
+
 function Blog() {
   return (
-    <div className="flex flex-wrap w-3/4 mx-auto">
-      {/* First three grid items in one line on desktop */}
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px] card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300 ">
-            <img src="./images/bl1.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className="0 p-4">Grid Item 5</div>
-        </div>
-      </div>
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px]  card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300  ">
-            <img src="./images/bl2.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className=" p-4">Grid Item 5</div>
-        </div>
-      </div>
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px]  card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300  ">
-            <img src="./images/bl3.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className=" p-4">Grid Item 5</div>
-        </div>
-      </div>
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px]  card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300  ">
-            <img src="./images/bl4.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className=" p-4">Grid Item 5</div>
-        </div>
-      </div>
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px] card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300 ">
-            <img src="./images/bl5.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className="0 p-4 ">Grid Item 5</div>
-        </div>
-      </div>
-      <div className="w-1/2 sm:w-1/2 md:w-1/2 lg:w-1/3   p-2">
-        <div className=" md:w-[250px] md:h-[220px] card-container cursor-pointer rounded-lg">
-          <div className="bg-gray-300 ">
-            <img src="./images/bl5.png" alt="" className="w-full h-auto" />
-          </div>
-          <div className="0 p-4 ">Grid Item 5</div>
-        </div>
-      </div>
+    <div className="flex justify-between items-center flex-wrap w-full mx-auto">
+      <CardDefault />
+      <CardDefault />
+      <CardDefault />
+      <CardDefault />
     </div>
   );
 }
 
 export default Blog;
+
+
+export function CardDefault() {
+  return (
+    <Card className="mt-6 w-64">
+      <CardHeader color="blue-gray" className="relative                                                                                                        ">
+        <img
+          src="https://images.unsplash.com/photo-1540553016722-983e48a2cd10?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=80"
+          alt="card-image"
+        />
+      </CardHeader>
+      <CardBody>
+        <Typography variant="h6" color="blue-gray" className="mb-2">
+          UI/UX Review Check
+        </Typography>
+        <Typography>
+          The place is close to Barceloneta Beach and 
+        </Typography>
+      </CardBody>
+      <CardFooter className="pt-0">
+        <Button>Read More</Button>
+      </CardFooter>
+    </Card>
+  );
+}

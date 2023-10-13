@@ -11,6 +11,7 @@ import { HiUserCircle } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { Drawer, IconButton } from "@material-tailwind/react";
 import React from "react";
+import { SearchResults } from "./SearchResults";
 
 function Navbar() {
   const links = [
@@ -33,6 +34,7 @@ function Navbar() {
   const [isLogOpen, setIsLogOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to control the drawer
+  const [results , setResults] = useState([])
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
   const openLogin = () => setIsLogOpen(true);
@@ -50,11 +52,14 @@ function Navbar() {
       Login
     </button>
   );
+  const closeSearchResults = () => {
+    setResults([]); // Clear the results
+  };
 
   return (
     <>
       <div className="top-0 bg-white z-50 w-full">
-        <div className="mx-10 h-[50px] md:h-[50px]  flex justify-between md:justify-around items-center">
+        <div className="md:mx-10 h-[50px] md:h-[50px]  flex justify-between md:justify-around items-center">
           <div className=" flex flex-grow md:flex-1 justify-between items-center mx-5">
             <div
               className="flex md:hidden items-center "
@@ -105,13 +110,7 @@ function Navbar() {
                 ))}
               </Drawer>
             </div>
-            <div className="">
-              <Link to="/">
-                <div className="flex justify-center items-end w-auto h-auto">
-                  <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
-                </div>
-              </Link>
-            </div>
+            <Logo />
           </div>
           <ul className="list-none hidden md:flex justify-between items-center text-[8px] md:text-[12px] lg:text-xs xl:text-xs 2xl:text-sm gap-2 md:gap-5  cursor-pointer">
             <Link to="/about">
@@ -122,9 +121,10 @@ function Navbar() {
               <li>Help</li>
             </Link>
           </ul>
-          <div className="md:w-1/4 lg:w-1/3 xl:w-1/2 hidden md:flex mx-5">
-            <Search />
-          </div>
+          <div className="relative my-0 md:w-1/4 lg:w-1/3 xl:w-1/2 mx-5 hidden md:flex flex-col">
+            <Search setResults={setResults} className="sticky top-0" />
+            <SearchResults results={results} className="absolute top-10" onClose={closeSearchResults}/>
+            </div>
           <div className="flex flex-shrink md:flex-none justify-between items-center gap-5 mx-5 md:mx-0 md:gap-10">
             <CiShoppingCart
               onClick={toggleCart}
@@ -158,3 +158,16 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+function Logo () {
+  return (
+    <div className="z-50">
+              <Link to="/">
+                <div className="flex justify-center items-end w-auto h-auto">
+                  <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
+                </div>
+              </Link>
+            </div>
+  )
+}

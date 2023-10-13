@@ -211,6 +211,45 @@ input[type="checkbox"]:checked {
     transform: scale(1.24);
   }
 }
+.scale-animation2 {
+  animation: scaleAnimation2 3s infinite alternate linear;
+}
+
+@keyframes scaleAnimation2 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+    
+  }
+}
+.reddot{
+  display: flex;
+}
+
+.reddot::after {
+  content: '';
+  background: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation: blink 1s infinite; /* Apply the "blink" animation */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; /* Dot is fully visible at the start of the animation */
+  }
+  50% {
+    opacity: 0; /* Dot becomes fully transparent halfway through the animation */
+  }
+  100% {
+    opacity: 1; /* Dot is fully visible again at the end of the animation */
+  }
+}
+
+
 .slider-w {
   width: 100%;
 }

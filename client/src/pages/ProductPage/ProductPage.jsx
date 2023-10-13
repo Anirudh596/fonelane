@@ -209,6 +209,7 @@ function ProductSection() {
   };
 
   const savedPrice = mrp - dynamicPricing();
+  
 
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);
