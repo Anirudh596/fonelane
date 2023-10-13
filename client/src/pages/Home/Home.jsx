@@ -83,7 +83,7 @@ function Home() {
         <div className="w-full  block md:hidden">
       <Swiper
         slidesPerView={1.3}
-       
+        spaceBetween={10}
         pagination={{
           clickable: true,
         }}
