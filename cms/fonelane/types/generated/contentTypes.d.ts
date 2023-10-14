@@ -854,7 +854,7 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
   info: {
     singularName: 'deal-of-the-day-2';
     pluralName: 'deal-of-the-day-2s';
-    displayName: 'Deal Of The Day 2';
+    displayName: 'Deal Of The Day';
     description: '';
   };
   options: {
