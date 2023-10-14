@@ -34,13 +34,16 @@ function Navbar() {
   const [isLogOpen, setIsLogOpen] = useState(false);
   const [isWishlistOpen, setIsWishlistOpen] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false); // State to control the drawer
-  const [results , setResults] = useState([])
 
   const toggleCart = () => setIsCartOpen(!isCartOpen);
   const openLogin = () => setIsLogOpen(true);
   const closeLogin = () => setIsLogOpen(false);
   const toggleWishlist = () => setIsWishlistOpen(!isWishlistOpen);
   const toggleDrawer = () => setIsDrawerOpen(!isDrawerOpen); // Function to toggle the drawer
+
+  const [desktopResults, setDesktopResults] = useState([]); // Results for desktop search
+  const [mobileResults, setMobileResults] = useState([]);   // Results for mobile search
+
 
   const loginButton = isLoggedIn ? (
     <HiUserCircle className="hover:scale-105 ease-linear cursor-pointer text-2xl 2xl:text-3xl" />
@@ -52,10 +55,13 @@ function Navbar() {
       Login
     </button>
   );
-  const closeSearchResults = () => {
-    setResults([]); // Clear the results
+  const closeDesktopSearchResults = () => {
+    setDesktopResults([]); // Clear the results for desktop search
   };
 
+  const closeMobileSearchResults = () => {
+    setMobileResults([]); // Clear the results for mobile search
+  };
   return (
     <>
       <div className="top-0 bg-white z-50 w-full">
@@ -122,8 +128,8 @@ function Navbar() {
             </Link>
           </ul>
           <div className="relative my-0 md:w-1/4 lg:w-1/3 xl:w-1/2 mx-5 hidden md:flex flex-col">
-            <Search setResults={setResults} className="sticky top-0" />
-            <SearchResults results={results} className="absolute top-10" onClose={closeSearchResults}/>
+            <Search setResults={setDesktopResults} className="sticky top-0" />
+            <SearchResults results={desktopResults} className="absolute top-10" onClose={closeDesktopSearchResults}/>
             </div>
           <div className="flex flex-shrink md:flex-none justify-between items-center gap-5 mx-5 md:mx-0 md:gap-10">
             <CiShoppingCart
@@ -142,8 +148,8 @@ function Navbar() {
         <hr className="w-full h-px border-0 bg-gray-200" />
       </div>
       <div className="relative  w-full  md:hidden flex h-10 my-1 z-50">
-        <Search setResults={setResults} className="sticky top-0" />
-        <SearchResults results={results} className="absolute top-10" onClose={closeSearchResults}/>
+        <Search setResults={setMobileResults} className="sticky top-0" />
+        <SearchResults results={mobileResults} className="absolute top-10" onClose={closeMobileSearchResults}/>
       </div>
 
       {isCartOpen && <CartFloat isOpen={isCartOpen} onClose={toggleCart} />}

@@ -286,6 +286,7 @@ function ProductSection() {
 
   return (
     <>
+      <Scroll />
       <div className="flex custom-w h-fit md:h-screen flex-col md:flex-row">
         <div className="md:flex-1">
         <div className="flex">

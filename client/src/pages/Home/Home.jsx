@@ -65,7 +65,7 @@ function Home() {
             Dicover More
           </p>
         </div>
-        <div className="hidden md:flex rounded-lg border border-gray-500 px-2 py-5 bg-gray-200 h-24">
+        <div className="hidden md:flex rounded-lg  border-gray-500 px-2 py-3  ">
         <Button size="lg" color="white" className="h-16 mx-1 md:mx-5 relative flex items-center gap-3 z-10 rounded-lg md:h-40 w-1/3">
         <img src="images/h1.png" className="h-16 md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
         {/* <p className="absolute top-1/4 left-10 text-white">New Arrival</p> */}
@@ -74,10 +74,11 @@ function Home() {
         <img src="images/h2.png" className=" md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
         {/* <p className="absolute top-1/4 left-10 text-white">Students Offer</p> */}
       </Button>
-      <Button size="lg" color="white" className=" mx-1 md:mx-5 relative flex items-center gap-3  z-10 rounded-lg  md:h-40 w-1/3">
-        <img src="images/h3.png" className="md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
-        {/* <p className="absolute top-1/4 left-10 text-white">Back Covers</p> */}
+      <Button size="lg" color="white" className="mx-1 md:mx-5  relative flex items-center gap-3  z-10 rounded-lg  md:h-40 w-1/3">
+        <img src="images/h3.png" className=" md:h-full md:w-full absolute top-0 left-0 z-0 rounded-lg" />
+        {/* <p className="absolute top-1/4 left-10 text-white">Students Offer</p> */}
       </Button>
+      
 
         </div>
         <div className="w-full  block md:hidden">

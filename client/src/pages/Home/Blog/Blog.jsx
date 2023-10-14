@@ -12,7 +12,10 @@ import "swiper/css/navigation";
 
 function Blog() {
   return (
+    <>
     <div className="w-full  block md:hidden">
+      
+
       <Swiper
         slidesPerView={1.6}
         spaceBetween={10}
@@ -21,7 +24,7 @@ function Blog() {
           clickable: true,
         }}
 
-      className="mySwiper"
+      className="mySwiper block md:hidden"
     >
       <SwiperSlide><CardDefault /></SwiperSlide>
       <SwiperSlide><CardDefault /></SwiperSlide>
@@ -30,6 +33,13 @@ function Blog() {
     </Swiper>
       
     </div>
+    <div className="w-full justify-between items-center hidden md:flex">
+    <CardDefault />
+    <CardDefault />
+    <CardDefault />
+    <CardDefault />
+    </div>
+    </>
   );
 }
 

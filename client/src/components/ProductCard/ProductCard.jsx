@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useMediaQuery } from 'react-responsive';
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Scroll from "../scroll/Scroll";
 
 function FirstCard() {
 
@@ -71,18 +72,19 @@ function FirstCard() {
 
   return (
     <Swiper
-      slidesPerView={slidesPerView}
-      spaceBetween={10}
-      autoplay={{
-        duration: 4000,
-        disableOnInteraction: false,
-      }}
-      pagination={{
-        clickable: true,
-      }}
-      modules={[Autoplay]}
-      className="mySwiper"
+    slidesPerView={slidesPerView}
+    spaceBetween={10}
+    autoplay={{
+      duration: 4000,
+      disableOnInteraction: false,
+    }}
+    pagination={{
+      clickable: true,
+    }}
+    modules={[Autoplay]}
+    className="mySwiper"
     >
+    <Scroll />
       {cardData}
     </Swiper>
   );
