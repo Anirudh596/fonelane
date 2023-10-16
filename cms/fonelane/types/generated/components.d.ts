@@ -51,6 +51,18 @@ export interface DeviceStorageAndCondStorage extends Schema.Component {
   };
 }
 
+export interface PolicyPolicy extends Schema.Component {
+  collectionName: 'components_policy_policies';
+  info: {
+    displayName: 'policy';
+    icon: 'eye';
+  };
+  attributes: {
+    heading: Attribute.String;
+    content: Attribute.RichText;
+  };
+}
+
 export interface StorageStorage extends Schema.Component {
   collectionName: 'components_storage_storages';
   info: {
@@ -78,6 +90,7 @@ declare module '@strapi/types' {
       'device-info.device-info': DeviceInfoDeviceInfo;
       'device-storage-and-cond.condition': DeviceStorageAndCondCondition;
       'device-storage-and-cond.storage': DeviceStorageAndCondStorage;
+      'policy.policy': PolicyPolicy;
       'storage.storage': StorageStorage;
     }
   }
