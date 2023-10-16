@@ -12,6 +12,7 @@
           ssl: {
             rejectUnauthorized: env.bool('DATABASE_SSL_SELF', false),
           },
+          useNullAsDefault: true,
         },
         debug: false,
       },
