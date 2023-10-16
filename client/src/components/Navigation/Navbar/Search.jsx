@@ -8,7 +8,7 @@ function Search({className, setResults}) {
   const fetchData = (value)=>{
         fetch(`https://fonelane-cms.onrender.com/api/deal-of-the-day-2s?populate=*`, {
         headers: {
-          Authorization: "bearer "+ "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+          Authorization: "bearer "+ "e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
         }
       }
       ).then((response) => response.json()).then((json) => {
