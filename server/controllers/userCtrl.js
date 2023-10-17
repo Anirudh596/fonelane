@@ -4,7 +4,6 @@ const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const axios = require("axios");
 
-
 const createUser = async (req, res) => {
   try {
     const mobile = req.body.mobile;
@@ -30,60 +29,15 @@ const createUser = async (req, res) => {
   }
 };
 
-// const loginUserCtrl = asyncHandler(async (req, res) => {
-//   const { mobile } = req.body;
-//   try {
-//     const findUser = await User.findOne({ mobile });
-//     if (findUser) {
-//       // Generate and send OTP to the user's mobile number
-//       const accountSid = "AC0af3a8ecc541f6da456e6a29d0d656bc";
-//       const authToken = "dc760f08947b6734283bee68b812cfdb";
-//       const verifySid = "VA3e3e54786b286fd0c9b86bed1a5936a4";
-//       const client = require("twilio")(accountSid, authToken);
-
-//       client.verify
-//         .services(verifySid)
-//         .verifications.create({ to: mobile, channel: "sms" })
-//         .then((verification) => {
-//           console.log("OTP sent successfully:", verification.status);
-//           res.json({
-//             msg: "OTP sent successfully",
-//             success: true,
-//           });
-//         })
-//         .catch((error) => {
-//           console.error("Error sending OTP:", error);
-//           res.status(500).json({
-//             msg: "Error sending OTP",
-//             success: false,
-//           });
-//         });
-//     } else {
-//       // User doesn't exist
-//       res.status(200).json({
-//             msg: "Error sending OTP",
-//             success: false,
-//           });
-//       console.log("dont exist");
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       msg: "An error occurred",
-//       success: false,
-//     });
-//   }
-// });
-
 const loginUserCtrl = asyncHandler(async (req, res) => {
   const { mobile } = req.body;
   try {
     const findUser = await User.findOne({ mobile });
     if (findUser) {
       // Generate and send OTP to the user's mobile number
-      const accountSid = "AC0af3a8ecc541f6da456e6a29d0d656bc";
-      const authToken = "dc760f08947b6734283bee68b812cfdb";
-      const verifySid = "VA3e3e54786b286fd0c9b86bed1a5936a4";
+      const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
+      const authToken = "cd4b3944e06e884d562bb2b52000096e";
+      const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
       const client = require("twilio")(accountSid, authToken);
 
       client.verify
@@ -125,7 +79,6 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
     });
   }
 });
-
 
 // for verifying otp
 const verifyOtpCtrl = asyncHandler(async (req, res) => {
@@ -179,11 +132,10 @@ const verifyOtpCtrl = asyncHandler(async (req, res) => {
   }
 });
 
-
 //update a user data
 
 const updateaUser = async (req, res) => {
-  console.log(req.params)
+  console.log(req.params);
   const { id } = req.params;
   console.log("Received user ID:", id);
   try {
@@ -220,7 +172,6 @@ const updateaUser = async (req, res) => {
   }
 };
 
-
 // Define getallUser as an async function
 const getallUser = async (req, res) => {
   try {
@@ -237,42 +188,40 @@ const getallUser = async (req, res) => {
 
 //get a single user
 
-const getaUser = async( req, res) => {
-  console.log(req.params)
-  const {id} =req.params;
+const getaUser = async (req, res) => {
+  console.log(req.params);
+  const { id } = req.params;
   try {
-    const getaUser = await User.findById(id)
+    const getaUser = await User.findById(id);
     res.json({
-      getaUser
-    })
-
-  }catch (error){
-    console.error(error)
+      getaUser,
+    });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
       msg: "an Error occured",
       success: false,
     });
-  };
+  }
 };
 
 //delete a single user
 
-const deleteaUser = async( req, res) => {
-  console.log(req.params)
-  const {id} =req.params;
+const deleteaUser = async (req, res) => {
+  console.log(req.params);
+  const { id } = req.params;
   try {
-    const deleteaUser = await User.findByIdAndDelete(id)
+    const deleteaUser = await User.findByIdAndDelete(id);
     res.json({
-      deleteaUser
-    })
-
-  }catch (error){
-    console.error(error)
+      deleteaUser,
+    });
+  } catch (error) {
+    console.error(error);
     res.status(500).json({
       msg: "an Error occured",
       success: false,
     });
-  };
+  }
 };
 
 // const otpGenerator = async (req, res) => {
@@ -304,8 +253,15 @@ const deleteaUser = async( req, res) => {
 //   }
 // }
 
-module.exports = { createUser, loginUserCtrl ,getallUser, getaUser, deleteaUser, updateaUser, verifyOtpCtrl};
-
+module.exports = {
+  createUser,
+  loginUserCtrl,
+  getallUser,
+  getaUser,
+  deleteaUser,
+  updateaUser,
+  verifyOtpCtrl,
+};
 
 // const { error } = require("console");
 // const generateToken = require("../config/jwtToken");
