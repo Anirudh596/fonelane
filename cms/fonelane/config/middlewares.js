@@ -23,8 +23,8 @@ module.exports = [
     name: "strapi::cors",
     config: {
       origin: [
-        "https://fonelane.netlify.app",
-        "http://fonelane.netlify.app",
+        "https://fonelane.vercel.app",
+        "http://fonelane.vercel.app",
         "http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
       ], // Include both http and https versions
     },
