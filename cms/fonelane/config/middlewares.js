@@ -7,14 +7,19 @@ module.exports = [
         useDefaults: true,
         directives: {
           'connect-src': ["'self'", 'https:'],
-         'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
           'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  'strapi::cors',
+  {
+    name: 'strapi::cors',
+    config: {
+      origin: ['https://fonelane.netlify.app'], // Add your Netlify site URL
+    },
+  },
   'strapi::poweredBy',
   'strapi::logger',
   'strapi::query',
