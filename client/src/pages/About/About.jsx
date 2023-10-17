@@ -7,7 +7,10 @@ import axios from "axios"
 
 function About() {
 
-  const [dataa, setData] = useState([]);
+  const [data, setData] = useState([]);
+  const [images1, setImages1] = useState([]);
+  const [images2, setImages2] = useState([]);
+  const [images3, setImages3] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,7 +23,11 @@ function About() {
 
         // Extract and set product images from the response data
         
+        // console.log(res.data.data.attributes.img1.data.attributes.url)
         setData(res.data.data.attributes)
+        setImages1(res.data.data.attributes.img1.data.attributes)
+        setImages2(res.data.data.attributes.img2.data.attributes)
+        setImages3(res.data.data.attributes.img3.data.attributes)
       } catch (error) {
         console.log(error);
       }
@@ -82,46 +89,46 @@ function About() {
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-              {dataa.head1}{" "}
+              {data.head1}{" "}
             </h3>
             <p>
-              {dataa.content1}
+              {data.content1}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <img src={dataa.img1.data.attributes.url} alt="" className="" />
+            <img src={images1.url} alt="" className="" />
           </div>
         </div>
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex justify-center items-center">
-            <img src={dataa.img2.data.attributes.url} alt="" className="rounded-3xl" />
+            <img src={images2.url} alt="" className="rounded-3xl" />
           </div>
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-            {dataa.head2}{" "}
+            {data.head2}{" "}
             </h3>
             <p>
-            {dataa.content2}
+            {data.content2}
             </p>
           </div>
         </div>
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-            {dataa.head3}{" "}
+            {data.head3}{" "}
             </h3>
             <p>
-            {dataa.content3}
+            {data.content3}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <img src={dataa.img3.data.attributes.url} alt="" className="" />
+            <img src={images3.url} alt="" className="" />
           </div>
         </div>
         <div className="flex flex-col p-16 gap-5 justify-between items-center relative rounded-lg border border-gray-700">
           <h2 className="text-3xl font-bold italic">Founder{"'"}s Message</h2>
           <p>
-            {dataa.founder}
+            {data.founder}
           </p>
           <p>-Anil Singh Chadhha</p>
           <a href="https://www.linkedin.com/in/anil-chadha-6554b0206/?originalSubdomain=in">
