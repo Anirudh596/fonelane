@@ -1,25 +1,39 @@
 module.exports = [
-  'strapi::errors',
+  "strapi::errors",
   {
-    name: 'strapi::security',
+    name: "strapi::security",
     config: {
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          'connect-src': ["'self'", 'https:'],
-         'img-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
-          'media-src': ["'self'", 'data:', 'blob:', 'res.cloudinary.com'],
+          "connect-src": [
+            "'self'",
+            "'unsafe-inline'",
+            "https://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
+            "http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
+          ],
+          "img-src": ["data:", "blob:", "res.cloudinary.com"],
+          "media-src": ["data:", "blob:", "res.cloudinary.com"],
           upgradeInsecureRequests: null,
         },
       },
     },
   },
-  'strapi::cors',
-  'strapi::poweredBy',
-  'strapi::logger',
-  'strapi::query',
-  'strapi::body',
-  'strapi::session',
-  'strapi::favicon',
-  'strapi::public',
+  {
+    name: "strapi::cors",
+    config: {
+      origin: [
+        "https://fonelane.vercel.app",
+        "http://fonelane.vercel.app",
+        "http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
+      ], // Include both http and https versions
+    },
+  },
+  "strapi::poweredBy",
+  "strapi::logger",
+  "strapi::query",
+  "strapi::body",
+  "strapi::session",
+  "strapi::favicon",
+  "strapi::public",
 ];

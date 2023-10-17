@@ -171,7 +171,7 @@ function Logo () {
   return (
     <div className="z-50">
               <Link to="/">
-                <div className="flex justify-center items-end w-auto h-auto">
+                <div className="flex justify-center items-end">
                   <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
                 </div>
               </Link>
