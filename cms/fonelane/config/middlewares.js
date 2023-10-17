@@ -6,12 +6,7 @@ module.exports = [
       contentSecurityPolicy: {
         useDefaults: true,
         directives: {
-          "connect-src": [
-            "'self'",
-            "'unsafe-inline'",
-            "https://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
-            "http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
-          ],
+          "connect-src": ["'self'", "https:"],
           "img-src": ["data:", "blob:", "res.cloudinary.com"],
           "media-src": ["data:", "blob:", "res.cloudinary.com"],
           upgradeInsecureRequests: null,
@@ -19,16 +14,7 @@ module.exports = [
       },
     },
   },
-  {
-    name: "strapi::cors",
-    config: {
-      origin: [
-        "https://fonelane.vercel.app",
-        "http://fonelane.vercel.app",
-        "http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337",
-      ], // Include both http and https versions
-    },
-  },
+  "strapi::cors",
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
