@@ -2,8 +2,32 @@ import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ImLinkedin } from "react-icons/im";
 import Scroll from "../../components/scroll/Scroll";
+import { useState, useEffect } from "react";
+import axios from "axios"
 
 function About() {
+
+  const [dataa, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/about?populate=*`, {
+          headers: {
+            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+          }
+        });
+
+        // Extract and set product images from the response data
+        
+        setData(res.data.data.attributes)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2, // Adjust this threshold as needed
@@ -58,85 +82,46 @@ function About() {
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-              The Brighter future we envision{" "}
+              {dataa.head1}{" "}
             </h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut ut
-              consequuntur, quibusdam doloribus ipsum adipisci, maxime corporis
-              praesentium iste sapiente, laboriosam nulla dolor eos voluptates
-              illo omnis ipsam dicta porro saepe totam. Iure deleniti et nam
-              reprehenderit magnam repellendus sequi, ex, minus officiis
-              excepturi dolore non, qui explicabo fuga beatae aliquid quas? Ad,
-              veniam perspiciatis eligendi est architecto voluptate mollitia!
-              Minima illum id fugiat unde qui praesentium, sint expedita
-              cupiditate doloribus minus blanditiis repellendus nesciunt
-              quaerat, quo ab doloremque beatae consequatur quam aliquid
-              veritatis alias tempore. Quidem incidunt, ab doloremque
-              consequatur eius modi esse fugit possimus accusantium adipisci.
-              Quae, eaque!
+              {dataa.content1}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <img src="images/about1.png" alt="" className="" />
+            <img src={dataa.img1.data.attributes.url} alt="" className="" />
           </div>
         </div>
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex justify-center items-center">
-            <img src="images/about2.png" alt="" className="rounded-3xl" />
+            <img src={dataa.img2.data.attributes.url} alt="" className="rounded-3xl" />
           </div>
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-              The Brighter future we envision{" "}
+            {dataa.head2}{" "}
             </h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut ut
-              consequuntur, quibusdam doloribus ipsum adipisci, maxime corporis
-              praesentium iste sapiente, laboriosam nulla dolor eos voluptates
-              illo omnis ipsam dicta porro saepe totam. Iure deleniti et nam
-              reprehenderit magnam repellendus sequi, ex, minus officiis
-              excepturi dolore non, qui explicabo fuga beatae aliquid quas? Ad,
-              veniam perspiciatis eligendi est architecto voluptate mollitia!
-              Minima illum id fugiat unde qui praesentium, sint expedita
-              cupiditate doloribus minus blanditiis repellendus nesciunt
-              quaerat, quo ab doloremque beatae consequatur quam aliquid
-              veritatis alias tempore. Quidem incidunt, ab doloremque
-              consequatur eius modi esse fugit possimus accusantium adipisci.
-              Quae, eaque!
+            {dataa.content2}
             </p>
           </div>
         </div>
         <div className="flex justify-between items-center relative">
           <div className="flex-1 flex flex-col items-start justify-center">
             <h3 className="text-2xl font-semibold">
-              The Brighter future we envision{" "}
+            {dataa.head3}{" "}
             </h3>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aut ut
-              consequuntur, quibusdam doloribus ipsum adipisci, maxime corporis
-              praesentium iste sapiente, laboriosam nulla dolor eos voluptates
-              illo omnis ipsam dicta porro saepe totam. Iure deleniti et nam
-              reprehenderit magnam repellendus sequi, ex, minus officiis
-              excepturi dolore non, qui explicabo fuga beatae aliquid quas? Ad,
-              veniam perspiciatis eligendi est architecto voluptate mollitia!
-              Minima illum id fugiat unde qui praesentium, sint expedita
-              cupiditate doloribus minus blanditiis repellendus nesciunt
-              quaerat, quo ab doloremque beatae consequatur quam aliquid
-              veritatis alias tempore. Quidem incidunt, ab doloremque
-              consequatur eius modi esse fugit possimus accusantium adipisci.
-              Quae, eaque!
+            {dataa.content3}
             </p>
           </div>
           <div className="flex-1 flex justify-center items-center">
-            <img src="images/about3.png" alt="" className="" />
+            <img src={dataa.img3.data.attributes.url} alt="" className="" />
           </div>
         </div>
         <div className="flex flex-col p-16 gap-5 justify-between items-center relative rounded-lg border border-gray-700">
           <h2 className="text-3xl font-bold italic">Founder{"'"}s Message</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt labore
-            ipsum aut, minima illum quam atque iure vel quos libero commodi
-            voluptatum eius dignissimos odio cupiditate ab sed debitis sapiente
-            nobis numquam voluptates, quod iste? Unde ab voluptatum non illum.
+            {dataa.founder}
           </p>
           <p>-Anil Singh Chadhha</p>
           <a href="https://www.linkedin.com/in/anil-chadha-6554b0206/?originalSubdomain=in">
