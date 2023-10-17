@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ReactPaginate from "react-paginate";
 import {
   Card,
@@ -10,17 +10,42 @@ import {
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Scroll from "../../components/scroll/Scroll";
+import axios from "axios";
 
 function JustIn() {
   const newDevices = [1, 2, 3, 4, 5,6,7,8,9,10];
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
+  const [data, setData] = useState([]);
+  const [totalProducts, setTotalProducts] = useState(0);
 
   const handlePageClick = (data) => {
     setCurrentPage(data.selected);
   };
 
-  const paginatedDevices = newDevices.slice(
+  useEffect(() => {
+    const fetchData = async ()=>{
+      try {
+        // const res = await axios.get(`http://localhost:1337/api/iphones`, {
+          const res = await axios.get(`http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/just-ins?populate=*`, {
+          headers: {
+            Authorization: "bearer "+ "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+          }
+        }
+        );
+        // setData(res.data.data);
+        setData(res.data.data);
+        setTotalProducts(res.data.data);
+        console.log(res.data.data)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData()
+  }, [])
+
+  const paginatedDevices = data
+  .slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
@@ -73,7 +98,7 @@ function JustIn() {
 
       <div className="flex w-full my-10 border border-gray-800 rounded-xl">
         <div className="flex w-full p-10 bg-[#f8fafc] flex-wrap justify-center">
-          {paginatedDevices.map((device, index) => (
+          {data.map((device, index) => (
             <Card
               key={index} className="w-48 h-72 m-3 cursor-pointer">
               <CardHeader
@@ -94,10 +119,10 @@ function JustIn() {
                     color="blue-gray"
                     className="font-medium text-sm"
                   >
-                    IPhone 13
+                    {device.attributes.title}
                   </Typography>
                   <Typography color="blue-gray" className="font-medium">
-                    $95.00
+                    {device.attributes.baseprice}
                   </Typography>
                 </div>
               </CardBody>
