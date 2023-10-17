@@ -159,7 +159,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`,
+          `http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:
@@ -188,7 +188,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `https://fonelane-cms.onrender.com/api/covers/${id}?populate=*`,
+          `http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:
