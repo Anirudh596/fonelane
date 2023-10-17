@@ -11,9 +11,9 @@ function CoverContent({cIndex}) {
   useEffect(() => {
     const fetchData = async () => {
        try {
-        const res = await axios.get(`https://fonelane-cms.onrender.com/api/covers/${cIndex}?populate=*`, {
+        const res = await axios.get(`http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/covers/${cIndex}?populate=*`, {
           headers: {
-            Authorization: "bearer "+ "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+            Authorization: "bearer "+ "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           }
         }
         );
@@ -30,9 +30,9 @@ function CoverContent({cIndex}) {
   useEffect(() => {
     const fetchData = async ()=>{
       try {
-          const res = await axios.get(`https://fonelane-cms.onrender.com/api/covers/${cIndex}`, {
+          const res = await axios.get(`http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/covers/${cIndex}`, {
           headers: {
-            Authorization: "bearer "+ "2db02d82e1ae075c920ecc147cf978b1b53c09964e651485cca3084579203f4ed9ed98fb25545898e05b1b3b59deec607f910db3ec242a02bd4ed43ffd6fb5361c3c3b1d5385ca72ea12ab33634728354e9f8d9df08ce60b9e14993483ecaddf6e8e018201a95be71cb740be3546489fa075944959a9870e3c1dba157b1bfa83",
+            Authorization: "bearer "+ "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           }
         }
         );

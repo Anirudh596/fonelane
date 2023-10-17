@@ -1,9 +1,36 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { useInView } from "react-intersection-observer";
-
+import axios from "axios";
 import Scroll from "../../components/scroll/Scroll";
 
+
+
 function Privacy() {
+
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await axios.get(`http://ec2-35-154-21-93.ap-south-1.compute.amazonaws.com:1337/api/policies/2?populate=*`, {
+          headers: {
+            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+          }
+        });
+
+        // Extract and set product images from the response data
+        
+        const privacydata = res.data.data.attributes.policy;
+        setData(privacydata)
+      } catch (error) {
+        console.log(error);
+      }
+    };
+    fetchData();
+  }, []);
+
+
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.2, // Adjust this threshold as needed
@@ -57,7 +84,13 @@ function Privacy() {
         />
       </div>
       <div>
-        <AccordionCustomIcon />
+        {data.map((item, index) => (
+          <AccordionCustomIcon
+            key={index}
+            heading={item.heading} // Pass the title from the data
+            content={item.content} // Pass the content from the data
+          />
+        ))}
       </div>
     </div>
   );
@@ -94,46 +127,46 @@ function Icon({ id, open }) {
   );
 }
 
-export function AccordionCustomIcon() {
+// export function AccordionCustomIcon() {
+//   const [open, setOpen] = React.useState(0);
+
+//   const handleOpen = (value) => setOpen(open === value ? 0 : value);
+
+//   return (
+//     <>
+      
+//       <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+//         <AccordionHeader onClick={() => handleOpen(1)}>
+//           What can I do with Material Tailwind?
+//         </AccordionHeader>
+//         <AccordionBody>
+//           We&apos;re not always in the position that we want to be at.
+//           We&apos;re constantly growing. We&apos;re constantly making mistakes.
+//           We&apos;re constantly trying to express ourselves and actualize our
+//           dreams.
+//         </AccordionBody>
+//       </Accordion>
+//     </>
+//   );
+// }
+
+
+export function AccordionCustomIcon({ heading, content }) {
   const [open, setOpen] = React.useState(0);
 
   const handleOpen = (value) => setOpen(open === value ? 0 : value);
 
   return (
     <>
-      <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(1)}>
-          What is Material Tailwind?
-        </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
-      </Accordion>
-      <Accordion open={open === 2} icon={<Icon id={2} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(2)}>
-          How to use Material Tailwind?
-        </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
-      </Accordion>
-      <Accordion open={open === 3} icon={<Icon id={3} open={open} />}>
-        <AccordionHeader onClick={() => handleOpen(3)}>
-          What can I do with Material Tailwind?
-        </AccordionHeader>
-        <AccordionBody>
-          We&apos;re not always in the position that we want to be at.
-          We&apos;re constantly growing. We&apos;re constantly making mistakes.
-          We&apos;re constantly trying to express ourselves and actualize our
-          dreams.
-        </AccordionBody>
-      </Accordion>
+    <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+      <AccordionHeader onClick={() => handleOpen(1)}>
+        {heading} {/* Display the title from props */}
+      </AccordionHeader>
+      <AccordionBody>
+        {content} {/* Display the content from props */}
+      </AccordionBody>
+    </Accordion>
     </>
   );
 }
+
