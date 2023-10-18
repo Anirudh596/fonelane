@@ -13,7 +13,7 @@ function Footer() {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
   return (
-    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-[70vh] my-5">
+    <div className="w-full bg-gray-100 h-auto  md:h-[90vh] lg:h-[80vh] xl:h-[70vh] mt -5">
       <div className="contact-bar custom-w h-24 md:h-18 flex flex-col md:flex-row justify-between py-2 md:py-0 items-center ">
         <p className="text-base md:text-3xl  font-semibold">
           Follow Us On
@@ -51,13 +51,13 @@ function Footer() {
         </div>
       </div>
       <hr className="h-px bg-slate-300 border-0" />
-      <div className="custom-w flex flex-col sm:flex-row justify-between">
-        <div className="company-visit w-full sm:w-2/5 p-5">
+      <div className="custom-w flex flex-col md:flex-row justify-between">
+        <div className="company-visit w-full flex  md:block md:w-2/5 p-5">
           <div className="h-1/2">
-            <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+            <p className="text-sm md:text-base  font-semibold">
               Company
             </p>
-            <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-3">
+            <ul className="list-none text-xs md:text-sm  leading-7 p-3">
               <Link to="/">
                 <li className="group">
                   <a href="#" className="hover:opacity-60">
@@ -83,8 +83,8 @@ function Footer() {
             </ul>
           </div>
           <div className="w-full h-1/2">
-            <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold mt-3 mb-1">
-              Visit Office:
+            <p className="text-sm md:text-base  font-semibold">
+              Meet Us at:
             </p>
             <ul className="list-none text-xs md:text-sm  p-5">
               <li>
@@ -105,10 +105,10 @@ function Footer() {
         <div className="policies-links w-full sm:w-3/4 p-5">
           <div className="w-full h-2/3 flex">
             <div className="w-1/2 h-full">
-              <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+              <p className="text-sm md:text-base font-semibold">
                 Policies
               </p>
-              <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-2">
+              <ul className="list-none text-xs md:text-sm  leading-7 p-2">
                 <li>
                   <Link to="/refund-return">
                     <a href="" className="hover:opacity-60">
@@ -141,10 +141,10 @@ function Footer() {
               </ul>
             </div>
             <div className="w-1/2 h-full">
-              <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold">
+              <p className="text-sm md:text-base l font-semibold">
                 Useful Links
               </p>
-              <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base leading-7 p-2">
+              <ul className="list-none text-xs md:text-sm  leading-7 p-2">
                 <li>
                   <a href="#" className="hover:opacity-60">
                     Track Orders
@@ -169,21 +169,21 @@ function Footer() {
             </div>
           </div>
           <div className=" flex justify-center items-center">
-            <img src="./images/logo 2.png" className="w-52 h-20" alt="" />
+            <img src="./images/logo 2.png" className="w-72 h-20" alt="" />
           </div>
         </div>
-        <div className="newsletter-feedback w-full sm:w-2/3 flex flex-col justify-center items-center p-5">
+        <div className="newsletter-feedback w-full md:w-2/3 flex flex-col justify-center items-center p-5">
           <div className="w-full h-1/3 flex flex-col">
-            <p className="font-medium test-xs md:text-sm lg:text-lg xl:text-lg mb-2">
-              Subscribe to Our Newsletter
-            </p>
+            
             <div className="flex">
               <div className="relative flex w-full max-w-[24rem]">
                 <Input
                   type="email"
-                  label="Email Address"
+                  label="Subscribe to our newsletter"
+                  placeholder="Type your Email here"
                   value={email}
                   onChange={onChange}
+                  variant="static"
                   className="pr-20"
                   containerProps={{
                     className: "min-w-0",
@@ -201,10 +201,10 @@ function Footer() {
             </div>
           </div>
           <div className="w-full h-2/3 flex flex-col justify-center items-center mt-10">
-            <p className="text-xs md:text-sm xl:text-base font-medium my-3">
+            <p className="text-xs md:text-sm  font-medium my-3">
               Give us your valuable feedback
             </p>
-            <button className="px-4 py-2 w-[120px] bg-white text-black hover:bg-gray-300 active:bg-black active:text-white ease-in duration-100 text-xs md:text-sm lg:text-base xl:text-base font-medium rounded-[15px]">
+            <button className="px-4 py-2 w-[120px] bg-white text-black hover:bg-gray-300 active:bg-black active:text-white ease-in duration-100 text-xs md:text-sm  font-medium rounded-[15px]">
               Feedback
             </button>
           </div>
