@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * just-in router
+ * new-arrival router
  */
 
 const { createCoreRouter } = require('@strapi/strapi').factories;
 
-module.exports = createCoreRouter('api::just-in.just-in');
+module.exports = createCoreRouter('api::new-arrival.new-arrival');

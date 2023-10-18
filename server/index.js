@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const mongoose = require('mongoose')
+const session = require('express-session');
 const dbConnect = require('./config/dbConnect')
 const dotenv = require('dotenv').config();
 const PORT = process.env.PORT || 5000;
@@ -16,7 +17,14 @@ app.use(cors())
 
 app.use('/api/user', authRouter)
 
-
+app.use(
+    session({
+      secret: 'fonelane123', // Replace with a strong and unique secret
+      resave: false,
+      saveUninitialized: true,
+      cookie: { secure: false },
+    })
+  );
 
 
 app.use(notFound);

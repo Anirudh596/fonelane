@@ -1,9 +1,9 @@
 'use strict';
 
 /**
- * just-in service
+ * new-arrival service
  */
 
 const { createCoreService } = require('@strapi/strapi').factories;
 
-module.exports = createCoreService('api::just-in.just-in');
+module.exports = createCoreService('api::new-arrival.new-arrival');

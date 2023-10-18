@@ -4,6 +4,8 @@ const User = require("../models/userModel");
 const asyncHandler = require("express-async-handler");
 const axios = require("axios");
 
+const session = require('express-session');
+
 const createUser = async (req, res) => {
   try {
     const mobile = req.body.mobile;
@@ -39,6 +41,8 @@ const loginUserCtrl = asyncHandler(async (req, res) => {
       const authToken = "cd4b3944e06e884d562bb2b52000096e";
       const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
       const client = require("twilio")(accountSid, authToken);
+
+      req.session.userId = findUser._id;
 
       client.verify
         .services(verifySid)

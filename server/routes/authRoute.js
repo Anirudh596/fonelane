@@ -10,6 +10,14 @@ router.post('/login', loginUserCtrl);
 router.post('/verify-otp', verifyOtpCtrl)
 
 router.get('/all-users', getallUser);
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+      if (err) {
+        console.error('Error destroying session:', err);
+      }
+      res.redirect('/'); // Redirect to a suitable page after logout
+    });
+  });
 router.get('/:id', getaUser)
 router.delete('/:id', deleteaUser)
 router.put('/:id', updateaUser)

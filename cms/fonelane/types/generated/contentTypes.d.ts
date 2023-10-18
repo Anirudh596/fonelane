@@ -822,28 +822,29 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
   };
 }
 
-export interface ApiJustInJustIn extends Schema.CollectionType {
-  collectionName: 'just_ins';
+export interface ApiNewArrivalNewArrival extends Schema.CollectionType {
+  collectionName: 'new_arrivals';
   info: {
-    singularName: 'just-in';
-    pluralName: 'just-ins';
-    displayName: 'justIn';
+    singularName: 'new-arrival';
+    pluralName: 'new-arrivals';
+    displayName: 'New Arrival';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
+    title: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::just-in.just-in',
+      'api::new-arrival.new-arrival',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::just-in.just-in',
+      'api::new-arrival.new-arrival',
       'oneToOne',
       'admin::user'
     > &
@@ -902,7 +903,7 @@ declare module '@strapi/types' {
       'api::banner.banner': ApiBannerBanner;
       'api::cover.cover': ApiCoverCover;
       'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
-      'api::just-in.just-in': ApiJustInJustIn;
+      'api::new-arrival.new-arrival': ApiNewArrivalNewArrival;
       'api::policy.policy': ApiPolicyPolicy;
     }
   }

@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "new_arrivals",
+  "info": {
+    "singularName": "new-arrival",
+    "pluralName": "new-arrivals",
+    "displayName": "New Arrival"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    }
+  }
+}
