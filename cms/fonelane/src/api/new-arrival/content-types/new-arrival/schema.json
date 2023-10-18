@@ -4,7 +4,8 @@
   "info": {
     "singularName": "new-arrival",
     "pluralName": "new-arrivals",
-    "displayName": "New Arrival"
+    "displayName": "New Arrival",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -13,6 +14,49 @@
   "attributes": {
     "title": {
       "type": "string"
+    },
+    "baseprice": {
+      "type": "integer"
+    },
+    "mrp": {
+      "type": "integer"
+    },
+    "mainimage": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "otherimages": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "colors": {
+      "type": "component",
+      "repeatable": true,
+      "component": "device-colors.colors"
+    },
+    "storage": {
+      "type": "component",
+      "repeatable": true,
+      "component": "storage.storage"
+    },
+    "specs": {
+      "type": "richtext"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
     }
   }
 }

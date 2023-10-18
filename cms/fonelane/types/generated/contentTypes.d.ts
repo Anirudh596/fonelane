@@ -828,12 +828,21 @@ export interface ApiNewArrivalNewArrival extends Schema.CollectionType {
     singularName: 'new-arrival';
     pluralName: 'new-arrivals';
     displayName: 'New Arrival';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     title: Attribute.String;
+    baseprice: Attribute.Integer;
+    mrp: Attribute.Integer;
+    mainimage: Attribute.Media;
+    otherimages: Attribute.Media;
+    colors: Attribute.Component<'device-colors.colors', true>;
+    storage: Attribute.Component<'storage.storage', true>;
+    specs: Attribute.RichText;
+    slug: Attribute.UID<'api::new-arrival.new-arrival', 'title'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
