@@ -35,6 +35,20 @@
     },
     "excellentinventory": {
       "type": "integer"
+    },
+    "ram": {
+      "type": "enumeration",
+      "enum": [
+        "MB512",
+        "GB1",
+        "GB2",
+        "GB3",
+        "GB4",
+        "GB6"
+      ]
+    },
+    "MRP": {
+      "type": "integer"
     }
   }
 }

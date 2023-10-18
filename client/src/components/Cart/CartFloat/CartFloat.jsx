@@ -1,6 +1,6 @@
 
 
-import  { useState } from "react";
+import  { useState, useEffect } from "react";
 import BackBtn from "../../BackBtn/BackBtn";
 import { FaTruckFast } from "react-icons/fa6";
 import { FcCustomerSupport } from "react-icons/fc";
@@ -14,6 +14,21 @@ import { useCart } from "../../context/cart";
 function CartFloat({ onClose }) {
   const [cart, setCart] = useCart();
   const [count, setCount] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    // Fetch cart items from your API
+    // Replace 'yourApiEndpoint' with the actual API endpoint URL
+    fetch("yourApiEndpoint")
+      .then((response) => response.json())
+      .then((data) => {
+        // Set the cart items in your component state
+        setCartItems(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching cart items: ", error);
+      });
+  }, []);
 
   const cartAssuredItems = [
     {
@@ -85,7 +100,7 @@ function CartFloat({ onClose }) {
             slidesPerView="auto"
             scrollbar={{ draggable: true }}
           >
-            {cart.map((product, index) => (
+            {cartItems.map((product, index) => (
               <SwiperSlide key={index} className="flex flex-col ">
               <div>
                 <div className="m-3 flex justify-evenly items-center cursor-pointer bg-white">
@@ -99,16 +114,16 @@ function CartFloat({ onClose }) {
                   <div className="flex">
                     <div className="flex flex-col justify-start items-start leading-5 w-full h-full p-3">
                       <div className="title text-sm md:text-base font-semibold">
-                        <h2>Iphone 12</h2>
+                        <h2>{product.title}</h2>
                       </div>
                       <div className="detail flex flex-wrap justify-start items-center gap-2 text-xs md:text-xs">
-                        <p>Quality: Fair</p>
-                        <p>Storage: 128GB</p>
+                        <p>Quality: {product.quality}</p>
+                        <p>Storage: {product.storage}</p>
                         {/* Display other product details */}
                       </div>
                       <div className="pricePro">
                         <h2 className="flex font-medium justify-center items-center gap-2">
-                          ₹
+                          ₹{product.price}
                           {/* Display price and other details */}
                         </h2>
                       </div>

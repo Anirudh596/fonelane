@@ -5,16 +5,16 @@ import { PiShoppingCartLight } from "react-icons/pi";
 import Scroll from "../../components/scroll/Scroll";
 function ProductPage() {
   const assuredImages = [
-    { img: "../../../public/images/fo1.png" },
-    { img: "../../../public/images/fo2.png" },
-    { img: "../../../public/images/fo3.png" },
-    { img: "../../../public/images/fo4.png" },
-  ];
-
-  useEffect(() => {
-    // Scroll to the top of the page when the component mounts
-    window.scrollTo(0, 0);
-  }, []); // Empty dependency array ensures it only runs once when mounted
+    "images/fo1.png",
+    "images/fo2.png",
+    "images/fo3.png",
+    "images/fo4.png",
+  ]
+  
+  // useEffect(() => {
+  //   // Scroll to the top of the page when the component mounts
+  //   window.scrollTo(0, 0);
+  // }, []); // Empty dependency array ensures it only runs once when mounted
 
   return (
     <>
@@ -133,7 +133,7 @@ function ProductSection() {
           }
         );
         setData(res.data.data.attributes);
-        console.log(res.data.data.attributes.baseprice);
+        // console.log(res.data.data.attributes.baseprice);
       } catch (error) {
         console.error(error);
       }
@@ -298,6 +298,7 @@ function ProductSection() {
     setSelectedImage(image);
   };
 
+
   return (
     <>
       <div className="flex custom-w h-fit md:h-screen flex-col md:flex-row">
@@ -359,45 +360,32 @@ function ProductSection() {
               Buy Now
             </button>
 
-            <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
-              Add to Cart
-            </button>
-          </div>
-          <div className="flex relative md:hidden w-full justify-center items-center">
-            <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
-            <div className="  w-full m-1 flex justify-start ">
-                  <p className="py-1 px-2 text-sm w-full flex bg-blue-600 text-white rounded-r-md font-semibold">
-                    ₹{savedPrice} off
-                  </p>
-                </div>
-              {qualityCheck.map((item, index) => (
-                <div
-                  key={index}
-                  className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
-                >
-                  <p className="text-[18px]">{item.main}</p>
-                  <p className="text-[10px]">{item.text}</p>
-                </div>
-              ))}
-            </div>
-            <Swiper
-              pagination={true}
-              modules={[Pagination]}
-              className="mySwiper"
+        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+          Add to Cart
+        </button>
+      </div>
+      <div className="flex relative md:hidden w-full justify-center items-center">
+        <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
+          {qualityCheck.map((item, index) => (
+            <div
+              key={index}
+              className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
             >
-              {productImages.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="w-full flex justify-center items-center">
-                    <img
-                      src={`${image}`}
-                      alt={`Product Image ${index}`}
-                      className=" h-72"
-                    />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+              <p className="text-[18px]">{item.main}</p>
+              <p className="text-[10px]">{item.text}</p>
+            </div>
+          ))}
+        </div>
+        <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
+          {productImages.map((image, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full flex justify-center items-center">
+              <img src={`${image}`} alt={`Product Image ${index}`} className=" h-72" />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
         </div>
 
         <div className="md:flex-1 w-full h-fit md:h-[90vh] md:px-8 overflow-x-hidden overflow-y-scroll scrollbar-hide">
