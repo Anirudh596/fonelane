@@ -13,18 +13,18 @@ function Footer() {
   const [email, setEmail] = React.useState("");
   const onChange = ({ target }) => setEmail(target.value);
   return (
-    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-screen lg:h-[70vh] xl:h-[70vh] my-5">
-      <div className="contact-bar custom-w h-[12vh] md:h-18 flex justify-between items-center ">
-        <p className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-semibold">
+    <div className="w-full bg-gray-100 h-auto sm:h-screen md:h-[70vh] my-5">
+      <div className="contact-bar custom-w h-24 md:h-18 flex flex-col md:flex-row justify-between py-2 md:py-0 items-center ">
+        <p className="text-base md:text-3xl  font-semibold">
           Follow Us On
         </p>
         <div>
-          <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+          <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-4xl ">
             <li className="social-icons opacity-100">
               <a href="https://www.instagram.com/fonelane/" target="_blank"  rel="noreferrer"><img
                 src="./images/instagram.png"
                 alt=""
-                className="w-[28px] h-[28px] md:w-[36px] md:h-[36px] "
+                className="w-[36px] md:h-[36px] "
               /></a>
             </li>
             <li className="social-icons opacity-100">
@@ -86,7 +86,7 @@ function Footer() {
             <p className="text-sm md:text-base lg:text-lg xl:text-xl font-semibold mt-3 mb-1">
               Visit Office:
             </p>
-            <ul className="list-none text-xs md:text-sm lg:text-base xl:text-base p-5">
+            <ul className="list-none text-xs md:text-sm  p-5">
               <li>
                 <p>A-341, Building No.2,</p>
               </li>
@@ -169,7 +169,7 @@ function Footer() {
             </div>
           </div>
           <div className=" flex justify-center items-center">
-            <img src="./images/logo 2.png" className="w-48 h-48" alt="" />
+            <img src="./images/logo 2.png" className="w-52 h-20" alt="" />
           </div>
         </div>
         <div className="newsletter-feedback w-full sm:w-2/3 flex flex-col justify-center items-center p-5">
@@ -209,39 +209,39 @@ function Footer() {
             </button>
           </div>
           <div className="w-full h-1/3 mt-10 flex flex-col justify-center items-center">
-            <p className="text-sm md:text-base lg:text-xl xl:text-2xl font-normal mb-3">
+            <p className="text-sm md:text-base  font-normal mb-3">
               Payment Methods
             </p>
             <div className="flex justify-center items-center gap-7">
               <img
                 src="./images/visa.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
                 src="./images/mc.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
                 src="./images/ae.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
                 src="./images/paytm.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
                 src="./images/provider.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
                 src="./images/cod.png"
                 alt=""
-                className="w-[20px] h-[20px] md:w-[20px] md:h-[20px] lg:w-[40px] lg:h-[40px] xl:w-[50px] xl:h-[50px]"
+                className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
             </div>
           </div>
