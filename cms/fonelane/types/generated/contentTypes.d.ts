@@ -677,24 +677,27 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.SingleType {
+export interface ApiAboutAbout extends Schema.CollectionType {
   collectionName: 'abouts';
   info: {
     singularName: 'about';
     pluralName: 'abouts';
-    displayName: 'about';
+    displayName: 'About';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    text1: Attribute.RichText;
+    head1: Attribute.String;
+    head2: Attribute.String;
+    head3: Attribute.String;
+    content1: Attribute.Text;
+    content2: Attribute.Text;
+    content3: Attribute.Text;
+    founder: Attribute.Text;
     img1: Attribute.Media;
-    text2: Attribute.RichText;
     img2: Attribute.Media;
-    text3: Attribute.RichText;
     img3: Attribute.Media;
-    text4: Attribute.RichText;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -713,12 +716,13 @@ export interface ApiAboutAbout extends Schema.SingleType {
   };
 }
 
-export interface ApiBannerBanner extends Schema.SingleType {
+export interface ApiBannerBanner extends Schema.CollectionType {
   collectionName: 'banners';
   info: {
     singularName: 'banner';
     pluralName: 'banners';
     displayName: 'banner';
+    description: '';
   };
   options: {
     draftAndPublish: true;
