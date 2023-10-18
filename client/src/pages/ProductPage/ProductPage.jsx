@@ -17,6 +17,8 @@ function ProductPage() {
   //   window.scrollTo(0, 0);
   // }, []); // Empty dependency array ensures it only runs once when mounted
 
+
+
   return (
     <>
       <Scroll />
@@ -130,7 +132,7 @@ function ProductSection() {
           },
         });
         setData(res.data.data.attributes);
-        console.log(res.data.data.attributes.baseprice);
+        // console.log(res.data.data.attributes.baseprice);
       } catch (error) {
         console.error(error);
       }
@@ -283,6 +285,35 @@ function ProductSection() {
     setSelectedImage(image);
   };
 
+  // const handleAddToCart = async () => {
+  //   // Create an object with product details
+  //   const productDetails = {
+  //     title: data.title,
+  //     price: dynamicPricing(),
+  //     Condition: selectedQuality,
+  //     Storage: selectedSpec,
+  //     Color: selectedColor,
+  //   };
+
+    const handleAddToCart = async () => {
+      // Create an object with product details
+      const productDetails = {
+        title: data.title,
+        price: dynamicPricing(),
+        Condition: selectedQuality,
+        Storage: selectedSpec,
+        Color: selectedColor,
+      };
+    try {
+      // Make a POST request to add the product to the user's cart
+      const response = await axios.post("http://localhost:5000/api/user/add-to-cart", productDetails);
+      console.log(response.data); // Handle the response as needed
+    } catch (error) {
+      console.error(error);
+      // Handle errors
+    }
+  }
+
 
   return (
     <>
@@ -336,7 +367,7 @@ function ProductSection() {
           Buy Now
         </button>
 
-        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105" onClick={handleAddToCart}>
           Add to Cart
         </button>
       </div>

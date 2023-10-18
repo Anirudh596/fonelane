@@ -896,6 +896,44 @@ export interface ApiPolicyPolicy extends Schema.CollectionType {
   };
 }
 
+export interface ApiProductProduct extends Schema.CollectionType {
+  collectionName: 'products';
+  info: {
+    singularName: 'product';
+    pluralName: 'products';
+    displayName: 'Products';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    baseprice: Attribute.Integer;
+    mainimage: Attribute.Media;
+    otherimages: Attribute.Media;
+    colors: Attribute.Component<'device-colors.colors', true>;
+    storage: Attribute.Component<'storage.storage', true>;
+    specs: Attribute.RichText;
+    slug: Attribute.UID<'api::product.product', 'title'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::product.product',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -918,6 +956,7 @@ declare module '@strapi/types' {
       'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
       'api::new-arrival.new-arrival': ApiNewArrivalNewArrival;
       'api::policy.policy': ApiPolicyPolicy;
+      'api::product.product': ApiProductProduct;
     }
   }
 }

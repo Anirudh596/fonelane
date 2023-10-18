@@ -1,6 +1,7 @@
 const { error } = require("console");
 const generateToken = require("../config/jwtToken");
 const User = require("../models/userModel");
+const Cart = require("../models/CartModel")
 const asyncHandler = require("express-async-handler");
 const axios = require("axios");
 
@@ -228,34 +229,63 @@ const deleteaUser = async (req, res) => {
   }
 };
 
-// const otpGenerator = async (req, res) => {
-//   try {
-//     const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
-// const authToken = "a40784a3a93d4f9fb988a595417fd52e";
-// const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
-// const client = await require("twilio")(accountSid, authToken);
+const addToCart = async (req, res) => {
+  try {
+    // const { userId } = req.session; // Get the user ID from the session
 
-// client.verify.v2
-//   .services(verifySid)
-//   .verifications.create({ to: req.body.mobile, channel: "sms" })
-//   .then((verification) => console.log(verification.status))
-//   .then(() => {
-//     const readline = require("readline").createInterface({
-//       input: process.stdin,
-//       output: process.stdout,
-//     });
-//     readline.question("Please enter the OTP:", (otpCode) => {
-//       client.verify.v2
-//         .services(verifySid)
-//         .verificationChecks.create({ to: req.body.mobile, code: otpCode })
-//         .then((verification_check) => console.log(verification_check.status))
-//         .then(() => readline.close());
-//     });
-//   });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// }
+    // if (!userId) {
+    //   return res.status(401).json({ success: false, message: 'User not authenticated.' });
+    // }
+
+    // Extract the product details from the request body
+    const { title, price, Condition, Storage, Color } = req.body;
+
+    // Create a new cart item for the user
+    const cartItem = new Cart({
+      title,
+      price,
+      Condition,
+      Storage,
+      Color,
+    });
+    
+
+    // Save the cart item to the database
+    await cartItem.save();
+
+    res.status(201).json({ success: true, message: 'Product added to the cart.' });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: 'An error occurred.' });
+  }
+}
+
+const cartItems = async (req, res) => {
+  try {
+    const cartItems = await Cart.find();
+    res.json(cartItems);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Unable to fetch cart items" });
+  }
+}
+
+const deleteaItem = async (req, res) => {
+  console.log(req.params);
+  const { id } = req.params;
+  try {
+    const deleteaUser = await Cart.findByIdAndDelete(id);
+    res.json({
+      deleteaItem,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      msg: "an Error occured",
+      success: false,
+    });
+  }
+};
 
 module.exports = {
   createUser,
@@ -265,166 +295,7 @@ module.exports = {
   deleteaUser,
   updateaUser,
   verifyOtpCtrl,
+  addToCart,
+  cartItems,
+  deleteaItem
 };
-
-// const { error } = require("console");
-// const generateToken = require("../config/jwtToken");
-// const User = require("../models/userModel");
-// const asyncHandler = require("express-async-handler");
-// const twilio = require("twilio");
-
-// // Create a user
-// const createUser = asyncHandler(async (req, res) => {
-//   const { mobile } = req.body;
-//   const findUser = await User.findOne({ mobile });
-
-//   if (findUser) {
-//     return res.status(400).json({
-//       msg: "User already exists",
-//       success: false,
-//     });
-//   }
-
-//   const newUser = await User.create(req.body);
-//   res.status(201).json(newUser);
-// });
-
-// // Login or Register a user
-// const loginUserCtrl = asyncHandler(async (req, res) => {
-//   const { mobile } = req.body;
-//   const findUser = await User.findOne({ mobile });
-
-//   if (findUser && (await findUser.isMobileMatched(mobile))) {
-//     const accountSid = "AC1f4174e615aa1e8cbaaddf35ad2f1104";
-//     const authToken = "a40784a3a93d4f9fb988a595417fd52e";
-//     const verifySid = "VA44abaf5811c16c7ea7c26d00c234a61e";
-//     const client = twilio(accountSid, authToken);
-
-//     client.verify.v2
-//       .services(verifySid)
-//       .verifications.create({ to: req.body.mobile, channel: "sms" })
-//       .then((verification) => console.log(verification.status))
-//       .then(() => {
-//         const readline = require("readline").createInterface({
-//           input: process.stdin,
-//           output: process.stdout,
-//         });
-//         readline.question("Please enter the OTP:", (otpCode) => {
-//           client.verify.v2
-//             .services(verifySid)
-//             .verificationChecks.create({ to: req.body.mobile, code: otpCode })
-//             .then((verification_check) => console.log(verification_check.status))
-//             .then(() => readline.close());
-//         });
-//       });
-//   } else {
-//     try {
-//       const newUser = await User.create(req.body);
-//       res.status(201).json(newUser);
-//       console.log("User created successfully");
-//     } catch (error) {
-//       console.error(error);
-//       res.status(500).json({
-//         msg: "An error occurred",
-//         success: false,
-//       });
-//     }
-//   }
-// });
-
-// // Rest of the backend controller functions remain the same
-
-// // Update user data
-// const updateaUser = asyncHandler(async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const existingUser = await User.findById(id);
-
-//     if (!existingUser) {
-//       return res.status(404).json({
-//         msg: "User not found",
-//         success: false,
-//       });
-//     }
-
-//     const updatedUser = await User.findByIdAndUpdate(
-//       id,
-//       {
-//         name: req?.body?.name,
-//         email: req?.body?.email,
-//         mobile: req?.body?.mobile,
-//       },
-//       {
-//         new: true,
-//       }
-//     );
-
-//     res.json(updatedUser);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       msg: "An error occurred",
-//       success: false,
-//     });
-//   }
-// });
-
-// // Get all users
-// const getallUser = asyncHandler(async (req, res) => {
-//   try {
-//     const getUsers = await User.find();
-//     res.json(getUsers);
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       msg: "An error occurred",
-//       success: false,
-//     });
-//   }
-// });
-
-// // Get a single user by ID
-// const getaUser = asyncHandler(async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const getaUser = await User.findById(id);
-//     res.json({
-//       getaUser,
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       msg: "An error occurred",
-//       success: false,
-//     });
-//   }
-// });
-
-// // Delete a single user by ID
-// const deleteaUser = asyncHandler(async (req, res) => {
-//   const { id } = req.params;
-
-//   try {
-//     const deleteaUser = await User.findByIdAndDelete(id);
-//     res.json({
-//       deleteaUser,
-//     });
-//   } catch (error) {
-//     console.error(error);
-//     res.status(500).json({
-//       msg: "An error occurred",
-//       success: false,
-//     });
-//   }
-// });
-
-// module.exports = {
-//   createUser,
-//   loginUserCtrl,
-//   getallUser,
-//   getaUser,
-//   deleteaUser,
-//   updateaUser,
-// };

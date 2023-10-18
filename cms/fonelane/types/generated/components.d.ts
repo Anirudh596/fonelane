@@ -80,6 +80,8 @@ export interface StorageStorage extends Schema.Component {
     goodinventory: Attribute.Integer;
     excellentprice: Attribute.Integer;
     excellentinventory: Attribute.Integer;
+    ram: Attribute.Enumeration<['MB512', 'GB1', 'GB2', 'GB3', 'GB4', 'GB6']>;
+    MRP: Attribute.Integer;
   };
 }
 
