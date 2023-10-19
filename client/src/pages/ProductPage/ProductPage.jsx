@@ -126,7 +126,7 @@ function ProductSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://3.110.62.60:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
+        const res = await axios.get(`http://52.66.77.248:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
           headers: {
             Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           },
@@ -157,7 +157,7 @@ function ProductSection() {
     const fetchData = async () => {
       try {
         const axiosInstance = axios.create({
-          baseURL: "http://3.110.62.60:1337/api/deal-of-the-day-2s",
+          baseURL: "http://52.66.77.248:1337/api/deal-of-the-day-2s",
           headers: {
             Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           },
@@ -257,7 +257,7 @@ function ProductSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://3.110.62.60:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
+        const res = await axios.get(`http://52.66.77.248:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
           headers: {
             Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           }

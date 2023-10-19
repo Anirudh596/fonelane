@@ -159,7 +159,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://3.110.62.60:1337/api/covers/${id}?populate=*`,
+          `http://52.66.77.248:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:
@@ -188,7 +188,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://3.110.62.60:1337/api/covers/${id}?populate=*`,
+          `http://52.66.77.248:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:

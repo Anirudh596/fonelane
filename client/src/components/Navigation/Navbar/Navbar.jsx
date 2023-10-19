@@ -193,7 +193,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import Swiper CSS
 import { useCart } from "../../context/cart";
 
-// eslint-disable-next-line react/prop-types
 function CartFloat({ onClose }) {
   const [cart, setCart] = useCart();
   const [count, setCount] = useState(0);
@@ -246,6 +245,7 @@ function CartFloat({ onClose }) {
     // Get the item to be deleted
     const itemToDelete = cartItems[index];
     const id = itemToDelete._id;
+
     // Make an API request to delete the item from the database
     fetch(`http://localhost:5000/api/user/cart/${id}`, {
       method: 'DELETE',
@@ -253,10 +253,10 @@ function CartFloat({ onClose }) {
       .then((response) => {
         if (response.status === 204) {
           // Item deleted successfully from the database
-          // Now, update the cart in the client-side state
-          const updatedCart = [...cartItems];
-          updatedCart.splice(index, 1);
-          setCartItems(updatedCart);
+          // Update the cart items in the frontend
+          const updatedCartItems = [...cartItems];
+          updatedCartItems.splice(index, 1);
+          setCartItems(updatedCartItems);
         } else {
           // Handle any error or failure here
           console.error('Failed to delete item from the database');
@@ -266,7 +266,6 @@ function CartFloat({ onClose }) {
         console.error('Error deleting item: ', error);
       });
   };
-  
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full justify-end bg-black bg-opacity-50`}>
