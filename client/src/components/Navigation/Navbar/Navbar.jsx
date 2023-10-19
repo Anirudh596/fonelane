@@ -192,11 +192,14 @@ import { BsShieldCheck } from "react-icons/bs";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css'; // Import Swiper CSS
 import { useCart } from "../../context/cart";
+import { CartContext } from "../../context/CartContext";
 
+// eslint-disable-next-line react/prop-types
 function CartFloat({ onClose }) {
-  const [cart, setCart] = useCart();
+  // const [cart, setCart] = useCart();
   const [count, setCount] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  
 
   useEffect(() => {
     // Fetch cart items from your API
@@ -245,18 +248,15 @@ function CartFloat({ onClose }) {
     // Get the item to be deleted
     const itemToDelete = cartItems[index];
     const id = itemToDelete._id;
-
     // Make an API request to delete the item from the database
     fetch(`http://localhost:5000/api/user/cart/${id}`, {
       method: 'DELETE',
     })
       .then((response) => {
         if (response.status === 204) {
-          // Item deleted successfully from the database
-          // Update the cart items in the frontend
-          const updatedCartItems = [...cartItems];
-          updatedCartItems.splice(index, 1);
-          setCartItems(updatedCartItems);
+          const updatedCart = [...cartItems];
+          updatedCart.splice(index, 1);
+          setCartItems(updatedCart);
         } else {
           // Handle any error or failure here
           console.error('Failed to delete item from the database');
@@ -266,6 +266,7 @@ function CartFloat({ onClose }) {
         console.error('Error deleting item: ', error);
       });
   };
+  
 
   return (
     <div className={`fixed top-0 left-0 w-full h-full justify-end bg-black bg-opacity-50`}>
@@ -326,10 +327,12 @@ function CartFloat({ onClose }) {
                         </div>
                       </div>
                       <div className=" flex flex-col justify-between items-center ">
-                        <BackBtn
+                        {/* <BackBtn
                           className={"text-base"}
-                          func={deleteItem(index)}  // Add to cart with quantity logic
-                        />
+                          // func={deleteItem(index)}  // Add to cart with quantity logic
+                        /> */}
+
+                        <button onClick={deleteItem(index)}>Delete</button>
                         {/* Add quantity controls and logic here */}
                         <div className="flex justify-between items-center w-16 h-2">
                           <button onClick={decrease}>-</button>
