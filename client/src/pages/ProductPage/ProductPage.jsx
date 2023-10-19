@@ -300,8 +300,6 @@ function ProductSection() {
     setSelectedImage(image);
   };
 
-<<<<<<< HEAD
-=======
   // const handleAddToCart = async () => {
   //   // Create an object with product details
   //   const productDetails = {
@@ -332,7 +330,6 @@ function ProductSection() {
   }
 
 
->>>>>>> f5a6169494ed7fcd2193bf75b11c2fb288de85d2
   return (
     <>
       <div className="flex custom-w h-fit md:h-screen flex-col md:flex-row">
@@ -364,7 +361,6 @@ function ProductSection() {
                   </p>
                 </div>
 
-<<<<<<< HEAD
                 <div className="  md:grid grid-rows-4   gap-1 rounded-t-xl rounded-b-xl">
                   {qualityCheck.map((item, index) => (
                     <div
@@ -378,29 +374,6 @@ function ProductSection() {
                     </div>
                   ))}
                 </div>
-=======
-        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105" onClick={handleAddToCart}>
-          Add to Cart
-        </button>
-      </div>
-      <div className="flex relative md:hidden w-full justify-center items-center">
-        <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
-          {qualityCheck.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
-            >
-              <p className="text-[18px]">{item.main}</p>
-              <p className="text-[10px]">{item.text}</p>
-            </div>
-          ))}
-        </div>
-        <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-          {productImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div className="w-full flex justify-center items-center">
-              <img src={`${image}`} alt={`Product Image ${index}`} className=" h-72" />
->>>>>>> f5a6169494ed7fcd2193bf75b11c2fb288de85d2
               </div>
               {selectedImage && (
                 <div className="w-full flex justify-center items-center">
