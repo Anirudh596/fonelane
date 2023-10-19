@@ -177,12 +177,12 @@ input[type="checkbox"]:checked {
   /* Add any other icon-specific styles here */
 }
 .card-container {
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1); /* Lighter box shadow by default */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Lighter box shadow by default */
   transition: box-shadow 0.3s ease-in-out;
 }
 
 .card-container:hover {
-  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3); /* Higher box shadow on hover */
 }
 
 /* starts Social Icons Design bottom of the page found us on */
@@ -209,6 +209,7 @@ input[type="checkbox"]:checked {
   }
   100% {
     transform: scale(1.24);
+    color: rgb(255, 196, 0);
   }
 }
 .scale-animation2 {
@@ -249,6 +250,34 @@ input[type="checkbox"]:checked {
   }
 }
 
+.exclusive{
+  display: flex;
+  align-items: center;
+  color: red;
+  gap: 5px;
+}
+
+.exclusive::before {
+  content: '';
+  background: red;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  animation: blink 1s infinite; /* Apply the "blink" animation */
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1; /* Dot is fully visible at the start of the animation */
+  }
+  50% {
+    opacity: 0; /* Dot becomes fully transparent halfway through the animation */
+  }
+  100% {
+    opacity: 1; /* Dot is fully visible again at the end of the animation */
+  }
+}
+
 
 .slider-w {
   width: 100%;
@@ -259,3 +288,5 @@ input[type="checkbox"]:checked {
     max-width: 1440px; /* Adjust max-width for large screens */
   }
 }
+
+

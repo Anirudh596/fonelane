@@ -1,21 +1,20 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react"; // Import useEffect
+import  { useEffect } from "react"; // Import useEffect from React
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { PiShoppingCartLight } from "react-icons/pi";
 import Scroll from "../../components/scroll/Scroll";
-
 function ProductPage() {
   const assuredImages = [
-    "images/fo1.png",
-    "images/fo2.png",
-    "images/fo3.png",
-    "images/fo4.png",
-  ]
-  
-  // useEffect(() => {
-  //   // Scroll to the top of the page when the component mounts
-  //   window.scrollTo(0, 0);
-  // }, []); // Empty dependency array ensures it only runs once when mounted
+    { img: "../../../public/images/fo1.png" },
+    { img: "../../../public/images/fo2.png" },
+    { img: "../../../public/images/fo3.png" },
+    { img: "../../../public/images/fo4.png" },
+  ];
+
+  useEffect(() => {
+    // Scroll to the top of the page when the component mounts
+    window.scrollTo(0, 0);
+  }, []); // Empty dependency array ensures it only runs once when mounted
 
 
 
@@ -25,16 +24,10 @@ function ProductPage() {
       <div className="h-full custom-w">
         <div className="flex justify-start items-center gap-1.5 md:gap-3 select-none my-4 text-[12px] md:text-sm">
           <Link to="/">
-            <p className="cursor-pointer active:opacity-80 active:underline ">
+            <p className="cursor-pointer active:opacity-80 active:underline">
               Home
             </p>
           </Link>
-          <p className="flex justify-center items-center text-[12px] md:text-sm">
-            {">"}
-          </p>
-          <p className="cursor-pointer active:opacity-80 active:underline">
-            Refurbished Devices
-          </p>
           <p className="flex justify-center items-center text-[12px] md:text-sm">
             {">"}
           </p>
@@ -43,18 +36,22 @@ function ProductPage() {
           </p>
         </div>
         <ProductSection />
-        <hr className="h-px border-0 bg-black w-full my-5" />
-        <div className=" flex flex-col gap-3 my-5">
+        <hr className="h-px border-0 bg-black w-full my-3" />
+        <div className="flex flex-col gap-3 my-5 px-5">
           <p className="text-[16px] font-medium flex gap-3">
             Fonelane Assured <p className="text-[#32cd32]">[whats This]</p>
           </p>
           <div className="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-2">
             {assuredImages.map((item, index) => {
-              <img key={index} src={`${item}`} alt="hello" />
+              return (
+                <div key={index} className="">
+                  <img src={`${item.img}`} alt={`Image ${index}`}  width={400} height={100} className="rounded-md"/>
+                </div>
+              );
             })}
           </div>
         </div>
-        <hr className="h-px border-0 bg-black w-full" /><hr className="h-px border-0 bg-black w-full" />
+        <hr className="h-px border-0 bg-black w-full" />
         <div className="title my-10">
           <p className="text-[28px] font-bold">You may also like</p>
         </div>
@@ -65,6 +62,10 @@ function ProductPage() {
         </div>
         <div className="block md:hidden  fixed bottom-0 w-full h-24 bg-white z-50">
           <div className="flex justify-between items-center h-full gap-5">
+            <div>
+            <p className="exclusive text-xs">Excluive Price!</p>
+
+            
             <div className="flex flex-col justify-center items-center flex-1 h-full">
               <p className="font-semibold text-lg md:text-2xl flex items-center justify-start gap-2">
                 ₹89000{" "}
@@ -75,6 +76,7 @@ function ProductPage() {
               <p className="text-[#32CD32]  text-xs md:text-base">
                 Save ₹57,001 (41% Off)
               </p>
+            </div>
             </div>
             <div className="flex-grow flex w-full   text-sm md:text-base my-10 px-5 gap-6">
               <button className="text-4xl border-[1px] border-slate-400 p-1 rounded-lg ">
@@ -94,25 +96,20 @@ function ProductPage() {
 
 export default ProductPage;
 
-
-import  { useState } from "react";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
 import { AiOutlineShareAlt } from "react-icons/ai";
-import { CiHeart } from "react-icons/ci";
 import { BsPatchCheckFill } from "react-icons/bs";
-import Review from "../../components/Review/Review";
 import Specs from "../Specs";
 import axios from "axios";
 import { useParams } from "react-router-dom";
-import {   useMemo } from "react";
+import { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
-import { Pagination } from 'swiper/modules';
-
-
-
+import { Pagination } from "swiper/modules";
+import { Rating, Typography } from "@material-tailwind/react";
 
 function ProductSection() {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
@@ -122,6 +119,7 @@ function ProductSection() {
   const [data, setData] = useState({});
   const [data1, setData1] = useState({});
   const { id } = useParams();
+  const [rated, setRated] = useState(4);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -142,11 +140,11 @@ function ProductSection() {
 
   const selectedStorageId = () => {
     switch (selectedSpec) {
-      case 'store1':
+      case "store1":
         return 1;
-      case 'store2':
+      case "store2":
         return 2;
-      case 'store3':
+      case "store3":
         return 3;
       default:
         return 0;
@@ -159,7 +157,9 @@ function ProductSection() {
         const axiosInstance = axios.create({
           baseURL: "http://52.66.77.248:1337/api/deal-of-the-day-2s",
           headers: {
-            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+            Authorization:
+              "bearer " +
+              "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           },
         });
 
@@ -170,9 +170,15 @@ function ProductSection() {
         ]);
 
         setData1({
-          fairPrice: response1.data.data.attributes.storage[selectedStorageId()].fairprice,
-          goodPrice: response2.data.data.attributes.storage[selectedStorageId()].goodprice,
-          excellentPrice: response3.data.data.attributes.storage[selectedStorageId()].excellentprice,
+          fairPrice:
+            response1.data.data.attributes.storage[selectedStorageId()]
+              .fairprice,
+          goodPrice:
+            response2.data.data.attributes.storage[selectedStorageId()]
+              .goodprice,
+          excellentPrice:
+            response3.data.data.attributes.storage[selectedStorageId()]
+              .excellentprice,
         });
       } catch (error) {
         console.error(error);
@@ -182,36 +188,32 @@ function ProductSection() {
     fetchData();
   }, [selectedSpec]);
 
-  const fairPrice = data1.fairPrice
-  const goodPrice = data1.goodPrice
-  const excellentPrice = data1.excellentPrice
+  const fairPrice = data1.fairPrice;
+  const goodPrice = data1.goodPrice;
+  const excellentPrice = data1.excellentPrice;
 
-  const mainPrice = data.baseprice ;
+  const mainPrice = data.baseprice;
 
   const mrp = data.mrp;
 
   const dynamicPricing = () => {
-    let mainPrice1 
-    if (selectedQuality === 'fair') {
+    let mainPrice1;
+    if (selectedQuality === "fair") {
       mainPrice1 = mainPrice + fairPrice;
-    }else if (selectedQuality === 'good') {
+    } else if (selectedQuality === "good") {
       mainPrice1 = mainPrice + goodPrice;
-    }else if (selectedQuality === 'excellent') {
+    } else if (selectedQuality === "excellent") {
       mainPrice1 = mainPrice + excellentPrice;
     }
     return mainPrice1;
-  }
-
-
-
+  };
 
   const saved = () => {
-    const saving = (((mrp - dynamicPricing()) * 100) / mrp);
+    const saving = ((mrp - dynamicPricing()) * 100) / mrp;
     return Math.floor(saving);
   };
 
   const savedPrice = mrp - dynamicPricing();
-  
 
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);
@@ -231,28 +233,31 @@ function ProductSection() {
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const [selectedImage, setSelectedImage] = useState(null);
   const [productImages, setProductImages] = useState([]); // Store product images
-  const qualityCheck = useMemo(() => [
-    {
-      main: "32",
-      text: "points quality check",
-    },
-    {
-      main: "7",
-      text: "Days Refund",
-    },
-    {
-      main: "12",
-      text: "months warranty",
-    },
-    {
-      main: "COD",
-      text: "Available",
-    },
-    {
-      main: "EMI",
-      text: "at no cost",
-    },
-  ], []);
+  const qualityCheck = useMemo(
+    () => [
+      {
+        main: "32",
+        text: "points quality check",
+      },
+      {
+        main: "7",
+        text: "Days Refund",
+      },
+      {
+        main: "12",
+        text: "months warranty",
+      },
+      {
+        main: "COD",
+        text: "Available",
+      },
+      {
+        main: "EMI",
+        text: "at no cost",
+      },
+    ],
+    []
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -261,11 +266,11 @@ function ProductSection() {
           headers: {
             Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
           }
-        });
+        );
 
         // Extract and set product images from the response data
         const imageData = res.data.data.attributes.otherimages.data;
-        setProductImages(imageData.map(image => image.attributes.url));
+        setProductImages(imageData.map((image) => image.attributes.url));
         console.log(res.data.data.attributes.otherimages.data);
       } catch (error) {
         console.log(error);
@@ -317,82 +322,104 @@ function ProductSection() {
 
   return (
     <>
-      <Scroll />
       <div className="flex custom-w h-fit md:h-screen flex-col md:flex-row">
         <div className="md:flex-1">
-        <div className="flex">
-        <div className="hidden md:grid grid-rows-4 w-[80px] h-fit gap-4">
-          {productImages.map((image, index) => (
-            <div
-              key={index}
-              onClick={() => handleImageClick(image)}
-              className={` overflow-hidden cursor-pointer bg-gray-200 w-[50px] h-[50px] rounded-[10px] flex justify-center items-center ${
-                selectedImage === image ? "bg-sky-200" : ""
-              }`}
-            >
-              <img
-                src={`${image}`}
-                alt={`Product Image ${index}`}
-                className=" h-[30px]"
-              />
+          <div className="flex">
+            <div className="hidden md:grid grid-rows-4 w-[80px] h-fit gap-4">
+              {productImages.map((image, index) => (
+                <div
+                  key={index}
+                  onClick={() => handleImageClick(image)}
+                  className={` overflow-hidden cursor-pointer bg-gray-200 w-[50px] h-[50px] rounded-[10px] flex justify-center items-center ${
+                    selectedImage === image ? "bg-sky-200" : ""
+                  }`}
+                >
+                  <img
+                    src={`${image}`}
+                    alt={`Product Image ${index}`}
+                    className=" h-[30px]"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="hidden md:grid grid-rows-4 lg:w-28 xl:w-32 h-fit gap-1 rounded-t-xl rounded-b-xl">
-          {qualityCheck.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
-            >
-              <p className="lg:text-base xl:text-xl" >{item.main}</p>
-              <p className="lg:text-[10px] xl:text-[12px]">{item.text}</p>
-            </div>
-          ))}
-        </div>
 
-        <div className="mt-4 hidden md:flex">
-          {selectedImage && (
-            <div className="w-full flex justify-center items-center">
-            <img
-              src={`${selectedImage}`}
-              alt="Selected Product Image"
-              className=" h-[310px]"
-            />
-            </div>
-          )}
-        </div>
-      </div>
-      <div className="buttons hidden md:flex gap-3 text-sm md:text-base my-10">
-        <button className="flex-1 px-5 border border-black flex justify-center items-center rounded-lg py-2 active:bg-black active:text-white hover:scale-105">
-          Buy Now
-        </button>
+            <div className="mt-4 hidden md:flex md:justify-between md:w-full">
+              <div className=" w-1/2 h-fit">
+                <div className="  w-full m-1 flex justify-start ">
+                  <p className="py-1 px-2 text-sm w-3/4 flex bg-blue-600 text-white rounded-r-md font-semibold">
+                    ₹{savedPrice} off
+                  </p>
+                </div>
 
-        <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105" onClick={handleAddToCart}>
-          Add to Cart
-        </button>
-      </div>
-      <div className="flex relative md:hidden w-full justify-center items-center">
-        <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
-          {qualityCheck.map((item, index) => (
-            <div
-              key={index}
-              className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
-            >
-              <p className="text-[18px]">{item.main}</p>
-              <p className="text-[10px]">{item.text}</p>
-            </div>
-          ))}
-        </div>
-        <Swiper pagination={true} modules={[Pagination]} className="mySwiper">
-          {productImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <div className="w-full flex justify-center items-center">
-              <img src={`${image}`} alt={`Product Image ${index}`} className=" h-72" />
+                <div className="  md:grid grid-rows-4   gap-1 rounded-t-xl rounded-b-xl">
+                  {qualityCheck.map((item, index) => (
+                    <div
+                      key={index}
+                      className="bg-gray-200  text-[#353C60] flex flex-col items-center justify-center rounded-md"
+                    >
+                      <p className="lg:text-base xl:text-xl">{item.main}</p>
+                      <p className="lg:text-[10px] xl:text-[12px]">
+                        {item.text}
+                      </p>
+                    </div>
+                  ))}
+                </div>
               </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+              {selectedImage && (
+                <div className="w-full flex justify-center items-center">
+                  <img
+                    src={`${selectedImage}`}
+                    alt="Selected Product Image"
+                    className=" w-fit h-72"
+                  />
+                </div>
+              )}
+            </div>
+          </div>
+          <div className="buttons hidden md:flex gap-3 text-sm md:text-base my-10">
+            <button className="flex-1 px-5 border border-black flex justify-center items-center rounded-lg py-2 active:bg-black active:text-white hover:scale-105">
+              Buy Now
+            </button>
+
+            <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105">
+              Add to Cart
+            </button>
+          </div>
+          <div className="flex relative md:hidden w-full justify-center items-center">
+            <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
+            <div className="  w-full m-1 flex justify-start ">
+                  <p className="py-1 px-2 text-sm w-full flex bg-blue-600 text-white rounded-r-md font-semibold">
+                    ₹{savedPrice} off
+                  </p>
+                </div>
+              {qualityCheck.map((item, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-200 text-[#353C60] flex flex-col items-center justify-center rounded-md"
+                >
+                  <p className="text-[18px]">{item.main}</p>
+                  <p className="text-[10px]">{item.text}</p>
+                </div>
+              ))}
+            </div>
+            <Swiper
+              pagination={true}
+              modules={[Pagination]}
+              className="mySwiper"
+            >
+              {productImages.map((image, index) => (
+                <SwiperSlide key={index}>
+                  <div className="w-full flex justify-center items-center">
+                    <img
+                      src={`${image}`}
+                      alt={`Product Image ${index}`}
+                      className=" h-72"
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
 
         <div className="md:flex-1 w-full h-fit md:h-[90vh] md:px-8 overflow-x-hidden overflow-y-scroll scrollbar-hide">
@@ -400,12 +427,12 @@ function ProductSection() {
             <div className="title-icon flex gap-16 justify-start items-center">
               <div className="titles left-0 w-full">
                 <div className="title">
-                  <p className="text-2xl md:text-[21px] font-semibold">
+                  <p className="text-xl md:text-base font-semibold">
                     {data.title}
                   </p>
                 </div>
 
-                <div className="spec-config flex flex-col md:grid md:grid-cols-3 auto-cols-auto md:text-center md:items-center md:gap-2 w-full flex-nowrap text-xs md:text-xs my-2 md:">
+                <div className="spec-config flex flex-col md:grid md:grid-cols-3 auto-cols-auto md:text-center md:items-center md:gap-2 w-full flex-nowrap text-xs  my-2 ">
                   <p className="md:border-r-[1px] border-black pr-2 py-1 ">
                     Condition:{" "}
                     <span>
@@ -435,29 +462,37 @@ function ProductSection() {
                 </div>
 
                 <div className="review cursor-pointer flex flex-nowrap items-center">
-                  <Review />
-                  <p className="mx-1  md:text-[25px] font-extralight">|</p>
-                  <p>300 reviews</p>
+                  <div className="flex items-center gap-2 font-bold text-blue-gray-500">
+                    {rated}.7
+                    <Rating value={4} onChange={(value) => setRated(value)} readonly/>
+                    <Typography
+                      color="blue-gray"
+                      className="font-medium text-xs md:text-sm text-blue-gray-500"
+                    >
+                      Based on 134 Reviews
+                    </Typography>
+                  </div>
                 </div>
               </div>
 
-              <div className="icons flex flex-col gap-5">
-                <CiHeart className="text-2xl md:text-3xl cursor-pointer group" />
-                <AiOutlineShareAlt className="text-2xl md:text-3xl  cursor-pointer group" />
+              {/* <CiHeart className="text-2xl md:text-3xl cursor-pointer group" /> */}
+              <div className="">
+                <AiOutlineShareAlt className="text-3xl  cursor-pointer group" />
               </div>
             </div>
-
-            <div className="prices hidden md:flex justify-start gap-4">
-              <p className="">Online Excluive Price</p>
-              <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
-                ₹{dynamicPricing()}{" "}
-                <p className="text-sm md:text-base font-semibold line-through flex gap-2">
-                  ₹{mrp}{" "}
+            <div className="prices hidden md:flex  md:flex-col justify-start ">
+              <p className="exclusive text-xs">Excluive Price!</p>
+              <div>
+                <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
+                  ₹{dynamicPricing()}{" "}
+                  <p className="text-sm md:text-base font-semibold line-through flex gap-2">
+                    ₹{mrp}{" "}
+                  </p>
+                  <span className="text-[#32CD32] text-sm md:text-base ">
+                    Save ₹{savedPrice} ({saved()}% Off)
+                  </span>
                 </p>
-                <span className="text-[#32CD32] text-sm md:text-base ">
-                  Save ₹{savedPrice} ({saved()}% Off)
-                </span>
-              </p>
+              </div>
             </div>
 
             <hr className="w-full" />
@@ -525,6 +560,12 @@ function ProductSection() {
                 {selectedQuality === "good" && "sadfjkh asdiofhu asdjfh "}
                 {selectedQuality === "excellent" && "sdkjfh asdfjhg sadfjkh g"}
               </p>
+              <p className="text-xs md:text-base flex justify-start items-center  gap-2">
+                <BsPatchCheckFill className="text-[#32CD32]" />
+                {selectedQuality === "fair" && "Fair"}
+                {selectedQuality === "good" && "sadfjkh asdiofhu asdjfh "}
+                {selectedQuality === "excellent" && "sdkjfh asdfjhg sadfjkh g"}
+              </p>
             </div>
 
             <div className="storage block">
@@ -540,7 +581,9 @@ function ProductSection() {
                       selectedSpec === storage ? "selected" : ""
                     } py-2   rounded-lg  md:hover:scale-105 border border-slate-500 font-light`}
                   >
-                    <p className="text-xs">{`6GB/${storage.split('store')[1] * 128}GB`}</p>
+                    <p className="text-xs">{`6GB/${
+                      storage.split("store")[1] * 128
+                    }GB`}</p>
                   </button>
                 ))}
               </div>
@@ -569,8 +612,10 @@ function ProductSection() {
 
             <div>
               <p className="font-semibold">In Box</p>
-              <div className="text-sm font-medium
-               border-[1px] border-gray-300 rounded-lg ">
+              <div
+                className="text-sm font-medium
+               border-[1px] border-gray-300 rounded-lg "
+              >
                 <ul className="list-disc px-5 py-2">
                   <li>Device</li>
                   <li>Back Cover</li>
