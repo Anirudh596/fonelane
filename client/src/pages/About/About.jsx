@@ -56,7 +56,7 @@ function About() {
       <div className="relative p-1 md:p-0">
         <img
           className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"
-          src="./images/aboutban.jpg.jpg"
+          src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697704346/Untitled_design_10_n8mrrv.png"
           alt="nature image"
         />
         <div

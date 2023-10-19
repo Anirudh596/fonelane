@@ -22,7 +22,7 @@ function Footer() {
           <ul className="list-none flex justify-center items-center gap-5 md:gap-10 text-4xl ">
             <li className="social-icons opacity-100">
               <a href="https://www.instagram.com/fonelane/" target="_blank"  rel="noreferrer"><img
-                src="./images/instagram.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703791/rwowq6avifqgr6mt5vkk.png"
                 alt=""
                 className="w-[36px] md:h-[36px] "
               /></a>
@@ -169,7 +169,7 @@ function Footer() {
             </div>
           </div>
           <div className=" flex justify-center items-center">
-            <img src="./images/logo 2.png" className="w-72 h-20" alt="" />
+            <img src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697704108/logo_2_touxvo.png" className="w-72 h-20" alt="" />
           </div>
         </div>
         <div className="newsletter-feedback w-full md:w-2/3 flex flex-col justify-center items-center p-5">
@@ -214,32 +214,32 @@ function Footer() {
             </p>
             <div className="flex justify-center items-center gap-7">
               <img
-                src="./images/visa.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703903/watd7sqpcc9dzyrrsqch.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
-                src="./images/mc.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703936/zcfxyzbevhsdqwmj5gxd.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
-                src="./images/ae.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703899/pmgkshszkq1ucet7u5ti.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
-                src="./images/paytm.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703973/mtfvtzx8t5vfyd8l12vg.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
-                src="./images/provider.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703976/amdqubvcyuytq83yfehr.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />
               <img
-                src="./images/cod.png"
+                src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697703977/cabxuxfri69aez0kr427.png"
                 alt=""
                 className="w-[20px] h-[20px] md:w-[25px] md:h-[25px] "
               />

@@ -172,7 +172,7 @@ function Logo() {
     <div className="z-50">
       <Link to="/">
         <div className="flex justify-center items-end">
-          <img src="./images/logo 2.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
+          <img src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697704108/logo_2_touxvo.png" alt="" className=" flex  items-center w-40  md:w-30  xl:w-40  " />
         </div>
       </Link>
     </div>

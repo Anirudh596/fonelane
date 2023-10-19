@@ -39,7 +39,7 @@ function ProductPage() {
         <hr className="h-px border-0 bg-black w-full my-3" />
         <div className="flex flex-col gap-3 my-5 px-5">
           <p className="text-[16px] font-medium flex gap-3">
-            Fonelane Assured <p className="text-[#32cd32]">[whats This]</p>
+            Fonelane Assured 
           </p>
           <div className="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-2">
             {assuredImages.map((item, index) => {
@@ -99,7 +99,6 @@ export default ProductPage;
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTag } from "@fortawesome/free-solid-svg-icons";
-import { AiOutlineShareAlt } from "react-icons/ai";
 import { BsPatchCheckFill } from "react-icons/bs";
 import Specs from "../Specs";
 import axios from "axios";
@@ -110,6 +109,8 @@ import "swiper/css";
 import "swiper/css/effect-creative";
 import { Pagination } from "swiper/modules";
 import { Rating, Typography } from "@material-tailwind/react";
+import CopyButton from "../../components/LinkShare/LinkShare";
+
 
 function ProductSection() {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
@@ -141,11 +142,11 @@ function ProductSection() {
   const selectedStorageId = () => {
     switch (selectedSpec) {
       case "store1":
-        return 1;
+        return 9;
       case "store2":
-        return 2;
+        return 8;
       case "store3":
-        return 3;
+        return 10;
       default:
         return 0;
     }
@@ -214,6 +215,11 @@ function ProductSection() {
   };
 
   const savedPrice = mrp - dynamicPricing();
+
+
+
+
+
 
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);
@@ -291,15 +297,6 @@ function ProductSection() {
     setSelectedImage(image);
   };
 
-  // const handleAddToCart = async () => {
-  //   // Create an object with product details
-  //   const productDetails = {
-  //     title: data.title,
-  //     price: dynamicPricing(),
-  //     Condition: selectedQuality,
-  //     Storage: selectedSpec,
-  //     Color: selectedColor,
-  //   };
 
     const handleAddToCart = async () => {
       // Create an object with product details
@@ -319,6 +316,8 @@ function ProductSection() {
       // Handle errors
     }
   }
+
+  
 
 
   return (
@@ -478,7 +477,7 @@ function ProductSection() {
 
               {/* <CiHeart className="text-2xl md:text-3xl cursor-pointer group" /> */}
               <div className="">
-                <AiOutlineShareAlt className="text-3xl  cursor-pointer group" />
+                <CopyButton />
               </div>
             </div>
             <div className="prices hidden md:flex  md:flex-col justify-start ">
@@ -665,3 +664,4 @@ function ProductSection() {
 }
 
 // export default ProductSection;
+
