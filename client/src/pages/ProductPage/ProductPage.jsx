@@ -109,7 +109,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-creative";
 import { Pagination } from "swiper/modules";
-import { Rating, Typography } from "@material-tailwind/react";
+import { Button, Input, Rating, Typography } from "@material-tailwind/react";
 import CopyButton from "../../components/LinkShare/LinkShare";
 
 function ProductSection() {
@@ -121,6 +121,8 @@ function ProductSection() {
   const [data1, setData1] = useState({});
   const { id } = useParams();
   const [rated, setRated] = useState(4);
+  const [pincode, setEmail] = useState("");
+  const onChange = ({ target }) => setEmail(target.value);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -491,7 +493,7 @@ function ProductSection() {
               </div>
             </div>
             <div className="prices hidden md:flex  md:flex-col justify-start ">
-              <p className="exclusive text-xs">Excluive Price!</p>
+              <p className="exclusive text-xs">Online Excluive Price!</p>
               <div>
                 <p className="font-semibold text-xl md:text-2xl flex items-center justify-start gap-2">
                   ₹{dynamicPricing()}{" "}
@@ -646,24 +648,26 @@ function ProductSection() {
             </a>
             <hr className="h-px border-0 bg-black w-full" />
 
-            <div className="pincode flex flex-col gap-3 ">
-              <p>Pincode :</p>
-              <div className="flex">
-                <input
-                  type="text"
-                  id="pin-check"
-                  name="PinCheck"
-                  placeholder="Enter Pincode for expected Delivery Date"
-                  className="w-64 rounded-lg border border-black py-3 px-3 text-[12px] focus:text-[16px] "
-                />
-                <input
-                  type="submit"
-                  value="Check"
-                  id="pin-check-btn"
-                  name="PinCheckBtn"
-                  className="px-3 py-3  w-[120px] bg-black text-white rounded-lg ml-[-20px]"
-                />
-              </div>
+            <div className="relative flex w-full max-w-[24rem]">
+              <Input
+                type="email"
+                label="Pincode"
+                value={pincode}
+                onChange={onChange}
+                className="pr-20"
+                containerProps={{
+                  className: "min-w-0",
+                }}
+                
+              />
+              <Button
+                size="sm"
+                color={pincode ? "gray" : "blue-gray"}
+                disabled={!pincode}
+                className="!absolute right-1 top-1 rounded"
+              >
+                Invite
+              </Button>
             </div>
           </div>
         </div>
