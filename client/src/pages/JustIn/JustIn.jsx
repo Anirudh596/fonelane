@@ -26,9 +26,9 @@ function JustIn() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await axios.get(`http://localhost:1337/api/iphones`, {
+        // const res = await axios.get(`http://193.203.161.234:1337/api/iphones`, {
         const res = await axios.get(
-          `http://localhost:1337/api/just-ins?populate=*`,
+          `http://193.203.161.234:1337/api/just-ins?populate=*`,
           {
             headers: {
               Authorization:
@@ -88,7 +88,6 @@ function JustIn() {
             Be the first one to get your hands on these new products.
           </motion.h2>
         </div>
-        
       </div>
 
       <div className="flex w-full my-10 border border-gray-800 rounded-xl">

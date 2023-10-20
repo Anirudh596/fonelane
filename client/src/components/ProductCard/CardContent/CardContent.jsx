@@ -13,7 +13,7 @@ function CardContent({ pIndex }) {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:1337/api/deal-of-the-day-2s/${pIndex}?populate=*`,
+          `http://193.203.161.234:1337/api/deal-of-the-day-2s/${pIndex}?populate=*`,
           {
             headers: {
               Authorization:
@@ -36,7 +36,7 @@ function CardContent({ pIndex }) {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:1337/api/deal-of-the-day-2s/${pIndex}`,
+          `http://193.203.161.234:1337/api/deal-of-the-day-2s/${pIndex}`,
           {
             headers: {
               Authorization:
@@ -57,7 +57,7 @@ function CardContent({ pIndex }) {
   // useEffect(() => {
   //   const fetchData = async () => {
   //     try {
-  //       const res = await axios.get(`http://localhost:1337/api/apples/${pIndex}`, {
+  //       const res = await axios.get(`http://193.203.161.234:1337/api/apples/${pIndex}`, {
   //         headers: {
   //           Authorization: "bearer " + "2ec30f082320c496ed24bc7722585cefc1b1078e6b32f5b77f5de157190641ef31ba5b3d4ddab8b53b227e7be72750200641d55f6c00f4190df68656dee12f8acf40d16712faf76f49ca4348826da57778fff1c384e5b96867a2a52bf64e2d31b90d712528ed1117b68326f2fd7a36caacfe37260b8f923f032bc62d791a8119",
   //         },

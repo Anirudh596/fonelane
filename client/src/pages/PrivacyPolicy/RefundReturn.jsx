@@ -11,7 +11,7 @@ function RefundReturn() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:1337/api/policies/1?populate=*`,
+          `http://193.203.161.234:1337/api/policies/1?populate=*`,
           {
             headers: {
               Authorization:

@@ -6,7 +6,7 @@ function Search({ className, setResults }) {
   const [isInputFocused, setInputFocused] = useState(false);
   const [input, setInput] = useState("");
   const fetchData = (value) => {
-    fetch(`http://localhost:1337/api/deal-of-the-day-2s?populate=*`, {
+    fetch(`http://193.203.161.234:1337/api/deal-of-the-day-2s?populate=*`, {
       headers: {
         Authorization:
           "bearer " +

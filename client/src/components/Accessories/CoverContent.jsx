@@ -11,7 +11,7 @@ function CoverContent({ cIndex }) {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:1337/api/covers/${cIndex}?populate=*`,
+          `http://193.203.161.234:1337/api/covers/${cIndex}?populate=*`,
           {
             headers: {
               Authorization:
@@ -34,7 +34,7 @@ function CoverContent({ cIndex }) {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:1337/api/covers/${cIndex}`,
+          `http://193.203.161.234:1337/api/covers/${cIndex}`,
           {
             headers: {
               Authorization:

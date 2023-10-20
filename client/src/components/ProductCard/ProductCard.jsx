@@ -10,7 +10,7 @@ import axios from "axios";
 import Scroll from "../scroll/Scroll";
 
 function FirstCard() {
-  // const cmsApiUrl = http://localhost:1337;
+  // const cmsApiUrl = http://193.203.161.234:1337;
   // const ApiUrl = import.meta.env.RENDER_BACKEND_URL;
   const isMobile = useMediaQuery({ maxWidth: 550 });
   const isTablet2 = useMediaQuery({ maxWidth: 768 });
@@ -36,9 +36,9 @@ function FirstCard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // const res = await axios.get(`http://localhost:1337/api/iphones`, {
+        // const res = await axios.get(`http://193.203.161.234:1337/api/iphones`, {
         const res = await axios.get(
-          `http://localhost:1337/api/deal-of-the-day-2s?populate=*`,
+          `http://193.203.161.234:1337/api/deal-of-the-day-2s?populate=*`,
           {
             headers: {
               Authorization:
