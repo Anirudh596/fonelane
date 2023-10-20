@@ -4,7 +4,8 @@
   "info": {
     "singularName": "policy",
     "pluralName": "policies",
-    "displayName": "Policy"
+    "displayName": "Policies - Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,12 +13,14 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "policy": {
       "type": "component",
       "repeatable": true,
-      "component": "policy.policy"
+      "component": "policy.policy",
+      "required": true
     }
   }
 }

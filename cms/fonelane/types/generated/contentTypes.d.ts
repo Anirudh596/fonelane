@@ -682,22 +682,23 @@ export interface ApiAboutAbout extends Schema.CollectionType {
   info: {
     singularName: 'about';
     pluralName: 'abouts';
-    displayName: 'About';
+    displayName: 'About Us - Content';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    head1: Attribute.String;
-    head2: Attribute.String;
-    head3: Attribute.String;
-    content1: Attribute.Text;
-    content2: Attribute.Text;
-    content3: Attribute.Text;
-    founder: Attribute.Text;
-    img1: Attribute.Media;
-    img2: Attribute.Media;
-    img3: Attribute.Media;
+    head1: Attribute.String & Attribute.Required;
+    head2: Attribute.String & Attribute.Required;
+    head3: Attribute.String & Attribute.Required;
+    content1: Attribute.Text & Attribute.Required;
+    content2: Attribute.Text & Attribute.Required;
+    content3: Attribute.Text & Attribute.Required;
+    founder: Attribute.Text & Attribute.Required;
+    img1: Attribute.Media & Attribute.Required;
+    img2: Attribute.Media & Attribute.Required;
+    img3: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -721,7 +722,7 @@ export interface ApiBannerBanner extends Schema.CollectionType {
   info: {
     singularName: 'banner';
     pluralName: 'banners';
-    displayName: 'banner';
+    displayName: 'Banner';
     description: '';
   };
   options: {
@@ -761,14 +762,14 @@ export interface ApiCoverCover extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     colorname: Attribute.Component<'device-colors.colors', true>;
-    price: Attribute.Integer;
-    MRP: Attribute.Integer;
-    inventory: Attribute.Integer;
-    specifications: Attribute.RichText;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
+    price: Attribute.Integer & Attribute.Required;
+    MRP: Attribute.Integer & Attribute.Required;
+    inventory: Attribute.Integer & Attribute.Required;
+    specifications: Attribute.RichText & Attribute.Required;
+    mainimage: Attribute.Media & Attribute.Required;
+    otherimages: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -792,22 +793,33 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
   info: {
     singularName: 'deal-of-the-day-2';
     pluralName: 'deal-of-the-day-2s';
-    displayName: 'Deal Of The Day';
+    displayName: 'Inventory';
     description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    baseprice: Attribute.Integer;
-    mrp: Attribute.Integer;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
+    title: Attribute.String & Attribute.Required;
+    baseprice: Attribute.Integer & Attribute.Required;
+    mrp: Attribute.Integer & Attribute.Required;
+    mainimage: Attribute.Media & Attribute.Required;
+    otherimages: Attribute.Media & Attribute.Required;
     colors: Attribute.Component<'device-colors.colors', true>;
     storage: Attribute.Component<'storage.storage', true>;
-    specs: Attribute.RichText;
-    slug: Attribute.UID<'api::deal-of-the-day-2.deal-of-the-day-2', 'title'>;
+    specs: Attribute.RichText & Attribute.Required;
+    slug: Attribute.UID<'api::deal-of-the-day-2.deal-of-the-day-2', 'title'> &
+      Attribute.Required;
+    hot_deals: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'manyToMany',
+      'api::hot-deal.hot-deal'
+    >;
+    new_arrivals: Attribute.Relation<
+      'api::deal-of-the-day-2.deal-of-the-day-2',
+      'manyToMany',
+      'api::new-arrival.new-arrival'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -819,6 +831,40 @@ export interface ApiDealOfTheDay2DealOfTheDay2 extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::deal-of-the-day-2.deal-of-the-day-2',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHotDealHotDeal extends Schema.CollectionType {
+  collectionName: 'hot_deals';
+  info: {
+    singularName: 'hot-deal';
+    pluralName: 'hot-deals';
+    displayName: 'Hot Deal';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    inventories: Attribute.Relation<
+      'api::hot-deal.hot-deal',
+      'manyToMany',
+      'api::deal-of-the-day-2.deal-of-the-day-2'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::hot-deal.hot-deal',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::hot-deal.hot-deal',
       'oneToOne',
       'admin::user'
     > &
@@ -838,15 +884,12 @@ export interface ApiNewArrivalNewArrival extends Schema.CollectionType {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    baseprice: Attribute.Integer;
-    mrp: Attribute.Integer;
-    mainimage: Attribute.Media;
-    otherimages: Attribute.Media;
-    colors: Attribute.Component<'device-colors.colors', true>;
-    storage: Attribute.Component<'storage.storage', true>;
-    specs: Attribute.RichText;
-    slug: Attribute.UID<'api::new-arrival.new-arrival', 'title'>;
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    inventories: Attribute.Relation<
+      'api::new-arrival.new-arrival',
+      'manyToMany',
+      'api::deal-of-the-day-2.deal-of-the-day-2'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -870,14 +913,15 @@ export interface ApiPolicyPolicy extends Schema.CollectionType {
   info: {
     singularName: 'policy';
     pluralName: 'policies';
-    displayName: 'Policy';
+    displayName: 'Policies - Content';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    title: Attribute.String;
-    policy: Attribute.Component<'policy.policy', true>;
+    title: Attribute.String & Attribute.Required;
+    policy: Attribute.Component<'policy.policy', true> & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -954,6 +998,7 @@ declare module '@strapi/types' {
       'api::banner.banner': ApiBannerBanner;
       'api::cover.cover': ApiCoverCover;
       'api::deal-of-the-day-2.deal-of-the-day-2': ApiDealOfTheDay2DealOfTheDay2;
+      'api::hot-deal.hot-deal': ApiHotDealHotDeal;
       'api::new-arrival.new-arrival': ApiNewArrivalNewArrival;
       'api::policy.policy': ApiPolicyPolicy;
       'api::product.product': ApiProductProduct;

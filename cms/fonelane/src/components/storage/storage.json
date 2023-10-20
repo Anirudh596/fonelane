@@ -7,7 +7,7 @@
   },
   "options": {},
   "attributes": {
-    "storage": {
+    "Storage": {
       "type": "enumeration",
       "enum": [
         "GB16",
@@ -16,25 +16,31 @@
         "GB128",
         "GB256",
         "GB512"
-      ]
+      ],
+      "required": true
     },
-    "fairprice": {
+    "Price_Fair": {
+      "type": "integer",
+      "required": true
+    },
+    "Inventory_Fair": {
+      "type": "integer",
+      "required": true
+    },
+    "Price_Good": {
+      "type": "integer",
+      "required": true
+    },
+    "Inventory_Good": {
       "type": "integer"
     },
-    "fairinventory": {
-      "type": "integer"
+    "Price_excellent": {
+      "type": "integer",
+      "required": true
     },
-    "goodprice": {
-      "type": "integer"
-    },
-    "goodinventory": {
-      "type": "integer"
-    },
-    "excellentprice": {
-      "type": "integer"
-    },
-    "excellentinventory": {
-      "type": "integer"
+    "Inventory_Excellent": {
+      "type": "integer",
+      "required": true
     },
     "ram": {
       "type": "enumeration",
@@ -49,6 +55,18 @@
     },
     "MRP": {
       "type": "integer"
+    },
+    "SKU_Fair": {
+      "type": "string",
+      "required": true
+    },
+    "SKU_good": {
+      "type": "string",
+      "required": true
+    },
+    "SKU_excellent": {
+      "type": "string",
+      "required": true
     }
   }
 }

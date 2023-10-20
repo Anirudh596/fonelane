@@ -56,10 +56,11 @@ export interface PolicyPolicy extends Schema.Component {
   info: {
     displayName: 'policy';
     icon: 'eye';
+    description: '';
   };
   attributes: {
-    heading: Attribute.String;
-    content: Attribute.RichText;
+    heading: Attribute.String & Attribute.Required;
+    content: Attribute.RichText & Attribute.Required;
   };
 }
 
@@ -71,17 +72,21 @@ export interface StorageStorage extends Schema.Component {
     description: '';
   };
   attributes: {
-    storage: Attribute.Enumeration<
+    Storage: Attribute.Enumeration<
       ['GB16', 'GB32', 'GB64', 'GB128', 'GB256', 'GB512']
-    >;
-    fairprice: Attribute.Integer;
-    fairinventory: Attribute.Integer;
-    goodprice: Attribute.Integer;
-    goodinventory: Attribute.Integer;
-    excellentprice: Attribute.Integer;
-    excellentinventory: Attribute.Integer;
+    > &
+      Attribute.Required;
+    Price_Fair: Attribute.Integer & Attribute.Required;
+    Inventory_Fair: Attribute.Integer & Attribute.Required;
+    Price_Good: Attribute.Integer & Attribute.Required;
+    Inventory_Good: Attribute.Integer;
+    Price_excellent: Attribute.Integer & Attribute.Required;
+    Inventory_Excellent: Attribute.Integer & Attribute.Required;
     ram: Attribute.Enumeration<['MB512', 'GB1', 'GB2', 'GB3', 'GB4', 'GB6']>;
     MRP: Attribute.Integer;
+    SKU_Fair: Attribute.String & Attribute.Required;
+    SKU_good: Attribute.String & Attribute.Required;
+    SKU_excellent: Attribute.String & Attribute.Required;
   };
 }
 
