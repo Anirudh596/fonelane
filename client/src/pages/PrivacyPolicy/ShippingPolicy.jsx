@@ -5,23 +5,26 @@ import axios from "axios";
 import parse from "html-react-parser";
 
 function ShippingPolicy() {
-
-  
   const [data, setData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://52.66.77.248:1337/api/policies/1?populate=*`, {
-          headers: {
-            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+        const res = await axios.get(
+          `http://localhost:1337/api/policies/1?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "bearer " +
+                "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+            },
           }
-        });
+        );
 
         // Extract and set product images from the response data
-        
+
         const privacydata = res.data.data.attributes.policy;
-        setData(privacydata)
+        setData(privacydata);
       } catch (error) {
         console.log(error);
       }
@@ -67,13 +70,13 @@ function ShippingPolicy() {
           initial="initial"
           animate={inView ? "final" : "initial"}
           variants={animations2}
-          src="images/privacy.png"
+          src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775094/2_smnddt.png"
           alt=""
           className="absolute w-96 top-20 md:top-7 right-7 md:right-32"
         />
       </div>
       <div>
-      {data.map((item, index) => (
+        {data.map((item, index) => (
           <AccordionCustomIcon
             key={index}
             heading={item.heading} // Pass the title from the data
@@ -124,15 +127,14 @@ export function AccordionCustomIcon({ heading, content }) {
 
   return (
     <>
-    <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
-      <AccordionHeader onClick={() => handleOpen(1)}>
-        {heading} {/* Display the title from props */}
-      </AccordionHeader>
-      <AccordionBody>
-        {parse(content)} {/* Display the content from props */}
-      </AccordionBody>
-    </Accordion>
+      <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
+        <AccordionHeader onClick={() => handleOpen(1)}>
+          {heading} {/* Display the title from props */}
+        </AccordionHeader>
+        <AccordionBody>
+          {parse(content)} {/* Display the content from props */}
+        </AccordionBody>
+      </Accordion>
     </>
   );
 }
-

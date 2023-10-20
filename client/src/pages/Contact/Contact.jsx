@@ -28,7 +28,7 @@ function Contact() {
         <div className="relative">
           <img
             className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"
-            src="./images/aboutban.png"
+            src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697774937/aboutban_nbzzgo.png"
             alt="nature image"
           />
           <div

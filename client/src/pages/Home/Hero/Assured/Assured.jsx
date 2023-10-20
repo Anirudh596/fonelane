@@ -16,7 +16,7 @@ function Assured() {
     {
       icon: (
         <img
-          src="./images/cod2.png"
+          src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697774870/cod2_kf21cd.png"
           alt="Cash On Delivery"
           className="w-[35px]  md:w-[40px]  "
         />

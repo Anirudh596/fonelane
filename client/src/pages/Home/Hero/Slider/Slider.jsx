@@ -11,9 +11,9 @@ import SlideContent from "./SlideContent/SlideContent";
 
 function Slider() {
   const slideData = [
-    { sliderImage: "./images/bane1.png" },
-    { sliderImage: "./images/bane2.png" },
-    { sliderImage: "./images/bane3.png" },
+    { sliderImage: "https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775709/bane3_ktahh1.png" },
+    { sliderImage: "https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775708/bane2_jnb3th.png" },
+    { sliderImage: "https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775708/bane1_u8jaeo.png" },
     // Add more slide data as needed
   ];
 

@@ -31,8 +31,6 @@ function Icon({ id, open }) {
 }
 
 function CoverPage() {
-
-
   useEffect(() => {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
@@ -150,7 +148,6 @@ function CoverSection() {
     unmount: { scale: 0.9 },
   };
 
-
   const [selectedColor, setSelectedColor] = useState("color1");
   const [data, setData] = useState({});
   const { id } = useParams();
@@ -159,7 +156,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://52.66.77.248:1337/api/covers/${id}?populate=*`,
+          `http://localhost:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:
@@ -188,7 +185,7 @@ function CoverSection() {
     const fetchData = async () => {
       try {
         const res = await axios.get(
-          `http://52.66.77.248:1337/api/covers/${id}?populate=*`,
+          `http://localhost:1337/api/covers/${id}?populate=*`,
           {
             headers: {
               Authorization:
@@ -219,7 +216,6 @@ function CoverSection() {
   const handleImageClick = (image) => {
     setSelectedImage(image);
   };
-
 
   return (
     <>
@@ -328,20 +324,21 @@ function CoverSection() {
                   ₹{data.MRP}{" "}
                 </p>
                 <span className="text-[#32CD32] text-sm md:text-base ">
-                  Save ₹{data.MRP - data.price} ({Math.floor(((data.MRP - data.price) * 100) / data.MRP)}% Off)
+                  Save ₹{data.MRP - data.price} (
+                  {Math.floor(((data.MRP - data.price) * 100) / data.MRP)}% Off)
                 </span>
               </p>
             </div>
             <div className="w-full text-xs md:text-xs gap-1 md:flex justify-between items-center">
-              <Accordion open={open === 1} animate={CUSTOM_ANIMATION} icon={<Icon id={1} open={open} />}>
+              <Accordion
+                open={open === 1}
+                animate={CUSTOM_ANIMATION}
+                icon={<Icon id={1} open={open} />}
+              >
                 <AccordionHeader onClick={() => handleOpen(1)}>
                   Features
                 </AccordionHeader>
-                <AccordionBody>
-                  
-                    {data.specifications}
-                  
-                </AccordionBody>
+                <AccordionBody>{data.specifications}</AccordionBody>
               </Accordion>
             </div>
             <div className="colors block">
