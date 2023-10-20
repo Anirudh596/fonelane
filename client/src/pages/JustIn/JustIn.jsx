@@ -13,7 +13,7 @@ import Scroll from "../../components/scroll/Scroll";
 import axios from "axios";
 
 function JustIn() {
-  const newDevices = [1, 2, 3, 4, 5,6,7,8,9,10];
+  const newDevices = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const itemsPerPage = 10;
   const [currentPage, setCurrentPage] = useState(0);
   const [data, setData] = useState([]);
@@ -24,35 +24,34 @@ function JustIn() {
   };
 
   useEffect(() => {
-    const fetchData = async ()=>{
+    const fetchData = async () => {
       try {
         // const res = await axios.get(`http://localhost:1337/api/iphones`, {
-          const res = await axios.get(`http://52.66.77.248:1337/api/just-ins?populate=*`, {
-          headers: {
-            Authorization: "bearer "+ "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+        const res = await axios.get(
+          `http://localhost:1337/api/just-ins?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "bearer " +
+                "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+            },
           }
-        }
         );
         // setData(res.data.data);
         setData(res.data.data);
         setTotalProducts(res.data.data);
-        console.log(res.data.data)
+        console.log(res.data.data);
       } catch (error) {
         console.log(error);
       }
     };
-    fetchData()
-  }, [])
+    fetchData();
+  }, []);
 
-  const paginatedDevices = data
-  .slice(
+  const paginatedDevices = data.slice(
     currentPage * itemsPerPage,
     (currentPage + 1) * itemsPerPage
   );
-
-
-
-
 
   const [ref, inView] = useInView({
     triggerOnce: true,
@@ -70,7 +69,7 @@ function JustIn() {
       <div className="relative md:p-0">
         <img
           className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"
-          src="./images/back.jpg"
+          src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775345/1_umsqss.png"
           alt="nature image"
         />
         <div
@@ -89,18 +88,13 @@ function JustIn() {
             Be the first one to get your hands on these new products.
           </motion.h2>
         </div>
-        <img
-          src="images/ip1.png"
-          alt=""
-          className="absolute top-0 right-0 w-2/3 h-full "
-        />
+        
       </div>
 
       <div className="flex w-full my-10 border border-gray-800 rounded-xl">
         <div className="flex w-full p-10 bg-[#f8fafc] flex-wrap justify-center">
           {data.map((device, index) => (
-            <Card
-              key={index} className="w-48 h-72 m-3 cursor-pointer">
+            <Card key={index} className="w-48 h-72 m-3 cursor-pointer">
               <CardHeader
                 shadow={false}
                 floated={false}
@@ -115,10 +109,7 @@ function JustIn() {
               <CardBody>
                 <Rating Value={4} readonly />
                 <div className="items-center justify-between">
-                  <Typography
-                    color="blue-gray"
-                    className="font-medium text-sm"
-                  >
+                  <Typography color="blue-gray" className="font-medium text-sm">
                     {device.attributes.title}
                   </Typography>
                   <Typography color="blue-gray" className="font-medium">

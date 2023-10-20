@@ -104,7 +104,7 @@ function CheckOut() {
                       className="flex w-full cursor-pointer justify-between items-center px-3 py-2"
                     >
                       <img
-                        src="./images/upi.png"
+                        src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697774770/upi_wqhe6p.png"
                         alt="upi image"
                         className="w-12"
                       />
@@ -130,7 +130,7 @@ function CheckOut() {
                       className="flex w-full cursor-pointer justify-between items-center px-3 py-2"
                     >
                       <img
-                        src="./images/netbanking.png"
+                        src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697774829/netbanking_k9wjl4.png"
                         alt="netbanking image"
                         className="w-10"
                       />
@@ -178,7 +178,7 @@ function CheckOut() {
                       className="flex w-full cursor-pointer justify-between items-center px-3 py-2"
                     >
                       <img
-                        src="./images/cod2.png"
+                        src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697774870/cod2_kf21cd.png"
                         alt="cod image"
                         className="w-10"
                       />
@@ -276,7 +276,11 @@ function CheckOut() {
             <hr className="my-2 h-px border-0 bg-gray-800" />
             <div>
               <h4>Subtotal:</h4>
-              <h4>{selectedPro.map((product,index) => {<span key={index}>{product.price}</span>})}</h4>
+              <h4>
+                {selectedPro.map((product, index) => {
+                  <span key={index}>{product.price}</span>;
+                })}
+              </h4>
             </div>
             <hr className="my-2 h-px border-0 bg-gray-800" />
             <Button

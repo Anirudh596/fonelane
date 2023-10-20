@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import  { useEffect } from "react"; // Import useEffect from React
+import { useEffect } from "react"; // Import useEffect from React
 import ProductCard from "../../components/ProductCard/ProductCard";
 import { PiShoppingCartLight } from "react-icons/pi";
 import Scroll from "../../components/scroll/Scroll";
@@ -15,8 +15,6 @@ function ProductPage() {
     // Scroll to the top of the page when the component mounts
     window.scrollTo(0, 0);
   }, []); // Empty dependency array ensures it only runs once when mounted
-
-
 
   return (
     <>
@@ -38,14 +36,18 @@ function ProductPage() {
         <ProductSection />
         <hr className="h-px border-0 bg-black w-full my-3" />
         <div className="flex flex-col gap-3 my-5 px-5">
-          <p className="text-[16px] font-medium flex gap-3">
-            Fonelane Assured 
-          </p>
+          <p className="text-[16px] font-medium flex gap-3">Fonelane Assured</p>
           <div className="flex justify-center md:justify-between items-center flex-wrap md:flex-nowrap gap-2">
             {assuredImages.map((item, index) => {
               return (
                 <div key={index} className="">
-                  <img src={`${item.img}`} alt={`Image ${index}`}  width={400} height={100} className="rounded-md"/>
+                  <img
+                    src={`${item.img}`}
+                    alt={`Image ${index}`}
+                    width={400}
+                    height={100}
+                    className="rounded-md"
+                  />
                 </div>
               );
             })}
@@ -63,20 +65,19 @@ function ProductPage() {
         <div className="block md:hidden  fixed bottom-0 w-full h-24 bg-white z-50">
           <div className="flex justify-between items-center h-full gap-5">
             <div>
-            <p className="exclusive text-xs">Excluive Price!</p>
+              <p className="exclusive text-xs">Excluive Price!</p>
 
-            
-            <div className="flex flex-col justify-center items-center flex-1 h-full">
-              <p className="font-semibold text-lg md:text-2xl flex items-center justify-start gap-2">
-                ₹89000{" "}
-                <p className="text-xs md:text-base font-normal line-through flex gap-2">
-                  ₹1,39000{" "}
+              <div className="flex flex-col justify-center items-center flex-1 h-full">
+                <p className="font-semibold text-lg md:text-2xl flex items-center justify-start gap-2">
+                  ₹89000{" "}
+                  <p className="text-xs md:text-base font-normal line-through flex gap-2">
+                    ₹1,39000{" "}
+                  </p>
                 </p>
-              </p>
-              <p className="text-[#32CD32]  text-xs md:text-base">
-                Save ₹57,001 (41% Off)
-              </p>
-            </div>
+                <p className="text-[#32CD32]  text-xs md:text-base">
+                  Save ₹57,001 (41% Off)
+                </p>
+              </div>
             </div>
             <div className="flex-grow flex w-full   text-sm md:text-base my-10 px-5 gap-6">
               <button className="text-4xl border-[1px] border-slate-400 p-1 rounded-lg ">
@@ -111,7 +112,6 @@ import { Pagination } from "swiper/modules";
 import { Rating, Typography } from "@material-tailwind/react";
 import CopyButton from "../../components/LinkShare/LinkShare";
 
-
 function ProductSection() {
   const [isSpecOpen, setIsSpecOpen] = useState(false);
   const [selectedQuality, setSelectedQuality] = useState("excellent");
@@ -125,11 +125,16 @@ function ProductSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://52.66.77.248:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
-          headers: {
-            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
-          },
-        });
+        const res = await axios.get(
+          `http://localhost:1337/api/deal-of-the-day-2s/${id}?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "bearer " +
+                "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+            },
+          }
+        );
         setData(res.data.data.attributes);
         // console.log(res.data.data.attributes.baseprice);
       } catch (error) {
@@ -156,7 +161,7 @@ function ProductSection() {
     const fetchData = async () => {
       try {
         const axiosInstance = axios.create({
-          baseURL: "http://52.66.77.248:1337/api/deal-of-the-day-2s",
+          baseURL: "http://localhost:1337/api/deal-of-the-day-2s",
           headers: {
             Authorization:
               "bearer " +
@@ -216,11 +221,6 @@ function ProductSection() {
 
   const savedPrice = mrp - dynamicPricing();
 
-
-
-
-
-
   const openSpecs = () => setIsSpecOpen(true);
   const closeSpecs = () => setIsSpecOpen(false);
 
@@ -268,11 +268,15 @@ function ProductSection() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get(`http://52.66.77.248:1337/api/deal-of-the-day-2s/${id}?populate=*`, {
-          headers: {
-            Authorization: "bearer " + "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+        const res = await axios.get(
+          `http://localhost:1337/api/deal-of-the-day-2s/${id}?populate=*`,
+          {
+            headers: {
+              Authorization:
+                "bearer " +
+                "422d2e9d1a9f0707a1622e0552b49661b6e630c8d02f25c724721eedc0376e8947e98312a4adf3bf21bbc7bee43f269d1471ca84c9f927b05ed421fba03c5217ec35ecd8121e836f96e0f01fe4582de30c62aad923007ae34066f6a443dd2e554cc819db2869212bc54a139c4b28fe55de325cdf9049dd7dbf253b053c56cd14",
+            },
           }
-        }
         );
 
         // Extract and set product images from the response data
@@ -297,28 +301,27 @@ function ProductSection() {
     setSelectedImage(image);
   };
 
-
-    const handleAddToCart = async () => {
-      // Create an object with product details
-      const productDetails = {
-        title: data.title,
-        price: dynamicPricing(),
-        Condition: selectedQuality,
-        Storage: selectedSpec,
-        Color: selectedColor,
-      };
+  const handleAddToCart = async () => {
+    // Create an object with product details
+    const productDetails = {
+      title: data.title,
+      price: dynamicPricing(),
+      Condition: selectedQuality,
+      Storage: selectedSpec,
+      Color: selectedColor,
+    };
     try {
       // Make a POST request to add the product to the user's cart
-      const response = await axios.post("http://localhost:5000/api/user/add-to-cart", productDetails);
+      const response = await axios.post(
+        "http://localhost:5000/api/user/add-to-cart",
+        productDetails
+      );
       console.log(response.data); // Handle the response as needed
     } catch (error) {
       console.error(error);
       // Handle errors
     }
-  }
-
-  
-
+  };
 
   return (
     <>
@@ -381,17 +384,20 @@ function ProductSection() {
               Buy Now
             </button>
 
-            <button className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105" onClick={handleAddToCart}>
+            <button
+              className="py-2 flex-1 px-5 border border-black flex justify-center items-center rounded-lg bg-black text-white active:bg-white active:text-black hover:scale-105"
+              onClick={handleAddToCart}
+            >
               Add to Cart
             </button>
           </div>
           <div className="flex relative md:hidden w-full justify-center items-center">
             <div className="absolute left-0 bottom-5 drop-shadow-xl grid md:hidden grid-rows-4 w-28 h-fit gap-1 z-30 rounded-t-xl rounded-b-xl  p-1">
-            <div className="  w-full m-1 flex justify-start ">
-                  <p className="py-1 px-2 text-sm w-full flex bg-blue-600 text-white rounded-r-md font-semibold">
-                    ₹{savedPrice} off
-                  </p>
-                </div>
+              <div className="  w-full m-1 flex justify-start ">
+                <p className="py-1 px-2 text-sm w-full flex bg-blue-600 text-white rounded-r-md font-semibold">
+                  ₹{savedPrice} off
+                </p>
+              </div>
               {qualityCheck.map((item, index) => (
                 <div
                   key={index}
@@ -464,7 +470,11 @@ function ProductSection() {
                 <div className="review cursor-pointer flex flex-nowrap items-center">
                   <div className="flex items-center gap-2 font-bold text-blue-gray-500">
                     {rated}.7
-                    <Rating value={4} onChange={(value) => setRated(value)} readonly/>
+                    <Rating
+                      value={4}
+                      onChange={(value) => setRated(value)}
+                      readonly
+                    />
                     <Typography
                       color="blue-gray"
                       className="font-medium text-xs md:text-sm text-blue-gray-500"
@@ -664,4 +674,3 @@ function ProductSection() {
 }
 
 // export default ProductSection;
-

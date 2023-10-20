@@ -45,7 +45,7 @@ function Deals() {
       <div className="relative md:p-0">
         <img
           className="h-64 md:h-96 w-full rounded-lg object-cover object-center mt-5"
-          src="./images/back.jpg"
+          src="https://res.cloudinary.com/dgl6gst2b/image/upload/v1697775346/3_bm9ntw.png"
           alt="nature image"
         />
         <div
@@ -64,11 +64,7 @@ function Deals() {
             Deals
           </motion.h2>
         </div>
-        <img
-          src="images/ip1.png"
-          alt=""
-          className="absolute top-0 right-0 w-2/3 h-full "
-        />
+        
       </div>
 
       <div className="flex w-full my-10 border border-gray-800 rounded-xl">
