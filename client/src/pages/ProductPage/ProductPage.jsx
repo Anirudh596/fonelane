@@ -163,7 +163,7 @@ function ProductSection() {
     const fetchData = async () => {
       try {
         const axiosInstance = axios.create({
-          baseURL: "http://localhost:1337/api/deal-of-the-day-2s",
+          baseURL: `http://localhost:1337/api/deal-of-the-day-2s`,
           headers: {
             Authorization:
               "bearer " +

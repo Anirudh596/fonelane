@@ -1,27 +1,21 @@
 {
   "kind": "collectionType",
-  "collectionName": "new_arrivals",
+  "collectionName": "hot_deals",
   "info": {
-    "singularName": "new-arrival",
-    "pluralName": "new-arrivals",
-    "displayName": "New Arrival",
-    "description": ""
+    "singularName": "hot-deal",
+    "pluralName": "hot-deals",
+    "displayName": "Hot Deal"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "unique": true,
-      "required": true
-    },
     "inventories": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::deal-of-the-day-2.deal-of-the-day-2",
-      "mappedBy": "new_arrivals"
+      "inversedBy": "hot_deals"
     }
   }
 }

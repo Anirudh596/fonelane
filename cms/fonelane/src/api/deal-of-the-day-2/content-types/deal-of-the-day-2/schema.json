@@ -4,7 +4,7 @@
   "info": {
     "singularName": "deal-of-the-day-2",
     "pluralName": "deal-of-the-day-2s",
-    "displayName": "Deal Of The Day",
+    "displayName": "Inventory",
     "description": ""
   },
   "options": {
@@ -13,18 +13,21 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "baseprice": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "mrp": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "mainimage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -35,7 +38,7 @@
     "otherimages": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -51,14 +54,29 @@
     "storage": {
       "type": "component",
       "repeatable": true,
-      "component": "storage.storage"
+      "component": "storage.storage",
+      "required": false
     },
     "specs": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "slug": {
       "type": "uid",
-      "targetField": "title"
+      "targetField": "title",
+      "required": true
+    },
+    "hot_deals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::hot-deal.hot-deal",
+      "mappedBy": "inventories"
+    },
+    "new_arrivals": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::new-arrival.new-arrival",
+      "inversedBy": "inventories"
     }
   }
 }

@@ -2,15 +2,18 @@
   "collectionName": "components_policy_policies",
   "info": {
     "displayName": "policy",
-    "icon": "eye"
+    "icon": "eye",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "heading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     }
   }
 }

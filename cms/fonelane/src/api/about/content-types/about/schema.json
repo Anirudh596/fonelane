@@ -4,7 +4,8 @@
   "info": {
     "singularName": "about",
     "pluralName": "abouts",
-    "displayName": "About"
+    "displayName": "About Us - Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,55 +13,65 @@
   "pluginOptions": {},
   "attributes": {
     "head1": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "head2": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "head3": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "content1": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "content2": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "content3": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "founder": {
-      "type": "text"
+      "type": "text",
+      "required": true
     },
     "img1": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "img2": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "img3": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     }
   }
 }

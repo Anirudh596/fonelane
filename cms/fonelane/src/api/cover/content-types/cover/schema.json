@@ -13,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "colorname": {
       "type": "component",
@@ -21,21 +22,25 @@
       "component": "device-colors.colors"
     },
     "price": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "MRP": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "inventory": {
-      "type": "integer"
+      "type": "integer",
+      "required": true
     },
     "specifications": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     },
     "mainimage": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -46,7 +51,7 @@
     "otherimages": {
       "type": "media",
       "multiple": true,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
